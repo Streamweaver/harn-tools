@@ -1,5 +1,8 @@
 # HarnTools
 
+These are some simple tools for the tabletop roleplaying system Harn Master and it's setting, Harn World.
+
+## Build Info
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.1.
 
 ## Development server

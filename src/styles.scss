@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'scss/variables';
+@import '../node_modules/font-awesome/scss/font-awesome';
+@import '../node_modules/bootstrap/scss/bootstrap';
+
+.top-pad {
+  padding-top: 0.75em;
+}
+
+.alert-success p,
+.alert-info p,
+.alert-warning p,
+.alert-danger p {
+  margin: 0;
+  padding: 0;
+}
+
+.google-red {
+  background-color: #dd4b39;
+}
+
+.loader-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
