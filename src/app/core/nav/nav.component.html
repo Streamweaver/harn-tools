@@ -7,11 +7,12 @@
   <div class="collapse navbar-collapse" id="navbarsExampleDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home</a>
+        <a class="nav-link" routerLink="/" [routerLinkActive]="['active']">Home</a>
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdownToolsMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a>
         <div class="dropdown-menu" aria-labelledby="dropdownToolsMenu">
+          <a class="dropdown-item" [routerLink]="['manors']" [routerLinkActive]="['active']">Manor</a>
           <a class="dropdown-item disabled" href="#">Weather</a>
           <a class="dropdown-item disabled" href="#">Armor</a>
           <a class="dropdown-item disabled" href="#">Names</a>
