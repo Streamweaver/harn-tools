@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TenantGenerator } from '../shared/tenant-generator';
 import { Itenant } from '../shared/itenant.model';
+import { ManorService } from '../shared/manors.service';
 
 @Component({
   selector: 'app-manor',
@@ -9,28 +10,44 @@ import { Itenant } from '../shared/itenant.model';
 })
 export class ManorComponent implements OnInit {
   tenants: Itenant[];
+  tenantTotals: {
+    serf_acres: number;
+    free_acres: number;
+    labor_days: number;
+    rent: number;
+    fees: number;
+  };
 
-  constructor() {
-    this.tenants = this.generateTenants(5);
+  constructor(
+    private _manorService: ManorService,
+  ) {
+    this.tenantTotals = {
+      serf_acres: 0,
+      free_acres: 0,
+      labor_days: 0,
+      rent: 0,
+      fees: 0
+    }
   }
 
   ngOnInit() {
-    this.tenants = this.generateTenants(10);
+    this.tenants = this._manorService.getTenants();
+    this.calculateTotals();
   }
 
   onPopulateClick() {
     console.log('POPULATE NOW');
-    this.tenants = this.generateTenants(30);
+    this._manorService.populateTenants(50);
+    this.calculateTotals();
   }
 
-  private generateTenants(n: number): Itenant[] {
-    const tg = new TenantGenerator();
-   const tList: Itenant[] = [];
-    while (tList.length < n) {
-      tList.push(tg.newTenant());
+  calculateTotals() {
+    for (const tenant of this.tenants) {
+      this.tenantTotals.serf_acres += tenant.serf_acres;
+      this.tenantTotals.free_acres += tenant.free_acres;
+      this.tenantTotals.labor_days += tenant.labor_days;
+      this.tenantTotals.rent += tenant.rent;
+      this.tenantTotals.fees += tenant.fees;
     }
-    console.log('Added ' + tList.length + ' Tenants');
-    return tList;
   }
-
 }

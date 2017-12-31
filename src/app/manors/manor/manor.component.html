@@ -5,7 +5,7 @@
     <div class="col-sm-6"><h2>Tennants</h2></div>
   </div>
 
-  <table class="table table-bordered table-striped table-hover table-condensed" *ngIf="tennants?.length > 0; else noTennants">
+  <table class="table table-bordered table-striped table-hover table-condensed" *ngIf="tenants?.length > 0; else noTennants">
     <thead class="thead-dark">
       <tr>
         <th>Occupation</th>
@@ -13,23 +13,28 @@
         <th>ML</th>
         <th>Serf</th>
         <th>Free</th>
-        <th>Labor Days</th>
+        <th>Labor<br>Days</th>
         <th>Rent</th>
         <th>Fees</th>
         <th>Notes</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let tennant of tennants">
-        <td>{{tennant.occupation}}</td>
-        <td>{{tennant.size}}</td>
-        <td>{{tennant.ml}}</td>
-        <td>{{tennant.serf_arcres}}</td>
-        <td>{{tennant.free_arcres}}</td>
-        <td>{{tennant.labor_days}}</td>
-        <td>{{tennant.rent}}</td>
-        <td>{{tennant.fees}}</td>
-        <td>{{tennant.note}}</td>
+      <tr *ngFor="let tenant of tenants">
+        <td *ngIf="tenant.craft">{{tenant.craft}}</td>
+        <td *ngIf="!tenant.craft">{{tenant.occupation}}</td>
+        <td>{{tenant.size}}</td>
+        <td>{{tenant.ml}}</td>
+        <td>{{tenant.serf_acres}}</td>
+        <td>{{tenant.free_acres}}</td>
+        <td>{{tenant.labor_days}}</td>
+        <td>{{tenant.rent}}</td>
+        <td>{{tenant.fees}}</td>
+        <td>{{tenant.note}}</td>
+      </tr>
+      <tr>
+        <td colspan="3">Totals:</td>
+        <td>{{tenantTotals.serf_acres}}</td>
       </tr>
     </tbody>
   </table>

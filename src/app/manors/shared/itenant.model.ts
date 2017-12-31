@@ -1,5 +1,6 @@
 export interface Itenant {
   occupation: string;
+  craft?: string;
   size: number;
   ml: number;
   serf_acres: number;

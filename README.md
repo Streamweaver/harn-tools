@@ -2,6 +2,13 @@
 
 These are some simple tools for the tabletop roleplaying system Harn Master and it's setting, Harn World.
 
+## Dependencies
+
+The 'dice-typescript' npm library requires global installation of the typings library. 
+```
+npm install -g typings
+```
+
 ## Development & Build Info
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.1.
 
