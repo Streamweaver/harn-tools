@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ManorsRoutingModule } from './manors-routing.module';
-import { HouseholdComponent } from './household/household.component';
-import { VillageComponent } from './village/village.component';
 import { ManorComponent } from './manor/manor.component';
+import { TennantComponent } from './tennant/tennant.component';
+import { TennantGeneratorComponent } from './tennant-generator/tennant-generator.component';
 
 @NgModule({
   imports: [
     CommonModule,
     ManorsRoutingModule
   ],
-  declarations: [HouseholdComponent, VillageComponent, ManorComponent]
+  declarations: [ManorComponent, TennantComponent, TennantGeneratorComponent]
 })
 export class ManorsModule { }

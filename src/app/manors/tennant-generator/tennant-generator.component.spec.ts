@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VillageComponent } from './village.component';
+import { TennantGeneratorComponent } from './tennant-generator.component';
 
-describe('VillageComponent', () => {
-  let component: VillageComponent;
-  let fixture: ComponentFixture<VillageComponent>;
+describe('TennantGeneratorComponent', () => {
+  let component: TennantGeneratorComponent;
+  let fixture: ComponentFixture<TennantGeneratorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ VillageComponent ]
+      declarations: [ TennantGeneratorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(VillageComponent);
+    fixture = TestBed.createComponent(TennantGeneratorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,4 +1,41 @@
 <div class="container page">
   <h1>Manor Generator</h1>
-  <h2>Tennants</h2>
+
+  <div class="row">
+    <div class="col-sm-6"><h2>Tennants</h2></div>
+  </div>
+
+  <table class="table table-bordered table-striped table-hover table-condensed" *ngIf="tennants?.length > 0; else noTennants">
+    <thead class="thead-dark">
+      <tr>
+        <th>Occupation</th>
+        <th>Size</th>
+        <th>ML</th>
+        <th>Serf</th>
+        <th>Free</th>
+        <th>Labor Days</th>
+        <th>Rent</th>
+        <th>Fees</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tennant of tennants">
+        <td>{{tennant.occupation}}</td>
+        <td>{{tennant.size}}</td>
+        <td>{{tennant.ml}}</td>
+        <td>{{tennant.serf_arcres}}</td>
+        <td>{{tennant.free_arcres}}</td>
+        <td>{{tennant.labor_days}}</td>
+        <td>{{tennant.rent}}</td>
+        <td>{{tennant.fees}}</td>
+        <td>{{tennant.note}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noTennants>
+    <h5>No Tennants Listed.</h5>
+    <a class="btn btn-primary" (click)="onPopulateClick()"><i class="fa fa-users"></i> Populate</a>
+  </ng-template>
 </div>
