@@ -17,14 +17,6 @@ export class ManorService {
   }
 
   getTenants(): Itenant[] {
-    this.populateTenants(50);
     return this.tenants;
-  }
-
-  populateTenants(n: number) {
-    while (this.tenants.length < n) {
-      this.tenants.push(this.tg.generateTenant());
-    }
-    console.log(this.tenants);
   }
 }

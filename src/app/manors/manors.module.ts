@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { ManorsRoutingModule } from './manors-routing.module';
 import { ManorComponent } from './manor/manor.component';
@@ -10,7 +11,8 @@ import { ManorService } from './shared/manors.service';
 @NgModule({
   imports: [
     CommonModule,
-    ManorsRoutingModule
+    ManorsRoutingModule,
+    FormsModule
   ],
   providers: [ManorService],
   declarations: [ManorComponent, TennantComponent, TennantGeneratorComponent]

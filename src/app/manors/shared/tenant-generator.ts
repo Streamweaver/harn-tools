@@ -39,6 +39,24 @@ enum CRAFTSMAN {
   ARMOURER = 'Armourer'
 }
 
+const CRAFTSMAN_FEES = {
+  [CRAFTSMAN.MILLER]: 240,
+  [CRAFTSMAN.METALSMITH]: 144,
+  [CRAFTSMAN.WOODCRAFTER]: 120,
+  [CRAFTSMAN.SALTER]: 120,
+  [CRAFTSMAN.HIDEWORDER]: 144,
+  [CRAFTSMAN.TIMBERWRIGHT]: 216,
+  [CRAFTSMAN.CHARCOALER]: 180,
+  [CRAFTSMAN.SHIPWRIGHT]: 144,
+  [CRAFTSMAN.INNKEEPER]: 216,
+  [CRAFTSMAN.OSTLER]: 180,
+  [CRAFTSMAN.POTTER]: 120,
+  [CRAFTSMAN.APOTHECARY]: 120,
+  [CRAFTSMAN.GLASSWORKER]: 120,
+  [CRAFTSMAN.WEAPONSMITH]: 220,
+  [CRAFTSMAN.ARMOURER]: 220
+};
+
 const CRAFTSMANTABLE = [
   {weight: 25, id: CRAFTSMAN.MILLER},
   {weight: 20, id: CRAFTSMAN.METALSMITH},
@@ -61,14 +79,17 @@ const FREEMEN = [TenantClass.CRAFTSMAN, TenantClass.FARMER, TenantClass.YEOMAN];
 
 export class TenantGenerator {
   private _tenantClass: TenantClass;
-  private _isSlaveState = true;
+  private _isSlaveState: boolean;
   private _dice = new NumberGenerator();
+  private _freeRent: number;
+  private _serfLabor: number;
 
-  constructor() {
-    this._isSlaveState = true;
-  }
+  constructor() {}
 
-  generateTenant(): Itenant {
+  generateTenant(freeRent: number, serfLabor: number, isSlaveState: boolean): Itenant {
+    this._freeRent = freeRent;
+    this._serfLabor = serfLabor;
+    this._isSlaveState = isSlaveState;
     const tenant: Itenant = {
       occupation: null,
       craft: null,
@@ -93,17 +114,9 @@ export class TenantGenerator {
     return tenant;
   }
 
-  toggleSlavery() {
-    this._isSlaveState = !this._isSlaveState;
-  }
-
-  isSlaveState() {
-    return this._isSlaveState;
-  }
-
   private _generateTenantClass(t: Itenant) {
     let tClass = rwc(CLASSTABLE);
-    if (!this._isSlaveState && t.occupation === TenantClass.SLAVE) {
+    if (!this._isSlaveState && tClass === TenantClass.SLAVE) {
       tClass = TenantClass.COTTAR;
     }
     t.occupation = tClass;
@@ -166,17 +179,14 @@ export class TenantGenerator {
   }
 
   private _assessFees(t: Itenant) {
-    t.fees = 0;
+    t.fees = (t.occupation === TenantClass.SLAVE) ? 0 : 6 + t.free_acres + t.serf_acres;
+    if (t.craft) {
+      t.fees = t.fees + CRAFTSMAN_FEES[t.craft];
+      t.note = 'Includes ' + CRAFTSMAN_FEES[t.craft] + ' guild fee.';
+    }
   }
 
   private _assessLaborDays(t: Itenant) {
-    t.labor_days = 0;
-  }
-
-  private _isFree(tc: TenantClass): boolean {
-    if (FREEMEN.indexOf(tc) > -1 ) {
-      return true;
-    }
-    return false;
+    t.labor_days = (t.occupation === TenantClass.SLAVE) ? 200 * t.size : 4 * t.serf_acres;
   }
 }
