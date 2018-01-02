@@ -1,0 +1,43 @@
+<div class="container page">
+  <h1>Distances</h1>
+  <p>This is used to calculate various distances and travel tims in Harn.</p>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header"><h4>Distance Conversion</h4></div>
+        <div class="card-body">
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Leagues</label>
+            <div class="col">
+              <input type="number" class="form-control" [(ngModel)]="leagues" (change)="onLeagueChange()" name="leagues">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Map Hexes</label>
+            <div class="col">
+              <input type="number" class="form-control" [(ngModel)]="hexes" (change)="onHexesChange()" name="hexes">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Miles<small>*</small></label>
+            <div class="col">
+              <input type="number" class="form-control" [(ngModel)]="miles" (change)="onMilesChange()" name="miles">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-4 col-form-label">Kilometers<small>*</small></label>
+            <div class="col">
+              <input type="number" class="form-control" [(ngModel)]="km" (change)="onKilometersChange()" name="km">
+            </div>
+          </div>
+        </div>
+        <div class="card-footer"><small>* Miles & Kilometers use round conversion numbers for consistency with Harn World.</small></div>
+      </div>
+    </div>
+    <div class="col">
+      <app-movement></app-movement>
+    </div>
+  </div>
+
+
+</div>

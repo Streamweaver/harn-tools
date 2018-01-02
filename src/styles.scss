@@ -1,11 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'scss/variables';
-@import '../node_modules/font-awesome/scss/font-awesome';
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 .page {
   padding-top: 4rem;
   padding-bottom: 2rem;
+}
+
+.text-rotate {
+  transform: rotate(90deg);
+  position: relative;
 }
 
 .alert-success p,
