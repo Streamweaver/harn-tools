@@ -5,12 +5,12 @@
       <div class="btn-group btn-group-tobble col border" data-toggle="buttons">
         <label class="btn float-right"
                *ngFor="let unitChoice of unitChoices"
-               [ngClass]="unitChoice.id === selectedUnit ? 'active btn-dark' : 'btn-secondary '"
+               [ngClass]="unitChoice.id === selectedUnits ? 'active btn-dark' : 'btn-secondary '"
                (click)="onUnitSelect(unitChoice.id)"
         >
           <input type="radio" name="units"
                  [value]="unitChoice.id"
-                 [checked]="unitChoice.id === selectedUnit"
+                 [checked]="unitChoice.id === selectedUnits"
                  autocomplete="off"> {{ unitChoice.value }}
         </label>
       </div>

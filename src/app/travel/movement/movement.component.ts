@@ -11,7 +11,7 @@ export class MovementComponent implements OnInit {
   movementRatesFlat: IMovementRate[];
   private movementRatesRough: IMovementRate[];
   private movementRatesMountain: IMovementRate[];
-  selectedUnit: Units;
+  selectedUnits: Units;
   unitChoices = [
     {
       id: Units.LEAGUES,
@@ -36,12 +36,12 @@ export class MovementComponent implements OnInit {
 
   ngOnInit() {
     this._loadMovementRates();
-    this.selectedUnit = Units.KILOMETERS;
+    this.selectedUnits = Units.KILOMETERS;
   }
 
   adjustedRate(rate: number): number {
     let adjustedRate = 0;
-    switch (this.selectedUnit) {
+    switch (this.selectedUnits) {
       case Units.LEAGUES:
         adjustedRate = rate * 0.25;
         break;
@@ -63,7 +63,7 @@ export class MovementComponent implements OnInit {
 
   onUnitSelect(u: number) {
     console.log(u);
-    this.selectedUnit = u;
+    this.selectedUnits = u;
   }
 
   private _loadMovementRates() {
