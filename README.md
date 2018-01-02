@@ -2,6 +2,11 @@
 
 These are some simple tools for the tabletop roleplaying system Harn Master and it's setting, Harn World.
 
+## Acknowlegements
+
+Name data derived from the following sources:
+* English Surnames in Northumberland https://www.s-gabriel.org/names/juetta/parish/surnames.html 
+
 ## Dependencies
 
 The 'dice-typescript' npm library requires global installation of the typings library. 

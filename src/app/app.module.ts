@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { CoreModule } from './core/core.module';
 import { ManorsModule } from './manors/manors.module';
 import { TravelModule } from './travel/travel.module';
+import { NamesModule } from './names/names.module';
 
 import { AppComponent } from './app.component';
 
@@ -18,6 +19,7 @@ import { AppComponent } from './app.component';
     CoreModule,
     ManorsModule,
     TravelModule,
+    NamesModule,
     AppRoutingModule,
     FormsModule
   ],
