@@ -1,6 +1,7 @@
 import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {IMovementRate} from '../shared/movementrate.interface';
 import { Units } from '../shared/units.enum';
+import { Condition } from '../shared/condition.enum';
 
 @Component({
   selector: 'app-movement',
@@ -9,8 +10,8 @@ import { Units } from '../shared/units.enum';
 })
 export class MovementComponent implements OnInit {
   movementRatesFlat: IMovementRate[];
-  private movementRatesRough: IMovementRate[];
-  private movementRatesMountain: IMovementRate[];
+  movementRatesRough: IMovementRate[];
+  movementRatesMountain: IMovementRate[];
   selectedUnits: Units;
   unitChoices = [
     {
@@ -30,6 +31,18 @@ export class MovementComponent implements OnInit {
       value: 'KM'
     }
   ];
+  conditions = {
+    weather: {
+      rain: false,
+      blizzard: false
+    },
+    ground: {
+      mud: false,
+      lightSnow: false,
+      snow: false,
+      deepSnow: false
+    }
+  };
 
   constructor() {
   }
@@ -58,7 +71,19 @@ export class MovementComponent implements OnInit {
         adjustedRate = rate;
         break;
     }
+    adjustedRate = adjustedRate * this.conditionsAdjustment();
     return parseFloat(adjustedRate.toFixed(2));
+  }
+
+  conditionsAdjustment(): number {
+    let condition = 1;
+    condition = ((this.conditions.ground.mud) ? condition * .5 : condition);
+    condition = ((this.conditions.weather.rain) ? condition * .9 : condition);
+    condition = ((this.conditions.weather.blizzard) ? condition * .25 : condition);
+    condition = ((this.conditions.ground.lightSnow) ? condition * .8 : condition);
+    condition = ((this.conditions.ground.snow) ? condition * .7 : condition);
+    condition = ((this.conditions.ground.deepSnow) ? condition * .25 : condition);
+    return condition;
   }
 
   onUnitSelect(u: number) {

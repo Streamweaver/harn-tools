@@ -1,9 +1,9 @@
 export enum Condition {
   RAIN,
-  HEAVYRAIN,
+  HEAVY_RAIN,
   MUD,
   BLIZZARD,
+  LIGHT_SNOW,
   SNOW,
-  SNOWMED,
-  SNOWDEEP
+  DEEP_SNOW
 }

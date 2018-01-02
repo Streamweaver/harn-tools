@@ -29,3 +29,8 @@
   align-items: center;
   justify-content: center;
 }
+
+/* fix for stacked form checkbox inputs */
+.form-check-input-condensed {
+  margin-left: 0;
+}

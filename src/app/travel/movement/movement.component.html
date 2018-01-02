@@ -1,8 +1,8 @@
 <div class="card">
   <div class="card-header">
     <div class="row">
-      <h4 class="col border">Travel Rates/Hour</h4>
-      <div class="btn-group btn-group-tobble col border" data-toggle="buttons">
+      <h4 class="col">Travel Rates/Hour</h4>
+      <div class="btn-group btn-group-tobble col" data-toggle="buttons">
         <label class="btn float-right"
                *ngFor="let unitChoice of unitChoices"
                [ngClass]="unitChoice.id === selectedUnits ? 'active btn-dark' : 'btn-secondary '"
@@ -17,6 +17,58 @@
     </div>
   </div>
   <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input form-check-input-condensed" type="checkbox"
+                 [(ngModel)]="conditions.ground.lightSnow"
+                 [checked]="conditions.ground.lightSnow"
+          >
+          <label class="form-check-label">Light Snow</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input form-check-input-condensed" type="checkbox"
+                 [(ngModel)]="conditions.ground.snow"
+                 [checked]="conditions.ground.snow"
+          >
+          <label class="form-check-label">Moderate Snow</label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <input class="form-check-input form-check-input-condensed" type="checkbox"
+                 [(ngModel)]="conditions.ground.deepSnow"
+                 [checked]="conditions.ground.deepSnow"
+          >
+          <label class="form-check-label">Deep Snow</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input form-check-input-condensed" type="checkbox"
+                 [(ngModel)]="conditions.ground.mud"
+                 [checked]="conditions.ground.mud"
+          >
+          <label class="form-check-label">Mud</label>
+        </div>
+      </div>
+      <div class="col">
+
+        <div class="form-check">
+          <input class="form-check-input form-check-input-condensed" type="checkbox"
+                 [(ngModel)]="conditions.weather.rain"
+                 [checked]="conditions.weather.rain"
+          >
+          <label class="form-check-label">Rain</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input form-check-input-condensed" type="checkbox"
+                 [(ngModel)]="conditions.weather.blizzard"
+                 [checked]="conditions.weather.blizzard"
+          >
+          <label class="form-check-label">Storm/Blizzard</label>
+        </div>
+    </div>
+
+    </div>
     <table class="table table-striped table-hover table-sm">
       <thead>
       <tr>
