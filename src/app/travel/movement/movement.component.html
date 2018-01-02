@@ -1,11 +1,11 @@
 <div class="card">
   <div class="card-header">
     <div class="row">
-      <h4 class="col">Travel Distances/Hour</h4>
-      <div class="btn-group btn-group-tobble col text-right" data-toggle="buttons">
-        <label class="btn btn-secondary"
+      <h4 class="col border">Travel Rates/Hour</h4>
+      <div class="btn-group btn-group-tobble col border" data-toggle="buttons">
+        <label class="btn float-right"
                *ngFor="let unitChoice of unitChoices"
-               [ngClass]="unitChoice.id === selectedUnit ? 'active' : ''"
+               [ngClass]="unitChoice.id === selectedUnit ? 'active btn-dark' : 'btn-secondary '"
                (click)="onUnitSelect(unitChoice.id)"
         >
           <input type="radio" name="units"
