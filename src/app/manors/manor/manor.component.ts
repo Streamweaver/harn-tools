@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TenantGenerator } from '../shared/tenant-generator';
 import { Itenant } from '../shared/itenant.model';
-import { ManorService } from '../shared/manors.service';
+import { ManorService } from '../shared/manor.service';
 
 @Component({
   selector: 'app-manor',
@@ -13,6 +13,7 @@ export class ManorComponent implements OnInit {
   private _isPopulated: boolean;
   tenants: Itenant[];
   tenantTotals: {
+    size: number;
     serf_acres: number;
     free_acres: number;
     labor_days: number;
@@ -34,6 +35,7 @@ export class ManorComponent implements OnInit {
   private _reset() {
     this.tenants = [];
     this.tenantTotals = {
+      size: 0,
       serf_acres: 0,
       free_acres: 0,
       labor_days: 0,
@@ -62,6 +64,7 @@ export class ManorComponent implements OnInit {
 
   calculateTotals() {
     for (const tenant of this.tenants) {
+      this.tenantTotals.size += tenant.size;
       this.tenantTotals.serf_acres += tenant.serf_acres;
       this.tenantTotals.free_acres += tenant.free_acres;
       this.tenantTotals.labor_days += tenant.labor_days;

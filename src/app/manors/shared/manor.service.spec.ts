@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { ManorService } from './manors.service';
+import { ManorService } from './manor.service';
 
 describe('ManorService', () => {
   beforeEach(() => {

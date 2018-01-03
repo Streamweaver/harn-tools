@@ -6,7 +6,7 @@ import { ManorsRoutingModule } from './manors-routing.module';
 import { ManorComponent } from './manor/manor.component';
 import { TennantComponent } from './tennant/tennant.component';
 import { TennantGeneratorComponent } from './tennant-generator/tennant-generator.component';
-import { ManorService } from './shared/manors.service';
+import { ManorService } from './shared/manor.service';
 
 @NgModule({
   imports: [
