@@ -12,12 +12,13 @@
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdownToolsMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tools</a>
         <div class="dropdown-menu" aria-labelledby="dropdownToolsMenu">
+          <a class="dropdown-item" [routerLink]="['names']" [routerLinkActive]="['active']">Names</a>
           <a class="dropdown-item" [routerLink]="['manors']" [routerLinkActive]="['active']">Manor</a>
           <a class="dropdown-item" [routerLink]="['travel']" [routerLinkActive]="['active']">Travel</a>
           <a class="dropdown-item disabled" href="#">Weather</a>
-          <a class="dropdown-item disabled" href="#">Armor</a>
-          <a class="dropdown-item" [routerLink]="['names']" [routerLinkActive]="['active']">Names</a>
           <a class="dropdown-item disabled" href="#">Treasure</a>
+          <a class="dropdown-item disabled" href="#">Armor</a>
+
         </div>
       </li>
       <li class="nav-item">
