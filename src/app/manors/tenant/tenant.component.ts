@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tennant',
-  templateUrl: './tennant.component.html',
-  styleUrls: ['./tennant.component.scss']
+  templateUrl: './tenant.component.html',
+  styleUrls: ['./tenant.component.scss']
 })
-export class TennantComponent implements OnInit {
+export class TenantComponent implements OnInit {
 
   constructor() { }
 

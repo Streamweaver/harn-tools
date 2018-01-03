@@ -1,28 +1,39 @@
 import { Injectable } from '@angular/core';
-import { Manor } from './models/manor.model';
-import { Itenant } from './itenant.model';
-import { TenantGenerator } from './tenant-generator';
+import { IManor } from './models/imanor.model';
+import { ITenant } from './models/itenant.model';
+
 
 @Injectable()
 export class ManorService {
-  manor: Manor;
-  tenants: Itenant[];
-  private tg: TenantGenerator;
+  manor: IManor;
 
   constructor() {
-    this.tg = new TenantGenerator();
-    this.manor = new Manor();
-    this.tenants = [];
-    if (localStorage.getItem('tenants') != null) {
-      this.tenants = JSON.parse(localStorage.getItem('tenants'));
-    }
+    this.manor = {
+      clearedAcres: 1000,
+      landQuality: 1.0,
+      tenants: [],
+      isSlaveState: false,
+      freeRent: 6,
+      serfLabor: 4
+    };
   }
 
-  getTenants(): Itenant[] {
-    return this.tenants;
+  resetManor() {
+    this.manor = {
+      clearedAcres: 1000,
+      landQuality: 1.0,
+      tenants: [],
+      isSlaveState: false,
+      freeRent: 6,
+      serfLabor: 4
+    };
   }
 
-  getManor(): Manor {
+  resetTenants() {
+    this.manor.tenants = [];
+  }
+
+  getManor(): IManor {
     return this.manor;
   }
 }

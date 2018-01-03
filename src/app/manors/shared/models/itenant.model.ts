@@ -1,7 +1,7 @@
 export interface ITenant {
   occupation: string;
-  craft?: string;
-  military?: string;
+  craft: string;
+  military: string;
   size: number;
   ml: number;
   serf_acres: number;

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TennantGeneratorComponent } from './tennant-generator.component';
+import { TenantListComponent } from './tenant-list.component';
 
-describe('TennantGeneratorComponent', () => {
-  let component: TennantGeneratorComponent;
-  let fixture: ComponentFixture<TennantGeneratorComponent>;
+describe('TenantListComponent', () => {
+  let component: TenantListComponent;
+  let fixture: ComponentFixture<TenantListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TennantGeneratorComponent ]
+      declarations: [ TenantListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TennantGeneratorComponent);
+    fixture = TestBed.createComponent(TenantListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
