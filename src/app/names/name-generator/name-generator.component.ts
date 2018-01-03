@@ -10,6 +10,7 @@ import { Gender } from '../shared/gender.enum';
 })
 export class NameGeneratorComponent implements OnInit {
   selectedGender: Gender;
+  gender = Gender;
   lastNames: string[];
   givenNames: IGivenNames;
   generatedNames: string[];
@@ -26,11 +27,11 @@ export class NameGeneratorComponent implements OnInit {
 
   loadNames(): void {
     this.nameService.getLastNames().subscribe(
-      lastNames => {this.lastNames = lastNames},
+      lastNames => { this.lastNames = lastNames; },
       err => console.log(err),
       () => console.log('Last Names Loaded!'));
     this.nameService.getGivenNames().subscribe(
-      givenNames => {this.givenNames = givenNames},
+      givenNames => { this.givenNames = givenNames; },
       err => console.log(err),
       () => console.log('Given names loaded!')
       );

@@ -1,25 +1,45 @@
 <div class="container page">
   <h1>Random Harnic Names</h1>
-  <p>This is a simple name generator that pulls from lists medeival names listed in england ~1400-1600.  I will eventulaly expand this to include options for Ivinian, Jarin and other names but for now this should be suitable for most feudal kingdom names.</p>
+  <p>This is a simple name generator that pulls from lists medeival names listed in england ~1400-1600. I will
+    eventulaly expand this to include options for Ivinian, Jarin and other names but for now this should be suitable for
+    most feudal kingdom names.</p>
   <div class="row">
-    <div class="btn-group btn-group-tobble col-md-2" data-toggle="buttons">
-      <label class="btn float-right"
-             *ngFor="let genderValue of genderValues"
-             [ngClass]="genderValue === selectedGender ? 'active btn-dark' : 'btn-secondary '"
-             (click)="onGenderSelect(genderValue)"
-      >
-        <input type="radio" name="units"
-               [value]="genderValue"
-               [checked]="genderValue === selectedGender"
-               autocomplete="off"> {{ genderChoices[genderValue] }}
-      </label>
+    <div class="col-md-2">
+      <div class="btn-group" role="group" aria-label="Gender">
+        <button type="button" class="btn"
+          [ngClass]="selectedGender === gender.FEMALE ? 'active btn-dark' : 'btn-secondary'"
+                (click)="onGenderSelect(gender.FEMALE)"
+        >Female</button>
+        <button type="button" class="btn"
+          [ngClass]="selectedGender === gender.MALE ? 'active btn-dark' : 'btn-secondary'"
+                (click)="onGenderSelect(gender.MALE)"
+        >Male</button>
+      </div>
     </div>
-    <div class="col-sm-1">
-      <a class="btn btn-primary btn-sm" (click)="generateRandomNames(10)"><i class="fas fa-sync-alt"></i></a>
+    <div class="col">
+      <div class="btn-group float-right" role="group" aria-label="Culture">
+        <button type="button" class="btn btn-secondary active btn-dark selected disabled">Feudal</button>
+        <button type="button" class="btn btn-secondary disabled">Jarin</button>
+        <button type="button" class="btn btn-secondary disabled">Orbaleese</button>
+        <button type="button" class="btn btn-secondary disabled">Ivanian</button>
+      </div>
     </div>
   </div>
-
-  <ul >
-    <li *ngFor="let name of generatedNames">{{name}}</li>
-  </ul>
+  <div class="row">
+    <div class="col">
+      <h6 class="mt-2">Select Female/Male to Generate</h6>
+      <ul>
+        <li *ngFor="let name of generatedNames">{{name}}</li>
+      </ul>
+    </div>
+    <div class="col">
+      <p class="mt-2">Currently, only Feudal names are generated.</p>
+      <ul>
+        <li><strong>Feudal:</strong> Includes most common harnic names among the main kingdoms of Harn and the Thardic Republic.  In this generator this includes lists of names and surnames derived from cencus in England between the 15th and 16th centry.</li>
+        <li><strong>Jarin:</strong> Includes the older tribal/clannish cultures on Harn.  Somtimes these names appear in the Feudal Kingdoms, particularly in families on the frontier.  These names are also common in Harnic Barbarian Jarin clans.  In this generator this includes list of Welsh and Celtic names from the mid to early middle ages.</li>
+        <li><strong>Orbaleese:</strong> Includes the Orbaleese Jarin people in northern Harn and some northern Harnic Barbarian clans.  In this generator this includes list of Scots and Celtic names.</li>
+        <li><strong>Ivanian:</strong> Includes anyone of Ivanian descent, includin the occupying clans in Orbaal.  In th is generator this includes list of Scandinavian names from the mid to late middle ages.</li>
+      </ul>
+    </div>
+  </div>
 </div>
