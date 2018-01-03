@@ -3,20 +3,24 @@ import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { HttpClient} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
+import { IGivenNames } from './i-given-names';
+
 
 @Injectable()
 export class NamesService {
   lastNames: Observable<string[]>;
+  givenNames: Observable<IGivenNames>;
 
   constructor(private http: HttpClient) {}
 
   getLastNames(): Observable<string[]> {
-    this.lastNames = this.http.get<string[]>('/assets/data/lastnames.data.json')
-      .pipe(
-        tap(result => console.log('last names loaded')),
-        catchError(this.handleError('getLastNames', []))
-      );
+    this.lastNames = this.http.get<string[]>('/assets/data/englishSurnames.data.json');
     return this.lastNames;
+  }
+
+  getGivenNames(): Observable<IGivenNames> {
+    this.givenNames = this.http.get<IGivenNames>('/assets/data/englishGivenNames.data.json');
+    return this.givenNames;
   }
 
   /**
@@ -41,6 +45,6 @@ export class NamesService {
 
   /** Log a HeroService message with the MessageService */
   private log(message: string) {
-    console.log('HeroService: ' + message);
+    console.log('Names Service: ' + message);
   }
 }

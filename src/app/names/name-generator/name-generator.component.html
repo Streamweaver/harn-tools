@@ -1,5 +1,25 @@
 <div class="container page">
-  <p *ngFor="let name of lastNames">
-    {{name}}
-  </p>
+  <h1>Random Harnic Names</h1>
+  <p>This is a simple name generator that pulls from lists medeival names listed in england ~1400-1600.  I will eventulaly expand this to include options for Ivinian, Jarin and other names but for now this should be suitable for most feudal kingdom names.</p>
+  <div class="row">
+    <div class="btn-group btn-group-tobble col-md-2" data-toggle="buttons">
+      <label class="btn float-right"
+             *ngFor="let genderValue of genderValues"
+             [ngClass]="genderValue === selectedGender ? 'active btn-dark' : 'btn-secondary '"
+             (click)="onGenderSelect(genderValue)"
+      >
+        <input type="radio" name="units"
+               [value]="genderValue"
+               [checked]="genderValue === selectedGender"
+               autocomplete="off"> {{ genderChoices[genderValue] }}
+      </label>
+    </div>
+    <div class="col-sm-1">
+      <a class="btn btn-primary btn-sm" (click)="generateRandomNames(10)"><i class="fas fa-sync-alt"></i></a>
+    </div>
+  </div>
+
+  <ul >
+    <li *ngFor="let name of generatedNames">{{name}}</li>
+  </ul>
 </div>
