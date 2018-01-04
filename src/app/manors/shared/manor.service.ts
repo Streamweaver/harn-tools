@@ -8,14 +8,7 @@ export class ManorService {
   manor: IManor;
 
   constructor() {
-    this.manor = {
-      clearedAcres: 1000,
-      landQuality: 1.0,
-      tenants: [],
-      isSlaveState: false,
-      freeRent: 6,
-      serfLabor: 4
-    };
+    this.resetManor();
   }
 
   resetManor() {
@@ -23,9 +16,10 @@ export class ManorService {
       clearedAcres: 1000,
       landQuality: 1.0,
       tenants: [],
-      isSlaveState: false,
       freeRent: 6,
-      serfLabor: 4
+      serfLabor: 4,
+      isSlaveState: false,
+      isCoastal: false
     };
   }
 

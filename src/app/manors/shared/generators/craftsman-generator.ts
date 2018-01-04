@@ -4,58 +4,58 @@ import { ITenant } from '../models/itenant.model';
 import * as rwc from 'random-weighted-choice';
 import { TenantClass } from './tenant-generator';
 
-enum CRAFTSMAN {
-  MILLER = 'Miller',
-  METALSMITH = 'Metalsmith',
-  WOODCRAFTER = 'Woodcrafter',
-  SALTER = 'Salter',
-  HIDEWORDER = 'Hideworker',
-  TIMBERWRIGHT = 'Timberwright',
-  CHARCOALER = 'Charcoaler',
-  SHIPWRIGHT = 'Shipwright',
-  INNKEEPER = 'Innkeeper',
-  OSTLER = 'Ostler',
-  POTTER = 'Potter',
-  APOTHECARY = 'Apothecary',
-  GLASSWORKER = 'Glassworker',
-  WEAPONSMITH = 'Weaponsmith',
-  ARMOURER = 'Armourer'
+enum Craftsman {
+  Miller = 'Miller',
+  Metalsmith = 'Metalsmith',
+  Woodcrafter = 'Woodcrafter',
+  Salter = 'Salter',
+  Hideworker = 'Hideworker',
+  Timberwright = 'Timberwright',
+  Charcoaler = 'Charcoaler',
+  Shipwright = 'Shipwright',
+  Innkeeper = 'Innkeeper',
+  Ostler = 'Ostler',
+  Potter = 'Potter',
+  Apothecary = 'Apothecary',
+  Glassworker = 'Glassworker',
+  Weaponsmith = 'Weaponsmith',
+  Armourer = 'Armourer'
 }
 
-const CRAFTSMAN_FEES = {
-  [CRAFTSMAN.MILLER]: 240,
-  [CRAFTSMAN.METALSMITH]: 144,
-  [CRAFTSMAN.WOODCRAFTER]: 120,
-  [CRAFTSMAN.SALTER]: 120,
-  [CRAFTSMAN.HIDEWORDER]: 144,
-  [CRAFTSMAN.TIMBERWRIGHT]: 216,
-  [CRAFTSMAN.CHARCOALER]: 180,
-  [CRAFTSMAN.SHIPWRIGHT]: 144,
-  [CRAFTSMAN.INNKEEPER]: 216,
-  [CRAFTSMAN.OSTLER]: 180,
-  [CRAFTSMAN.POTTER]: 120,
-  [CRAFTSMAN.APOTHECARY]: 120,
-  [CRAFTSMAN.GLASSWORKER]: 120,
-  [CRAFTSMAN.WEAPONSMITH]: 220,
-  [CRAFTSMAN.ARMOURER]: 220
+const craftsmanFees = {
+  [Craftsman.Miller]: 240,
+  [Craftsman.Metalsmith]: 144,
+  [Craftsman.Woodcrafter]: 120,
+  [Craftsman.Salter]: 120,
+  [Craftsman.Hideworker]: 144,
+  [Craftsman.Timberwright]: 216,
+  [Craftsman.Charcoaler]: 180,
+  [Craftsman.Shipwright]: 144,
+  [Craftsman.Innkeeper]: 216,
+  [Craftsman.Ostler]: 180,
+  [Craftsman.Potter]: 120,
+  [Craftsman.Apothecary]: 120,
+  [Craftsman.Glassworker]: 120,
+  [Craftsman.Weaponsmith]: 220,
+  [Craftsman.Armourer]: 220
 };
 
-const CRAFTSMANTABLE = [
-  {weight: 25, id: CRAFTSMAN.MILLER},
-  {weight: 20, id: CRAFTSMAN.METALSMITH},
-  {weight: 15, id: CRAFTSMAN.WOODCRAFTER},
-  {weight: 10, id: CRAFTSMAN.SALTER},
-  {weight: 5, id: CRAFTSMAN.HIDEWORDER},
-  {weight: 5, id: CRAFTSMAN.TIMBERWRIGHT},
-  {weight: 5, id: CRAFTSMAN.CHARCOALER},
-  {weight: 5, id: CRAFTSMAN.SHIPWRIGHT},
-  {weight: 5, id: CRAFTSMAN.INNKEEPER},
-  {weight: 2, id: CRAFTSMAN.OSTLER},
-  {weight: 2, id: CRAFTSMAN.POTTER},
-  {weight: 2, id: CRAFTSMAN.APOTHECARY},
-  {weight: 2, id: CRAFTSMAN.GLASSWORKER},
-  {weight: 1, id: CRAFTSMAN.WEAPONSMITH},
-  {weight: 1, id: CRAFTSMAN.ARMOURER}
+const craftsmanTable = [
+  {weight: 25, id: Craftsman.Miller},
+  {weight: 20, id: Craftsman.Metalsmith},
+  {weight: 15, id: Craftsman.Woodcrafter},
+  {weight: 10, id: Craftsman.Salter},
+  {weight: 5, id: Craftsman.Hideworker},
+  {weight: 5, id: Craftsman.Timberwright},
+  {weight: 5, id: Craftsman.Charcoaler},
+  {weight: 5, id: Craftsman.Shipwright},
+  {weight: 5, id: Craftsman.Innkeeper},
+  {weight: 2, id: Craftsman.Ostler},
+  {weight: 2, id: Craftsman.Potter},
+  {weight: 2, id: Craftsman.Apothecary},
+  {weight: 2, id: Craftsman.Glassworker},
+  {weight: 1, id: Craftsman.Weaponsmith},
+  {weight: 1, id: Craftsman.Armourer}
 ];
 
 export class CraftsmanGenerator {
@@ -67,16 +67,55 @@ export class CraftsmanGenerator {
   }
 
   assignCraftsmen() {
+  let craft: Craftsman;
     for (const tenant of this._manor.tenants) {
       if (tenant.occupation === TenantClass.CRAFTSMAN) {
-        tenant.craft = rwc(CRAFTSMANTABLE);
-        this.adjustFees(tenant);
+        craft = this.getCraft();
+        if (!this._exists(craft)) {
+          tenant.craft = craft;
+        } else {
+          tenant.craft = this._firstOpenCraft();
+        }
+        this._adjustFees(tenant);
       }
     }
   }
 
-  adjustFees(t: ITenant) {
-    t.fees = t.fees + CRAFTSMAN_FEES[t.craft];
-    t.notes.push('Includes ' + CRAFTSMAN_FEES[t.craft] + ' guild fees');
+  private getCraft(): Craftsman {
+    let craft = rwc(craftsmanTable);
+    while (this._allowedIfShipwright(craft)) {
+      craft = rwc(craftsmanTable);
+    }
+    return craft;
   }
+
+  private _exists(craft: string): boolean {
+    for (const tenant of this._manor.tenants) {
+      if (tenant.craft === craft) { return true; }
+    }
+    return false;
+  }
+
+  private _firstOpenCraft(): string {
+    for (const item in Craftsman) {
+      if (!Number(item)) {
+        if (!this._exists(item) && this._allowedIfShipwright(item)) {
+          return item;
+        }
+      }
+    }
+    return this.getCraft();
+  }
+
+  private _allowedIfShipwright(craft: string): boolean {
+    return (this._manor.isCoastal && craft === Craftsman[Craftsman.Shipwright]);
+  }
+
+
+
+  private _adjustFees(t: ITenant) {
+    t.fees = t.fees + craftsmanFees[t.craft];
+    t.notes.push('Includes ' + craftsmanFees[t.craft] + ' guild fees');
+  }
+
 }

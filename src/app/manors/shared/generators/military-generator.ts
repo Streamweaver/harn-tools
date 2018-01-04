@@ -31,6 +31,6 @@ export class MilitaryGenerator {
   }
 
   assessFeudalObligation() {
-    console.log('Unit Obligation: ' + manor.clearedAcres / 600);
+    console.log('Unit Obligation: ' + this._manor.clearedAcres / 600);
   }
 }

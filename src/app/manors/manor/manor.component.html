@@ -31,12 +31,23 @@
       </div>
     </div>
     <div class="row">
-      <div class="form-group">
-        <label>Save State?</label>
-        <input type="checkbox"
+      <div class="col">
+      <div class="form-check form-check-inline">
+
+        <input type="checkbox" class="form-check-input"
                [checked]="manor.isSlaveState"
                (change)="manor.isSlaveState = !manor.isSlaveState"
                name="isSlaveState">
+        <label class="form-check-label">Save State?</label>
+      </div>
+      <div class="form-check form-check-inline">
+
+        <input type="checkbox" class="form-check-input"
+               [checked]="manor.isCoastal"
+               (change)="manor.isCoastal = !manor.isCoastal"
+               name="isCoastal">
+        <label class="form-check-label">Coastal</label>
+      </div>
       </div>
     </div>
     <div class="row">
