@@ -31,6 +31,16 @@ export class MilitaryGenerator {
   }
 
   assessFeudalObligation() {
-    console.log('Unit Obligation: ' + this._manor.clearedAcres / 600);
+    this._manor.feudalObligationHH = this._assessFeudalObligationHF();
+    this._manor.feudalObligationLF = this._assessFeudalObligationLF();
+  }
+
+  private _assessFeudalObligationHF(): number {
+    return (this._manor.grossAcres - this._manor.foAcresPerHH >= 0) ? 1 : 0;
+  }
+
+  private _assessFeudalObligationLF(): number {
+    const foLeft = this._manor.grossAcres - this._assessFeudalObligationHF() * this._manor.foAcresPerHH;
+    return Math.floor(foLeft / this._manor.foAcresPerLF);
   }
 }

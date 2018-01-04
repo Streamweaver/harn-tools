@@ -1,6 +1,7 @@
 import { ITenant } from './itenant.model';
 
 export class IManor {
+  grossAcres: number;
   clearedAcres: number;
   landQuality: number;
   tenants: ITenant[];
@@ -8,4 +9,8 @@ export class IManor {
   serfLabor: number;
   isSlaveState: boolean;
   isCoastal: boolean;
+  foAcresPerHH: number;
+  foAcresPerLF: number;
+  feudalObligationHH: number;
+  feudalObligationLF: number;
 }
