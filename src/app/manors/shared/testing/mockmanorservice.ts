@@ -1,4 +1,4 @@
-import {IManor} from '../models/imanor.model';
+import {IManor, ManorFactory} from '../models/imanor.model';
 
 export class MockManorService {
   manor: IManor;
@@ -8,20 +8,7 @@ export class MockManorService {
   }
 
   resetManor() {
-    this.manor = {
-      grossAcres: 2000,
-      clearedAcres: 1000,
-      landQuality: 1.0,
-      tenants: [],
-      freeRent: 6,
-      serfLabor: 4,
-      isSlaveState: false,
-      isCoastal: false,
-      foAcresPerHH: 1500,
-      foAcresPerLF: 600,
-      feudalObligationHH: 0,
-      feudalObligationLF: 0
-    };
+    this.manor = ManorFactory.getManor();
   }
 
   resetTenants() {

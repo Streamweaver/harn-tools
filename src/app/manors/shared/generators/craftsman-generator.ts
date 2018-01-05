@@ -1,10 +1,10 @@
-import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { IManor } from '../models/imanor.model';
-import { ITenant } from '../models/itenant.model';
 import * as rwc from 'random-weighted-choice';
-import { TenantClass } from './tenant-generator';
+import {NumberGenerator} from '../../../shared/generators/number-generator';
+import {IManor} from '../models/imanor.model';
+import {ITenant} from '../models/itenant.model';
+import {TenantClass} from './tenant-generator';
 
-enum Craftsman {
+export enum Craftsman {
   Miller = 'Miller',
   Metalsmith = 'Metalsmith',
   Woodcrafter = 'Woodcrafter',
@@ -19,10 +19,11 @@ enum Craftsman {
   Apothecary = 'Apothecary',
   Glassworker = 'Glassworker',
   Weaponsmith = 'Weaponsmith',
-  Armourer = 'Armourer'
+  Armourer = 'Armourer',
+  GMDetermine = 'GM Determine'
 }
 
-const craftsmanFees = {
+export const craftsmanFees = {
   [Craftsman.Miller]: 240,
   [Craftsman.Metalsmith]: 144,
   [Craftsman.Woodcrafter]: 120,
@@ -37,7 +38,8 @@ const craftsmanFees = {
   [Craftsman.Apothecary]: 120,
   [Craftsman.Glassworker]: 120,
   [Craftsman.Weaponsmith]: 220,
-  [Craftsman.Armourer]: 220
+  [Craftsman.Armourer]: 220,
+  [Craftsman.GMDetermine]: 0
 };
 
 const craftsmanTable = [
@@ -62,14 +64,13 @@ export class CraftsmanGenerator {
   private _dice = new NumberGenerator();
   private _manor: IManor;
 
-  constructor(manor: IManor) {
-    this._manor = manor;
-  }
+  constructor() {}
 
-  assignCraftsmen() {
-  let craft: Craftsman;
+  assignCraftsmen(manor: IManor) {
+    this._manor = manor;
+    let craft: Craftsman;
     for (const tenant of this._manor.tenants) {
-      if (tenant.occupation === TenantClass.CRAFTSMAN) {
+      if (tenant.occupation === TenantClass.CRAFTSMAN && tenant.craft === null) {
         craft = this.getCraft();
         if (!this._exists(craft)) {
           tenant.craft = craft;
@@ -79,19 +80,27 @@ export class CraftsmanGenerator {
         this._adjustFees(tenant);
       }
     }
+    this._noteMissing();
   }
 
   private getCraft(): Craftsman {
-    let craft = rwc(craftsmanTable);
-    while (this._allowedIfShipwright(craft)) {
+    let craft;
+    do {
       craft = rwc(craftsmanTable);
     }
+    while (!this._validCraftForManor(craft));
     return craft;
+  }
+
+  private _validCraftForManor(craft: string): boolean {
+    return  !this._manor.isCoastal && craft === Craftsman.Shipwright ? false : true;
   }
 
   private _exists(craft: string): boolean {
     for (const tenant of this._manor.tenants) {
-      if (tenant.craft === craft) { return true; }
+      if (tenant.craft === craft) {
+        return true;
+      }
     }
     return false;
   }
@@ -99,23 +108,32 @@ export class CraftsmanGenerator {
   private _firstOpenCraft(): string {
     for (const item in Craftsman) {
       if (!Number(item)) {
-        if (!this._exists(item) && this._allowedIfShipwright(item)) {
-          return item;
+        if (!this._exists(item) && this._validCraftForManor(item)) {
+          return Craftsman[item];
         }
       }
     }
-    return this.getCraft();
+    return Craftsman.GMDetermine;
   }
-
-  private _allowedIfShipwright(craft: string): boolean {
-    return (this._manor.isCoastal && craft === Craftsman[Craftsman.Shipwright]);
-  }
-
-
 
   private _adjustFees(t: ITenant) {
     t.fees = t.fees + craftsmanFees[t.craft];
-    t.notes.push('Includes ' + craftsmanFees[t.craft] + ' guild fees');
+    if (t.craft === Craftsman.GMDetermine) {
+      t.notes.push('Determine craft and reassess fees');
+    } else {
+      t.notes.push('Includes ' + craftsmanFees[t.craft] + ' guild fees');
+    }
   }
 
+  private _noteMissing() {
+    if (!this._exists(Craftsman.Miller)) {
+      this._manor.Notes.push('No Miller!');
+    }
+    if (!this._exists(Craftsman.Metalsmith)) {
+      this._manor.Notes.push('No Metalsmith!');
+    }
+    if (!this._exists(Craftsman.Woodcrafter)) {
+      this._manor.Notes.push('No Woodcrafter!');
+    }
+  }
 }

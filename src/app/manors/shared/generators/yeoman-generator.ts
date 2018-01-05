@@ -14,8 +14,9 @@ export class YeomanGenerator {
   }
 
   assessFeudalObligation() {
-    this._manor.feudalObligationHH = this._heavyHorseObligation();
-    this._manor.feudalObligationLF = this._lightFoodObligation();
+    this._manor.Notes.push(
+      'Feaudal Obligation: ' + this._heavyHorseObligation() + 'HH/' + this._lightFoodObligation() + 'LF'
+    );
   }
 
   private _heavyHorseObligation(): number {

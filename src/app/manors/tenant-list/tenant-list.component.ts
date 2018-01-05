@@ -20,8 +20,8 @@ export class TenantListComponent implements OnInit {
 
   ngOnInit() {
     this.manor = this.manorService.getManor();
-    this._tg = new TenantGenerator(this.manor);
-    this._cg = new CraftsmanGenerator(this.manor);
+    this._tg = new TenantGenerator();
+    this._cg = new CraftsmanGenerator();
     this._mg = new YeomanGenerator(this.manor);
   }
 
@@ -33,8 +33,8 @@ export class TenantListComponent implements OnInit {
     if (this.manor.tenants.length > 1) {
       this.manorService.resetTenants();
     }
-    this._tg.generateTenants();
-    this._cg.assignCraftsmen();
+    this._tg.generateTenants(this.manor);
+    this._cg.assignCraftsmen(this.manor);
     this._mg.assessFeudalObligation();
     console.log('Generate Click');
   }

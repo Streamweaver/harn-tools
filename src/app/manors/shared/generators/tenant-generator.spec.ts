@@ -1,6 +1,5 @@
 import { TenantGenerator } from './tenant-generator';
-import { ManorFixture } from '../models/testing/manor.fixture';
-import { IManor } from '../models/imanor.model';
+import { IManor, ManorFactory } from '../models/imanor.model';
 import { TenantClass } from './tenant-generator';
 
 describe('Generator: Tenant', () => {
@@ -8,9 +7,10 @@ describe('Generator: Tenant', () => {
   let manor: IManor;
 
   beforeEach(() => {
-    manor = ManorFixture;
+    manor = ManorFactory.getManor();
     manor.clearedAcres = 10000;
-    generator = new TenantGenerator(manor);
+    generator = new TenantGenerator();
+    generator.generateTenants(manor);
   });
 
   afterEach(() => {
@@ -18,12 +18,11 @@ describe('Generator: Tenant', () => {
     manor = null;
   });
 
-  it('should properly create the method', () => {
+  it('should properly initiate the generator', () => {
     expect(generator).toBeTruthy();
   });
 
   it('should generate tenants', () => {
-    generator.generateTenants();
     expect(manor.tenants.length).toBe(250);
   });
 
@@ -111,7 +110,7 @@ describe('Generator: Tenant', () => {
   it('should assess proper fees above 5 for everyone but slaves', () => {
     manor.isSlaveState = true;
     for (const tenant of manor.tenants) {
-      if(tenant.occupation !== TenantClass.SLAVE) {
+      if (tenant.occupation !== TenantClass.SLAVE) {
         expect(tenant.fees).toBeGreaterThan(5);
       } else {
         expect(tenant.fees).toBe(0);
@@ -122,7 +121,7 @@ describe('Generator: Tenant', () => {
   it('should assess proper rents above 60 for everyone but slaves', () => {
     manor.isSlaveState = true;
     for (const tenant of manor.tenants) {
-      if(tenant.occupation !== TenantClass.SLAVE) {
+      if (tenant.occupation !== TenantClass.SLAVE) {
         expect(tenant.rent).toBeGreaterThan(59);
       } else {
         expect(tenant.rent).toBe(0);

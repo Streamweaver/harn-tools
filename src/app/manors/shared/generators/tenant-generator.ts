@@ -24,15 +24,13 @@ const CLASSTABLE = [
 const FREEMEN = [TenantClass.CRAFTSMAN, TenantClass.FARMER];
 
 export class TenantGenerator {
-  private _tenantClass: TenantClass;
   private _dice = new NumberGenerator();
   private _manor: IManor;
 
-  constructor(manor: IManor) {
-    this._manor = manor;
-  }
+  constructor() {}
 
-  generateTenants() {
+  generateTenants(manor: IManor) {
+    this._manor = manor;
     const tenantHouseholds = this._manor.clearedAcres / 40 * this._manor.landQuality;
     for (let i = 0; i < tenantHouseholds; i++) {
       this._manor.tenants.push(this._generateTenant());
