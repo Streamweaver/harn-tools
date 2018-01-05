@@ -17,7 +17,7 @@ export class NameGeneratorComponent implements OnInit {
   genderChoices = Gender;
   genderValues = Object.values(Gender).filter( e => typeof( e ) === 'number' );
 
-  constructor(private nameService: NamesService) { }
+  constructor(private namesService: NamesService) { }
 
   ngOnInit() {
     this.loadNames();
@@ -26,11 +26,11 @@ export class NameGeneratorComponent implements OnInit {
   }
 
   loadNames(): void {
-    this.nameService.getLastNames().subscribe(
+    this.namesService.getLastNames().subscribe(
       lastNames => { this.lastNames = lastNames; },
       err => console.log(err),
       () => console.log('Last Names Loaded!'));
-    this.nameService.getGivenNames().subscribe(
+    this.namesService.getGivenNames().subscribe(
       givenNames => { this.givenNames = givenNames; },
       err => console.log(err),
       () => console.log('Given names loaded!')

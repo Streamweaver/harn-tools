@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {FormsModule} from '@angular/forms';
+import {MovementComponent} from '../movement/movement.component';
 
 import { DistanceComponent } from './distance.component';
 
@@ -8,7 +10,8 @@ describe('DistanceComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DistanceComponent ]
+      imports: [FormsModule],
+      declarations: [ DistanceComponent, MovementComponent ]
     })
     .compileComponents();
   }));

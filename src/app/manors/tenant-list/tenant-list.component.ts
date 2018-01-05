@@ -3,7 +3,7 @@ import { IManor } from '../shared/models/imanor.model';
 import { ManorService } from '../shared/manor.service';
 import { TenantGenerator } from '../shared/generators/tenant-generator';
 import { CraftsmanGenerator } from '../shared/generators/craftsman-generator';
-import { MilitaryGenerator } from '../shared/generators/military-generator';
+import { YeomanGenerator } from '../shared/generators/yeoman-generator';
 
 @Component({
   selector: 'app-tenant-list',
@@ -14,7 +14,7 @@ export class TenantListComponent implements OnInit {
   manor: IManor;
   private _tg: TenantGenerator;
   private _cg: CraftsmanGenerator;
-  private _mg: MilitaryGenerator;
+  private _mg: YeomanGenerator;
 
   constructor(private manorService: ManorService) {}
 
@@ -22,7 +22,7 @@ export class TenantListComponent implements OnInit {
     this.manor = this.manorService.getManor();
     this._tg = new TenantGenerator(this.manor);
     this._cg = new CraftsmanGenerator(this.manor);
-    this._mg = new MilitaryGenerator(this.manor);
+    this._mg = new YeomanGenerator(this.manor);
   }
 
   onResetClick() {
