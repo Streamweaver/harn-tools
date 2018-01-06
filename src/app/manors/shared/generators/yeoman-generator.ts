@@ -2,6 +2,7 @@ import {IManor} from '../models/imanor.model';
 import {ITenant} from '../models/itenant.model';
 import {Military, MilitaryData} from '../models/military.models';
 import {TenantClass} from './tenant-generator';
+import * as rwc from 'random-weighted-choice';
 
 const recruitmentTable = [
   {weight: 50, id: Military.LF},
@@ -19,21 +20,45 @@ const militaryAcres = {
 
 export class YeomanGenerator {
   private _manor: IManor;
+  private _recruitmentPts: number;
 
-  constructor() {
-  }
+  constructor() {}
 
   recruitYeoman(manor: IManor) {
     this._manor = manor;
     this._noteFeudalObligation();
-    let recruitedPts = this.lightFoodObligation() * 2;
-    while (recruitedPts > 0) {
-
+    this._recruitmentPts = this.lightFoodObligation() * 2;
+    while (this._recruitableFamers() && this._recruitmentPts > 1) {
+      const rank = this._getNextValidSoldier();
+      this._draftFarmer(rank);
     }
   }
 
   private _getNextValidSoldier(): Military {
+    let rank: Military;
+    do {
+      rank = rwc(recruitmentTable);
+    } while (MilitaryData[rank].pts < this._recruitmentPts)
+    this._recruitmentPts = this._recruitmentPts - MilitaryData[rank].pts;
+    return rank;
+  }
 
+  private _recruitableFamers(): boolean {
+    let recruitableFamers = false;
+    for (const tenant of this._manor.tenants) {
+      if (tenant.occupation === TenantClass.FARMER && tenant.military === null) {
+        recruitableFamers = true;
+      }
+    }
+    return recruitableFamers;
+  }
+
+  private _draftFarmer(rank: Military) {
+    for (const tenant of this._manor.tenants) {
+      if (tenant.occupation === TenantClass.FARMER && tenant.military === null) {
+        tenant.military = rank;
+      }
+    }
   }
 
   private _adjustAcres() {}

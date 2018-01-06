@@ -59,6 +59,18 @@ describe('Generator: Yeoman', () => {
   });
 
   it('should recruit only from Farmers', function () {
-
+    makeTenants(5, TenantClass.FARMER);
+    makeTenants(5, TenantClass.COTTAR);
+    manor.foAcresPerHH = 0;
+    manor.foAcresPerLF = 500;
+    generator.recruitYeoman(manor);
+    for (const tenant of manor.tenants) {
+      if (tenant.occupation === TenantClass.COTTAR) {
+        expect(tenant.military).toBeNull();
+      }
+      if (tenant.occupation === TenantClass.FARMER) {
+        expect(tenant.military).not.toBeNull();
+      }
+    }
   });
 });
