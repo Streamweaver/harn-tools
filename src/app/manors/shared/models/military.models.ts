@@ -1,17 +1,17 @@
 export enum Military {
-  LF,
-  MF,
-  SB,
-  LB,
-  LH,
-  MH,
-  HH
+  LF = 'Light Foot',
+  MF = 'Medium Foot',
+  SB = 'Shortbow',
+  LB = 'Longbow',
+  LH = 'Light Horse',
+  MH = 'Medium Horse',
+  HH = 'Heavy Horse'
 }
 
 export const MilitaryData = {
   [Military.LF]: {
     pts: 2,
-    title:'Light Foot',
+    title: 'Light Foot',
     kind: 0
     },
   [Military.MF]: {

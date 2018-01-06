@@ -22,7 +22,7 @@ export class TenantListComponent implements OnInit {
     this.manor = this.manorService.getManor();
     this._tg = new TenantGenerator();
     this._cg = new CraftsmanGenerator();
-    this._mg = new YeomanGenerator(this.manor);
+    this._mg = new YeomanGenerator();
   }
 
   onResetClick() {
@@ -35,7 +35,7 @@ export class TenantListComponent implements OnInit {
     }
     this._tg.generateTenants(this.manor);
     this._cg.assignCraftsmen(this.manor);
-    this._mg.assessFeudalObligation();
+    this._mg.recruitYeoman(this.manor);
     console.log('Generate Click');
   }
 

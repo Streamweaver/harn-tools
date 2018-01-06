@@ -1,5 +1,4 @@
 import * as rwc from 'random-weighted-choice';
-import {NumberGenerator} from '../../../shared/generators/number-generator';
 import {IManor} from '../models/imanor.model';
 import {ITenant} from '../models/itenant.model';
 import {TenantClass} from './tenant-generator';
@@ -61,7 +60,6 @@ const craftsmanTable = [
 ];
 
 export class CraftsmanGenerator {
-  private _dice = new NumberGenerator();
   private _manor: IManor;
 
   constructor() {}
