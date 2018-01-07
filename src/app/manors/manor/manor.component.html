@@ -1,5 +1,7 @@
-<div class="container page" *ngIf="showGenerationInput">
-  <h1>Generate Manor</h1>
+<div class="row title-box bg-dark text-white page px-3 py-2 mx-4">
+  <strong>Generate Budget</strong>
+</div>
+<div class="container" *ngIf="showGenerationInput">
   <div class="row">
 
     <div class="card mx-1">
@@ -109,5 +111,6 @@
   </div>
   <a class="btn btn-sm btn-danger" (click)="onResetClick()" *ngIf="!showGenerationInput"><i class="fa fa-users"></i>
     Reset</a>
-  <app-tenant-list></app-tenant-list>
+
 </div>
+<app-tenant-list></app-tenant-list>

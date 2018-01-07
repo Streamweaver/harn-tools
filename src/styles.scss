@@ -3,8 +3,8 @@
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 .page {
-  padding-top: 4rem;
-  padding-bottom: 2rem;
+  margin-top: 4rem;
+  margin-bottom: .2rem;
 }
 
 .text-rotate {
@@ -35,4 +35,9 @@
   margin-left: 0;
   margin-top: 0.65rem;
   vertical-align: center;
+}
+
+.title-box{
+  border: double .5em $body-bg;
+  border-radius: 1.5em;
 }
