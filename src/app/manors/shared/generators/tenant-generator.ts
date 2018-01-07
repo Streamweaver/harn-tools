@@ -39,6 +39,7 @@ export class TenantGenerator {
 
   private _generateTenant(): ITenant {
     const tenant: ITenant = {
+      id: this._manor.tenants.length,
       occupation: null,
       craft: null,
       military: null,

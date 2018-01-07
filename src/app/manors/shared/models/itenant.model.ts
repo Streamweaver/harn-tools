@@ -1,4 +1,5 @@
 export interface ITenant {
+  id: number;
   occupation: string;
   craft: string;
   military: string;

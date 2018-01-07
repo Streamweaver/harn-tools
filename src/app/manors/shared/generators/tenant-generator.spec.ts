@@ -139,4 +139,13 @@ describe('Generator: Tenant', () => {
       }
     }
   });
+
+  it('should assign no duplicate ids', function () {
+    manor.clearedAcres = 10000;
+    const ids: number[] = [];
+    for (const tenant of manor.tenants) {
+      expect(ids.indexOf(tenant.id) > -1).not.toBeTruthy();
+      ids.push(tenant.id);
+    }
+  });
 });
