@@ -1,6 +1,9 @@
 import {ITenant} from './itenant.model';
 
 export class IManor {
+  name: string;
+  realm: string;
+  topology: Topology;
   grossAcres: number;
   clearedAcres: number;
   landQuality: number;
@@ -8,7 +11,6 @@ export class IManor {
   freeRent: number;
   serfLabor: number;
   isSlaveState: boolean;
-  isCoastal: boolean;
   foAcresPerHH: number;
   foAcresPerLF: number;
   Notes: string[];
@@ -17,6 +19,9 @@ export class IManor {
 export class ManorFactory {
   static getManor(): IManor {
     return {
+      name: null,
+      realm: null,
+      topology: null,
       grossAcres: 2000,
       clearedAcres: 1000,
       landQuality: 1.0,
@@ -24,10 +29,16 @@ export class ManorFactory {
       freeRent: 6,
       serfLabor: 4,
       isSlaveState: false,
-      isCoastal: false,
       foAcresPerHH: 1500,
       foAcresPerLF: 600,
       Notes: []
     };
   }
+}
+
+export enum Topology {
+  Lowland = 'Lowlands',
+  Highland = 'Highlands',
+  Coastal = 'Coastal',
+  Forest = 'Forest',
 }

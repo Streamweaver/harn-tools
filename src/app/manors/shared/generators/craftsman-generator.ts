@@ -1,5 +1,5 @@
 import * as rwc from 'random-weighted-choice';
-import {IManor} from '../models/imanor.model';
+import {IManor, Topology} from '../models/imanor.model';
 import {ITenant} from '../models/itenant.model';
 import {TenantClass} from './tenant-generator';
 
@@ -91,7 +91,7 @@ export class CraftsmanGenerator {
   }
 
   private _validCraftForManor(craft: string): boolean {
-    return  !this._manor.isCoastal && craft === Craftsman.Shipwright ? false : true;
+    return  !(this._manor.topology === Topology.Coastal) && craft === Craftsman.Shipwright ? false : true;
   }
 
   private _exists(craft: string): boolean {

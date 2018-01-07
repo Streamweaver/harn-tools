@@ -37,7 +37,17 @@
   vertical-align: center;
 }
 
-.title-box{
+.title-box {
   border: double .5em $body-bg;
   border-radius: 1.5em;
+}
+
+.subtitle-box {
+  border: none;
+  border-radius: .2em;
+}
+
+hr.small {
+  margin-top: .2rem;
+  margin-bottom: .2rem;
 }

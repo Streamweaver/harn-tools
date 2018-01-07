@@ -1,4 +1,4 @@
-import {IManor, ManorFactory} from './../models/imanor.model';
+import {IManor, ManorFactory, Topology} from './../models/imanor.model';
 import {Craftsman, craftsmanFees, CraftsmanGenerator} from './craftsman-generator';
 import {TenantClass} from './tenant-generator';
 
@@ -57,7 +57,7 @@ describe('Generator: Craftsman', () => {
   });
 
   it('should not assign shipwright to non-coastal manors', function () {
-    manor.isCoastal = false;
+    manor.topology = Topology.Lowland;
     makeTenants(15, TenantClass.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     for (const tenant of manor.tenants) {
@@ -66,7 +66,7 @@ describe('Generator: Craftsman', () => {
   });
 
   it('should assign shipwright to coastal manors', function () {
-    manor.isCoastal = true;
+    manor.topology = Topology.Coastal;
     makeTenants(15, TenantClass.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     let shipwrightCount = 0;

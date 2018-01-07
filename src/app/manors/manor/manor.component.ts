@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CraftsmanGenerator} from '../shared/generators/craftsman-generator';
 import {TenantGenerator} from '../shared/generators/tenant-generator';
 import {YeomanGenerator} from '../shared/generators/yeoman-generator';
-import { IManor } from '../shared/models/imanor.model';
+import { IManor, Topology } from '../shared/models/imanor.model';
 import { ManorService } from '../shared/manor.service';
 
 @Component({
@@ -43,4 +43,8 @@ export class ManorComponent implements OnInit {
     this._mg.recruitYeoman(this.manor);
   }
 
+  topologyChoices(): string[] {
+    const keys = Object.keys(Topology);
+    return keys;
+  }
 }

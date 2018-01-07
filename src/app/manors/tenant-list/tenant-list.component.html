@@ -1,32 +1,29 @@
-
-<div>
-  <div class="row title-box bg-dark text-white px-3 py-2 mx-4">
-    <strong>Manor Census</strong>
-  </div>
-  <div class="row">
-    <div class="col-sm-6"><h2>Tennants ({{manor.tenants.length}})</h2></div>
-  </div>
+<div class="row title-box bg-dark text-white px-3 py-2 mx-4">
+  <div class="col"><strong>Manor Census ({{manor.tenants.length}})</strong></div>
+  <div class="col text-right"><strong>{{manor.name}}</strong></div>
+</div>
+<div class="container">
   <table class="table table-bordered table-striped table-hover table-sm"
          *ngIf="manor.tenants?.length > 0; else noTennants">
-    <thead class="thead-dark">
+    <thead class="thead-light">
     <tr>
-      <th>Occupation</th>
-      <th>Size</th>
-      <th>ML</th>
-      <th>Serf</th>
-      <th>Free</th>
-      <th>Labor<br>Days</th>
-      <th>Rent</th>
-      <th>Fees</th>
-      <th>Notes</th>
+      <th class="small font-weight-bold">Occupation</th>
+      <th class="small font-weight-bold">Size</th>
+      <th class="small font-weight-bold">ML</th>
+      <th class="small font-weight-bold">Serf</th>
+      <th class="small font-weight-bold">Free</th>
+      <th class="small font-weight-bold">Labor<br>Days</th>
+      <th class="small font-weight-bold">Rent</th>
+      <th class="small font-weight-bold">Fees</th>
+      <th class="small font-weight-bold">Notes</th>
     </tr>
     </thead>
     <tbody>
     <tr app-tenant *ngFor="let tenant of manor.tenants" [tenant]="tenant">
 
     </tr>
-    <tr>
-      <td>Totals:</td>
+    <tr class="table-info">
+      <td class="font-weight-bold text-right">Totals:</td>
       <td>{{populationSize()}}</td>
       <td></td>
       <td>{{serfAcres()}}</td>
