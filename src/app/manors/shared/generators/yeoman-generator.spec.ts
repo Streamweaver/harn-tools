@@ -1,6 +1,7 @@
 import {IManor, ManorFactory} from '../models/imanor.model';
-import {YeomanGenerator} from './yeoman-generator';
+import {MilitaryData} from '../models/military.models';
 import {TenantClass} from './tenant-generator';
+import {YeomanGenerator, MilitaryAcres} from './yeoman-generator';
 
 describe('Generator: Yeoman', () => {
   let generator: YeomanGenerator;
@@ -58,7 +59,7 @@ describe('Generator: Yeoman', () => {
     expect(manor.Notes.length).toBe(1);
   });
 
-  it('should recruit only from Farmers', function () {
+  it('should NOT recruit non-farmers', function () {
     makeTenants(5, TenantClass.FARMER);
     makeTenants(5, TenantClass.COTTAR);
     manor.foAcresPerHH = 0;
@@ -68,8 +69,83 @@ describe('Generator: Yeoman', () => {
       if (tenant.occupation === TenantClass.COTTAR) {
         expect(tenant.military).toBeNull();
       }
-      if (tenant.occupation === TenantClass.FARMER) {
-        expect(tenant.military).not.toBeNull();
+    }
+  });
+
+  it('should recruit no more than the feudal obligation', function () {
+    makeTenants(100, TenantClass.FARMER);
+    manor.grossAcres = 2000;
+    manor.foAcresPerHH = 0;
+    manor.foAcresPerLF = 500;
+    generator.recruitYeoman(manor);
+    let recruitmentPts = 0;
+    for (const tenant of manor.tenants) {
+      if (tenant.military !== null) {
+        recruitmentPts = recruitmentPts + MilitaryData[tenant.military].pts;
+      }
+    }
+    expect(recruitmentPts > 6 && recruitmentPts < 9).toBeTruthy();
+  });
+
+  it('should NOT fail if there are no farmers', function () {
+    makeTenants(200, TenantClass.COTTAR);
+    generator.recruitYeoman(manor);
+    expect(generator).toBeTruthy();
+  });
+
+  it('should generate the proper range of acres for military classes', function () {
+    makeTenants(100, TenantClass.FARMER);
+    manor.grossAcres = 2000;
+    manor.foAcresPerHH = 0;
+    manor.foAcresPerLF = 20;
+    generator.recruitYeoman(manor);
+    for (const tenant of manor.tenants) {
+      if (tenant.military !== null) {
+        const h = MilitaryAcres[tenant.military] + 10;
+        const l = MilitaryAcres[tenant.military] + 1;
+        expect(tenant.free_acres >= l && tenant.free_acres <= h).toBeTruthy();
+      }
+    }
+  });
+
+  it('should assess correct rent for military classes', function () {
+    makeTenants(100, TenantClass.FARMER);
+    manor.grossAcres = 2000;
+    manor.foAcresPerHH = 0;
+    manor.foAcresPerLF = 20;
+    generator.recruitYeoman(manor);
+    for (const tenant of manor.tenants) {
+      if (tenant.military !== null) {
+        expect(tenant.rent).toBe(tenant.free_acres + 60);
+      }
+    }
+  });
+
+  it('should assess correct fees for military classes', function () {
+    makeTenants(100, TenantClass.FARMER);
+    manor.grossAcres = 2000;
+    manor.foAcresPerHH = 0;
+    manor.foAcresPerLF = 20;
+    generator.recruitYeoman(manor);
+    for (const tenant of manor.tenants) {
+      if (tenant.military !== null) {
+        expect(tenant.fees).toBe(tenant.free_acres + 60);
+      }
+    }
+  });
+
+  it('should add a note to tenant about their military service', function () {
+    makeTenants(5, TenantClass.FARMER);
+    makeTenants(5, TenantClass.COTTAR);
+    manor.grossAcres = 2000;
+    manor.foAcresPerHH = 0;
+    manor.foAcresPerLF = 500;
+    generator.recruitYeoman(manor);
+    for (const tenant of manor.tenants) {
+      if (tenant.military !== null) {
+        expect(tenant.notes.length).toBe(1);
+      } else {
+        expect(tenant.notes.length).toBe(0);
       }
     }
   });

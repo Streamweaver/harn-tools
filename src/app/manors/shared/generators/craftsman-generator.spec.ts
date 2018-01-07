@@ -1,6 +1,6 @@
 import {IManor, ManorFactory} from './../models/imanor.model';
-import {CraftsmanGenerator, Craftsman, craftsmanFees} from './craftsman-generator';
-import {TenantClass } from './tenant-generator';
+import {Craftsman, craftsmanFees, CraftsmanGenerator} from './craftsman-generator';
+import {TenantClass} from './tenant-generator';
 
 describe('Generator: Craftsman', () => {
   let generator: CraftsmanGenerator;
@@ -8,20 +8,20 @@ describe('Generator: Craftsman', () => {
 
   function makeTenants(n: number, tc: TenantClass) {
     for (let i = 0; i < n; i++) {
-    manor.tenants.push({
-      occupation: tc,
-      craft: null,
-      military: null,
-      size: 0,
-      ml: 0,
-      serf_acres: 0,
-      free_acres: 0,
-      labor_days: 0,
-      rent: 0,
-      fees: 0,
-      notes: []
-    });
-  }
+      manor.tenants.push({
+        occupation: tc,
+        craft: null,
+        military: null,
+        size: 0,
+        ml: 0,
+        serf_acres: 0,
+        free_acres: 0,
+        labor_days: 0,
+        rent: 0,
+        fees: 0,
+        notes: []
+      });
+    }
   }
 
   beforeEach(() => {

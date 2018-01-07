@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { ManorsRoutingModule } from './manors-routing.module';
 import { ManorComponent } from './manor/manor.component';
-import { TenantComponent } from './tenant/tenant.component';
 import { ManorService } from './shared/manor.service';
 import { TenantListComponent } from './tenant-list/tenant-list.component';
+import {TenantComponent} from './tenant/tenant.component';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { TenantListComponent } from './tenant-list/tenant-list.component';
     FormsModule
   ],
   providers: [ManorService],
-  declarations: [ManorComponent, TenantComponent, TenantListComponent]
+  declarations: [ManorComponent, TenantListComponent, TenantComponent]
 })
 export class ManorsModule { }

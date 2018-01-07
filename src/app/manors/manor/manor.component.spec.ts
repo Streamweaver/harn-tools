@@ -4,6 +4,7 @@ import {TenantListComponent} from '../tenant-list/tenant-list.component';
 import { ManorComponent } from './manor.component';
 import { ManorService } from '../shared/manor.service';
 import { MockManorService } from '../shared/testing/mockmanorservice';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('ManorComponent', () => {
   let component: ManorComponent;
@@ -13,7 +14,8 @@ describe('ManorComponent', () => {
     TestBed.configureTestingModule({
       imports: [FormsModule],
       declarations: [ ManorComponent, TenantListComponent ],
-      providers: [{provide: ManorService, useClass: MockManorService}]
+      providers: [{provide: ManorService, useClass: MockManorService}],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));

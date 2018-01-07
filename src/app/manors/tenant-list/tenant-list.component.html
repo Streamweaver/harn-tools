@@ -23,17 +23,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let tenant of manor.tenants">
-      <td *ngIf="tenant.craft">{{tenant.craft}}</td>
-      <td *ngIf="!tenant.craft">{{tenant.occupation}}</td>
-      <td>{{tenant.size}}</td>
-      <td>{{tenant.ml}}</td>
-      <td>{{tenant.serf_acres}}</td>
-      <td>{{tenant.free_acres}}</td>
-      <td>{{tenant.labor_days}}</td>
-      <td>{{tenant.rent}}</td>
-      <td>{{tenant.fees}}</td>
-      <td>{{tenant.notes.join('; ')}}</td>
+    <tr app-tenant *ngFor="let tenant of manor.tenants" [tenant]="tenant">
+
     </tr>
     <tr>
       <td>Totals:</td>
