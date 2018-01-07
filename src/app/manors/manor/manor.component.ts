@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {CraftsmanGenerator} from '../shared/generators/craftsman-generator';
+import {TenantGenerator} from '../shared/generators/tenant-generator';
+import {YeomanGenerator} from '../shared/generators/yeoman-generator';
 import { IManor } from '../shared/models/imanor.model';
 import { ManorService } from '../shared/manor.service';
 
@@ -9,19 +12,35 @@ import { ManorService } from '../shared/manor.service';
 })
 export class ManorComponent implements OnInit {
   manor: IManor;
+  showGenerationInput: boolean;
+  private _tg: TenantGenerator;
+  private _cg: CraftsmanGenerator;
+  private _mg: YeomanGenerator;
 
   constructor(private manorService: ManorService) {}
 
   ngOnInit() {
     this.manor = this.manorService.getManor();
+    this.showGenerationInput = true;
+    this._tg = new TenantGenerator();
+    this._cg = new CraftsmanGenerator();
+    this._mg = new YeomanGenerator();
   }
 
   private _reset() {
     this.manorService.resetManor();
+    this.showGenerationInput = true;
   }
 
   onResetClick() {
     this._reset();
+  }
+
+  onGenerateClick() {
+    this.showGenerationInput = false;
+    this._tg.generateTenants(this.manor);
+    this._cg.assignCraftsmen(this.manor);
+    this._mg.recruitYeoman(this.manor);
   }
 
 }

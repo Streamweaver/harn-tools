@@ -1,11 +1,6 @@
 <div>
   <div class="row">
     <div class="col-sm-6"><h2>Tennants ({{manor.tenants.length}})</h2></div>
-    <div class="col-sm-6 text-right">
-      <a class="btn btn-sm" (click)="onPopulateClick()"
-         [ngClass]="manor.tenants.length < 1 ? 'btn-primary' : 'btn-danger'"
-      ><i class="fa fa-users"></i> Populate</a>
-    </div>
   </div>
   <table class="table table-bordered table-striped table-hover table-sm"
          *ngIf="manor.tenants?.length > 0; else noTennants">

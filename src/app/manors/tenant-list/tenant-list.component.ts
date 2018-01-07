@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IManor } from '../shared/models/imanor.model';
 import { ManorService } from '../shared/manor.service';
-import { TenantGenerator } from '../shared/generators/tenant-generator';
-import { CraftsmanGenerator } from '../shared/generators/craftsman-generator';
-import { YeomanGenerator } from '../shared/generators/yeoman-generator';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-tenant-list',
@@ -12,31 +10,11 @@ import { YeomanGenerator } from '../shared/generators/yeoman-generator';
 })
 export class TenantListComponent implements OnInit {
   manor: IManor;
-  private _tg: TenantGenerator;
-  private _cg: CraftsmanGenerator;
-  private _mg: YeomanGenerator;
 
   constructor(private manorService: ManorService) {}
 
   ngOnInit() {
     this.manor = this.manorService.getManor();
-    this._tg = new TenantGenerator();
-    this._cg = new CraftsmanGenerator();
-    this._mg = new YeomanGenerator();
-  }
-
-  onResetClick() {
-    this.manor.tenants = [];
-  }
-
-  onPopulateClick() {
-    if (this.manor.tenants.length > 1) {
-      this.manorService.resetTenants();
-    }
-    this._tg.generateTenants(this.manor);
-    this._cg.assignCraftsmen(this.manor);
-    this._mg.recruitYeoman(this.manor);
-    console.log('Generate Click');
   }
 
   populationSize(): number {
