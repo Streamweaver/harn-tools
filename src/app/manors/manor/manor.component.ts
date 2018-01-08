@@ -4,6 +4,7 @@ import {TenantGenerator} from '../shared/generators/tenant-generator';
 import {YeomanGenerator} from '../shared/generators/yeoman-generator';
 import { IManor, Topology } from '../shared/models/imanor.model';
 import { ManorService } from '../shared/manor.service';
+import { TenantOfficerGenerator } from '../shared/generators/tenant-officer.generator';
 
 @Component({
   selector: 'app-manor',
@@ -16,6 +17,7 @@ export class ManorComponent implements OnInit {
   private _tg: TenantGenerator;
   private _cg: CraftsmanGenerator;
   private _mg: YeomanGenerator;
+  private _to: TenantOfficerGenerator;
 
   constructor(private manorService: ManorService) {}
 
@@ -25,6 +27,7 @@ export class ManorComponent implements OnInit {
     this._tg = new TenantGenerator();
     this._cg = new CraftsmanGenerator();
     this._mg = new YeomanGenerator();
+    this._to = new TenantOfficerGenerator();
   }
 
   private _reset() {
@@ -41,6 +44,7 @@ export class ManorComponent implements OnInit {
     this._tg.generateTenants(this.manor);
     this._cg.assignCraftsmen(this.manor);
     this._mg.recruitYeoman(this.manor);
+    this._to.electOfficers(this.manor);
   }
 
   topologyChoices(): string[] {

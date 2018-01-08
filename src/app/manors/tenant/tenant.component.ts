@@ -14,15 +14,15 @@ export class TenantComponent implements OnInit {
   ngOnInit() {}
 
   title(): string {
+    let title = 'Unknown';
     if (this.tenant.military !== null) {
-      return 'Yeoman: ' + this.tenant.military;
+      title = 'Yeoman: ' + this.tenant.military;
+    } else if (this.tenant.craft !== null) {
+      title = this.tenant.craft;
+    } else if (this.tenant.occupation !== null) {
+      title = this.tenant.occupation;
     }
-    if (this.tenant.craft !== null) {
-      return this.tenant.craft;
-    }
-    if (this.tenant.occupation !== null) {
-      return this.tenant.occupation;
-    }
-    return 'Unknown';
+    title = this.tenant.office !== null ? title + '/' + this.tenant.office : title;
+    return title;
   }
 }

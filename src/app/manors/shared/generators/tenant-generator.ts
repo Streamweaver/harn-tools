@@ -9,7 +9,8 @@ export enum TenantClass {
   VILLEIN = 'Villein', // Serf
   HALFVILLEIN = 'Half-Villein', // Serf
   COTTAR = 'Cottar', // Serf
-  SLAVE = 'Slave/Thrall' // Slave
+  SLAVE = 'Slave/Thrall', // Slave
+  PRIEST = 'Priest'
 }
 
 const CLASSTABLE = [
