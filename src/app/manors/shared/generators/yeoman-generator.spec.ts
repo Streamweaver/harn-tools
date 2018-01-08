@@ -10,10 +10,11 @@ describe('Generator: Yeoman', () => {
   function makeTenants(n: number, tc: TenantClass) {
     for (let i = 0; i < n; i++) {
       manor.tenants.push({
-        id: i,
+        id: manor.tenants.length,
         occupation: tc,
         craft: null,
         military: null,
+        office: null,
         size: 0,
         ml: 0,
         serf_acres: 0,

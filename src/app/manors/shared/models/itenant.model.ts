@@ -3,6 +3,7 @@ export interface ITenant {
   occupation: string;
   craft: string;
   military: string;
+  office: string;
   size: number;
   ml: number;
   serf_acres: number;
@@ -12,3 +13,4 @@ export interface ITenant {
   fees: number;
   notes: string[];
 }
+

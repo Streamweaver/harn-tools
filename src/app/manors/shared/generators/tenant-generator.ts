@@ -43,6 +43,7 @@ export class TenantGenerator {
       occupation: null,
       craft: null,
       military: null,
+      office: null,
       size: 0,
       ml: 0,
       serf_acres: 0,
