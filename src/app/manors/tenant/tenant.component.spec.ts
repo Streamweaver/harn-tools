@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {TenantClass} from '../shared/generators/tenant-generator';
 import { Craftsman } from '../shared/generators/craftsman-generator';
 import { Military } from '../shared/models/military.models';
-import { ITenant } from '../shared/models/itenant.model';
+import { ITenant } from '../shared/models/tenant.model';
 import {By} from '@angular/platform-browser';
 
 import { TenantComponent } from './tenant.component';

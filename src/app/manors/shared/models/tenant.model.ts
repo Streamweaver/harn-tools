@@ -13,4 +13,3 @@ export interface ITenant {
   fees: number;
   notes: string[];
 }
-

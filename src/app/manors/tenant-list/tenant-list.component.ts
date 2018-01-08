@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IManor } from '../shared/models/imanor.model';
+import { IManor } from '../shared/models/manor.model';
 import { ManorService } from '../shared/manor.service';
 import { Observable } from 'rxjs/Observable';
 

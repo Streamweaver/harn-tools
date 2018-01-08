@@ -1,4 +1,4 @@
-import {IManor, ManorFactory, Topology} from './../models/imanor.model';
+import {IManor, ManorFactory, Topology} from '../models/manor.model';
 import {Craftsman, craftsmanFees, CraftsmanGenerator} from './craftsman-generator';
 import {TenantClass} from './tenant-generator';
 

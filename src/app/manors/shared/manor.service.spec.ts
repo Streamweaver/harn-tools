@@ -1,5 +1,5 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { ManorFactory } from './models/imanor.model';
+import { ManorFactory } from './models/manor.model';
 
 import { ManorService } from './manor.service';
 

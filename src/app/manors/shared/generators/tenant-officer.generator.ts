@@ -1,6 +1,6 @@
 import {NumberGenerator} from '../../../shared/generators/number-generator';
-import {IManor} from '../models/imanor.model';
-import {ITenant} from '../models/itenant.model';
+import {IManor} from '../models/manor.model';
+import {ITenant} from '../models/tenant.model';
 import {Military, MilitaryData} from '../models/military.models';
 import {TenantClass} from './tenant-generator';
 import * as rwc from 'random-weighted-choice';
@@ -98,7 +98,10 @@ export class TenantOfficerGenerator {
 
   private _serfOfficerPool(): ITenant[] {
     let tenants = this._manor.tenants.filter(tenant =>
-      tenant.serf_acres > 0 && tenant.office === null && tenant.military === null
+      tenant.serf_acres > 0
+      && tenant.office === null
+      && tenant.military === null
+      && tenant.occupation !== TenantClass.SLAVE
     );
     tenants = tenants.sort((a, b): number => {
       return (a.serf_acres ** 2 * a.ml > b.serf_acres ** 2 * b.ml) ? -1 : 1;

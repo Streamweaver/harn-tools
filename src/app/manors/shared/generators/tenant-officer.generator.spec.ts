@@ -1,6 +1,6 @@
 import {NumberGenerator} from '../../../shared/generators/number-generator';
 import {Military} from '../models/military.models';
-import {IManor, ManorFactory} from './../models/imanor.model';
+import {IManor, ManorFactory} from '../models/manor.model';
 import {TenantClass} from './tenant-generator';
 import {Officer, TenantOfficerGenerator} from './tenant-officer.generator';
 

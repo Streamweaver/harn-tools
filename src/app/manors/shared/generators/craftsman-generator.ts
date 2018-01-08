@@ -1,6 +1,6 @@
 import * as rwc from 'random-weighted-choice';
-import {IManor, Topology} from '../models/imanor.model';
-import {ITenant} from '../models/itenant.model';
+import {IManor, Topology} from '../models/manor.model';
+import {ITenant} from '../models/tenant.model';
 import {TenantClass} from './tenant-generator';
 
 export enum Craftsman {

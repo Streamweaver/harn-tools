@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ITenant } from '../shared/models/itenant.model';
+import { ITenant } from '../shared/models/tenant.model';
 
 @Component({
   selector: '[app-tenant]',

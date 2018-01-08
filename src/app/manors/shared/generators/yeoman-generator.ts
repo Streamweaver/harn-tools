@@ -1,5 +1,5 @@
 import {NumberGenerator} from '../../../shared/generators/number-generator';
-import {IManor} from '../models/imanor.model';
+import {IManor} from '../models/manor.model';
 import {Military, MilitaryData} from '../models/military.models';
 import {TenantClass} from './tenant-generator';
 import * as rwc from 'random-weighted-choice';

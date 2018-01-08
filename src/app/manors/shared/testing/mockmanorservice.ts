@@ -1,4 +1,4 @@
-import {IManor, ManorFactory} from '../models/imanor.model';
+import {IManor, ManorFactory} from '../models/manor.model';
 
 export class MockManorService {
   manor: IManor;

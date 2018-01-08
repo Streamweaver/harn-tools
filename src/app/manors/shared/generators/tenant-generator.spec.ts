@@ -1,5 +1,5 @@
-import { TenantGenerator } from './tenant-generator';
-import { IManor, ManorFactory } from '../models/imanor.model';
+import { TenantGenerator, isFreeman } from './tenant-generator';
+import { IManor, ManorFactory } from '../models/manor.model';
 import { TenantClass } from './tenant-generator';
 
 describe('Generator: Tenant', () => {

@@ -1,4 +1,4 @@
-import {IManor, ManorFactory} from '../models/imanor.model';
+import {IManor, ManorFactory} from '../models/manor.model';
 import {MilitaryData} from '../models/military.models';
 import {TenantClass} from './tenant-generator';
 import {YeomanGenerator, MilitaryAcres} from './yeoman-generator';

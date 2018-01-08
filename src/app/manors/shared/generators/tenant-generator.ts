@@ -1,6 +1,6 @@
 import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { IManor } from '../models/imanor.model';
-import { ITenant } from '../models/itenant.model';
+import { IManor } from '../models/manor.model';
+import { ITenant } from '../models/tenant.model';
 import * as rwc from 'random-weighted-choice';
 
 export enum TenantClass {
@@ -23,6 +23,15 @@ const CLASSTABLE = [
 ];
 
 const FREEMEN = [TenantClass.CRAFTSMAN, TenantClass.FARMER];
+
+export function isFreeman(t: ITenant): boolean {
+  for (const tc in FREEMEN) {
+    if (tc === t.occupation) {
+      return true;
+    }
+  }
+  return false;
+}
 
 export class TenantGenerator {
   private _dice = new NumberGenerator();

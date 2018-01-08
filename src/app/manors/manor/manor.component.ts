@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CraftsmanGenerator} from '../shared/generators/craftsman-generator';
 import {TenantGenerator} from '../shared/generators/tenant-generator';
 import {YeomanGenerator} from '../shared/generators/yeoman-generator';
-import { IManor, Topology } from '../shared/models/imanor.model';
+import { IManor, Topology } from '../shared/models/manor.model';
 import { ManorService } from '../shared/manor.service';
 import { TenantOfficerGenerator } from '../shared/generators/tenant-officer.generator';
 

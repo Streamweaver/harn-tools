@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IManor, ManorFactory } from './models/imanor.model';
+import { IManor, ManorFactory } from './models/manor.model';
 
 @Injectable()
 export class ManorService {
