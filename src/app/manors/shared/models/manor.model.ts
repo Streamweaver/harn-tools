@@ -1,4 +1,5 @@
-import {ITenant} from './tenant.model';
+import {ITenant, TenantArray} from './tenant.model';
+import {IPopulation, Population} from './population.model';
 
 export class IManor {
   name: string;
@@ -7,7 +8,8 @@ export class IManor {
   grossAcres: number;
   clearedAcres: number;
   landQuality: number;
-  tenants: Array<ITenant>;
+  tenants: ITenant[];
+  population: IPopulation;
   freeRent: number;
   serfLabor: number;
   isSlaveState: boolean;
@@ -36,7 +38,8 @@ class Manor implements IManor {
   grossAcres: number;
   clearedAcres: number;
   landQuality: number;
-  tenants: Array<ITenant>;
+  tenants: ITenant[];
+  population: IPopulation;
   freeRent: number;
   serfLabor: number;
   isSlaveState: boolean;
@@ -52,6 +55,7 @@ class Manor implements IManor {
     this.clearedAcres = 1000;
     this.landQuality = 1.0;
     this.tenants = [];
+    this.population = new Population();
     this.freeRent = 6;
     this.serfLabor = 4;
     this.isSlaveState = false;

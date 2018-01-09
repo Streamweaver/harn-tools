@@ -1,4 +1,5 @@
 import {IManor, ManorFactory} from '../models/manor.model';
+import {TenantArray} from '../models/tenant.model';
 
 export class MockManorService {
   manor: IManor;
@@ -9,10 +10,6 @@ export class MockManorService {
 
   resetManor() {
     this.manor = ManorFactory.getManor();
-  }
-
-  resetTenants() {
-    this.manor.tenants = [];
   }
 
   getManor(): IManor {

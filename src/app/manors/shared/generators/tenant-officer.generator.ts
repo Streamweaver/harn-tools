@@ -83,7 +83,6 @@ export class TenantOfficerGenerator {
         break;
       }
     }
-
   }
 
   private _getTenantAcres(): number {
@@ -118,7 +117,7 @@ export class TenantOfficerGenerator {
       const bTotal = (b.free_acres + b.serf_acres) ** 2 * b.ml;
       return aTotal > bTotal ? -1 : 1;
       }
-    )
+    );``
     return tenants;
   }
 

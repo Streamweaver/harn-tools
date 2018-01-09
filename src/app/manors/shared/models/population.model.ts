@@ -1,67 +1,56 @@
+import {ITenant} from './tenant.model';
 import {Officer} from '../generators/tenant-officer.generator';
 
-
-export interface ITenant {
-  id: number;
-  occupation: string;
-  craft: string;
-  military: string;
-  office: string;
-  size: number;
-  ml: number;
-  serf_acres: number;
-  free_acres: number;
-  labor_days: number;
-  rent: number;
-  fees: number;
-  notes: string[];
+export interface IPopulation {
+  tenants: ITenant[];
 }
 
-export class TenantArray extends Array<ITenant> {
+export class Population implements IPopulation {
+  tenants: ITenant[];
 
-  acres(): number {
+  tenantAcres(): number {
     let total = 0;
-    for (const tenant of this) {
+    for (const tenant of this.tenants) {
       total += tenant.serf_acres + tenant.free_acres;
     }
     return total;
   }
 
-  freeAcres(): number {
+  tenantFreeAcres(): number {
     let total = 0;
-    for (const tenant of this) {
+    for (const tenant of this.tenants) {
       total += tenant.free_acres;
     }
     return total;
   }
 
-  serfAcres(): number {
+  tenantSerfAcres(): number {
     let total = 0;
-    for (const tenant of this) {
+    for (const tenant of this.tenants) {
       total += tenant.serf_acres;
     }
     return total;
   }
 
-  laborDays(): number {
+  tenantLaborDays(): number {
     let total = 0;
-    for (const tenant of this) {
+    for (const tenant of this.tenants) {
       total += tenant.labor_days;
     }
     return total;
   }
 
-  fees(): number {
+  tenantFees(): number {
     let total = 0;
-    for (const tenant of this) {
+    for (const tenant of this.tenants) {
       total += tenant.fees;
     }
     return total;
   }
 
-  rent(): number {
+  tenantRent(): number {
     let total = 0;
-    for (const tenant of this) {
+    for (const tenant of this.tenants) {
       total += tenant.rent;
     }
     return total;
@@ -70,10 +59,10 @@ export class TenantArray extends Array<ITenant> {
   glebeRevenue(): number {
     let glebeAcres = 0;
     let totalAcres = 0; // doing again since this saves another for loop.
-    for (const tenant of this) {
+    for (const tenant of this.tenants) {
       totalAcres += tenant.serf_acres + tenant.free_acres;
       if (tenant.office === Officer.Glebe) {
-        glebeAcres = tenant.free_acres;
+        glebeAcres += tenant.free_acres;
       }
     }
     totalAcres = totalAcres - glebeAcres;
