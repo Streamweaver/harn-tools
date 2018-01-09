@@ -73,7 +73,7 @@ export class YeomanGenerator {
 
   private _recruitableFamers(): boolean {
     let recruitableFamers = false;
-    for (const tenant of this._manor.tenants) {
+    for (const tenant of this._manor.population.tenants) {
       if (tenant.occupation === TenantClass.FARMER && tenant.military === null) {
         recruitableFamers = true;
       }
@@ -82,7 +82,7 @@ export class YeomanGenerator {
   }
 
   private _draftFarmer(rank: Military) {
-    for (const tenant of this._manor.tenants) {
+    for (const tenant of this._manor.population.tenants) {
       if (tenant.occupation === TenantClass.FARMER && tenant.military === null) {
         tenant.military = rank;
         break;
@@ -95,7 +95,7 @@ export class YeomanGenerator {
    * @private
    */
   private _adjustAcres() {
-    for (const tenant of this._manor.tenants) {
+    for (const tenant of this._manor.population.tenants) {
       if (tenant.military !== null) {
         tenant.free_acres = this._dice.rollDie(10) + MilitaryAcres[tenant.military];
       }
@@ -108,7 +108,7 @@ export class YeomanGenerator {
    * @private
    */
   private _adjustFees() {
-    for (const tenant of this._manor.tenants) {
+    for (const tenant of this._manor.population.tenants) {
       if (tenant.military !== null) {
         tenant.fees = 60 + tenant.free_acres;
       }
@@ -120,7 +120,7 @@ export class YeomanGenerator {
    * @private
    */
   private _adjustRent() {
-    for (const tenant of this._manor.tenants) {
+    for (const tenant of this._manor.population.tenants) {
       if (tenant.military !== null) {
         tenant.rent = 60 + tenant.free_acres;
       }
@@ -138,7 +138,7 @@ export class YeomanGenerator {
   }
 
   private _noteMilitaryService() {
-    for (const tenant of this._manor.tenants) {
+    for (const tenant of this._manor.population.tenants) {
       if (tenant.military !== null) {
         tenant.notes.push('Military service owed.');
       }

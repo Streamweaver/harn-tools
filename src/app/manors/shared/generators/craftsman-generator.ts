@@ -67,7 +67,7 @@ export class CraftsmanGenerator {
   assignCraftsmen(manor: IManor) {
     this._manor = manor;
     let craft: Craftsman;
-    for (const tenant of this._manor.tenants) {
+    for (const tenant of this._manor.population.tenants) {
       if (tenant.occupation === TenantClass.CRAFTSMAN && tenant.craft === null) {
         craft = this.getCraft();
         if (!this._exists(craft)) {
@@ -95,7 +95,7 @@ export class CraftsmanGenerator {
   }
 
   private _exists(craft: string): boolean {
-    for (const tenant of this._manor.tenants) {
+    for (const tenant of this._manor.population.tenants) {
       if (tenant.craft === craft) {
         return true;
       }

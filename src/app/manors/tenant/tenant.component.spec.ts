@@ -3,10 +3,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {TenantClass} from '../shared/generators/tenant-generator';
 import { Craftsman } from '../shared/generators/craftsman-generator';
 import { Military } from '../shared/models/military.models';
-import { ITenant, TenantArray } from '../shared/models/tenant.model';
+import { Population } from '../shared/models/population.model';
+import { MockManorService } from '../shared/testing/mockmanorservice';
 import {By} from '@angular/platform-browser';
 
 import { TenantComponent } from './tenant.component';
+import { IManor } from '../shared/models/manor.model';
 
 describe('TenantComponent', () => {
   let component: TestTenantListComponent;
@@ -36,8 +38,8 @@ describe('TenantComponent', () => {
 // https://angular.io/guide/testing#test-a-component-inside-a-test-host-component
 @Component({
   template: `
-    <tr app-tenant *ngFor="let tenant of tenants" [tenant]="tenant"></tr>`
+    <tr app-tenant *ngFor="let tenant of manor.population.tenants" [tenant]="tenant"></tr>`
 })
 class TestTenantListComponent {
-  tenants: TenantArray;
+  manor: IManor;
 }

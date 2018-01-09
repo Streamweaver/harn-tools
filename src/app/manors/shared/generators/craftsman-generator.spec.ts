@@ -8,8 +8,8 @@ describe('Generator: Craftsman', () => {
 
   function makeTenants(n: number, tc: TenantClass) {
     for (let i = 0; i < n; i++) {
-      manor.tenants.push({
-        id: manor.tenants.length,
+       manor.population.tenants.push({
+        id:  manor.population.tenants.length,
         occupation: tc,
         craft: null,
         military: null,
@@ -43,7 +43,7 @@ describe('Generator: Craftsman', () => {
   it('should have no unassigned craftsmen', function () {
     makeTenants(10, TenantClass.CRAFTSMAN);
     generator.assignCraftsmen(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       expect(tenant.craft).not.toBeNull();
     }
   });
@@ -51,7 +51,7 @@ describe('Generator: Craftsman', () => {
   it('should not assign a craft to non-craftsmen', function () {
     makeTenants(10, TenantClass.VILLEIN);
     generator.assignCraftsmen(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.occupation === TenantClass.VILLEIN) {
         expect(tenant.craft).toBeNull();
       }
@@ -62,7 +62,7 @@ describe('Generator: Craftsman', () => {
     manor.topology = Topology.Lowland;
     makeTenants(15, TenantClass.CRAFTSMAN);
     generator.assignCraftsmen(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       expect(tenant.craft).not.toBe(Craftsman.Shipwright);
     }
   });
@@ -72,7 +72,7 @@ describe('Generator: Craftsman', () => {
     makeTenants(15, TenantClass.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     let shipwrightCount = 0;
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       shipwrightCount += tenant.craft === Craftsman.Shipwright ? 1 : 0;
     }
     expect(shipwrightCount).toBe(1);
@@ -82,7 +82,7 @@ describe('Generator: Craftsman', () => {
     makeTenants(14, TenantClass.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     let gmdCount = 0;
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       gmdCount += tenant.craft === Craftsman.GMDetermine ? 1 : 0;
     }
     expect(gmdCount).toBe(0);
@@ -92,7 +92,7 @@ describe('Generator: Craftsman', () => {
     makeTenants(150, TenantClass.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     let gmdCount = 0;
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       gmdCount += tenant.craft === Craftsman.GMDetermine ? 1 : 0;
     }
     expect(gmdCount).toBe(136);
@@ -102,7 +102,7 @@ describe('Generator: Craftsman', () => {
     makeTenants(10, TenantClass.CRAFTSMAN);
     makeTenants(30, TenantClass.VILLEIN);
     generator.assignCraftsmen(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.occupation !== TenantClass.CRAFTSMAN) {
         expect(tenant.fees).toBe(0);
       }
@@ -114,18 +114,18 @@ describe('Generator: Craftsman', () => {
 
   it('should NOT reassign existing crafts', function () {
     makeTenants(10, TenantClass.CRAFTSMAN);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       tenant.craft = Craftsman.Metalsmith;
     }
     generator.assignCraftsmen(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       expect(tenant.craft).toBe(Craftsman.Metalsmith);
     }
   });
 
   it('should add notes for missing critical craftsmen', function () {
     makeTenants(10, TenantClass.CRAFTSMAN);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       tenant.craft = Craftsman.Armourer;
     }
     generator.assignCraftsmen(manor);

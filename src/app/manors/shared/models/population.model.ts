@@ -8,6 +8,18 @@ export interface IPopulation {
 export class Population implements IPopulation {
   tenants: ITenant[];
 
+  constructor() {
+    this.tenants = [];
+  }
+
+  tenantSize(): number {
+    let total = 0;
+    for (const tenant of this.tenants) {
+      total += tenant.size;
+    }
+    return total;
+  }
+
   tenantAcres(): number {
     let total = 0;
     for (const tenant of this.tenants) {

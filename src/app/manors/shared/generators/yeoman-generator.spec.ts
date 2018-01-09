@@ -9,8 +9,8 @@ describe('Generator: Yeoman', () => {
 
   function makeTenants(n: number, tc: TenantClass) {
     for (let i = 0; i < n; i++) {
-      manor.tenants.push({
-        id: manor.tenants.length,
+       manor.population.tenants.push({
+        id:  manor.population.tenants.length,
         occupation: tc,
         craft: null,
         military: null,
@@ -67,7 +67,7 @@ describe('Generator: Yeoman', () => {
     manor.foAcresPerHH = 0;
     manor.foAcresPerLF = 500;
     generator.recruitYeoman(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.occupation === TenantClass.COTTAR) {
         expect(tenant.military).toBeNull();
       }
@@ -81,7 +81,7 @@ describe('Generator: Yeoman', () => {
     manor.foAcresPerLF = 500;
     generator.recruitYeoman(manor);
     let recruitmentPts = 0;
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.military !== null) {
         recruitmentPts = recruitmentPts + MilitaryData[tenant.military].pts;
       }
@@ -101,7 +101,7 @@ describe('Generator: Yeoman', () => {
     manor.foAcresPerHH = 0;
     manor.foAcresPerLF = 20;
     generator.recruitYeoman(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.military !== null) {
         const h = MilitaryAcres[tenant.military] + 10;
         const l = MilitaryAcres[tenant.military] + 1;
@@ -116,7 +116,7 @@ describe('Generator: Yeoman', () => {
     manor.foAcresPerHH = 0;
     manor.foAcresPerLF = 20;
     generator.recruitYeoman(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.military !== null) {
         expect(tenant.rent).toBe(tenant.free_acres + 60);
       }
@@ -129,7 +129,7 @@ describe('Generator: Yeoman', () => {
     manor.foAcresPerHH = 0;
     manor.foAcresPerLF = 20;
     generator.recruitYeoman(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.military !== null) {
         expect(tenant.fees).toBe(tenant.free_acres + 60);
       }
@@ -143,7 +143,7 @@ describe('Generator: Yeoman', () => {
     manor.foAcresPerHH = 0;
     manor.foAcresPerLF = 500;
     generator.recruitYeoman(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.military !== null) {
         expect(tenant.notes.length).toBe(1);
       } else {

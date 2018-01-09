@@ -43,13 +43,13 @@ export class TenantGenerator {
     this._manor = manor;
     const tenantHouseholds = this._manor.clearedAcres / 40 * this._manor.landQuality;
     for (let i = 0; i < tenantHouseholds; i++) {
-      this._manor.tenants.push(this._generateTenant());
+      this._manor.population.tenants.push(this._generateTenant());
     }
   }
 
   private _generateTenant(): ITenant {
     const tenant: ITenant = {
-      id: this._manor.tenants.length,
+      id: this._manor.population.tenants.length,
       occupation: null,
       craft: null,
       military: null,

@@ -1,5 +1,5 @@
 <div class="row title-box bg-dark text-white px-3 py-2 mx-4">
-  <div class="col"><strong>Manor Census ({{manor.tenants.length}})</strong></div>
+  <div class="col"><strong>Manor Census ({{ manor.population.tenants.length}})</strong></div>
   <div class="col text-right"><strong>{{manor.name}}</strong></div>
 </div>
 <div class="container">
@@ -17,19 +17,19 @@
       <th class="small font-weight-bold">Notes</th>
     </tr>
     </thead>
-    <tbody *ngIf="manor.tenants.length > 0">
-    <tr app-tenant *ngFor="let tenant of manor.tenants" [tenant]="tenant">
+    <tbody *ngIf="manor.population.tenants.length > 0">
+    <tr app-tenant *ngFor="let tenant of manor.population.tenants" [tenant]="tenant">
 
     </tr>
     <tr class="table-info">
       <td class="font-weight-bold text-right">Totals:</td>
-      <td>{{manor.tenants.lenth}}</td>
+      <td>{{manor.population.tenantSize()}}</td>
       <td></td>
-      <td>{{manor.tenants.serfAcres()}}</td>
-      <td>{{manor.tenants.freeAcres()}}</td>
-      <td>{{manor.tenants.laborDays()}}</td>
-      <td>{{manor.tenants.rent()}}</td>
-      <td>{{manor.tenants.fees()}}</td>
+      <td>{{manor.population.tenantSerfAcres()}}</td>
+      <td>{{manor.population.tenantFreeAcres()}}</td>
+      <td>{{manor.population.tenantLaborDays()}}</td>
+      <td>{{manor.population.tenantRent()}}</td>
+      <td>{{manor.population.tenantFees()}}</td>
       <td></td>
     </tr>
     </tbody>

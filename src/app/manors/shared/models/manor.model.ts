@@ -1,4 +1,3 @@
-import {ITenant, TenantArray} from './tenant.model';
 import {IPopulation, Population} from './population.model';
 
 export class IManor {
@@ -8,7 +7,6 @@ export class IManor {
   grossAcres: number;
   clearedAcres: number;
   landQuality: number;
-  tenants: ITenant[];
   population: IPopulation;
   freeRent: number;
   serfLabor: number;
@@ -38,7 +36,6 @@ class Manor implements IManor {
   grossAcres: number;
   clearedAcres: number;
   landQuality: number;
-  tenants: ITenant[];
   population: IPopulation;
   freeRent: number;
   serfLabor: number;
@@ -54,7 +51,6 @@ class Manor implements IManor {
     this.grossAcres = 2000;
     this.clearedAcres = 1000;
     this.landQuality = 1.0;
-    this.tenants = [];
     this.population = new Population();
     this.freeRent = 6;
     this.serfLabor = 4;

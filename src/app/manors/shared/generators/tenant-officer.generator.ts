@@ -27,7 +27,7 @@ export class TenantOfficerGenerator {
     this._selectSerfOfficer(Officer.Woodward);
     this._selectSerfOfficer(Officer.Herder);
     this._selectBeadle();
-    const glebeChance = this._manor.tenants.length * 5 > 96 ? 96 : this._manor.tenants.length * 5;
+    const glebeChance = this._manor.population.tenants.length * 5 > 96 ? 96 : this._manor.population.tenants.length * 5;
     if (this._dice.rollDie(100) < glebeChance) {
       this._selectGlebe();
     } else {
@@ -69,7 +69,7 @@ export class TenantOfficerGenerator {
   }
 
   private _selectGlebe() {
-    for (const tenant of this._manor.tenants) {
+    for (const tenant of this._manor.population.tenants) {
       if (tenant.craft === null && tenant.military === null && tenant.office === null) {
         tenant.office = Officer.Glebe;
         tenant.occupation = TenantClass.PRIEST;
@@ -87,7 +87,7 @@ export class TenantOfficerGenerator {
 
   private _getTenantAcres(): number {
     let tenantAcres = 0;
-    for (const tenant of this._manor.tenants) {
+    for (const tenant of this._manor.population.tenants) {
       if (tenant.office !== Officer.Glebe) {
         tenantAcres += tenant.free_acres + tenant.serf_acres;
       }
@@ -96,7 +96,7 @@ export class TenantOfficerGenerator {
   }
 
   private _serfOfficerPool(): ITenant[] {
-    let tenants = this._manor.tenants.filter(tenant =>
+    let tenants = this._manor.population.tenants.filter(tenant =>
       tenant.serf_acres > 0
       && tenant.office === null
       && tenant.military === null
@@ -109,7 +109,7 @@ export class TenantOfficerGenerator {
   }
 
   private _beadlePool(): ITenant[] {
-    let tenants = this._manor.tenants.filter(tenant =>
+    let tenants = this._manor.population.tenants.filter(tenant =>
       tenant.office === null && tenant.military !== null
     );
     tenants = tenants.sort((a, b) => {
@@ -117,14 +117,14 @@ export class TenantOfficerGenerator {
       const bTotal = (b.free_acres + b.serf_acres) ** 2 * b.ml;
       return aTotal > bTotal ? -1 : 1;
       }
-    );``
+    );
     return tenants;
   }
 
   private _officeAssigned(o: Officer, id: number): boolean {
-    for (const tenant of this._manor.tenants) {
+    for (const tenant of this._manor.population.tenants) {
       if (tenant.id === id && tenant.office === null) {
-        tenant.office = o;
+        tenant.office = o as string;
         if (tenant.labor_days > 0) {
           tenant.notes.push('Labor served as officer.');
         }

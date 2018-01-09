@@ -11,8 +11,8 @@ describe('Generator: Tenant Officers', () => {
 
   function makeTenants(n: number, tc: TenantClass) {
     for (let i = 0; i < n; i++) {
-      manor.tenants.push({
-        id: manor.tenants.length,
+       manor.population.tenants.push({
+        id:  manor.population.tenants.length,
         occupation: tc,
         craft: null,
         military: null,
@@ -36,7 +36,7 @@ describe('Generator: Tenant Officers', () => {
     makeTenants(5, TenantClass.VILLEIN);
     makeTenants(5, TenantClass.CRAFTSMAN);
     makeTenants(5, TenantClass.FARMER);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.occupation === TenantClass.COTTAR || tenant.occupation === TenantClass.HALFVILLEIN || tenant.occupation === TenantClass.VILLEIN) {
         tenant.serf_acres = dice.rollTotal(6, 4) * 5;
         tenant.labor_days = tenant.serf_acres * 5;
@@ -73,7 +73,7 @@ describe('Generator: Tenant Officers', () => {
     populateVillage();
     generator.electOfficers(manor);
     let reeveCount = 0;
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.office === Officer.Reeve) {
         reeveCount++;
       }
@@ -85,7 +85,7 @@ describe('Generator: Tenant Officers', () => {
     populateVillage();
     generator.electOfficers(manor);
     let officerCount = 0;
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.office === Officer.Woodward) {
         officerCount++;
         expect(tenant.labor_days).toBe(0);
@@ -98,7 +98,7 @@ describe('Generator: Tenant Officers', () => {
     populateVillage();
     generator.electOfficers(manor);
     let officerCount = 0;
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.office === Officer.Herder) {
         officerCount++;
         expect(tenant.labor_days).toBe(0);
@@ -111,7 +111,7 @@ describe('Generator: Tenant Officers', () => {
     populateVillage();
     generator.electOfficers(manor);
     let officerCount = 0;
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.office === Officer.Beadle) {
         officerCount++;
         expect(tenant.labor_days).toBe(0);
@@ -123,7 +123,7 @@ describe('Generator: Tenant Officers', () => {
   it('should NOT assign an office to a craftsman', function () {
     populateVillage();
     generator.electOfficers(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.occupation === TenantClass.CRAFTSMAN) {
         expect(tenant.office).toBeNull();
       }
@@ -133,7 +133,7 @@ describe('Generator: Tenant Officers', () => {
   it('should assign a Glebe poperly', function () {
     populateVillage();
     generator.electOfficers(manor);
-    for (const tenant of manor.tenants) {
+    for (const tenant of  manor.population.tenants) {
       if (tenant.occupation === TenantClass.PRIEST) {
         expect(tenant.military).toBeNull();
         expect(tenant.craft).toBeNull();

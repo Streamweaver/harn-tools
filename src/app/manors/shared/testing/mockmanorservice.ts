@@ -1,5 +1,4 @@
 import {IManor, ManorFactory} from '../models/manor.model';
-import {TenantArray} from '../models/tenant.model';
 
 export class MockManorService {
   manor: IManor;
