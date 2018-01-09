@@ -27,7 +27,7 @@ export class TenantOfficerGenerator {
     this._selectSerfOfficer(Officer.Woodward);
     this._selectSerfOfficer(Officer.Herder);
     this._selectBeadle();
-    const glebeChance = this._manor.population.tenants.length * 5 > 96 ? 96 : this._manor.population.tenants.length * 5;
+    const glebeChance = this._manor.population.glebeRevenue();
     if (this._dice.rollDie(100) < glebeChance) {
       this._selectGlebe();
     } else {
@@ -78,7 +78,7 @@ export class TenantOfficerGenerator {
         tenant.rent = 0;
         tenant.fees = 0;
         tenant.free_acres = this._dice.rollTotal(6, 2) * 5;
-        const glebeRevenue = this._getTenantAcres() * 5 + tenant.free_acres * 60;
+        const glebeRevenue = this._manor.population.glebeRevenue();
         tenant.notes.push('Glebe revenues ' + glebeRevenue + 'd');
         break;
       }

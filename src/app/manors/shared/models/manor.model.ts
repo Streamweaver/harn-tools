@@ -7,7 +7,7 @@ export class IManor {
   grossAcres: number;
   clearedAcres: number;
   landQuality: number;
-  population: IPopulation;
+  population: Population;
   freeRent: number;
   serfLabor: number;
   isSlaveState: boolean;
@@ -36,7 +36,7 @@ class Manor implements IManor {
   grossAcres: number;
   clearedAcres: number;
   landQuality: number;
-  population: IPopulation;
+  population: Population;
   freeRent: number;
   serfLabor: number;
   isSlaveState: boolean;
