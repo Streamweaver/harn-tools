@@ -68,6 +68,10 @@ export class Population implements IPopulation {
     return total;
   }
 
+  tenantLaborPool(): number {
+    return this.tenants.length * 500;
+  }
+
   glebeRevenue(): number {
     let glebeAcres = 0;
     let totalAcres = 0; // doing again since this saves another for loop.

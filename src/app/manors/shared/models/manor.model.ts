@@ -3,6 +3,7 @@ import {TenantType} from './tenant.model';
 import {Officer} from './tenant.model';
 import {craftsmanFees} from './tenant.model';
 import {Craftsman} from './tenant.model';
+import {NumberGenerator} from '../../../shared/generators/number-generator';
 
 export class IManor {
   name: string;
@@ -12,7 +13,12 @@ export class IManor {
   woodlandAcres: number;
   clearedAcres: number;
   landQuality: number;
+  fiefIndex: number;
+  tradeIndex: number;
+  laborPool: number;
+
   population: Population;
+
   freeRent: number;
   serfLabor: number;
   isSlaveState: boolean;
@@ -65,7 +71,12 @@ export class Manor implements IManor {
   woodlandAcres: number;
   clearedAcres: number;
   landQuality: number;
+  fiefIndex: number;
+  tradeIndex: number;
+  laborPool: number;
+
   population: Population;
+
   freeRent: number;
   baseRent: number;
   serfLabor: number;
@@ -73,6 +84,8 @@ export class Manor implements IManor {
   foAcresPerHH: number;
   foAcresPerLF: number;
   Notes: string[];
+
+  private dice: NumberGenerator;
 
   constructor() {
     this.name = null;
@@ -82,6 +95,10 @@ export class Manor implements IManor {
     this.woodlandAcres = 1000;
     this.clearedAcres = 1000;
     this.landQuality = 1.0;
+    this.fiefIndex = 0.0;
+    this.tradeIndex = 0.0;
+    this.laborPool = 0;
+
     this.population = new Population();
     this.freeRent = 6;
     this.baseRent = 60;
@@ -90,5 +107,31 @@ export class Manor implements IManor {
     this.foAcresPerHH = 1500;
     this.foAcresPerLF = 600;
     this.Notes = [];
+
+    this.dice = new NumberGenerator();
+  }
+
+  /**
+   * The total Cleared Acres remaining for
+   * the fiefholder’s own use. It is equal to Cleared Acres minus Tenant Acres.
+   */
+  demenseAcres(): number {
+    return this.clearedAcres - this.population.tenantAcres();
+  }
+
+  /**
+   * Sets manor fief index randomly.
+   *
+   * An index ranging from 0.75 to 1.25 which reflects the quality of capital assets
+   * on the fief, such as barns, granaries, roads, bridges, ditches, canals, and duck
+   * ponds. It also reflects quality of livestock, seed stocks, etc. FI is generated
+   * on the Fief Index table or can be set by the GM within the range given allowing
+   * for the effects of war, floods, etc.
+   */
+  setFiefIndex() {
+    if (this.fiefIndex === 0) {
+      this.fiefIndex = this.dice.rollTotal(6, 2) * 0.05 + 0.65;
+    }
+
   }
 }

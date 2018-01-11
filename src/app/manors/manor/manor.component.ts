@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {CraftsmanGenerator} from '../shared/generators/craftsman-generator';
 import {TenantGenerator} from '../shared/generators/tenant-generator';
 import {YeomanGenerator} from '../shared/generators/yeoman-generator';
-import { IManor, Topology, TopologyEffects } from '../shared/models/manor.model';
+import { Manor, IManor, Topology, TopologyEffects } from '../shared/models/manor.model';
 import { ManorService } from '../shared/manor.service';
 import { TenantOfficerGenerator } from '../shared/generators/tenant-officer.generator';
 import { NumberGenerator } from '../../shared/generators/number-generator';
@@ -13,7 +13,7 @@ import { NumberGenerator } from '../../shared/generators/number-generator';
   styleUrls: ['./manor.component.scss']
 })
 export class ManorComponent implements OnInit {
-  manor: IManor;
+  manor: Manor;
   dice: NumberGenerator;
   showGenerationInput: boolean;
   private _tg: TenantGenerator;
@@ -24,7 +24,7 @@ export class ManorComponent implements OnInit {
   constructor(private manorService: ManorService) {}
 
   ngOnInit() {
-    this.manor = this.manorService.getManor();
+    this.manor = this.manorService.getManor() as Manor;
     this.dice = new NumberGenerator();
     this.showGenerationInput = true;
     this._tg = new TenantGenerator();
@@ -54,6 +54,7 @@ export class ManorComponent implements OnInit {
     this._cg.assignCraftsmen(this.manor);
     this._mg.recruitYeoman(this.manor);
     this._to.electOfficers(this.manor);
+    this.manor.setFiefIndex();
   }
 
   topologyChoices(): string[] {

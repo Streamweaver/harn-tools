@@ -113,25 +113,18 @@
 
       <hr class="small">
 
-      <div class="input-group input-group-sm">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Labor Pool</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" disabled>
+      <div class=row>
+        <div class="col-sm-7 small">Labor Pool</div>
+        <div class="col-sm-3 small">{{manor.population.tenantLaborPool()}}</div>
       </div>
-      <div class="input-group input-group-sm">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Labor Obligation</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" disabled>
+      <div class=row>
+          <div class="col-sm-7 small">Labor Obligation</div>
+          <div class="col-sm-3 small">{{manor.population.tenantLaborDays()}}</div>
       </div>
 
       <hr class="small">
 
       <div class="input-group input-group-sm">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Land Quality</span>
-        </div>
         <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                [(ngModel)]="manor.landQuality">
       </div>
@@ -139,7 +132,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text">Fief Index</span>
         </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" disabled>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.fiefIndex" disabled>
       </div>
       <div class="input-group input-group-sm">
         <div class="input-group-prepend">
