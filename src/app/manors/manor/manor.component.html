@@ -68,77 +68,97 @@
         <span class="font-weight-bold">Manor Data</span>
       </div>
 
-      <div class="input-group input-group-sm">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Realm:</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
-               [(ngModel)]="manor.realm">
+      <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4 small">Realm</div>
+          <div class="col-sm-7 small">
+              <div class="input-group input-group-sm">
+                  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                         [(ngModel)]="manor.realm">
+                </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4 small">Topology</div>
+          <div class="col-sm-7 small">
+              <div class="input-group input-group-sm">
+                  <select class="px-3" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.topology" (change)="onTopologySelect()">
+                    <option value="" disabled [ngValue]="null">--choose</option>
+                    <option *ngFor="let topography of topologyChoices()" [ngValue]="topography"
+                            [selected]="manor.topology === topography">{{topography}}
+                    </option>
+                  </select>
+                </div>
+          </div>
       </div>
 
-      <div class="input-group input-group-sm">
-        <div class="input-group-prepend">
-          <label class="input-group-text">Topology</label>
-        </div>
-        <select class="px-3" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.topology" (change)="onTopologySelect()">
-          <option value="" disabled [ngValue]="null">--choose</option>
-          <option *ngFor="let topography of topologyChoices()" [ngValue]="topography"
-                  [selected]="manor.topology === topography">{{topography}}
-          </option>
-        </select>
-      </div>
       <hr class="small">
 
-      <div class="input-group input-group-sm">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Gross Acres:</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
-               [(ngModel)]="manor.grossAcres">
+      <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4 small">Gross Acres</div>
+          <div class="col-sm-7 small">
+              <div class="input-group input-group-sm">
+                  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                         [(ngModel)]="manor.grossAcres">
+                </div>
+          </div>
       </div>
-      <div class="input-group input-group-sm">
-        <div class="input-group-prepend">
-          <span class="input-group-text"> - Woodland Acres</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
-        [(ngModel)]="manor.woodlandAcres" disabled>
+      <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4 small"> - Woodland Acres</div>
+          <div class="col-sm-7 small">
+              <div class="input-group input-group-sm">
+                  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                  [(ngModel)]="manor.woodlandAcres" disabled>
+                </div>
+          </div>
       </div>
-      <div class="input-group input-group-sm">
-        <div class="input-group-prepend">
-          <span class="input-group-text"> = Cleared Acres</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
-               [(ngModel)]="manor.clearedAcres">
+      <div class="row">
+          <div class="col-sm-4 col-md-4 col-lg-4 small"> = Cleared Acres</div>
+          <div class="col-sm-7 small">
+              <div class="input-group input-group-sm">
+                  <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                         [(ngModel)]="manor.clearedAcres">
+                </div>
+          </div>
       </div>
 
       <hr class="small">
 
       <div class=row>
-        <div class="col-sm-7 small">Labor Pool</div>
-        <div class="col-sm-3 small">{{manor.population.tenantLaborPool()}}</div>
+        <div class="col-sm-4 col-md-4 col-lg-4 small">Labor Pool</div>
+        <div class="col-sm-7 small">{{manor.population.tenantLaborPool()}}</div>
       </div>
       <div class=row>
-          <div class="col-sm-7 small">Labor Obligation</div>
-          <div class="col-sm-3 small">{{manor.population.tenantLaborDays()}}</div>
+          <div class="col-sm-4 col-md-4 col-lg-4 small">Labor Obligation</div>
+          <div class="col-sm-7 small">{{manor.population.tenantLaborDays()}}</div>
       </div>
 
       <hr class="small">
 
-      <div class="input-group input-group-sm">
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
-               [(ngModel)]="manor.landQuality">
-      </div>
-      <div class="input-group input-group-sm">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Fief Index</span>
+      <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4 small">Land Quality</div>
+        <div class="col-sm-7 small">
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                       [(ngModel)]="manor.landQuality">
+              </div>
         </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.fiefIndex" disabled>
       </div>
-      <div class="input-group input-group-sm">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Trade Index</span>
+      <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4 small">Fief Index</div>
+        <div class="col-sm-7 small">
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.fiefIndex" disabled>
+              </div>
         </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" disabled>
+      </div>
+      <div class="row">
+        <div class="col-sm-4 col-md-4 col-lg-4 small">Trade Index</div>
+        <div class="col-sm-7 small">
+
+      <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" disabled>
+        </div>
+        </div>
       </div>
 
     </div>
