@@ -44,8 +44,11 @@ export class TenantOfficerGenerator {
   private _selectSerfOfficer(o: Officer) {
     let selected = false;
     let tenants = this._serfOfficerPool();
-    if (o === Officer.Herder || o === Officer.Beadle) {
+    if (o === Officer.Herder || o === Officer.Beadle || o === Officer.Woodward) {
       tenants = tenants.filter(t => t.occupation !== TenantType.FISHERMAN);
+    }
+    if (o === Officer.Reeve) {
+      tenants = tenants.filter(t => t.occupation !== TenantType.FISHERMAN || TenantType.TRAPPER);
     }
     if (o === Officer.ForestWarden) {
       tenants = tenants.filter(t => t.occupation === TenantType.TRAPPER);

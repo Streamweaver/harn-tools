@@ -1,6 +1,6 @@
 import {NumberGenerator} from '../../../shared/generators/number-generator';
 import {Military} from '../models/military.models';
-import {IManor, ManorFactory} from '../models/manor.model';
+import {IManor, ManorFactory, Topology} from '../models/manor.model';
 import {Officer, TenantType} from '../models/tenant.model';
 import {TenantOfficerGenerator} from './tenant-officer.generator';
 
@@ -30,16 +30,20 @@ describe('Generator: Tenant Officers', () => {
   }
 
   function populateVillage() {
-    makeTenants(5, TenantType.COTTAR);
-    makeTenants(5, TenantType.HALFVILLEIN);
-    makeTenants(5, TenantType.SLAVE);
-    makeTenants(5, TenantType.VILLEIN);
-    makeTenants(5, TenantType.CRAFTSMAN);
-    makeTenants(5, TenantType.FARMER);
+    makeTenants(15, TenantType.COTTAR);
+    makeTenants(15, TenantType.HALFVILLEIN);
+    makeTenants(15, TenantType.SLAVE);
+    makeTenants(15, TenantType.VILLEIN);
+    makeTenants(15, TenantType.CRAFTSMAN);
+    makeTenants(15, TenantType.FARMER);
+    makeTenants(15, TenantType.FISHERMAN);
+    makeTenants(15, TenantType.TRAPPER);
     for (const tenant of  manor.population.tenants) {
       if (tenant.occupation === TenantType.COTTAR
         || tenant.occupation === TenantType.HALFVILLEIN
-        || tenant.occupation === TenantType.VILLEIN) {
+        || tenant.occupation === TenantType.VILLEIN
+        || tenant.occupation === TenantType.FISHERMAN
+        || tenant.occupation === TenantType.TRAPPER) {
         tenant.serf_acres = dice.rollTotal(6, 4) * 5;
         tenant.labor_days = tenant.serf_acres * 5;
         tenant.fees = 60;
@@ -78,6 +82,7 @@ describe('Generator: Tenant Officers', () => {
     for (const tenant of  manor.population.tenants) {
       if (tenant.office === Officer.Reeve) {
         reeveCount++;
+        expect(tenant.labor_days).toBe(0);
       }
     }
     expect(reeveCount).toBe(1);
@@ -91,6 +96,7 @@ describe('Generator: Tenant Officers', () => {
       if (tenant.office === Officer.Woodward) {
         officerCount++;
         expect(tenant.labor_days).toBe(0);
+        expect(tenant.occupation).not.toBe(TenantType.FISHERMAN);
       }
     }
     expect(officerCount).toBe(1);
@@ -104,6 +110,7 @@ describe('Generator: Tenant Officers', () => {
       if (tenant.office === Officer.Herder) {
         officerCount++;
         expect(tenant.labor_days).toBe(0);
+        expect(tenant.occupation).not.toBe(TenantType.FISHERMAN);
       }
     }
     expect(officerCount).toBe(1);
@@ -117,6 +124,38 @@ describe('Generator: Tenant Officers', () => {
       if (tenant.office === Officer.Beadle) {
         officerCount++;
         expect(tenant.labor_days).toBe(0);
+        expect(tenant.occupation).not.toBe(TenantType.FISHERMAN);
+        expect(tenant.occupation).not.toBe(TenantType.TRAPPER);
+      }
+    }
+    expect(officerCount).toBe(1);
+  });
+
+  it('should assign Fish Warden properly', function () {
+    manor.topology = Topology.Coastal;
+    populateVillage();
+    generator.electOfficers(manor);
+    let officerCount = 0;
+    for (const tenant of  manor.population.tenants) {
+      if (tenant.office === Officer.FishWarden) {
+        officerCount++;
+        expect(tenant.labor_days).toBe(0);
+        expect(tenant.occupation).toBe(TenantType.FISHERMAN);
+      }
+    }
+    expect(officerCount).toBe(1);
+  });
+
+  it('should assign Forest Warden properly', function () {
+    manor.topology = Topology.Forest;
+    populateVillage();
+    generator.electOfficers(manor);
+    let officerCount = 0;
+    for (const tenant of  manor.population.tenants) {
+      if (tenant.office === Officer.ForestWarden) {
+        officerCount++;
+        expect(tenant.labor_days).toBe(0);
+        expect(tenant.occupation).toBe(TenantType.TRAPPER);
       }
     }
     expect(officerCount).toBe(1);
