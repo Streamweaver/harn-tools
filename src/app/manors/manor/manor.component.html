@@ -80,7 +80,8 @@
         <div class="input-group-prepend">
           <label class="input-group-text">Topology</label>
         </div>
-        <select class="px-3" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.topology">
+        <select class="px-3" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.topology" (change)="onTopologySelect()">
+          <option value="" disabled [ngValue]="null">--choose</option>
           <option *ngFor="let topography of topologyChoices()" [ngValue]="topography"
                   [selected]="manor.topology === topography">{{topography}}
           </option>
@@ -99,7 +100,8 @@
         <div class="input-group-prepend">
           <span class="input-group-text"> - Woodland Acres</span>
         </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" disabled>
+        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+        [(ngModel)]="manor.woodlandAcres" disabled>
       </div>
       <div class="input-group input-group-sm">
         <div class="input-group-prepend">

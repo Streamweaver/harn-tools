@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import {CraftsmanGenerator} from '../shared/generators/craftsman-generator';
 import {TenantGenerator} from '../shared/generators/tenant-generator';
 import {YeomanGenerator} from '../shared/generators/yeoman-generator';
-import { IManor, Topology } from '../shared/models/manor.model';
+import { IManor, Topology, TopologyEffects } from '../shared/models/manor.model';
 import { ManorService } from '../shared/manor.service';
 import { TenantOfficerGenerator } from '../shared/generators/tenant-officer.generator';
+import { NumberGenerator } from '../../shared/generators/number-generator';
 
 @Component({
   selector: 'app-manor',
@@ -13,6 +14,7 @@ import { TenantOfficerGenerator } from '../shared/generators/tenant-officer.gene
 })
 export class ManorComponent implements OnInit {
   manor: IManor;
+  dice: NumberGenerator;
   showGenerationInput: boolean;
   private _tg: TenantGenerator;
   private _cg: CraftsmanGenerator;
@@ -23,6 +25,7 @@ export class ManorComponent implements OnInit {
 
   ngOnInit() {
     this.manor = this.manorService.getManor();
+    this.dice = new NumberGenerator();
     this.showGenerationInput = true;
     this._tg = new TenantGenerator();
     this._cg = new CraftsmanGenerator();
@@ -33,6 +36,12 @@ export class ManorComponent implements OnInit {
   private _reset() {
     this.manorService.resetManor();
     this.showGenerationInput = true;
+  }
+
+  onTopologySelect() {
+      const woodlandRatio = TopologyEffects[this.manor.topology].woods  + this.dice.rollDie(10) - 5;
+      this.manor.woodlandAcres = Math.floor(this.manor.grossAcres * woodlandRatio / 100);
+      this.manor.clearedAcres = this.manor.grossAcres - this.manor.woodlandAcres;
   }
 
   onResetClick() {

@@ -9,6 +9,7 @@ export class IManor {
   realm: string;
   topology: Topology;
   grossAcres: number;
+  woodlandAcres: number;
   clearedAcres: number;
   landQuality: number;
   population: Population;
@@ -27,17 +28,41 @@ export class ManorFactory {
 }
 
 export enum Topology {
-  Lowland = 'Lowlands',
-  Highland = 'Highlands',
+  Lowlands = 'Lowlands',
+  Highlands = 'Highlands',
   Coastal = 'Coastal',
   Forest = 'Forest',
 }
+
+export const TopologyEffects = {
+  [Topology.Lowlands]: {
+    woods: 10,
+    crops: 45,
+    pasture: 45
+  },
+  [Topology.Highlands]: {
+    woods: 20,
+    crops: 30,
+    pasture: 50
+  },
+  [Topology.Coastal]: {
+    woods: 10,
+    crops: 40,
+    pasture: 50
+  },
+  [Topology.Forest]: {
+    woods: 50,
+    crops: 25,
+    pasture: 25
+  },
+};
 
 export class Manor implements IManor {
   name: string;
   realm: string;
   topology: Topology;
   grossAcres: number;
+  woodlandAcres: number;
   clearedAcres: number;
   landQuality: number;
   population: Population;
@@ -54,6 +79,7 @@ export class Manor implements IManor {
     this.realm = null;
     this.topology = null;
     this.grossAcres = 2000;
+    this.woodlandAcres = 1000;
     this.clearedAcres = 1000;
     this.landQuality = 1.0;
     this.population = new Population();
