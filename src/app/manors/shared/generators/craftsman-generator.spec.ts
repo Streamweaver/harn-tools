@@ -1,12 +1,13 @@
 import {IManor, ManorFactory, Topology} from '../models/manor.model';
-import {Craftsman, craftsmanFees, CraftsmanGenerator} from './craftsman-generator';
-import {TenantClass} from './tenant-generator';
+import {CraftsmanGenerator} from './craftsman-generator';
+import {TenantType} from '../models/tenant.model';
+import {Craftsman, craftsmanFees} from '../models/tenant.model';
 
 describe('Generator: Craftsman', () => {
   let generator: CraftsmanGenerator;
   let manor: IManor;
 
-  function makeTenants(n: number, tc: TenantClass) {
+  function makeTenants(n: number, tc: TenantType) {
     for (let i = 0; i < n; i++) {
        manor.population.tenants.push({
         id:  manor.population.tenants.length,
@@ -41,7 +42,7 @@ describe('Generator: Craftsman', () => {
   });
 
   it('should have no unassigned craftsmen', function () {
-    makeTenants(10, TenantClass.CRAFTSMAN);
+    makeTenants(10, TenantType.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     for (const tenant of  manor.population.tenants) {
       expect(tenant.craft).not.toBeNull();
@@ -49,10 +50,10 @@ describe('Generator: Craftsman', () => {
   });
 
   it('should not assign a craft to non-craftsmen', function () {
-    makeTenants(10, TenantClass.VILLEIN);
+    makeTenants(10, TenantType.VILLEIN);
     generator.assignCraftsmen(manor);
     for (const tenant of  manor.population.tenants) {
-      if (tenant.occupation === TenantClass.VILLEIN) {
+      if (tenant.occupation === TenantType.VILLEIN) {
         expect(tenant.craft).toBeNull();
       }
     }
@@ -60,7 +61,7 @@ describe('Generator: Craftsman', () => {
 
   it('should not assign shipwright to non-coastal manors', function () {
     manor.topology = Topology.Lowland;
-    makeTenants(15, TenantClass.CRAFTSMAN);
+    makeTenants(15, TenantType.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     for (const tenant of  manor.population.tenants) {
       expect(tenant.craft).not.toBe(Craftsman.Shipwright);
@@ -69,7 +70,7 @@ describe('Generator: Craftsman', () => {
 
   it('should assign shipwright to coastal manors', function () {
     manor.topology = Topology.Coastal;
-    makeTenants(15, TenantClass.CRAFTSMAN);
+    makeTenants(15, TenantType.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     let shipwrightCount = 0;
     for (const tenant of  manor.population.tenants) {
@@ -79,7 +80,7 @@ describe('Generator: Craftsman', () => {
   });
 
   it('should NOT assign GM Determine craftsman if under 15', function () {
-    makeTenants(14, TenantClass.CRAFTSMAN);
+    makeTenants(14, TenantType.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     let gmdCount = 0;
     for (const tenant of  manor.population.tenants) {
@@ -89,7 +90,7 @@ describe('Generator: Craftsman', () => {
   });
 
   it('should assign crafts only once and then all become GM Determine', function () {
-    makeTenants(150, TenantClass.CRAFTSMAN);
+    makeTenants(150, TenantType.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     let gmdCount = 0;
     for (const tenant of  manor.population.tenants) {
@@ -99,21 +100,21 @@ describe('Generator: Craftsman', () => {
   });
 
   it('should assess appropriate fees', function () {
-    makeTenants(10, TenantClass.CRAFTSMAN);
-    makeTenants(30, TenantClass.VILLEIN);
+    makeTenants(10, TenantType.CRAFTSMAN);
+    makeTenants(30, TenantType.VILLEIN);
     generator.assignCraftsmen(manor);
     for (const tenant of  manor.population.tenants) {
-      if (tenant.occupation !== TenantClass.CRAFTSMAN) {
+      if (tenant.occupation !== TenantType.CRAFTSMAN) {
         expect(tenant.fees).toBe(0);
       }
-      if (tenant.occupation === TenantClass.CRAFTSMAN) {
+      if (tenant.occupation === TenantType.CRAFTSMAN) {
         expect(tenant.fees).toBe(craftsmanFees[tenant.craft]);
       }
     }
   });
 
   it('should NOT reassign existing crafts', function () {
-    makeTenants(10, TenantClass.CRAFTSMAN);
+    makeTenants(10, TenantType.CRAFTSMAN);
     for (const tenant of  manor.population.tenants) {
       tenant.craft = Craftsman.Metalsmith;
     }
@@ -124,7 +125,7 @@ describe('Generator: Craftsman', () => {
   });
 
   it('should add notes for missing critical craftsmen', function () {
-    makeTenants(10, TenantClass.CRAFTSMAN);
+    makeTenants(10, TenantType.CRAFTSMAN);
     for (const tenant of  manor.population.tenants) {
       tenant.craft = Craftsman.Armourer;
     }

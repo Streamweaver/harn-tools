@@ -1,7 +1,7 @@
 import {NumberGenerator} from '../../../shared/generators/number-generator';
 import {IManor} from '../models/manor.model';
 import {Military, MilitaryData} from '../models/military.models';
-import {TenantClass} from './tenant-generator';
+import {TenantType} from '../models/tenant.model';
 import * as rwc from 'random-weighted-choice';
 
 /**
@@ -74,7 +74,7 @@ export class YeomanGenerator {
   private _recruitableFamers(): boolean {
     let recruitableFamers = false;
     for (const tenant of this._manor.population.tenants) {
-      if (tenant.occupation === TenantClass.FARMER && tenant.military === null) {
+      if (tenant.occupation === TenantType.FARMER && tenant.military === null) {
         recruitableFamers = true;
       }
     }
@@ -83,8 +83,8 @@ export class YeomanGenerator {
 
   private _draftFarmer(rank: Military) {
     for (const tenant of this._manor.population.tenants) {
-      if (tenant.occupation === TenantClass.FARMER && tenant.military === null) {
-        tenant.military = rank;
+      if (tenant.occupation === TenantType.FARMER && tenant.military === null) {
+        tenant.military = rank as string;
         break;
       }
     }

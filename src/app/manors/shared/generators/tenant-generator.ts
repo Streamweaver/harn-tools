@@ -1,37 +1,16 @@
 import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { IManor } from '../models/manor.model';
-import { ITenant } from '../models/tenant.model';
+import { IManor, Topology } from '../models/manor.model';
+import { ITenant, TenantType } from '../models/tenant.model';
 import * as rwc from 'random-weighted-choice';
 
-export enum TenantClass {
-  CRAFTSMAN = 'Craftsman', // Guilded Freeman
-  FARMER = 'Farmer', // Unguilded Freeman
-  VILLEIN = 'Villein', // Serf
-  HALFVILLEIN = 'Half-Villein', // Serf
-  COTTAR = 'Cottar', // Serf
-  SLAVE = 'Slave/Thrall', // Slave
-  PRIEST = 'Priest'
-}
-
 const CLASSTABLE = [
-  {weight: 10, id: TenantClass.CRAFTSMAN},
-  {weight: 15, id: TenantClass.FARMER},
-  {weight: 35, id: TenantClass.VILLEIN},
-  {weight: 20, id: TenantClass.HALFVILLEIN},
-  {weight: 10, id: TenantClass.COTTAR},
-  {weight: 10, id: TenantClass.SLAVE}
+  {weight: 10, id: TenantType.CRAFTSMAN},
+  {weight: 15, id: TenantType.FARMER},
+  {weight: 35, id: TenantType.VILLEIN},
+  {weight: 20, id: TenantType.HALFVILLEIN},
+  {weight: 10, id: TenantType.COTTAR},
+  {weight: 10, id: TenantType.SLAVE}
 ];
-
-const FREEMEN = [TenantClass.CRAFTSMAN, TenantClass.FARMER];
-
-export function isFreeman(t: ITenant): boolean {
-  for (const tc in FREEMEN) {
-    if (tc === t.occupation) {
-      return true;
-    }
-  }
-  return false;
-}
 
 export class TenantGenerator {
   private _dice = new NumberGenerator();
@@ -39,6 +18,11 @@ export class TenantGenerator {
 
   constructor() {}
 
+  /**
+   * Begins the generation process for manor passed.
+   *
+   * @param {IManor} manor
+   */
   generateTenants(manor: IManor) {
     this._manor = manor;
     const tenantHouseholds = this._manor.clearedAcres / 40 * this._manor.landQuality;
@@ -47,6 +31,12 @@ export class TenantGenerator {
     }
   }
 
+  /**
+   * Yields a single tenant for addition to the manor.
+   *
+   * @returns {ITenant}
+   * @private
+   */
   private _generateTenant(): ITenant {
     const tenant: ITenant = {
       id: this._manor.population.tenants.length,
@@ -69,6 +59,7 @@ export class TenantGenerator {
     this._generateTenantSerfAcres(tenant);
     this._generateTenantFreeAcres(tenant);
     this._assessLaborDays(tenant);
+    this._assignSpecialTrade(tenant);
     this._assessRent(tenant);
     this._assessFees(tenant);
     return tenant;
@@ -76,17 +67,17 @@ export class TenantGenerator {
 
   private _generateTenantClass(t: ITenant) {
     let tClass = rwc(CLASSTABLE);
-    if (!this._manor.isSlaveState && tClass === TenantClass.SLAVE) {
-      tClass = TenantClass.COTTAR;
+    if (!this._manor.isSlaveState && tClass === TenantType.SLAVE) {
+      tClass = TenantType.COTTAR;
     }
     t.occupation = tClass;
   }
 
   private _generateTenantSize(t: ITenant) {
     let size = this._dice.rollDie(6);
-    if (t.occupation === TenantClass.VILLEIN) {
+    if (t.occupation === TenantType.VILLEIN) {
       size = size + 2;
-    } else if (t.occupation !== TenantClass.COTTAR) {
+    } else if (t.occupation !== TenantType.COTTAR) {
       size = size + 1;
     }
     t.size = size;
@@ -98,13 +89,13 @@ export class TenantGenerator {
 
   private _generateTenantSerfAcres(t: ITenant) {
     switch (t.occupation) {
-      case TenantClass.VILLEIN:
+      case TenantType.VILLEIN:
         t.serf_acres =  this._dice.rollDie(20) + 20;
         break;
-      case TenantClass.HALFVILLEIN:
+      case TenantType.HALFVILLEIN:
         t.serf_acres = this._dice.rollDie(10) + 10;
         break;
-      case TenantClass.COTTAR:
+      case TenantType.COTTAR:
         t.serf_acres = this._dice.rollDie(6) - 1;
         break;
       default:
@@ -115,13 +106,13 @@ export class TenantGenerator {
 
   private _generateTenantFreeAcres(t: ITenant) {
     switch (t.occupation) {
-      case TenantClass.CRAFTSMAN:
+      case TenantType.CRAFTSMAN:
         t.free_acres = this._dice.rollDie(6) * 5;
         break;
-      case TenantClass.FARMER:
+      case TenantType.FARMER:
         t.free_acres = this._dice.rollDie(6) * 5;
         break;
-      case TenantClass.VILLEIN:
+      case TenantType.VILLEIN:
         t.free_acres = (this._dice.rollDie(25) % 5 === 0) ? this._dice.rollDie(6) * 5 : 0;
         break;
       default:
@@ -129,16 +120,53 @@ export class TenantGenerator {
     }
   }
 
+  /**
+   * Assigns fisherman and trappers in coastal and woodland manors.
+   *
+   * @param {ITenant} t
+   * @private
+   */
+  private _assignSpecialTrade(t: ITenant): void {
+    if (t.occupation === TenantType.CRAFTSMAN || t.occupation === TenantType.PRIEST) {
+      return;
+    }
+    if (t.free_acres + t.serf_acres > 39) {
+      return;
+    }
+    const ta = t.free_acres + t.serf_acres;
+    const chanceMod = ta >= 20 ? Math.floor((ta - 15) / 5) : 0;
+    if (this._dice.rollTotal(6, 3) - chanceMod > 10) {
+      if (this._manor.topology === Topology.Coastal) {
+        t.occupation = TenantType.FISHERMAN;
+      } else if (this._manor.topology === Topology.Forest) {
+        t.occupation = TenantType.TRAPPER;
+      }
+    }
+  }
+
   private _assessRent(t: ITenant) {
-    const base = (t.occupation === TenantClass.SLAVE) ? 0 : 60;
+    const base = (t.occupation === TenantType.SLAVE) ? 0 : 60;
     t.rent = base + 6 * t.free_acres;
   }
 
   private _assessFees(t: ITenant) {
-    t.fees = (t.occupation === TenantClass.SLAVE) ? 0 : 6 + t.free_acres + t.serf_acres;
+    if (t.occupation === TenantType.SLAVE) {
+      t.fees = 0;
+      return;
+    }
+    t.fees = 6 + t.free_acres + t.serf_acres;
+    if (t.occupation === TenantType.FISHERMAN) {
+      const activityRate = 40 - t.serf_acres - t.free_acres;
+      t.fees += 24;
+      t.notes.push('Fishing fee 24d added, ' + activityRate + '(2d6)d/yr');
+    } else if (t.occupation === TenantType.TRAPPER) {
+      const activityRate = 40 - t.serf_acres - t.free_acres;
+      t.fees += 24;
+      t.notes.push('Trapper fee 24d added, ' + activityRate + '(2d6)d/yr');
+    }
   }
 
   private _assessLaborDays(t: ITenant) {
-    t.labor_days = (t.occupation === TenantClass.SLAVE) ? 200 * t.size : 4 * t.serf_acres;
+    t.labor_days = (t.occupation === TenantType.SLAVE) ? 200 * t.size : 4 * t.serf_acres;
   }
 }

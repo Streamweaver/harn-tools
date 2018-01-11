@@ -1,47 +1,9 @@
 import * as rwc from 'random-weighted-choice';
 import {IManor, Topology} from '../models/manor.model';
-import {ITenant} from '../models/tenant.model';
-import {TenantClass} from './tenant-generator';
+import {Craftsman, craftsmanFees, ITenant} from '../models/tenant.model';
+import {TenantType} from '../models/tenant.model';
 
-export enum Craftsman {
-  Miller = 'Miller',
-  Metalsmith = 'Metalsmith',
-  Woodcrafter = 'Woodcrafter',
-  Salter = 'Salter',
-  Hideworker = 'Hideworker',
-  Timberwright = 'Timberwright',
-  Charcoaler = 'Charcoaler',
-  Shipwright = 'Shipwright',
-  Innkeeper = 'Innkeeper',
-  Ostler = 'Ostler',
-  Potter = 'Potter',
-  Apothecary = 'Apothecary',
-  Glassworker = 'Glassworker',
-  Weaponsmith = 'Weaponsmith',
-  Armourer = 'Armourer',
-  GMDetermine = 'GM Determine'
-}
-
-export const craftsmanFees = {
-  [Craftsman.Miller]: 240,
-  [Craftsman.Metalsmith]: 144,
-  [Craftsman.Woodcrafter]: 120,
-  [Craftsman.Salter]: 120,
-  [Craftsman.Hideworker]: 144,
-  [Craftsman.Timberwright]: 216,
-  [Craftsman.Charcoaler]: 180,
-  [Craftsman.Shipwright]: 144,
-  [Craftsman.Innkeeper]: 216,
-  [Craftsman.Ostler]: 180,
-  [Craftsman.Potter]: 120,
-  [Craftsman.Apothecary]: 120,
-  [Craftsman.Glassworker]: 120,
-  [Craftsman.Weaponsmith]: 220,
-  [Craftsman.Armourer]: 220,
-  [Craftsman.GMDetermine]: 0
-};
-
-const craftsmanTable = [
+export const craftsmanTable = [
   {weight: 25, id: Craftsman.Miller},
   {weight: 20, id: Craftsman.Metalsmith},
   {weight: 15, id: Craftsman.Woodcrafter},
@@ -68,7 +30,7 @@ export class CraftsmanGenerator {
     this._manor = manor;
     let craft: Craftsman;
     for (const tenant of this._manor.population.tenants) {
-      if (tenant.occupation === TenantClass.CRAFTSMAN && tenant.craft === null) {
+      if (tenant.occupation === TenantType.CRAFTSMAN && tenant.craft === null) {
         craft = this.getCraft();
         if (!this._exists(craft)) {
           tenant.craft = craft;

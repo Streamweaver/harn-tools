@@ -1,7 +1,8 @@
 import {IPopulation, Population} from './population.model';
-import {TenantClass} from '../generators/tenant-generator';
-import {Officer} from '../generators/tenant-officer.generator';
-import {craftsmanFees, Craftsman} from '../generators/craftsman-generator';
+import {TenantType} from './tenant.model';
+import {Officer} from './tenant.model';
+import {craftsmanFees} from './tenant.model';
+import {Craftsman} from './tenant.model';
 
 export class IManor {
   name: string;
@@ -20,7 +21,7 @@ export class IManor {
 }
 
 export class ManorFactory {
-  static getManor(): IManor {
+  static getManor(): Manor {
     return new Manor();
   }
 }
@@ -32,7 +33,7 @@ export enum Topology {
   Forest = 'Forest',
 }
 
-class Manor implements IManor {
+export class Manor implements IManor {
   name: string;
   realm: string;
   topology: Topology;
@@ -63,38 +64,5 @@ class Manor implements IManor {
     this.foAcresPerHH = 1500;
     this.foAcresPerLF = 600;
     this.Notes = [];
-  }
-
-  setTenantFees() {
-      for (const t of this.population.tenants) { // TODO check these base amounts.
-        t.fees = (t.occupation === TenantClass.SLAVE) ? 0 : 6 + t.free_acres + t.serf_acres; // from tenant gen
-        if (t.craft !== null) {
-          t.fees += craftsmanFees[t.craft];
-        }
-        if (t.craft === Craftsman.GMDetermine) { // from craftsman generator
-          t.notes.push('Guild fees not set yet'); // TODO find way to make note idempotent
-        } else {
-          t.notes.push('Guild fees of ' + craftsmanFees[t.craft] + 'd included');
-        }
-        if (t.military !== null) {
-          t.fees = 60 + t.free_acres;
-        }
-        if(t.office === Officer.Glebe) {
-          t.fees = 0;
-        }
-      }
-  }
-
-  setTenantRent() {
-    for (const tenant of this.population.tenants) {
-      const base = (tenant.occupation === TenantClass.SLAVE) ? 0 : this.baseRent;
-      tenant.rent = base + this.freeRent * tenant.free_acres;
-      if (tenant.military !== null) {  // Adjust for military.
-        tenant.rent = 60 + tenant.free_acres;
-      }
-      if (tenant.office === Officer.Glebe) { // Glebe's pay no rent.
-        tenant.rent = 0;
-      }
-    }
   }
 }

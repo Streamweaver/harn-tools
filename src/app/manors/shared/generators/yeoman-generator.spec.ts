@@ -1,17 +1,17 @@
 import {IManor, ManorFactory} from '../models/manor.model';
 import {MilitaryData} from '../models/military.models';
-import {TenantClass} from './tenant-generator';
+import {TenantType} from '../models/tenant.model';
 import {YeomanGenerator, MilitaryAcres} from './yeoman-generator';
 
 describe('Generator: Yeoman', () => {
   let generator: YeomanGenerator;
   let manor: IManor;
 
-  function makeTenants(n: number, tc: TenantClass) {
+  function makeTenants(n: number, tc: TenantType) {
     for (let i = 0; i < n; i++) {
        manor.population.tenants.push({
         id:  manor.population.tenants.length,
-        occupation: tc,
+        occupation: tc as string,
         craft: null,
         military: null,
         office: null,
@@ -62,20 +62,20 @@ describe('Generator: Yeoman', () => {
   });
 
   it('should NOT recruit non-farmers', function () {
-    makeTenants(5, TenantClass.FARMER);
-    makeTenants(5, TenantClass.COTTAR);
+    makeTenants(5, TenantType.FARMER);
+    makeTenants(5, TenantType.COTTAR);
     manor.foAcresPerHH = 0;
     manor.foAcresPerLF = 500;
     generator.recruitYeoman(manor);
     for (const tenant of  manor.population.tenants) {
-      if (tenant.occupation === TenantClass.COTTAR) {
+      if (tenant.occupation === TenantType.COTTAR) {
         expect(tenant.military).toBeNull();
       }
     }
   });
 
   it('should recruit no more than the feudal obligation', function () {
-    makeTenants(100, TenantClass.FARMER);
+    makeTenants(100, TenantType.FARMER);
     manor.grossAcres = 2000;
     manor.foAcresPerHH = 0;
     manor.foAcresPerLF = 500;
@@ -90,13 +90,13 @@ describe('Generator: Yeoman', () => {
   });
 
   it('should NOT fail if there are no farmers', function () {
-    makeTenants(200, TenantClass.COTTAR);
+    makeTenants(200, TenantType.COTTAR);
     generator.recruitYeoman(manor);
     expect(generator).toBeTruthy();
   });
 
   it('should generate the proper range of acres for military classes', function () {
-    makeTenants(100, TenantClass.FARMER);
+    makeTenants(100, TenantType.FARMER);
     manor.grossAcres = 2000;
     manor.foAcresPerHH = 0;
     manor.foAcresPerLF = 20;
@@ -111,7 +111,7 @@ describe('Generator: Yeoman', () => {
   });
 
   it('should assess correct rent for military classes', function () {
-    makeTenants(100, TenantClass.FARMER);
+    makeTenants(100, TenantType.FARMER);
     manor.grossAcres = 2000;
     manor.foAcresPerHH = 0;
     manor.foAcresPerLF = 20;
@@ -124,7 +124,7 @@ describe('Generator: Yeoman', () => {
   });
 
   it('should assess correct fees for military classes', function () {
-    makeTenants(100, TenantClass.FARMER);
+    makeTenants(100, TenantType.FARMER);
     manor.grossAcres = 2000;
     manor.foAcresPerHH = 0;
     manor.foAcresPerLF = 20;
@@ -137,8 +137,8 @@ describe('Generator: Yeoman', () => {
   });
 
   it('should add a note to tenant about their military service', function () {
-    makeTenants(5, TenantClass.FARMER);
-    makeTenants(5, TenantClass.COTTAR);
+    makeTenants(5, TenantType.FARMER);
+    makeTenants(5, TenantType.COTTAR);
     manor.grossAcres = 2000;
     manor.foAcresPerHH = 0;
     manor.foAcresPerLF = 500;

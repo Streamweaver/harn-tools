@@ -1,15 +1,15 @@
 import {NumberGenerator} from '../../../shared/generators/number-generator';
 import {Military} from '../models/military.models';
 import {IManor, ManorFactory} from '../models/manor.model';
-import {TenantClass} from './tenant-generator';
-import {Officer, TenantOfficerGenerator} from './tenant-officer.generator';
+import {Officer, TenantType} from '../models/tenant.model';
+import {TenantOfficerGenerator} from './tenant-officer.generator';
 
 describe('Generator: Tenant Officers', () => {
   let generator: TenantOfficerGenerator;
   let manor: IManor;
   let dice: NumberGenerator;
 
-  function makeTenants(n: number, tc: TenantClass) {
+  function makeTenants(n: number, tc: TenantType) {
     for (let i = 0; i < n; i++) {
        manor.population.tenants.push({
         id:  manor.population.tenants.length,
@@ -30,24 +30,26 @@ describe('Generator: Tenant Officers', () => {
   }
 
   function populateVillage() {
-    makeTenants(5, TenantClass.COTTAR);
-    makeTenants(5, TenantClass.HALFVILLEIN);
-    makeTenants(5, TenantClass.SLAVE);
-    makeTenants(5, TenantClass.VILLEIN);
-    makeTenants(5, TenantClass.CRAFTSMAN);
-    makeTenants(5, TenantClass.FARMER);
+    makeTenants(5, TenantType.COTTAR);
+    makeTenants(5, TenantType.HALFVILLEIN);
+    makeTenants(5, TenantType.SLAVE);
+    makeTenants(5, TenantType.VILLEIN);
+    makeTenants(5, TenantType.CRAFTSMAN);
+    makeTenants(5, TenantType.FARMER);
     for (const tenant of  manor.population.tenants) {
-      if (tenant.occupation === TenantClass.COTTAR || tenant.occupation === TenantClass.HALFVILLEIN || tenant.occupation === TenantClass.VILLEIN) {
+      if (tenant.occupation === TenantType.COTTAR
+        || tenant.occupation === TenantType.HALFVILLEIN
+        || tenant.occupation === TenantType.VILLEIN) {
         tenant.serf_acres = dice.rollTotal(6, 4) * 5;
         tenant.labor_days = tenant.serf_acres * 5;
         tenant.fees = 60;
         tenant.rent = 60;
       }
-      if (tenant.occupation === TenantClass.CRAFTSMAN || tenant.occupation === TenantClass.FARMER) {
+      if (tenant.occupation === TenantType.CRAFTSMAN || tenant.occupation === TenantType.FARMER) {
         tenant.free_acres = dice.rollTotal(6, 4) * 5;
         tenant.fees = 60;
         tenant.rent = 60;
-        if (dice.rollDie(100) < 51 && tenant.occupation === TenantClass.FARMER) {
+        if (dice.rollDie(100) < 51 && tenant.occupation === TenantType.FARMER) {
           tenant.military = Military.LF;
         }
       }
@@ -124,7 +126,7 @@ describe('Generator: Tenant Officers', () => {
     populateVillage();
     generator.electOfficers(manor);
     for (const tenant of  manor.population.tenants) {
-      if (tenant.occupation === TenantClass.CRAFTSMAN) {
+      if (tenant.occupation === TenantType.CRAFTSMAN) {
         expect(tenant.office).toBeNull();
       }
     }
@@ -134,7 +136,7 @@ describe('Generator: Tenant Officers', () => {
     populateVillage();
     generator.electOfficers(manor);
     for (const tenant of  manor.population.tenants) {
-      if (tenant.occupation === TenantClass.PRIEST) {
+      if (tenant.occupation === TenantType.PRIEST) {
         expect(tenant.military).toBeNull();
         expect(tenant.craft).toBeNull();
         expect(tenant.office).toBe(Officer.Glebe);

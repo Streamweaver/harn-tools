@@ -1,5 +1,5 @@
 import {ITenant} from './tenant.model';
-import {Officer} from '../generators/tenant-officer.generator';
+import {Officer} from './tenant.model';
 
 export interface IPopulation {
   tenants: ITenant[];
