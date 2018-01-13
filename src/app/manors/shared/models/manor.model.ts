@@ -1,9 +1,9 @@
-import {IPopulation, Population} from './population.model';
-import {TenantType} from './tenant.model';
-import {Officer} from './tenant.model';
-import {craftsmanFees} from './tenant.model';
-import {Craftsman} from './tenant.model';
-import {NumberGenerator} from '../../../shared/generators/number-generator';
+import { IPopulation, Population } from './population.model';
+import { TenantType } from './tenant.model';
+import { Officer } from './tenant.model';
+import { craftsmanFees } from './tenant.model';
+import { Craftsman } from './tenant.model';
+import { NumberGenerator } from '../../../shared/generators/number-generator';
 
 export class IManor {
   name: string;
@@ -22,6 +22,7 @@ export class IManor {
   freeRent: number;
   serfLabor: number;
   isSlaveState: boolean;
+  isBailiffRun: boolean;
   foAcresPerHH: number;
   foAcresPerLF: number;
   Notes: string[];
@@ -60,7 +61,7 @@ export const TopologyEffects = {
     woods: 50,
     crops: 25,
     pasture: 25
-  },
+  }
 };
 
 export class Manor implements IManor {
@@ -81,6 +82,7 @@ export class Manor implements IManor {
   baseRent: number;
   serfLabor: number;
   isSlaveState: boolean;
+  isBailiffRun: boolean;
   foAcresPerHH: number;
   foAcresPerLF: number;
   Notes: string[];
@@ -104,6 +106,7 @@ export class Manor implements IManor {
     this.baseRent = 60;
     this.serfLabor = 4;
     this.isSlaveState = false;
+    this.isBailiffRun = false;
     this.foAcresPerHH = 1500;
     this.foAcresPerLF = 600;
     this.Notes = [];
@@ -129,6 +132,8 @@ export class Manor implements IManor {
    * for the effects of war, floods, etc.
    */
   setFiefIndex() {
-      this.fiefIndex = parseFloat((this.dice.rollTotal(6, 2) * 0.05 + 0.65).toFixed(2));
+    this.fiefIndex = parseFloat(
+      (this.dice.rollTotal(6, 2) * 0.05 + 0.65).toFixed(2)
+    );
   }
 }

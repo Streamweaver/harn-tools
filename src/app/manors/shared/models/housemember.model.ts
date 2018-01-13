@@ -1,8 +1,8 @@
 export interface IHouseholdMember {
+  id: number;
   title: string;
   ml: number;
   each: number;
   count: number;
-  total: number;
   loyalty: number;
 }

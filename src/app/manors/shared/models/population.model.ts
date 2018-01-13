@@ -92,7 +92,7 @@ export class Population implements IPopulation {
   householdTotal(): number {
     let total = 0;
     for (const member of this.household) {
-      total += member.total;
+      total += member.each * member.count;
     }
     return total;
   }

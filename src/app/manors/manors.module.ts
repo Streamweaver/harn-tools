@@ -7,6 +7,7 @@ import { ManorComponent } from './manor/manor.component';
 import { ManorService } from './shared/manor.service';
 import { TenantListComponent } from './tenant-list/tenant-list.component';
 import {TenantComponent} from './tenant/tenant.component';
+import { HouseholdListComponent } from './household-list/household-list.component';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import {TenantComponent} from './tenant/tenant.component';
     FormsModule
   ],
   providers: [ManorService],
-  declarations: [ManorComponent, TenantListComponent, TenantComponent]
+  declarations: [ManorComponent, TenantListComponent, TenantComponent, HouseholdListComponent]
 })
 export class ManorsModule { }
