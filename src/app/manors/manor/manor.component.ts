@@ -44,6 +44,24 @@ export class ManorComponent implements OnInit {
       this.manor.clearedAcres = this.manor.grossAcres - this.manor.woodlandAcres;
   }
 
+  /**
+   * When gross acres is changed it recalculates cleared acres and woodland acres to the same percent.
+   */
+  onGrossAcresChange() {
+    const oldTotal = this.manor.woodlandAcres + this.manor.clearedAcres;
+    const woodlandPercent = this.manor.woodlandAcres / oldTotal;
+    this.manor.woodlandAcres = Math.floor(this.manor.grossAcres * woodlandPercent);
+    this.manor.clearedAcres = this.manor.grossAcres - this.manor.woodlandAcres;
+  }
+
+  onWoodlandAcresChange() {
+    this.manor.clearedAcres = this.manor.grossAcres - this.manor.woodlandAcres;
+  }
+
+  onClearedAcresChange() {
+    this.manor.woodlandAcres = this.manor.grossAcres - this.manor.clearedAcres;
+  }
+
   onResetClick() {
     this._reset();
   }

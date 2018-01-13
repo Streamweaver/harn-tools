@@ -37,7 +37,7 @@ export enum Topology {
   Lowlands = 'Lowlands',
   Highlands = 'Highlands',
   Coastal = 'Coastal',
-  Forest = 'Forest',
+  Forest = 'Forest'
 }
 
 export const TopologyEffects = {
@@ -90,10 +90,10 @@ export class Manor implements IManor {
   constructor() {
     this.name = null;
     this.realm = null;
-    this.topology = null;
+    this.topology = Topology.Lowlands;
     this.grossAcres = 2000;
-    this.woodlandAcres = 1000;
-    this.clearedAcres = 1000;
+    this.woodlandAcres = 200;
+    this.clearedAcres = 1800;
     this.landQuality = 1.0;
     this.fiefIndex = 0.0;
     this.tradeIndex = 0.0;
