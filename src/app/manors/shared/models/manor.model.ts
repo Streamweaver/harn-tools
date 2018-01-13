@@ -129,9 +129,6 @@ export class Manor implements IManor {
    * for the effects of war, floods, etc.
    */
   setFiefIndex() {
-    if (this.fiefIndex === 0) {
-      this.fiefIndex = this.dice.rollTotal(6, 2) * 0.05 + 0.65;
-    }
-
+      this.fiefIndex = parseFloat((this.dice.rollTotal(6, 2) * 0.05 + 0.65).toFixed(2));
   }
 }

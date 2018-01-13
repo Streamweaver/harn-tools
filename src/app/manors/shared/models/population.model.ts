@@ -1,15 +1,19 @@
-import {ITenant} from './tenant.model';
-import {Officer} from './tenant.model';
+import { ITenant } from './tenant.model';
+import { Officer } from './tenant.model';
+import { IHouseholdMember } from './housemember.model';
 
 export interface IPopulation {
   tenants: ITenant[];
+  household: IHouseholdMember[];
 }
 
 export class Population implements IPopulation {
   tenants: ITenant[];
+  household: IHouseholdMember[];
 
   constructor() {
     this.tenants = [];
+    this.household = [];
   }
 
   tenantSize(): number {
@@ -83,5 +87,13 @@ export class Population implements IPopulation {
     }
     totalAcres = totalAcres - glebeAcres;
     return totalAcres * 5 + glebeAcres * 60;
+  }
+
+  householdTotal(): number {
+    let total = 0;
+    for (const member of this.household) {
+      total += member.total;
+    }
+    return total;
   }
 }
