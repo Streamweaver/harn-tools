@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IManor } from '../shared/models/manor.model';
 import { ManorService } from '../shared/manor.service';
-import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-tenant-list',
@@ -19,7 +18,7 @@ export class TenantListComponent implements OnInit {
 
   populationSize(): number {
     let size = 0;
-    for (const tenant of this. manor.population.tenants) {
+    for (const tenant of this.manor.population.tenants) {
       size += tenant.size;
     }
     return size;
@@ -27,7 +26,7 @@ export class TenantListComponent implements OnInit {
 
   serfAcres(): number {
     let acres = 0;
-    for (const tenant of this. manor.population.tenants) {
+    for (const tenant of this.manor.population.tenants) {
       acres += tenant.serf_acres;
     }
     return acres;
@@ -35,7 +34,7 @@ export class TenantListComponent implements OnInit {
 
   freeAcres(): number {
     let acres = 0;
-    for (const tenant of this. manor.population.tenants) {
+    for (const tenant of this.manor.population.tenants) {
       acres += tenant.free_acres;
     }
     return acres;
@@ -43,7 +42,7 @@ export class TenantListComponent implements OnInit {
 
   laborDays(): number {
     let days = 0;
-    for (const tenant of this. manor.population.tenants) {
+    for (const tenant of this.manor.population.tenants) {
       days += tenant.labor_days;
     }
     return days;
@@ -51,7 +50,7 @@ export class TenantListComponent implements OnInit {
 
   rent(): number {
     let rent = 0;
-    for (const tenant of this. manor.population.tenants) {
+    for (const tenant of this.manor.population.tenants) {
       rent += tenant.rent;
     }
     return rent;
@@ -59,7 +58,7 @@ export class TenantListComponent implements OnInit {
 
   fees(): number {
     let fees = 0;
-    for (const tenant of this. manor.population.tenants) {
+    for (const tenant of this.manor.population.tenants) {
       fees += tenant.fees;
     }
     return fees;

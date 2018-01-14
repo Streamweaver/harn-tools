@@ -1,22 +1,16 @@
-<table class="table table-bordered table-sm table-hover table-striped">
+<table class="table table-bordered table-sm table-hover table-striped table-responsive-lg">
   <thead>
     <tr>
+      <th></th>
       <th scope="col">Title/Name</th>
-      <th scope="col">ML</th>
-      <th scope="col">Each</th>
-      <th scope="col">#</th>
-      <th scope="col">Total</th>
-      <th scope="col">Loyalty</th>
+      <th scope="col" class="text-center">ML</th>
+      <th scope="col" class="text-center">Each</th>
+      <th scope="col" class="text-center">#</th>
+      <th scope="col" class="text-center">Total</th>
+      <th scope="col" class="text-center">Loyalty</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let member of manor.population.household">
-      <td>{{member.title}}</td>
-      <td>{{member.ml}}</td>
-      <td>{{member.each}}</td>
-      <td>{{member.count}}</td>
-      <td>{{member.each * member.count}}</td>
-      <td>{{member.loyalty}}</td>
-    </tr>
+    <tr app-household-member *ngFor="let member of manor.population.household" [member]="member"></tr>
   </tbody>
 </table>
