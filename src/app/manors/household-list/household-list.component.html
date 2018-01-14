@@ -1,16 +1,27 @@
-<table class="table table-bordered table-sm table-hover table-striped table-responsive-lg">
-  <thead>
-    <tr>
-      <th></th>
-      <th scope="col">Title/Name</th>
-      <th scope="col" class="text-center">ML</th>
-      <th scope="col" class="text-center">Each</th>
-      <th scope="col" class="text-center">#</th>
-      <th scope="col" class="text-center">Total</th>
-      <th scope="col" class="text-center">Loyalty</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr app-household-member *ngFor="let member of manor.population.household" [member]="member"></tr>
-  </tbody>
-</table>
+<div class="row form-row">
+  <div class="col">Title/Name</div>
+  <div class="col-sm-1 text-center">ML</div>
+  <div class="col-sm-1 text-center">Each</div>
+  <div class="col-sm-1 text-center">#</div>
+  <div class="col-sm-1 text-center">Total</div>
+  <div class="col-sm-1 text-center">Loyalty</div>
+  <div class="col-sm-1 text-center">&nbsp;</div>
+</div>
+
+<div app-household-member *ngFor="let member of manor.population.household" [member]="member" class="form-row"></div>
+
+<hr class="small">
+
+<div class="row form-row" *ngIf="manor.population.household.length > 0">
+  <div class="col"></div>
+  <div class="col-sm-1 text-center"></div>
+  <div class="col-sm-1 text-center"></div>
+  <div class="col-sm-1 text-center">Total:</div>
+  <div class="col-sm-1 text-center">
+    <div class="input-group input-group-sm">
+      <input type="text" class="form-control" [value]="householdTotal()">
+    </div>
+  </div>
+  <div class="col-sm-1 text-center"></div>
+  <div class="col-sm-1 text-center"></div>
+</div>

@@ -12,4 +12,12 @@ export class HouseholdListComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  householdTotal(): number {
+    let total = 0;
+    for (const member of this.manor.population.household) {
+      total += member.each * member.count;
+    }
+    return total;
+  }
 }

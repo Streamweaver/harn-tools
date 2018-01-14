@@ -9,18 +9,21 @@ import { TenantListComponent } from './tenant-list/tenant-list.component';
 import { TenantComponent } from './tenant/tenant.component';
 import { HouseholdListComponent } from './household-list/household-list.component';
 import { HouseholdMemberComponent } from './household-member/household-member.component';
-import { ReactiveManorComponent } from './reactive-manor/reactive-manor.component';
 
 @NgModule({
-  imports: [CommonModule, ManorsRoutingModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    ManorsRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
   providers: [ManorService],
   declarations: [
     ManorComponent,
     TenantListComponent,
     TenantComponent,
     HouseholdListComponent,
-    HouseholdMemberComponent,
-    ReactiveManorComponent
+    HouseholdMemberComponent
   ]
 })
 export class ManorsModule {}

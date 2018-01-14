@@ -13,7 +13,7 @@ export class ReactiveManorComponent implements OnInit {
 
   showGenerationInput: boolean;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
     this.manor = ManorFactory.getManor();
@@ -25,33 +25,41 @@ export class ReactiveManorComponent implements OnInit {
     this.manorForm = this.fb.group({
       name: ['', Validators.required],
       realm: ['', Validators.required],
+      topology: ['', Validators.required],
       grossAcres: [0, Validators.min(500)],
       woodlandAcres: [0, Validators.max(10000)],
-      clearedAcres: [0],
-      isSlaveState: '',
+      clearedAcres: [0, Validators.required],
+      fiefIndex: [1.0, Validators.required],
+      tradeIndex: [0.5, Validators.required],
+      // Generation data
+      isSlaveState: [false, Validators.required]
     });
   }
 
   onResetClick() {}
   onGenerateClick() {}
 
-    /**
+  /**
    * When gross acres is changed it recalculates cleared acres and woodland acres to the same percent.
    */
   onGrossAcresChange() {
-    const oldTotal = this.manorForm.value.woodlandAcres + this.manorForm.value.clearedAcres;
+    const oldTotal =
+      this.manorForm.value.woodlandAcres + this.manorForm.value.clearedAcres;
     const woodlandPercent = this.manorForm.value.woodlandAcres / oldTotal;
     this.manorForm.value.woodlandAcres = Math.floor(
       this.manorForm.value.grossAcres * woodlandPercent
     );
-    this.manorForm.value.clearedAcres = this.manorForm.value.grossAcres - this.manorForm.value.woodlandAcres;
+    this.manorForm.value.clearedAcres =
+      this.manorForm.value.grossAcres - this.manorForm.value.woodlandAcres;
   }
 
   onWoodlandAcresChange() {
-    this.manorForm.value.clearedAcres = this.manorForm.value.grossAcres - this.manor.woodlandAcres;
+    this.manorForm.value.clearedAcres =
+      this.manorForm.value.grossAcres - this.manor.woodlandAcres;
   }
 
   onClearedAcresChange() {
-    this.manorForm.value.woodlandAcres = this.manorForm.value.grossAcres - this.manor.clearedAcres;
+    this.manorForm.value.woodlandAcres =
+      this.manorForm.value.grossAcres - this.manor.clearedAcres;
   }
 }

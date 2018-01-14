@@ -15,7 +15,6 @@ export class IManor {
   landQuality: number;
   fiefIndex: number;
   tradeIndex: number;
-  laborPool: number;
 
   population: Population;
 
@@ -74,7 +73,6 @@ export class Manor implements IManor {
   landQuality: number;
   fiefIndex: number;
   tradeIndex: number;
-  laborPool: number;
 
   population: Population;
 
@@ -99,7 +97,6 @@ export class Manor implements IManor {
     this.landQuality = 1.0;
     this.fiefIndex = 0.0;
     this.tradeIndex = 0.0;
-    this.laborPool = 0;
 
     this.population = new Population();
     this.freeRent = 6;
