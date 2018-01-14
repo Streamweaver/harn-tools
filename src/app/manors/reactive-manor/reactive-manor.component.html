@@ -1,0 +1,50 @@
+<div class="container-fluid page">
+  <div class="row title-box bg-dark text-white px-3 py-2 mx-4">
+    <div class="col">
+      <strong>Manor Budget</strong>
+    </div>
+    <div class="col text-right h4">{{manor.name}}</div>
+  </div>
+
+  <form [formGroup]="manorForm" novalidate>
+      <div class="form-group">
+          <label class="center-block">Name:
+            <input class="form-control" formControlName="name" [(ngModel)]="manor.name">
+          </label>
+        </div>
+  <div class="form-group">
+    <label class="center-block">Realm:
+      <input class="form-control" formControlName="realm">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Gross Acres:
+      <input class="form-control" formControlName="grossAcres">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Woodland Acres
+      <input class="form-control" formControlName="woodlandAcres">
+    </label>
+  </div>
+  <div class="form-group">
+    <label class="center-block">Cleared Acres:
+      <input class="form-control" formControlName="clearedAcres" (change)="onClearedAcresChange()">
+    </label>
+  </div>
+  <div class="checkbox">
+    <label class="center-block">
+      <input type="checkbox" formControlName="isSlaveState"> Slave State?
+    </label>
+  </div>
+</form>
+
+  <div class="row">
+    <p>Form value: {{ manorForm.value | json }}</p>
+    <p>Form status: {{ manorForm.status | json }}</p>
+    <hr>
+    <p>Model value: {{ manor | json }}</p>
+  </div>
+</div>
+
+

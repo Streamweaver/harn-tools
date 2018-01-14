@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { ManorComponent } from './manor/manor.component';
 import { Routes, RouterModule } from '@angular/router';
+import { ReactiveManorComponent } from './reactive-manor/reactive-manor.component';
 
 const routes: Routes = [
-  {path: 'manors', component: ManorComponent}
+  {path: 'manors', component: ReactiveManorComponent}
 ];
 
 @NgModule({
