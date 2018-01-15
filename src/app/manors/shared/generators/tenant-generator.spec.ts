@@ -1,6 +1,6 @@
-import { TenantGenerator} from './tenant-generator';
+import { TenantGenerator } from './tenant-generator';
 import { Manor, ManorFactory, Topology } from '../models/manor.model';
-import {TenantType} from '../models/tenant.model';
+import { TenantType } from '../models/tenant.model';
 
 describe('Generator: Tenant', () => {
   let generator: TenantGenerator;
@@ -24,13 +24,13 @@ describe('Generator: Tenant', () => {
 
   it('should generate tenants', () => {
     generator.generateTenants(manor);
-    expect( manor.population.tenants.length).toBe(250);
+    expect(manor.population.tenants.length).toBe(250);
   });
 
   it('should NOT genereate slaves', () => {
     generator.generateTenants(manor);
     let hasSlave = false;
-    for (const tenant of  manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       hasSlave = tenant.occupation === TenantType.SLAVE ? true : hasSlave;
     }
     expect(hasSlave).toBe(false);
@@ -41,7 +41,7 @@ describe('Generator: Tenant', () => {
     manor.clearedAcres = 10000;
     generator.generateTenants(manor);
     let hasSlave = false;
-    for (const tenant of  manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       hasSlave = tenant.occupation === TenantType.SLAVE ? true : hasSlave;
     }
     expect(hasSlave).toBe(true);
@@ -52,8 +52,9 @@ describe('Generator: Tenant', () => {
     manor.clearedAcres = 10000;
     generator.generateTenants(manor);
     let hasFishermen = false;
-    for (const tenant of  manor.population.tenants) {
-      hasFishermen = tenant.occupation === TenantType.FISHERMAN ? true : hasFishermen;
+    for (const tenant of manor.population.tenants) {
+      hasFishermen =
+        tenant.occupation === TenantType.FISHERMAN ? true : hasFishermen;
     }
     expect(hasFishermen).toBe(true);
   });
@@ -63,7 +64,7 @@ describe('Generator: Tenant', () => {
     manor.clearedAcres = 10000;
     generator.generateTenants(manor);
     let hasTrapper = false;
-    for (const tenant of  manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       hasTrapper = tenant.occupation === TenantType.TRAPPER ? true : hasTrapper;
     }
     expect(hasTrapper).toBe(true);
@@ -71,16 +72,15 @@ describe('Generator: Tenant', () => {
 
   it('should NOT set craft', () => {
     generator.generateTenants(manor);
-    for (const tenant of  manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       expect(tenant.craft).toBeNull();
     }
-
   });
 
   it('should NOT set Military', () => {
     generator.generateTenants(manor);
     let hasMilitary = false;
-    for (const tenant of  manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       hasMilitary = tenant.military !== null ? true : hasMilitary;
     }
     expect(hasMilitary).toBe(false);
@@ -88,15 +88,15 @@ describe('Generator: Tenant', () => {
 
   it('should properly set ML', () => {
     generator.generateTenants(manor);
-    for (const tenant of  manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       expect(tenant.ml > 39 && tenant.ml < 116).toBeTruthy();
     }
   });
 
   function checkSerfAcres(o: TenantType, gt: number, lt: number) {
     it('should create proper serf acers for ' + o, () => {
-      for (const tenant of  manor.population.tenants) {
-        if (tenant.occupation === o as string) {
+      for (const tenant of manor.population.tenants) {
+        if (tenant.occupation === (o as string)) {
           expect(tenant.serf_acres).toBeGreaterThan(gt);
           expect(tenant.serf_acres).toBeLessThan(lt);
         }
@@ -111,7 +111,7 @@ describe('Generator: Tenant', () => {
 
   function checkFreeAcres(o: TenantType, gt: number, lt: number) {
     it('should create proper serf acers for ' + o, () => {
-      for (const tenant of  manor.population.tenants) {
+      for (const tenant of manor.population.tenants) {
         if (tenant.occupation === o) {
           expect(tenant.free_acres).toBeGreaterThan(gt);
           expect(tenant.free_acres).toBeLessThan(lt);
@@ -129,7 +129,7 @@ describe('Generator: Tenant', () => {
     generator.generateTenants(manor);
     manor.clearedAcres = 100000;
     let totalFree = 0;
-    for (const tenant of  manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       if (tenant.occupation === TenantType.VILLEIN) {
         totalFree += tenant.free_acres;
       }
@@ -140,7 +140,7 @@ describe('Generator: Tenant', () => {
   it('should assess proper fees above 5 for everyone but slaves', () => {
     manor.isSlaveState = true;
     generator.generateTenants(manor);
-    for (const tenant of  manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       if (tenant.occupation !== TenantType.SLAVE) {
         expect(tenant.fees).toBeGreaterThan(5);
       } else {
@@ -152,7 +152,7 @@ describe('Generator: Tenant', () => {
   it('should assess proper rents above 60 for everyone but slaves', () => {
     manor.isSlaveState = true;
     generator.generateTenants(manor);
-    for (const tenant of  manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       if (tenant.occupation !== TenantType.SLAVE) {
         expect(tenant.rent).toBeGreaterThan(59);
       } else {
@@ -164,22 +164,12 @@ describe('Generator: Tenant', () => {
   it('should generate labor days for anyone with serf acres properly', () => {
     manor.isSlaveState = true;
     generator.generateTenants(manor);
-    for (const tenant of  manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       if (tenant.occupation !== TenantType.SLAVE) {
         expect(tenant.labor_days).toBe(4 * tenant.serf_acres);
       } else {
         expect(tenant.labor_days).toBe(200 * tenant.size);
       }
-    }
-  });
-
-  it('should assign no duplicate ids', function () {
-    manor.clearedAcres = 10000;
-    generator.generateTenants(manor);
-    const ids: number[] = [];
-    for (const tenant of  manor.population.tenants) {
-      expect(ids.indexOf(tenant.id) > -1).not.toBeTruthy();
-      ids.push(tenant.id);
     }
   });
 });

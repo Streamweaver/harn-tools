@@ -26,35 +26,51 @@ export class HouseholdGenerator {
 
   generateHousehold(m: IManor) {
     this._manor = m;
+    this._manor.population.household = [];
     this._generateFamily();
   }
 
   private _generateFamily() {
-    this._generateHouseMember('Fiefholder', 3000, 1, null);
-    this._generateHouseMember('Spouse', 2000, 1, 70);
-    this._generateHouseMember('Lady-In-Waiting', 1500, 1, 70);
+    this._manor.population.household.push(
+      this.generateHouseMember('Fiefholder', 3000, 1, null)
+    );
+    this._manor.population.household.push(
+      this.generateHouseMember('Spouse', 2000, 1, 70)
+    );
+    this._manor.population.household.push(
+      this.generateHouseMember('Lady-In-Waiting', 1500, 1, 70)
+    );
     const numOffspring = this._dice.rollThresholds(6, 3);
-    this._generateHouseMember('Offspring', 1000, numOffspring, 70);
-    this._generateHouseMember('Chamberlin', 800, 1, 50);
-    this._generateHouseMember('Cook', 500, 1, 50);
-    this._generateHouseMember('Alewife', 400, 1, 50);
-    this._generateHouseMember('Domestics', 300, 3 + numOffspring, 50);
+    this._manor.population.household.push(
+      this.generateHouseMember('Offspring', 1000, numOffspring, 70)
+    );
+    this._manor.population.household.push(
+      this.generateHouseMember('Chamberlin', 800, 1, 50)
+    );
+    this._manor.population.household.push(
+      this.generateHouseMember('Cook', 500, 1, 50)
+    );
+    this._manor.population.household.push(
+      this.generateHouseMember('Alewife', 400, 1, 50)
+    );
+    this._manor.population.household.push(
+      this.generateHouseMember('Domestics', 300, 3 + numOffspring, 50)
+    );
   }
 
-  private _generateHouseMember(
+  generateHouseMember(
     title: string,
     each: number,
     count: number,
     loyaltybase: number
-  ) {
-    this._manor.population.household.push({
-      id: this._manor.population.household.length,
+  ): IHouseholdMember {
+    return {
       title: title,
       ml: this._dice.rollTotal(6, 3) * 5 + 25,
       each: each,
       count: count,
       loyalty:
         loyaltybase !== null ? this._dice.rollTotal(6, 5) + loyaltybase : null
-    });
+    };
   }
 }

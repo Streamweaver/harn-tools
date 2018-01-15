@@ -1,5 +1,4 @@
 export interface IHouseholdMember {
-  id: number;
   title: string;
   ml: number;
   each: number;

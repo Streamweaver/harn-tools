@@ -1,5 +1,4 @@
 export interface ITenant {
-  id: number;
   occupation: string;
   craft: string;
   military: string;
@@ -51,7 +50,6 @@ export const craftsmanFees = {
   [Craftsman.Armourer]: 220,
   [Craftsman.GMDetermine]: 0
 };
-
 
 export enum TenantType {
   CRAFTSMAN = 'Craftsman', // Guilded Freeman

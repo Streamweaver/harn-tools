@@ -1,6 +1,6 @@
-import {NumberGenerator} from '../../../shared/generators/number-generator';
-import {IManor, Topology} from '../models/manor.model';
-import {ITenant, Officer, TenantType} from '../models/tenant.model';
+import { NumberGenerator } from '../../../shared/generators/number-generator';
+import { IManor, Topology } from '../models/manor.model';
+import { ITenant, Officer, TenantType } from '../models/tenant.model';
 
 export class TenantOfficerGenerator {
   private _dice: NumberGenerator;
@@ -44,11 +44,17 @@ export class TenantOfficerGenerator {
   private _selectSerfOfficer(o: Officer) {
     let selected = false;
     let tenants = this._serfOfficerPool();
-    if (o === Officer.Herder || o === Officer.Beadle || o === Officer.Woodward) {
+    if (
+      o === Officer.Herder ||
+      o === Officer.Beadle ||
+      o === Officer.Woodward
+    ) {
       tenants = tenants.filter(t => t.occupation !== TenantType.FISHERMAN);
     }
     if (o === Officer.Reeve) {
-      tenants = tenants.filter(t => t.occupation !== TenantType.FISHERMAN || TenantType.TRAPPER);
+      tenants = tenants.filter(
+        t => t.occupation !== TenantType.FISHERMAN || TenantType.TRAPPER
+      );
     }
     if (o === Officer.ForestWarden) {
       tenants = tenants.filter(t => t.occupation === TenantType.TRAPPER);
@@ -59,13 +65,12 @@ export class TenantOfficerGenerator {
     do {
       for (const tenant of tenants) {
         if (this._dice.rollDie(100) < 81) {
-          selected = this._officeAssigned(o, tenant.id);
+          selected = this._officeAssigned(o, tenant);
           break;
         }
       }
       tenants = this._serfOfficerPool();
-    }
-    while (!selected && tenants.length > 0);
+    } while (!selected && tenants.length > 0);
   }
 
   /**
@@ -79,7 +84,7 @@ export class TenantOfficerGenerator {
     do {
       for (const tenant of tenants) {
         if (this._dice.rollDie(100) < 81) {
-          selected = this._officeAssigned(Officer.Beadle, tenant.id);
+          selected = this._officeAssigned(Officer.Beadle, tenant);
           break;
         }
       }
@@ -87,8 +92,7 @@ export class TenantOfficerGenerator {
         this._selectSerfOfficer(Officer.Beadle);
       }
       tenants = this._beadlePool();
-    }
-    while (!selected && tenants.length > 0);
+    } while (!selected && tenants.length > 0);
   }
 
   /**
@@ -98,7 +102,11 @@ export class TenantOfficerGenerator {
    */
   private _selectGlebe() {
     for (const tenant of this._manor.population.tenants) {
-      if (tenant.craft === null && tenant.military === null && tenant.office === null) {
+      if (
+        tenant.craft === null &&
+        tenant.military === null &&
+        tenant.office === null
+      ) {
         tenant.office = Officer.Glebe;
         tenant.occupation = TenantType.PRIEST;
         tenant.labor_days = 0;
@@ -125,41 +133,43 @@ export class TenantOfficerGenerator {
   }
 
   private _serfOfficerPool(): ITenant[] {
-    let tenants = this._manor.population.tenants.filter(tenant =>
-      tenant.serf_acres > 0
-      && tenant.office === null
-      && tenant.military === null
-      && tenant.occupation !== TenantType.SLAVE
+    let tenants = this._manor.population.tenants.filter(
+      tenant =>
+        tenant.serf_acres > 0 &&
+        tenant.office === null &&
+        tenant.military === null &&
+        tenant.occupation !== TenantType.SLAVE
     );
     tenants = tenants.sort((a, b): number => {
-      return (a.serf_acres ** 2 * a.ml > b.serf_acres ** 2 * b.ml) ? -1 : 1;
+      return a.serf_acres ** 2 * a.ml > b.serf_acres ** 2 * b.ml ? -1 : 1;
     });
     return tenants;
   }
 
   private _beadlePool(): ITenant[] {
-    let tenants = this._manor.population.tenants.filter(tenant =>
-      tenant.office === null && tenant.military !== null
+    let tenants = this._manor.population.tenants.filter(
+      tenant => tenant.office === null && tenant.military !== null
     );
     tenants = tenants.sort((a, b) => {
       const aTotal = (a.free_acres + a.serf_acres) ** 2 * a.ml;
       const bTotal = (b.free_acres + b.serf_acres) ** 2 * b.ml;
       return aTotal > bTotal ? -1 : 1;
-      }
-    );
+    });
     return tenants;
   }
 
-  private _officeAssigned(o: Officer, id: number): boolean {
-    for (const tenant of this._manor.population.tenants) {
-      if (tenant.id === id && tenant.office === null) {
-        tenant.office = o as string;
-        if (tenant.labor_days > 0) {
-          tenant.notes.push('Labor served as officer.');
-        }
-        tenant.labor_days = 0;
-        return true;
-      }
+  /**
+   * Attempts to assign the office to the tenant, and returns true if assined.  if the office is already filled
+   * for some reason, it returns false
+   * @param o Officer position to assign
+   * @param tenant Tenant to be assigned office.
+   */
+  private _officeAssigned(o: Officer, tenant: ITenant): boolean {
+    if (tenant.office === null) {
+      tenant.office = o as string;
+      tenant.notes.push('Labor served as officer.');
+      tenant.labor_days = 0;
+      return true;
     }
     return false;
   }

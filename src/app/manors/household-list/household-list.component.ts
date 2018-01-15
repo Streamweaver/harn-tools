@@ -1,3 +1,5 @@
+import { HouseholdGenerator } from './../shared/generators/household.generator';
+import { IHouseholdMember } from './../shared/models/housemember.model';
 import { IManor } from './../shared/models/manor.model';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -8,10 +10,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HouseholdListComponent implements OnInit {
   @Input('manor') manor: IManor;
+  private _hg: HouseholdGenerator;
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this._hg = new HouseholdGenerator();
+  }
 
   householdTotal(): number {
     let total = 0;
@@ -21,7 +26,16 @@ export class HouseholdListComponent implements OnInit {
     return total;
   }
 
-  onDeleteMember(idx: number) {
-    this.manor.population.household.splice(idx, 1);
+  onAddMemberClick() {
+    this.manor.population.household.push(
+      this._hg.generateHouseMember('New memeber', 0, 0, 50)
+    );
+  }
+
+  onDeleteMemberClick(idx: number) {
+    const member = this.manor.population.household[idx];
+    if (confirm('Are you sure you want to DELETE ' + member.title + '?')) {
+      this.manor.population.household.splice(idx, 1);
+    }
   }
 }

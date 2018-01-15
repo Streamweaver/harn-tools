@@ -4,12 +4,12 @@ import { ITenant, TenantType } from '../models/tenant.model';
 import * as rwc from 'random-weighted-choice';
 
 const CLASSTABLE = [
-  {weight: 10, id: TenantType.CRAFTSMAN},
-  {weight: 15, id: TenantType.FARMER},
-  {weight: 35, id: TenantType.VILLEIN},
-  {weight: 20, id: TenantType.HALFVILLEIN},
-  {weight: 10, id: TenantType.COTTAR},
-  {weight: 10, id: TenantType.SLAVE}
+  { weight: 10, id: TenantType.CRAFTSMAN },
+  { weight: 15, id: TenantType.FARMER },
+  { weight: 35, id: TenantType.VILLEIN },
+  { weight: 20, id: TenantType.HALFVILLEIN },
+  { weight: 10, id: TenantType.COTTAR },
+  { weight: 10, id: TenantType.SLAVE }
 ];
 
 export class TenantGenerator {
@@ -25,7 +25,8 @@ export class TenantGenerator {
    */
   generateTenants(manor: IManor) {
     this._manor = manor;
-    const tenantHouseholds = this._manor.clearedAcres / 40 * this._manor.landQuality;
+    const tenantHouseholds =
+      this._manor.clearedAcres / 40 * this._manor.landQuality;
     for (let i = 0; i < tenantHouseholds; i++) {
       this._manor.population.tenants.push(this._generateTenant());
     }
@@ -39,7 +40,6 @@ export class TenantGenerator {
    */
   private _generateTenant(): ITenant {
     const tenant: ITenant = {
-      id: this._manor.population.tenants.length,
       occupation: null,
       craft: null,
       military: null,
@@ -90,7 +90,7 @@ export class TenantGenerator {
   private _generateTenantSerfAcres(t: ITenant) {
     switch (t.occupation) {
       case TenantType.VILLEIN:
-        t.serf_acres =  this._dice.rollDie(20) + 20;
+        t.serf_acres = this._dice.rollDie(20) + 20;
         break;
       case TenantType.HALFVILLEIN:
         t.serf_acres = this._dice.rollDie(10) + 10;
@@ -113,7 +113,8 @@ export class TenantGenerator {
         t.free_acres = this._dice.rollDie(6) * 5;
         break;
       case TenantType.VILLEIN:
-        t.free_acres = (this._dice.rollDie(25) % 5 === 0) ? this._dice.rollDie(6) * 5 : 0;
+        t.free_acres =
+          this._dice.rollDie(25) % 5 === 0 ? this._dice.rollDie(6) * 5 : 0;
         break;
       default:
         t.free_acres = 0;
@@ -127,7 +128,10 @@ export class TenantGenerator {
    * @private
    */
   private _assignSpecialTrade(t: ITenant): void {
-    if (t.occupation === TenantType.CRAFTSMAN || t.occupation === TenantType.PRIEST) {
+    if (
+      t.occupation === TenantType.CRAFTSMAN ||
+      t.occupation === TenantType.PRIEST
+    ) {
       return;
     }
     if (t.free_acres + t.serf_acres > 39) {
@@ -145,7 +149,7 @@ export class TenantGenerator {
   }
 
   private _assessRent(t: ITenant) {
-    const base = (t.occupation === TenantType.SLAVE) ? 0 : 60;
+    const base = t.occupation === TenantType.SLAVE ? 0 : 60;
     t.rent = base + 6 * t.free_acres;
   }
 
@@ -167,6 +171,7 @@ export class TenantGenerator {
   }
 
   private _assessLaborDays(t: ITenant) {
-    t.labor_days = (t.occupation === TenantType.SLAVE) ? 200 * t.size : 4 * t.serf_acres;
+    t.labor_days =
+      t.occupation === TenantType.SLAVE ? 200 * t.size : 4 * t.serf_acres;
   }
 }
