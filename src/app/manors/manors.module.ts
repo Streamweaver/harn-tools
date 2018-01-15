@@ -9,6 +9,7 @@ import { TenantListComponent } from './tenant-list/tenant-list.component';
 import { TenantComponent } from './tenant/tenant.component';
 import { HouseholdListComponent } from './household-list/household-list.component';
 import { HouseholdMemberComponent } from './household-member/household-member.component';
+import { CropListComponent } from './crop-list/crop-list.component';
 
 @NgModule({
   imports: [
@@ -23,7 +24,8 @@ import { HouseholdMemberComponent } from './household-member/household-member.co
     TenantListComponent,
     TenantComponent,
     HouseholdListComponent,
-    HouseholdMemberComponent
+    HouseholdMemberComponent,
+    CropListComponent
   ]
 })
 export class ManorsModule {}

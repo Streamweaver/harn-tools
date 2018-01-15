@@ -29,7 +29,7 @@ export class NumberGenerator {
    */
   public rollThresholds(times: number, threshold: number) {
     let count = 0;
-    for (let i = 0; i < threshold; i++) {
+    for (let i = 0; i < times; i++) {
       count += this.rollDie(6) > threshold ? 1 : 0;
     }
     return count;

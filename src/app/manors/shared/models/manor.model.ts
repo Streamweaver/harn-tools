@@ -1,8 +1,5 @@
-import { IPopulation, Population } from './population.model';
-import { TenantType } from './tenant.model';
-import { Officer } from './tenant.model';
-import { craftsmanFees } from './tenant.model';
-import { Craftsman } from './tenant.model';
+import { Population } from './population.model';
+import { ICrop } from './crop.model';
 import { NumberGenerator } from '../../../shared/generators/number-generator';
 
 export class IManor {
@@ -17,6 +14,7 @@ export class IManor {
   tradeIndex: number;
 
   population: Population;
+  crops: ICrop[];
 
   freeRent: number;
   serfLabor: number;
@@ -75,6 +73,7 @@ export class Manor implements IManor {
   tradeIndex: number;
 
   population: Population;
+  crops: ICrop[];
 
   freeRent: number;
   baseRent: number;
@@ -99,6 +98,7 @@ export class Manor implements IManor {
     this.tradeIndex = 0.0;
 
     this.population = new Population();
+    this.crops = [];
     this.freeRent = 6;
     this.baseRent = 60;
     this.serfLabor = 4;
