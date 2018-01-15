@@ -1,3 +1,64 @@
-<p>
-  crop-list works!
-</p>
+<div class="card">
+  <div class="card-header font-weight-bold">
+    Crops
+  </div>
+  <div class="card-body">
+    <div class="row form-row">
+      <div class="col small">Crop</div>
+      <div class="col-sm-2 text-center small">Yield</div>
+      <div class="col-sm-2 text-center small">Acres</div>
+      <div class="col-sm-2 text-center small">Labor</div>
+      <div class="col-sm-2 text-center small">Kind</div>
+      <div class="col-sm-1 text-center">&nbsp;</div>
+    </div>
+
+    <div *ngFor="let crop of manor.crops; index as idx" class="form-row">
+      <div class="col">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" [(ngModel)]="crop.name">
+        </div>
+      </div>
+      <div class="col-sm-2 text-center">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" [(ngModel)]="crop.yield">
+        </div>
+      </div>
+      <div class="col-sm-2 text-center">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" [(ngModel)]="crop.acres">
+        </div>
+      </div>
+      <div class="col-sm-2 text-center">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" [(ngModel)]="crop.labor">
+        </div>
+      </div>
+      <div class="col-sm-2 text-center">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" [value]="crop.acres * crop.yield" disabled>
+        </div>
+      </div>
+      <div class="col-sm-1 text-center">
+        <div class="input-group input-group-sm">
+          <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteCropClick(idx)">
+            <i class="far fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <div class="row">
+      <div class="col text-right font-weight-bold">Total Kind:</div>
+      <div class="col-sm-2">
+        {{cropTotal() | number}}d
+      </div>
+      <div class="col-sm-2">
+        <button type="button" class="btn btn-primary btn-sm" (click)="onAddCropClick()">
+          <i class="fas fa-user-plus"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -10,6 +10,7 @@ import { TenantComponent } from './tenant/tenant.component';
 import { HouseholdListComponent } from './household-list/household-list.component';
 import { HouseholdMemberComponent } from './household-member/household-member.component';
 import { CropListComponent } from './crop-list/crop-list.component';
+import { CropGeneratorService } from './shared/services/crop-generator.service';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { CropListComponent } from './crop-list/crop-list.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ManorService],
+  providers: [ManorService, CropGeneratorService],
   declarations: [
     ManorComponent,
     TenantListComponent,
