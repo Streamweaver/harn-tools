@@ -20,4 +20,8 @@ export class HouseholdListComponent implements OnInit {
     }
     return total;
   }
+
+  onDeleteMember(idx: number) {
+    this.manor.population.household.splice(idx, 1);
+  }
 }

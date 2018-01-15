@@ -8,6 +8,7 @@ import { IHouseholdMember } from './../shared/models/housemember.model';
 })
 export class HouseholdMemberComponent implements OnInit {
   @Input('member') member: IHouseholdMember;
+  @Input('idx') idx: number;
 
   constructor() {}
 

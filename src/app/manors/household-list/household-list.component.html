@@ -1,27 +1,65 @@
-<div class="row form-row">
-  <div class="col">Title/Name</div>
-  <div class="col-sm-1 text-center">ML</div>
-  <div class="col-sm-1 text-center">Each</div>
-  <div class="col-sm-1 text-center">#</div>
-  <div class="col-sm-1 text-center">Total</div>
-  <div class="col-sm-1 text-center">Loyalty</div>
-  <div class="col-sm-1 text-center">&nbsp;</div>
-</div>
+<div class="card">
+  <div class="card-header">
+    Lords Household
+  </div>
+  <div class="card-body">
+    <div class="row form-row">
+      <div class="col small">Title/Name</div>
+      <div class="col-sm-1 text-center small">ML</div>
+      <div class="col-sm-1 text-center small">Each</div>
+      <div class="col-sm-1 text-center small">#</div>
+      <div class="col-sm-1 text-center small">Total</div>
+      <div class="col-sm-1 text-center small">Loyalty</div>
+      <div class="col-sm-1 text-center">&nbsp;</div>
+    </div>
 
-<div app-household-member *ngFor="let member of manor.population.household" [member]="member" class="form-row"></div>
-
-<hr class="small">
-
-<div class="row form-row" *ngIf="manor.population.household.length > 0">
-  <div class="col"></div>
-  <div class="col-sm-1 text-center"></div>
-  <div class="col-sm-1 text-center"></div>
-  <div class="col-sm-1 text-center">Total:</div>
-  <div class="col-sm-1 text-center">
-    <div class="input-group input-group-sm">
-      <input type="text" class="form-control" [value]="householdTotal()">
+    <div *ngFor="let member of manor.population.household; index as idx" class="form-row">
+      <div class="col">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" [(ngModel)]="member.title">
+        </div>
+      </div>
+      <div class="col-sm-1 text-center">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" [(ngModel)]="member.ml">
+        </div>
+      </div>
+      <div class="col-sm-1 text-center">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" [(ngModel)]="member.each">
+        </div>
+      </div>
+      <div class="col-sm-1 text-center">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" [(ngModel)]="member.count">
+        </div>
+      </div>
+      <div class="col-sm-1 text-center">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" [value]="member.count * member.each" disabled>
+        </div>
+      </div>
+      <div class="col-sm-1 text-center">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" [(ngModel)]="member.loyalty">
+        </div>
+      </div>
+      <div class="col-sm-1 text-center">
+        <div class="input-group input-group-sm">
+          <button type="button" class="btn btn-secondary btn-sm" (click)="onDeleteMember(idx)">
+            <i class="far fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="col-sm-1 text-center"></div>
-  <div class="col-sm-1 text-center"></div>
+
+  <div class="card-footer">
+    <div class="row" *ngIf="manor.population.household.length > 0">
+      <div class="col text-right font-weight-bold">Total Kind:</div>
+      <div class="col-sm-2 ">
+        {{householdTotal() | number}}d
+      </div>
+    </div>
+  </div>
 </div>
