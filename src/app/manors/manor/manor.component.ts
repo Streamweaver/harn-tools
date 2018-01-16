@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import {CraftsmanGenerator} from '../shared/generators/craftsman-generator';
+import {HouseholdGenerator} from '../shared/generators/household.generator';
+import {TenantGenerator} from '../shared/generators/tenant-generator';
+import {TenantOfficerGenerator} from '../shared/generators/tenant-officer.generator';
+import {YeomanGenerator} from '../shared/generators/yeoman-generator';
 import {
   Manor,
-  ManorFactory,
-  Topology,
-  TopologyEffects
+  ManorFactory
 } from '../shared/models/manor.model';
 import { NumberGenerator } from '../../shared/generators/number-generator';
 import { CropGeneratorService } from '../shared/services/crop-generator.service';
@@ -15,8 +18,13 @@ import { CropGeneratorService } from '../shared/services/crop-generator.service'
 })
 export class ManorComponent implements OnInit {
   manor: Manor;
-  dice: NumberGenerator;
+  private dice: NumberGenerator;
   showGenerationInput: boolean;
+  private tenantGenerator: TenantGenerator;
+  private craftsmanGenerator: CraftsmanGenerator;
+  private yeomanGenerator: YeomanGenerator;
+  private officerGenerator: TenantOfficerGenerator;
+  private householdGenerator: HouseholdGenerator;
 
   constructor(
     private cropService: CropGeneratorService
@@ -24,6 +32,11 @@ export class ManorComponent implements OnInit {
 
   ngOnInit() {
     this.dice = new NumberGenerator();
+    this.tenantGenerator = new TenantGenerator();
+    this.craftsmanGenerator = new CraftsmanGenerator();
+    this.yeomanGenerator = new YeomanGenerator();
+    this.officerGenerator = new TenantOfficerGenerator();
+    this.householdGenerator = new HouseholdGenerator();
     this._reset();
   }
 
@@ -38,6 +51,12 @@ export class ManorComponent implements OnInit {
 
   onGenerateClick() {
     this.showGenerationInput = false;
+    this.tenantGenerator.generateTenants(this.manor);
+    this.craftsmanGenerator.assignCraftsmen(this.manor);
+    this.yeomanGenerator.recruitYeoman(this.manor);
+    this.officerGenerator.electOfficers(this.manor);
+    this.householdGenerator.generateHousehold(this.manor);
+
     this.cropService.generateCrops(this.manor);
   }
 

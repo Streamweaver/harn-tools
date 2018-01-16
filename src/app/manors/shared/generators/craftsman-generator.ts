@@ -22,42 +22,40 @@ export const craftsmanTable = [
 ];
 
 export class CraftsmanGenerator {
-  private _manor: Manor;
 
   constructor() {}
 
   assignCraftsmen(manor: Manor) {
-    this._manor = manor;
     let craft: Craftsman;
-    for (const tenant of this._manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       if (tenant.occupation === TenantType.CRAFTSMAN && tenant.craft === null) {
-        craft = this.getCraft();
-        if (!this._exists(craft)) {
+        craft = this.getCraft(manor);
+        if (!this._exists(manor, craft)) {
           tenant.craft = craft;
         } else {
-          tenant.craft = this._firstOpenCraft();
+          tenant.craft = this._firstOpenCraft(manor);
         }
         this._adjustFees(tenant);
       }
     }
-    this._noteMissing();
+    this._noteMissing(manor);
   }
 
-  private getCraft(): Craftsman {
+  private getCraft(manor: Manor): Craftsman {
     let craft;
     do {
       craft = rwc(craftsmanTable);
     }
-    while (!this._validCraftForManor(craft));
+    while (!this._validCraftForManor(manor, craft));
     return craft;
   }
 
-  private _validCraftForManor(craft: string): boolean {
-    return  !(this._manor.topology === Topology.Coastal) && craft === Craftsman.Shipwright ? false : true;
+  private _validCraftForManor(manor: Manor, craft: string): boolean {
+    return  !(manor.topology === Topology.Coastal) && craft === Craftsman.Shipwright ? false : true;
   }
 
-  private _exists(craft: string): boolean {
-    for (const tenant of this._manor.population.tenants) {
+  private _exists(manor: Manor, craft: string): boolean {
+    for (const tenant of manor.population.tenants) {
       if (tenant.craft === craft) {
         return true;
       }
@@ -65,10 +63,10 @@ export class CraftsmanGenerator {
     return false;
   }
 
-  private _firstOpenCraft(): string {
+  private _firstOpenCraft(manor: Manor): string {
     for (const item in Craftsman) {
       if (!Number(item)) {
-        if (!this._exists(item) && this._validCraftForManor(item)) {
+        if (!this._exists(manor, item) && this._validCraftForManor(manor, item)) {
           return Craftsman[item];
         }
       }
@@ -85,15 +83,15 @@ export class CraftsmanGenerator {
     }
   }
 
-  private _noteMissing() {
-    if (!this._exists(Craftsman.Miller)) {
-      this._manor.notes.push('No Miller!');
+  private _noteMissing(manor: Manor) {
+    if (!this._exists(manor, Craftsman.Miller)) {
+      manor.notes.push('No Miller!');
     }
-    if (!this._exists(Craftsman.Metalsmith)) {
-      this._manor.notes.push('No Metalsmith!');
+    if (!this._exists(manor, Craftsman.Metalsmith)) {
+      manor.notes.push('No Metalsmith!');
     }
-    if (!this._exists(Craftsman.Woodcrafter)) {
-      this._manor.notes.push('No Woodcrafter!');
+    if (!this._exists(manor, Craftsman.Woodcrafter)) {
+      manor.notes.push('No Woodcrafter!');
     }
   }
 }

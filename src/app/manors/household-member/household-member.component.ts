@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IHouseholdMember } from './../shared/models/housemember.model';
+import { HouseholdMember } from './../shared/models/housemember.model';
 
 @Component({
   selector: '[app-household-member]',
@@ -7,7 +7,7 @@ import { IHouseholdMember } from './../shared/models/housemember.model';
   styleUrls: ['./household-member.component.scss']
 })
 export class HouseholdMemberComponent implements OnInit {
-  @Input('member') member: IHouseholdMember;
+  @Input('member') member: HouseholdMember;
   @Input('idx') idx: number;
 
   constructor() {}

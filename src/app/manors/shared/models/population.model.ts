@@ -1,10 +1,10 @@
 import { ITenant } from './tenant.model';
 import { Officer } from './tenant.model';
-import { IHouseholdMember } from './housemember.model';
+import { HouseholdMember } from './housemember.model';
 
 export class Population {
   tenants: ITenant[];
-  household: IHouseholdMember[];
+  household: HouseholdMember[];
 
   constructor() {
     this.tenants = [];

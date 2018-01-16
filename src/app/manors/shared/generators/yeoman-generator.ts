@@ -32,7 +32,6 @@ export const MilitaryAcres = {
  */
 export class YeomanGenerator {
   private _dice: NumberGenerator;
-  private _manor: Manor;
   private _recruitmentPts: number;
 
   constructor() {
@@ -44,17 +43,21 @@ export class YeomanGenerator {
    * @param {Manor} manor
    */
   recruitYeoman(manor: Manor) {
-    this._manor = manor;
-    this._recruitmentPts = this.lightFoodObligation() * MilitaryData[Military.LF].pts;
-    while (this._recruitableFamers() && this._recruitmentPts > 1) {
-      const rank = this._getNextValidSoldier();
-      this._draftFarmer(rank);
+    this._recruitmentPts = this.lightFoodObligation(manor) * MilitaryData[Military.LF].pts; // calculate obligation.
+    for (const tenant of manor.population.tenants) {
+      if (tenant.military !== null) {
+        this._recruitmentPts -= MilitaryData[tenant.military].pts;
+      }
     }
-    this._adjustAcres();
-    this._adjustRent();
-    this._adjustFees();
-    this._noteMilitaryService();
-    this._noteFeudalObligation();
+    while (this._recruitableFamers(manor) && this._recruitmentPts > 1) {
+      const rank = this._getNextValidSoldier();
+      this._draftFarmer(manor, rank);
+    }
+    this._adjustAcres(manor);
+    this._adjustRent(manor);
+    this._adjustFees(manor);
+    this._noteMilitaryService(manor);
+    this._noteFeudalObligation(manor);
   }
 
   /**
@@ -71,9 +74,9 @@ export class YeomanGenerator {
     return rank;
   }
 
-  private _recruitableFamers(): boolean {
+  private _recruitableFamers(manor: Manor): boolean {
     let recruitableFamers = false;
-    for (const tenant of this._manor.population.tenants) {
+    for (const tenant of manor.population.tenants) {
       if (tenant.occupation === TenantType.FARMER && tenant.military === null) {
         recruitableFamers = true;
       }
@@ -81,8 +84,8 @@ export class YeomanGenerator {
     return recruitableFamers;
   }
 
-  private _draftFarmer(rank: Military) {
-    for (const tenant of this._manor.population.tenants) {
+  private _draftFarmer(manor: Manor, rank: Military) {
+    for (const tenant of manor.population.tenants) {
       if (tenant.occupation === TenantType.FARMER && tenant.military === null) {
         tenant.military = rank as string;
         break;
@@ -94,8 +97,8 @@ export class YeomanGenerator {
    * Recalculates tenant free acres based on any military rank.
    * @private
    */
-  private _adjustAcres() {
-    for (const tenant of this._manor.population.tenants) {
+  private _adjustAcres(manor: Manor) {
+    for (const tenant of manor.population.tenants) {
       if (tenant.military !== null) {
         tenant.free_acres = this._dice.rollDie(10) + MilitaryAcres[tenant.military];
       }
@@ -107,8 +110,8 @@ export class YeomanGenerator {
    * Doesn't actually differ from Freeman but leaving incase I change them later.
    * @private
    */
-  private _adjustFees() {
-    for (const tenant of this._manor.population.tenants) {
+  private _adjustFees(manor: Manor) {
+    for (const tenant of manor.population.tenants) {
       if (tenant.military !== null) {
         tenant.fees = 60 + tenant.free_acres;
       }
@@ -119,8 +122,8 @@ export class YeomanGenerator {
    * Recalculates any tenant rent based on military rules.
    * @private
    */
-  private _adjustRent() {
-    for (const tenant of this._manor.population.tenants) {
+  private _adjustRent(manor: Manor) {
+    for (const tenant of manor.population.tenants) {
       if (tenant.military !== null) {
         tenant.rent = 60 + tenant.free_acres;
       }
@@ -131,14 +134,14 @@ export class YeomanGenerator {
    * Pushes a comment on the Feudal Obligation into the manor Notes.
    * @private
    */
-  private _noteFeudalObligation() {
-    this._manor.notes.push(
-      'Feaudal Obligation: ' + this.heavyHorseObligation() + 'HH/' + this.lightFoodObligation() + 'LF'
+  private _noteFeudalObligation(manor: Manor) {
+    manor.notes.push(
+      'Feaudal Obligation: ' + this.heavyHorseObligation(manor) + 'HH/' + this.lightFoodObligation(manor) + 'LF'
     );
   }
 
-  private _noteMilitaryService() {
-    for (const tenant of this._manor.population.tenants) {
+  private _noteMilitaryService(manor: Manor) {
+    for (const tenant of manor.population.tenants) {
       if (tenant.military !== null) {
         tenant.notes.push('Military service owed.');
       }
@@ -149,16 +152,16 @@ export class YeomanGenerator {
    * Calculates if a manor reaches minimum heavy horse obligation.
    * @returns {number} returns 1 if it meets it and 0 if not.
    */
-  heavyHorseObligation(): number {
-    return (this._manor.grossAcres - this._manor.policies.foAcresPerHH >= 0) ? 1 : 0;
+  heavyHorseObligation(manor: Manor): number {
+    return (manor.grossAcres - manor.policies.foAcresPerHH >= 0) ? 1 : 0;
   }
 
   /**
    * Calculates the LF obligation remaining after any Heavy Horse obligation is met.
    * @returns {number} of LF equivalent troops.
    */
-  lightFoodObligation(): number {
-    const foLeft = this._manor.grossAcres - this.heavyHorseObligation() * this._manor.policies.foAcresPerHH;
-    return Math.floor(foLeft / this._manor.policies.foAcresPerLF);
+  lightFoodObligation(manor: Manor): number {
+    const foLeft = manor.grossAcres - this.heavyHorseObligation(manor) * manor.policies.foAcresPerHH;
+    return Math.floor(foLeft / manor.policies.foAcresPerLF);
   }
 }

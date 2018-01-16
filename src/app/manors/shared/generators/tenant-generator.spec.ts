@@ -9,6 +9,7 @@ describe('Generator: Tenant', () => {
   beforeEach(() => {
     manor = ManorFactory.getManor();
     manor.clearedAcres = 10000;
+    manor.landQuality = 1;
     generator = new TenantGenerator();
   });
 
@@ -22,12 +23,18 @@ describe('Generator: Tenant', () => {
     expect(generator).toBeTruthy();
   });
 
-  it('should generate tenants', () => {
+  it('should generate the appropriate number of tenants', () => {
     generator.generateTenants(manor);
     expect(manor.population.tenants.length).toBe(250);
   });
 
-  it('should NOT genereate slaves', () => {
+  it('should add additional tenants below the number required', function () {
+    manor.clearedAcres = 2 * manor.clearedAcres;
+    generator.generateTenants(manor);
+    expect(manor.population.tenants.length).toBe(500);
+  });
+
+  it('should NOT genereate slaves for non-slave states', () => {
     generator.generateTenants(manor);
     let hasSlave = false;
     for (const tenant of manor.population.tenants) {
@@ -36,7 +43,7 @@ describe('Generator: Tenant', () => {
     expect(hasSlave).toBe(false);
   });
 
-  it('should genereate slaves', () => {
+  it('should genereate slaves for slave-states', () => {
     manor.policies.isSlaveState = true;
     manor.clearedAcres = 10000;
     generator.generateTenants(manor);

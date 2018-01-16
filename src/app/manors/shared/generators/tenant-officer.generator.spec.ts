@@ -190,4 +190,20 @@ describe('Generator: Tenant Officers', () => {
       }
     }
   });
+
+  it('should not assign offices again if already assigned', function () {
+    populateVillage();
+    generator.electOfficers(manor);
+    let officerCount = 0;
+    for (const tenant of manor.population.tenants) {
+      officerCount += tenant.office !== null ? 1 :0;
+    }
+    expect(officerCount).toBe(5);
+    officerCount = 0;
+    generator.electOfficers(manor);
+    for (const tenant of manor.population.tenants) {
+      officerCount += tenant.office !== null ? 1 :0;
+    }
+    expect(officerCount).toBe(5);
+  });
 });

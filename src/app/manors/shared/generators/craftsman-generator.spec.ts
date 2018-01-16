@@ -3,7 +3,7 @@ import { CraftsmanGenerator } from './craftsman-generator';
 import { TenantType } from '../models/tenant.model';
 import { Craftsman, craftsmanFees } from '../models/tenant.model';
 
-xdescribe('Generator: Craftsman', () => {
+describe('Generator: Craftsman', () => {
   let generator: CraftsmanGenerator;
   let manor: Manor;
 

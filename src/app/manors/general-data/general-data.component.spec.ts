@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GeneralDataComponent } from './general-data.component';
 
-describe('GeneralDataComponent', () => {
+xdescribe('GeneralDataComponent', () => {
   let component: GeneralDataComponent;
   let fixture: ComponentFixture<GeneralDataComponent>;
 

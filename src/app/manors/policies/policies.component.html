@@ -1,4 +1,4 @@
-<form [formGroup]="policiesForm">
+<div class="row" [formGroup]="policiesForm">
   <div class="col">
     <div class="card">
       <div class="card-header">
@@ -49,7 +49,6 @@
             <div class="form-check form-check-inline">
               <input type="checkbox" class="form-check-input form-check-input-condensed"
                      formConrol="policies.isSlaveState"
-                     [(ngModel)]="policies.isSlaveState"
                      (change)="policies.isSlaveState = !policies.isSlaveState">
               <label class="form-check-label">Slave State?</label>
             </div>
@@ -59,7 +58,6 @@
             <div class="form-check form-check-inline">
               <input type="checkbox" class="form-check-input form-check-input-condensed"
                      formConrol="policies.isBaliffRun"
-                     [(ngModel)]="policies.isBailiffRun"
                      (change)="policies.isBailiffRun = !policies.isBailiffRun">
               <label class="form-check-label">Bailiff Run?</label>
             </div>
@@ -88,4 +86,4 @@
       </div>
     </div>
   </div>
-</form>
+</div>

@@ -15,17 +15,22 @@ export class PoliciesComponent implements OnInit {
 
   ngOnInit() {
     this.createForm();
+    this.initForm();
   }
 
   createForm() {
     this.policiesForm = this.fb.group({
-      baseRent: [0, Validators.required],
-      freeholderRent: [0, Validators.required],
-      serfLabor: [0, Validators.required],
+      baseRent: [0, [Validators.required, Validators.min(30), Validators.max(120)]],
+      freeholderRent: [0, [Validators.required, Validators.min(3), Validators.max(12)]],
+      serfLabor: [0, [Validators.required, Validators.min(0), Validators.max(8)]],
       foAcresPerHH: [0, Validators.required],
       foAcresPerLF: [0, Validators.required],
-      isSlaveState: false,
-      isBailiffRun: false,
+      isSlaveState: '',
+      isBailiffRun: '',
     });
+  }
+
+  initForm() {
+    this.policiesForm.patchValue(this.policies);
   }
 }

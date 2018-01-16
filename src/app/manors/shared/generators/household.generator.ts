@@ -1,5 +1,5 @@
 import { NumberGenerator } from './../../../shared/generators/number-generator';
-import { IHouseholdMember } from './../models/housemember.model';
+import { HouseholdMember, Noble, Servant, Stable } from './../models/housemember.model';
 import { Manor } from './../models/manor.model';
 
 /**
@@ -17,45 +17,68 @@ function numberOfHouseholdNobles(eAcres: number): number {
 }
 
 export class HouseholdGenerator {
-  private _manor: Manor;
-  private _dice: NumberGenerator;
+  private dice: NumberGenerator;
 
   constructor() {
-    this._dice = new NumberGenerator();
+    this.dice = new NumberGenerator();
   }
 
-  generateHousehold(m: Manor) {
-    this._manor = m;
-    this._manor.population.household = [];
-    this._generateFamily();
+  generateHousehold(manor: Manor) {
+    this.generateBaseHousehold(manor);
+    this.generateExtraServants(manor);
   }
 
-  private _generateFamily() {
-    this._manor.population.household.push(
-      this.generateHouseMember('Fiefholder', 3000, 1, null)
+  private generateBaseHousehold(manor: Manor) {
+    if (manor.population.household.length > 0) {
+      return; // don't generate if members exist.
+    }
+    this.addHouseMember(
+      manor,
+      this.generateHouseMember(Noble.Fiefholder, 3000, 1, null)
     );
-    this._manor.population.household.push(
-      this.generateHouseMember('Spouse', 2000, 1, 70)
+    this.addHouseMember(
+      manor,
+      this.generateHouseMember(Noble.Spouse, 2000, 1, 70)
     );
-    this._manor.population.household.push(
-      this.generateHouseMember('Lady-In-Waiting', 1500, 1, 70)
+    this.addHouseMember(
+      manor,
+      this.generateHouseMember(Noble.LadyInWaiting, 1500, 1, 70)
     );
-    const numOffspring = this._dice.rollThresholds(6, 3);
-    this._manor.population.household.push(
-      this.generateHouseMember('Offspring', 1000, numOffspring, 70)
+    const numOffspring = this.dice.rollThresholds(6, 3);
+    this.addHouseMember(
+      manor,
+      this.generateHouseMember(Noble.Offspring, 1000, numOffspring, 70)
     );
-    this._manor.population.household.push(
-      this.generateHouseMember('Chamberlin', 800, 1, 50)
+    this.addHouseMember(
+      manor,
+      this.generateHouseMember(Servant.Chamberlain, 800, 1, 50)
     );
-    this._manor.population.household.push(
-      this.generateHouseMember('Cook', 500, 1, 50)
+    this.addHouseMember(
+      manor,
+      this.generateHouseMember(Servant.Cook, 500, 1, 50)
     );
-    this._manor.population.household.push(
-      this.generateHouseMember('Alewife', 400, 1, 50)
+    this.addHouseMember(
+      manor,
+      this.generateHouseMember(Servant.Alewife, 400, 1, 50)
     );
-    this._manor.population.household.push(
-      this.generateHouseMember('Domestics', 300, 3 + numOffspring, 50)
+    this.addHouseMember(
+      manor,
+      this.generateHouseMember(Servant.Domestic, 300, 3 + numOffspring, 50)
     );
+  }
+
+  private generateStables(manor: Manor) {}
+
+  private generateCraftsmen(manor: Manor) {}
+
+  private generateExtraServants (manor: Manor) {
+
+  }
+
+  addHouseMember(manor: Manor, member: HouseholdMember) {
+    if (member.count !== 0) {
+      manor.population.household.push(member);
+    }
   }
 
   generateHouseMember(
@@ -63,14 +86,14 @@ export class HouseholdGenerator {
     each: number,
     count: number,
     loyaltybase: number
-  ): IHouseholdMember {
+  ): HouseholdMember {
     return {
       title: title,
-      ml: this._dice.rollTotal(6, 3) * 5 + 25,
+      ml: this.dice.rollTotal(6, 3) * 5 + 25,
       each: each,
       count: count,
       loyalty:
-        loyaltybase !== null ? this._dice.rollTotal(6, 5) + loyaltybase : null
+        loyaltybase !== null ? this.dice.rollTotal(6, 5) + loyaltybase : null
     };
   }
 }

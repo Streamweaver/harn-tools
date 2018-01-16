@@ -21,7 +21,7 @@ export class Policies {
     this.freeholderRent = 6;
     this.serfLabor = 4;
     this.isSlaveState = false;
-    this.isBailiffRun = false;
+    this.isBailiffRun = true;
     this.foAcresPerHH = 1200;
     this.foAcresPerLF = 600;
     this.plantingProfile = [];

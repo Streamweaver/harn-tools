@@ -1,4 +1,4 @@
-export interface IHouseholdMember {
+export interface HouseholdMember {
   title: string;
   ml: number;
   each: number;
@@ -9,6 +9,7 @@ export interface IHouseholdMember {
 export enum Noble {
   Fiefholder = 'Fiefholder',
   Spouse = 'Spouse',
+  LadyInWaiting = 'Lady-in-Waiting',
   Offspring = 'Offspring',
   Relative = 'Relative',
   Squire = 'Squire',
@@ -21,12 +22,12 @@ export enum Stable {
   Palfrey = 'Palfrey'
 }
 
-export enum Servants {
+export enum Servant {
   Chamberlain = 'Chamberlain',
   Cook = 'Cook',
   Baker = 'Baker',
   Alewife = 'Alewife',
   Gardener = 'Gardener',
   Nursemaid = 'Nursemaid',
-  Domestics = 'Domestics'
+  Domestic = 'Domestic'
 }

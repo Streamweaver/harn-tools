@@ -44,7 +44,7 @@ describe('Generator: Yeoman', () => {
     manor.grossAcres = 5000;
     manor.policies.foAcresPerHH = 10;
     generator.recruitYeoman(manor);
-    expect(generator.heavyHorseObligation()).toBe(1);
+    expect(generator.heavyHorseObligation(manor)).toBe(1);
   });
 
   it('should calculate Light Foot requirement properly', function() {
@@ -52,7 +52,7 @@ describe('Generator: Yeoman', () => {
     manor.policies.foAcresPerHH = 500;
     manor.policies.foAcresPerLF = 200;
     generator.recruitYeoman(manor);
-    expect(generator.lightFoodObligation()).toBe(5);
+    expect(generator.lightFoodObligation(manor)).toBe(5);
   });
 
   it('should add a note about the Feudal Obligation', function() {

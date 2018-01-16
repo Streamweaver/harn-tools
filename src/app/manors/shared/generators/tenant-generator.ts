@@ -14,7 +14,6 @@ const CLASSTABLE = [
 
 export class TenantGenerator {
   private _dice = new NumberGenerator();
-  private _manor: Manor;
 
   constructor() {}
 
@@ -24,11 +23,10 @@ export class TenantGenerator {
    * @param {Manor} manor
    */
   generateTenants(manor: Manor) {
-    this._manor = manor;
-    const tenantHouseholds =
-      this._manor.clearedAcres / 40 * this._manor.landQuality;
-    for (let i = 0; i < tenantHouseholds; i++) {
-      this._manor.population.tenants.push(this._generateTenant());
+    const tenantCapacity = manor.clearedAcres / 40 * manor.landQuality;
+    const tenantsNeeded = tenantCapacity - manor.population.tenants.length;
+    for (let i = 0; i < tenantsNeeded; i++) {
+      manor.population.tenants.push(this._generateTenant(manor));
     }
   }
 
@@ -38,7 +36,7 @@ export class TenantGenerator {
    * @returns {ITenant}
    * @private
    */
-  private _generateTenant(): ITenant {
+  private _generateTenant(manor: Manor): ITenant {
     const tenant: ITenant = {
       occupation: null,
       craft: null,
@@ -53,21 +51,21 @@ export class TenantGenerator {
       fees: 0,
       notes: []
     };
-    this._generateTenantClass(tenant);
+    this._generateTenantClass(manor, tenant);
     this._generateTenantSize(tenant);
     this._generateML(tenant);
     this._generateTenantSerfAcres(tenant);
     this._generateTenantFreeAcres(tenant);
     this._assessLaborDays(tenant);
-    this._assignSpecialTrade(tenant);
+    this._assignSpecialTrade(manor, tenant);
     this._assessRent(tenant);
     this._assessFees(tenant);
     return tenant;
   }
 
-  private _generateTenantClass(t: ITenant) {
+  private _generateTenantClass(manor: Manor, t: ITenant) {
     let tClass = rwc(CLASSTABLE);
-    if (!this._manor.policies.isSlaveState && tClass === TenantType.SLAVE) {
+    if (!manor.policies.isSlaveState && tClass === TenantType.SLAVE) {
       tClass = TenantType.COTTAR;
     }
     t.occupation = tClass;
@@ -127,7 +125,7 @@ export class TenantGenerator {
    * @param {ITenant} t
    * @private
    */
-  private _assignSpecialTrade(t: ITenant): void {
+  private _assignSpecialTrade(manor: Manor, t: ITenant): void {
     if (
       t.occupation === TenantType.CRAFTSMAN ||
       t.occupation === TenantType.PRIEST
@@ -140,9 +138,9 @@ export class TenantGenerator {
     const ta = t.free_acres + t.serf_acres;
     const chanceMod = ta >= 20 ? Math.floor((ta - 15) / 5) : 0;
     if (this._dice.rollTotal(6, 3) - chanceMod > 10) {
-      if (this._manor.topology === Topology.Coastal) {
+      if (manor.topology === Topology.Coastal) {
         t.occupation = TenantType.FISHERMAN;
-      } else if (this._manor.topology === Topology.Forest) {
+      } else if (manor.topology === Topology.Forest) {
         t.occupation = TenantType.TRAPPER;
       }
     }
