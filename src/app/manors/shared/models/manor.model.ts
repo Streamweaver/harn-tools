@@ -1,29 +1,32 @@
 import { Population } from './population.model';
-import { ICrop } from './crop.model';
+import {
+  ICrop,
+  PlantingProfileInterface,
+  LivestockInterface
+} from './crop.model';
 import { NumberGenerator } from '../../../shared/generators/number-generator';
+import { AnnualReportInterface } from './annualreport.model';
 
-export class IManor {
-  name: string;
-  realm: string;
-  topology: Topology;
-  grossAcres: number;
-  woodlandAcres: number;
-  clearedAcres: number;
-  landQuality: number;
-  fiefIndex: number;
-  tradeIndex: number;
-  weatherIndex: number;
-
-  population: Population;
-  crops: ICrop[];
-
-  freeRent: number;
+class Policies {
+  baseRent: number;
+  freeholderRent: number;
   serfLabor: number;
   isSlaveState: boolean;
   isBailiffRun: boolean;
   foAcresPerHH: number;
   foAcresPerLF: number;
-  Notes: string[];
+  plantingProfile: PlantingProfileInterface[];
+
+  constructor() {
+    this.baseRent = 60;
+    this.freeholderRent = 6;
+    this.serfLabor = 4;
+    this.isSlaveState = false;
+    this.isBailiffRun = false;
+    this.foAcresPerHH = 1200;
+    this.foAcresPerLF = 600;
+    this.plantingProfile = [];
+  }
 }
 
 export class ManorFactory {
@@ -62,7 +65,7 @@ export const TopologyEffects = {
   }
 };
 
-export class Manor implements IManor {
+export class Manor {
   name: string;
   realm: string;
   topology: Topology;
@@ -72,18 +75,12 @@ export class Manor implements IManor {
   landQuality: number;
   fiefIndex: number;
   tradeIndex: number;
-  weatherIndex: number;
 
+  policies: Policies;
   population: Population;
+  annualReports: AnnualReportInterface[];
   crops: ICrop[];
 
-  freeRent: number;
-  baseRent: number;
-  serfLabor: number;
-  isSlaveState: boolean;
-  isBailiffRun: boolean;
-  foAcresPerHH: number;
-  foAcresPerLF: number;
   Notes: string[];
 
   private dice: NumberGenerator;
@@ -92,23 +89,19 @@ export class Manor implements IManor {
     this.name = null;
     this.realm = null;
     this.topology = Topology.Lowlands;
-    this.grossAcres = 2000;
-    this.woodlandAcres = 200;
-    this.clearedAcres = 1800;
-    this.landQuality = 1.0;
-    this.fiefIndex = 0.0;
-    this.tradeIndex = 0.0;
-    this.weatherIndex = 1.0;
+    this.grossAcres = 900 + this.dice.rollTotal(6, 3) * 100;
+    this.woodlandAcres = Math.floor(
+      this.grossAcres * this.dice.rollDie(10 / 100 + 0.05)
+    );
+    this.clearedAcres = this.grossAcres - this.woodlandAcres;
+    this.landQuality = 0.74 + this.dice.rollDie(51) / 100;
+    this.setFiefIndex();
+    this.tradeIndex = 0.5;
 
+    this.policies = new Policies();
     this.population = new Population();
     this.crops = [];
-    this.freeRent = 6;
-    this.baseRent = 60;
-    this.serfLabor = 4;
-    this.isSlaveState = false;
-    this.isBailiffRun = false;
-    this.foAcresPerHH = 1500;
-    this.foAcresPerLF = 600;
+
     this.Notes = [];
 
     this.dice = new NumberGenerator();

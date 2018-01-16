@@ -1,10 +1,24 @@
-import { ICrop } from './crop.model';
-
-export interface ICrop {
+export interface PlantingProfileInterface {
   name: string;
-  yield: number;
   acres: number;
+}
+
+export interface ICrop extends PlantingProfileInterface {
+  yield: number;
   labor: number;
+  kind: number;
+}
+
+export interface LivestockInterface extends ICrop {
+  size: number;
+}
+
+export enum HerdType {
+  Oxen = 'Oxen',
+  Cows = 'Cows',
+  Goats = 'Goats',
+  Sheep = 'Sheep',
+  Swine = 'Swine'
 }
 
 export enum CropType {
@@ -22,49 +36,49 @@ interface ICropData {
   [key: string]: {
     hr: number;
     labor: number;
-    dYield: number;
-  }[];
+    yield: number;
+  };
 }
-export const CropData = {
+export const CropData: ICropData = {
   [CropType.Rye]: {
     hr: 10,
     labor: 5,
-    dYield: 45
+    yield: 45
   },
   [CropType.Barley]: {
     hr: 20,
     labor: 6,
-    dYield: 48
+    yield: 48
   },
   [CropType.Oats]: {
     hr: 15,
     labor: 5,
-    dYield: 42
+    yield: 42
   },
   [CropType.Hay]: {
     hr: 20,
     labor: 5,
-    dYield: 40
+    yield: 40
   },
   [CropType.Vegetables]: {
     hr: 0,
     labor: 8,
-    dYield: 80
+    yield: 80
   },
   [CropType.Flax]: {
     hr: -10,
     labor: 6,
-    dYield: 66
+    yield: 66
   },
   [CropType.Wheat]: {
     hr: -20,
     labor: 6,
-    dYield: 72
+    yield: 72
   },
   [CropType.Fruit]: {
     hr: -30,
     labor: 7,
-    dYield: 90
+    yield: 90
   }
 };
 

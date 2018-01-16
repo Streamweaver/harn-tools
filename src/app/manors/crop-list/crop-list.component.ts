@@ -10,6 +10,7 @@ import { CropGeneratorService } from '../shared/services/crop-generator.service'
 })
 export class CropListComponent implements OnInit {
   @Input('manor') manor: IManor;
+  @Input('weatherIndex') weatherIndex;
 
   constructor(private cropService: CropGeneratorService) {}
 
