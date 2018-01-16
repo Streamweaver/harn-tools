@@ -79,9 +79,8 @@ export class Manor {
   policies: Policies;
   population: Population;
   annualReports: AnnualReportInterface[];
-  crops: ICrop[];
 
-  Notes: string[];
+  notes: string[];
 
   private dice: NumberGenerator;
 
@@ -100,9 +99,8 @@ export class Manor {
 
     this.policies = new Policies();
     this.population = new Population();
-    this.crops = [];
 
-    this.Notes = [];
+    this.notes = [];
 
     this.dice = new NumberGenerator();
   }

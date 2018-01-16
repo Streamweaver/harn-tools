@@ -2,12 +2,7 @@ import { ITenant } from './tenant.model';
 import { Officer } from './tenant.model';
 import { IHouseholdMember } from './housemember.model';
 
-export interface IPopulation {
-  tenants: ITenant[];
-  household: IHouseholdMember[];
-}
-
-export class Population implements IPopulation {
+export class Population {
   tenants: ITenant[];
   household: IHouseholdMember[];
 

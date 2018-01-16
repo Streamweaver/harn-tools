@@ -97,12 +97,6 @@ export class ManorComponent implements OnInit {
 
   onGenerateClick() {
     this.showGenerationInput = false;
-    this._tg.generateTenants(this.manor);
-    this._cg.assignCraftsmen(this.manor);
-    this._mg.recruitYeoman(this.manor);
-    this._to.electOfficers(this.manor);
-    this._hg.generateHousehold(this.manor);
-    this.manor.setFiefIndex();
     this.cropService.generateCrops(this.manor);
   }
 
