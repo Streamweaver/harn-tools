@@ -1,0 +1,137 @@
+<div class="card">
+  <div class="card-header font-weight-bold">Manor Data</div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small">Realm</div>
+      <div class="col-sm-6 small">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                 [(ngModel)]="manor.realm">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small">Topology</div>
+      <div class="col-sm-6 small">
+        <div class="input-group input-group-sm">
+          <select class="px-1 py-1 col-sm-12" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                  [(ngModel)]="manor.topology" (change)="onTopologySelect()">
+            <option value="" disabled [ngValue]="null">--choose</option>
+            <option *ngFor="let topography of topologyChoices()" [ngValue]="topography"
+                    [selected]="manor.topology === topography">{{topography}}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <hr class="small">
+
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small">Gross Acres</div>
+      <div class="col-sm-6 small">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                 (change)="onGrossAcresChange()" [(ngModel)]="manor.grossAcres">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small"> - Woodland Acres</div>
+      <div class="col-sm-6 small">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                 (change)="onWoodlandAcresChange()" [(ngModel)]="manor.woodlandAcres">
+        </div>
+      </div>
+    </div>
+    <div class="row field-box">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small"> = Cleared Acres</div>
+      <div class="col-sm-6 small">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                 (change)="onClearedAcresChange()" [(ngModel)]="manor.clearedAcres">
+        </div>
+      </div>
+    </div>
+    <div class="row field-box">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small"> - Tenant Acres</div>
+      <div class="col-sm-6 small">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                 (change)="onClearedAcresChange()"
+                 [value]="manor.population.tenantAcres()" disabled>
+        </div>
+      </div>
+    </div>
+    <div class="row field-box">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small"> = Demesne Acres</div>
+      <div class="col-sm-6 small">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                 (change)="onClearedAcresChange()"
+                 [value]="manor.demenseAcres()" disabled>
+        </div>
+      </div>
+    </div>
+
+    <hr class="small">
+
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small">Labor Pool</div>
+      <div class="col-sm-6 small">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                 [value]="manor.population.tenantLaborPool()"
+                 disabled>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small">Labor Obligation</div>
+      <div class="col-sm-6 small">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                 [value]="manor.population.tenantLaborDays()"
+                 disabled>
+        </div>
+      </div>
+    </div>
+
+    <hr class="small">
+
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small">Land Quality</div>
+      <div class="col-sm-6 small">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                 [(ngModel)]="manor.landQuality">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small">Fief Index</div>
+      <div class="col-sm-6 small">
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                 [(ngModel)]="manor.fiefIndex"
+                 [disabled]="showGenerationInput">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-6 col-xsm-6 small">Trade Index</div>
+      <div class="col-sm-6 small">
+
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                 [(ngModel)]="manor.tradeIndex"
+                 [disabled]="showGenerationInput">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer">
+
+  </div>
+</div>

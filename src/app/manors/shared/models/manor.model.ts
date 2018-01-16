@@ -89,7 +89,7 @@ export class Manor {
     this.topology = Topology.Lowlands;
     this.grossAcres = 900 + this.dice.rollTotal(6, 3) * 100;
     this.woodlandAcres = Math.floor(
-      this.grossAcres * this.dice.rollDie(10 / 100 + 0.05)
+      this.grossAcres * (this.dice.rollDie(10) / 100 + 0.05)
     );
     this.clearedAcres = this.grossAcres - this.woodlandAcres;
     this.landQuality = 0.74 + this.dice.rollDie(51) / 100;

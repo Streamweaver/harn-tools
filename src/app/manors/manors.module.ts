@@ -10,6 +10,7 @@ import { HouseholdListComponent } from './household-list/household-list.componen
 import { HouseholdMemberComponent } from './household-member/household-member.component';
 import { CropListComponent } from './crop-list/crop-list.component';
 import { CropGeneratorService } from './shared/services/crop-generator.service';
+import { GeneralDataComponent } from './general-data/general-data.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { CropGeneratorService } from './shared/services/crop-generator.service';
     TenantComponent,
     HouseholdListComponent,
     HouseholdMemberComponent,
-    CropListComponent
+    CropListComponent,
+    GeneralDataComponent
   ]
 })
 export class ManorsModule {}
