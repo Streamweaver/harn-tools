@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { IManor } from '../shared/models/manor.model';
-import { ManorService } from '../shared/manor.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Manor } from '../shared/models/manor.model';
 
 @Component({
   selector: 'app-tenant-list',
@@ -8,13 +7,11 @@ import { ManorService } from '../shared/manor.service';
   styleUrls: ['./tenant-list.component.scss']
 })
 export class TenantListComponent implements OnInit {
-  manor: IManor;
+  @Input('manor') manor: Manor;
 
-  constructor(private manorService: ManorService) {}
+  constructor() {}
 
-  ngOnInit() {
-    this.manor = this.manorService.getManor();
-  }
+  ngOnInit() {}
 
   populationSize(): number {
     let size = 0;

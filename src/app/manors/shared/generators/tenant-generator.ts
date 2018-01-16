@@ -1,5 +1,5 @@
 import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { IManor, Topology } from '../models/manor.model';
+import { Manor, Topology } from '../models/manor.model';
 import { ITenant, TenantType } from '../models/tenant.model';
 import * as rwc from 'random-weighted-choice';
 
@@ -14,16 +14,16 @@ const CLASSTABLE = [
 
 export class TenantGenerator {
   private _dice = new NumberGenerator();
-  private _manor: IManor;
+  private _manor: Manor;
 
   constructor() {}
 
   /**
    * Begins the generation process for manor passed.
    *
-   * @param {IManor} manor
+   * @param {Manor} manor
    */
-  generateTenants(manor: IManor) {
+  generateTenants(manor: Manor) {
     this._manor = manor;
     const tenantHouseholds =
       this._manor.clearedAcres / 40 * this._manor.landQuality;
@@ -67,7 +67,7 @@ export class TenantGenerator {
 
   private _generateTenantClass(t: ITenant) {
     let tClass = rwc(CLASSTABLE);
-    if (!this._manor.isSlaveState && tClass === TenantType.SLAVE) {
+    if (!this._manor.policies.isSlaveState && tClass === TenantType.SLAVE) {
       tClass = TenantType.COTTAR;
     }
     t.occupation = tClass;

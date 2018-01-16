@@ -1,10 +1,10 @@
 import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { IManor, Topology } from '../models/manor.model';
+import { Manor, Topology } from '../models/manor.model';
 import { ITenant, Officer, TenantType } from '../models/tenant.model';
 
 export class TenantOfficerGenerator {
   private _dice: NumberGenerator;
-  private _manor: IManor;
+  private _manor: Manor;
 
   constructor() {
     this._dice = new NumberGenerator();
@@ -12,9 +12,9 @@ export class TenantOfficerGenerator {
 
   /**
    * Initiates selection of each of the officer types in the manor.
-   * @param {IManor} manor
+   * @param {Manor} manor
    */
-  electOfficers(manor: IManor) {
+  electOfficers(manor: Manor) {
     this._manor = manor;
     this._selectSerfOfficer(Officer.Reeve);
     this._selectSerfOfficer(Officer.Woodward);
@@ -30,7 +30,7 @@ export class TenantOfficerGenerator {
     if (this._dice.rollDie(100) < glebeChance) {
       this._selectGlebe();
     } else {
-      this._manor.Notes.push('No active Glebe');
+      this._manor.notes.push('No active Glebe');
     }
   }
 

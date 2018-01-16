@@ -1,17 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { CraftsmanGenerator } from '../shared/generators/craftsman-generator';
-import { TenantGenerator } from '../shared/generators/tenant-generator';
-import { YeomanGenerator } from '../shared/generators/yeoman-generator';
 import {
   Manor,
-  IManor,
+  ManorFactory,
   Topology,
   TopologyEffects
 } from '../shared/models/manor.model';
-import { ManorService } from '../shared/manor.service';
-import { TenantOfficerGenerator } from '../shared/generators/tenant-officer.generator';
 import { NumberGenerator } from '../../shared/generators/number-generator';
-import { HouseholdGenerator } from '../shared/generators/household.generator';
 import { CropGeneratorService } from '../shared/services/crop-generator.service';
 
 @Component({
@@ -23,43 +17,26 @@ export class ManorComponent implements OnInit {
   manor: Manor;
   dice: NumberGenerator;
   showGenerationInput: boolean;
-  private _tg: TenantGenerator;
-  private _cg: CraftsmanGenerator;
-  private _mg: YeomanGenerator;
-  private _to: TenantOfficerGenerator;
-  private _hg: HouseholdGenerator;
 
   constructor(
-    private manorService: ManorService,
     private cropService: CropGeneratorService
   ) {}
 
   ngOnInit() {
     this.dice = new NumberGenerator();
-    this._tg = new TenantGenerator();
-    this._cg = new CraftsmanGenerator();
-    this._mg = new YeomanGenerator();
-    this._to = new TenantOfficerGenerator();
-    this._hg = new HouseholdGenerator();
-    this.manor = this.manorService.getManor() as Manor;
     this._reset();
   }
 
   private _reset() {
-    this.manorService.resetManor();
-    this.manor.grossAcres = this.dice.rollTotal(6, 2) * 100 + 1000;
-    this.manor.landQuality = parseFloat(
-      (
-        1 +
-        this.dice.rollTotal(6, 5) / 100 -
-        this.dice.rollTotal(6, 5) / 100
-      ).toFixed(2)
-    );
-    this.manor.setFiefIndex();
+    this.manor = ManorFactory.getManor();
     this.showGenerationInput = true;
     this.onTopologySelect();
   }
 
+  /**
+   * Recalculates Woodland and Cleared Acre values based on values from the
+   * Topology table in Harn Manor.
+   */
   onTopologySelect() {
     const woodlandRatio =
       TopologyEffects[this.manor.topology].woods -
@@ -83,10 +60,16 @@ export class ManorComponent implements OnInit {
     this.manor.clearedAcres = this.manor.grossAcres - this.manor.woodlandAcres;
   }
 
+  /**
+   * When woodland acres are changed, recalculate cleared acres to compensate.
+   */
   onWoodlandAcresChange() {
     this.manor.clearedAcres = this.manor.grossAcres - this.manor.woodlandAcres;
   }
 
+  /**
+   * When cleared acres are changed, recalculate woodland acres to compensate.
+   */
   onClearedAcresChange() {
     this.manor.woodlandAcres = this.manor.grossAcres - this.manor.clearedAcres;
   }
@@ -100,6 +83,10 @@ export class ManorComponent implements OnInit {
     this.cropService.generateCrops(this.manor);
   }
 
+  /**
+   * Parses a string array of topologies from the enum for use in select option.
+   * @returns {string[]}
+   */
   topologyChoices(): string[] {
     const keys = Object.keys(Topology);
     return keys;

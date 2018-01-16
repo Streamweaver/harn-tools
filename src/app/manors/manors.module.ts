@@ -4,7 +4,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { ManorsRoutingModule } from './manors-routing.module';
 import { ManorComponent } from './manor/manor.component';
-import { ManorService } from './shared/manor.service';
 import { TenantListComponent } from './tenant-list/tenant-list.component';
 import { TenantComponent } from './tenant/tenant.component';
 import { HouseholdListComponent } from './household-list/household-list.component';
@@ -19,7 +18,7 @@ import { CropGeneratorService } from './shared/services/crop-generator.service';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [ManorService, CropGeneratorService],
+  providers: [CropGeneratorService],
   declarations: [
     ManorComponent,
     TenantListComponent,

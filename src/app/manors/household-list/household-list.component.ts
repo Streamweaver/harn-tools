@@ -1,6 +1,5 @@
 import { HouseholdGenerator } from './../shared/generators/household.generator';
-import { IHouseholdMember } from './../shared/models/housemember.model';
-import { IManor } from './../shared/models/manor.model';
+import { Manor } from './../shared/models/manor.model';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -9,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./household-list.component.scss']
 })
 export class HouseholdListComponent implements OnInit {
-  @Input('manor') manor: IManor;
+  @Input('manor') manor: Manor;
   private _hg: HouseholdGenerator;
 
   constructor() {}

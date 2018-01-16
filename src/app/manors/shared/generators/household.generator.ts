@@ -1,6 +1,6 @@
 import { NumberGenerator } from './../../../shared/generators/number-generator';
 import { IHouseholdMember } from './../models/housemember.model';
-import { IManor } from './../models/manor.model';
+import { Manor } from './../models/manor.model';
 
 /**
  * Determines the number of household nobles based on the effective acres.  Manors held
@@ -17,14 +17,14 @@ function numberOfHouseholdNobles(eAcres: number): number {
 }
 
 export class HouseholdGenerator {
-  private _manor: IManor;
+  private _manor: Manor;
   private _dice: NumberGenerator;
 
   constructor() {
     this._dice = new NumberGenerator();
   }
 
-  generateHousehold(m: IManor) {
+  generateHousehold(m: Manor) {
     this._manor = m;
     this._manor.population.household = [];
     this._generateFamily();

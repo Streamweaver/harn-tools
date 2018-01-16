@@ -37,7 +37,7 @@ describe('Generator: Tenant', () => {
   });
 
   it('should genereate slaves', () => {
-    manor.isSlaveState = true;
+    manor.policies.isSlaveState = true;
     manor.clearedAcres = 10000;
     generator.generateTenants(manor);
     let hasSlave = false;
@@ -138,7 +138,7 @@ describe('Generator: Tenant', () => {
   });
 
   it('should assess proper fees above 5 for everyone but slaves', () => {
-    manor.isSlaveState = true;
+    manor.policies.isSlaveState = true;
     generator.generateTenants(manor);
     for (const tenant of manor.population.tenants) {
       if (tenant.occupation !== TenantType.SLAVE) {
@@ -150,7 +150,7 @@ describe('Generator: Tenant', () => {
   });
 
   it('should assess proper rents above 60 for everyone but slaves', () => {
-    manor.isSlaveState = true;
+    manor.policies.isSlaveState = true;
     generator.generateTenants(manor);
     for (const tenant of manor.population.tenants) {
       if (tenant.occupation !== TenantType.SLAVE) {
@@ -162,7 +162,7 @@ describe('Generator: Tenant', () => {
   });
 
   it('should generate labor days for anyone with serf acres properly', () => {
-    manor.isSlaveState = true;
+    manor.policies.isSlaveState = true;
     generator.generateTenants(manor);
     for (const tenant of manor.population.tenants) {
       if (tenant.occupation !== TenantType.SLAVE) {

@@ -1,8 +1,6 @@
 import { Population } from './population.model';
 import {
-  ICrop,
-  PlantingProfileInterface,
-  LivestockInterface
+  PlantingProfile,
 } from './crop.model';
 import { NumberGenerator } from '../../../shared/generators/number-generator';
 import { AnnualReportInterface } from './annualreport.model';
@@ -15,7 +13,7 @@ class Policies {
   isBailiffRun: boolean;
   foAcresPerHH: number;
   foAcresPerLF: number;
-  plantingProfile: PlantingProfileInterface[];
+  plantingProfile: PlantingProfile[];
 
   constructor() {
     this.baseRent = 60;
@@ -85,6 +83,7 @@ export class Manor {
   private dice: NumberGenerator;
 
   constructor() {
+    this.dice = new NumberGenerator();
     this.name = null;
     this.realm = null;
     this.topology = Topology.Lowlands;
@@ -102,7 +101,7 @@ export class Manor {
 
     this.notes = [];
 
-    this.dice = new NumberGenerator();
+
   }
 
   /**

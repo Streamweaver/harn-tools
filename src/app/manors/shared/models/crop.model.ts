@@ -1,15 +1,15 @@
-export interface PlantingProfileInterface {
+export interface PlantingProfile {
   name: string;
   acres: number;
 }
 
-export interface ICrop extends PlantingProfileInterface {
+export interface Crop extends PlantingProfile {
   yield: number;
   labor: number;
   kind: number;
 }
 
-export interface LivestockInterface extends ICrop {
+export interface LivestockInterface extends Crop {
   size: number;
 }
 
@@ -81,10 +81,3 @@ export const CropData: ICropData = {
     yield: 90
   }
 };
-
-export class Crop implements ICrop {
-  name: string;
-  yield: number;
-  acres: number;
-  labor: number;
-}

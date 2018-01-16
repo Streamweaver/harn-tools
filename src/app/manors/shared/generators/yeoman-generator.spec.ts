@@ -1,11 +1,11 @@
-import { IManor, ManorFactory } from '../models/manor.model';
+import { Manor, ManorFactory } from '../models/manor.model';
 import { MilitaryData } from '../models/military.models';
 import { TenantType } from '../models/tenant.model';
 import { YeomanGenerator, MilitaryAcres } from './yeoman-generator';
 
 describe('Generator: Yeoman', () => {
   let generator: YeomanGenerator;
-  let manor: IManor;
+  let manor: Manor;
 
   function makeTenants(n: number, tc: TenantType) {
     for (let i = 0; i < n; i++) {
@@ -42,29 +42,29 @@ describe('Generator: Yeoman', () => {
 
   it('should calculate Heavy Horse oblgation properly', function() {
     manor.grossAcres = 5000;
-    manor.foAcresPerHH = 10;
+    manor.policies.foAcresPerHH = 10;
     generator.recruitYeoman(manor);
     expect(generator.heavyHorseObligation()).toBe(1);
   });
 
   it('should calculate Light Foot requirement properly', function() {
     manor.grossAcres = 1500;
-    manor.foAcresPerHH = 500;
-    manor.foAcresPerLF = 200;
+    manor.policies.foAcresPerHH = 500;
+    manor.policies.foAcresPerLF = 200;
     generator.recruitYeoman(manor);
     expect(generator.lightFoodObligation()).toBe(5);
   });
 
   it('should add a note about the Feudal Obligation', function() {
     generator.recruitYeoman(manor);
-    expect(manor.Notes.length).toBe(1);
+    expect(manor.notes.length).toBe(1);
   });
 
   it('should NOT recruit non-farmers', function() {
     makeTenants(5, TenantType.FARMER);
     makeTenants(5, TenantType.COTTAR);
-    manor.foAcresPerHH = 0;
-    manor.foAcresPerLF = 500;
+    manor.policies.foAcresPerHH = 0;
+    manor.policies.foAcresPerLF = 500;
     generator.recruitYeoman(manor);
     for (const tenant of manor.population.tenants) {
       if (tenant.occupation === TenantType.COTTAR) {
@@ -76,8 +76,8 @@ describe('Generator: Yeoman', () => {
   it('should recruit no more than the feudal obligation', function() {
     makeTenants(100, TenantType.FARMER);
     manor.grossAcres = 2000;
-    manor.foAcresPerHH = 0;
-    manor.foAcresPerLF = 500;
+    manor.policies.foAcresPerHH = 0;
+    manor.policies.foAcresPerLF = 500;
     generator.recruitYeoman(manor);
     let recruitmentPts = 0;
     for (const tenant of manor.population.tenants) {
@@ -97,8 +97,8 @@ describe('Generator: Yeoman', () => {
   it('should generate the proper range of acres for military classes', function() {
     makeTenants(100, TenantType.FARMER);
     manor.grossAcres = 2000;
-    manor.foAcresPerHH = 0;
-    manor.foAcresPerLF = 20;
+    manor.policies.foAcresPerHH = 0;
+    manor.policies.foAcresPerLF = 20;
     generator.recruitYeoman(manor);
     for (const tenant of manor.population.tenants) {
       if (tenant.military !== null) {
@@ -112,8 +112,8 @@ describe('Generator: Yeoman', () => {
   it('should assess correct rent for military classes', function() {
     makeTenants(100, TenantType.FARMER);
     manor.grossAcres = 2000;
-    manor.foAcresPerHH = 0;
-    manor.foAcresPerLF = 20;
+    manor.policies.foAcresPerHH = 0;
+    manor.policies.foAcresPerLF = 20;
     generator.recruitYeoman(manor);
     for (const tenant of manor.population.tenants) {
       if (tenant.military !== null) {
@@ -125,8 +125,8 @@ describe('Generator: Yeoman', () => {
   it('should assess correct fees for military classes', function() {
     makeTenants(100, TenantType.FARMER);
     manor.grossAcres = 2000;
-    manor.foAcresPerHH = 0;
-    manor.foAcresPerLF = 20;
+    manor.policies.foAcresPerHH = 0;
+    manor.policies.foAcresPerLF = 20;
     generator.recruitYeoman(manor);
     for (const tenant of manor.population.tenants) {
       if (tenant.military !== null) {
@@ -139,8 +139,8 @@ describe('Generator: Yeoman', () => {
     makeTenants(5, TenantType.FARMER);
     makeTenants(5, TenantType.COTTAR);
     manor.grossAcres = 2000;
-    manor.foAcresPerHH = 0;
-    manor.foAcresPerLF = 500;
+    manor.policies.foAcresPerHH = 0;
+    manor.policies.foAcresPerLF = 500;
     generator.recruitYeoman(manor);
     for (const tenant of manor.population.tenants) {
       if (tenant.military !== null) {

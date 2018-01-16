@@ -1,7 +1,7 @@
-import {IManor, ManorFactory} from '../models/manor.model';
+import {Manor, ManorFactory} from '../models/manor.model';
 
 export class MockManorService {
-  manor: IManor;
+  manor: Manor;
 
   constructor() {
     this.resetManor();
@@ -11,7 +11,7 @@ export class MockManorService {
     this.manor = ManorFactory.getManor();
   }
 
-  getManor(): IManor {
+  getManor(): Manor {
     return this.manor;
   }
 }

@@ -1,5 +1,5 @@
 import {NumberGenerator} from '../../../shared/generators/number-generator';
-import {IManor} from '../models/manor.model';
+import {Manor} from '../models/manor.model';
 import {Military, MilitaryData} from '../models/military.models';
 import {TenantType} from '../models/tenant.model';
 import * as rwc from 'random-weighted-choice';
@@ -32,7 +32,7 @@ export const MilitaryAcres = {
  */
 export class YeomanGenerator {
   private _dice: NumberGenerator;
-  private _manor: IManor;
+  private _manor: Manor;
   private _recruitmentPts: number;
 
   constructor() {
@@ -41,9 +41,9 @@ export class YeomanGenerator {
 
   /**
    * Handles recruitment for manor passed to it.
-   * @param {IManor} manor
+   * @param {Manor} manor
    */
-  recruitYeoman(manor: IManor) {
+  recruitYeoman(manor: Manor) {
     this._manor = manor;
     this._recruitmentPts = this.lightFoodObligation() * MilitaryData[Military.LF].pts;
     while (this._recruitableFamers() && this._recruitmentPts > 1) {
@@ -132,7 +132,7 @@ export class YeomanGenerator {
    * @private
    */
   private _noteFeudalObligation() {
-    this._manor.Notes.push(
+    this._manor.notes.push(
       'Feaudal Obligation: ' + this.heavyHorseObligation() + 'HH/' + this.lightFoodObligation() + 'LF'
     );
   }
@@ -150,7 +150,7 @@ export class YeomanGenerator {
    * @returns {number} returns 1 if it meets it and 0 if not.
    */
   heavyHorseObligation(): number {
-    return (this._manor.grossAcres - this._manor.foAcresPerHH >= 0) ? 1 : 0;
+    return (this._manor.grossAcres - this._manor.policies.foAcresPerHH >= 0) ? 1 : 0;
   }
 
   /**
@@ -158,7 +158,7 @@ export class YeomanGenerator {
    * @returns {number} of LF equivalent troops.
    */
   lightFoodObligation(): number {
-    const foLeft = this._manor.grossAcres - this.heavyHorseObligation() * this._manor.foAcresPerHH;
-    return Math.floor(foLeft / this._manor.foAcresPerLF);
+    const foLeft = this._manor.grossAcres - this.heavyHorseObligation() * this._manor.policies.foAcresPerHH;
+    return Math.floor(foLeft / this._manor.policies.foAcresPerLF);
   }
 }

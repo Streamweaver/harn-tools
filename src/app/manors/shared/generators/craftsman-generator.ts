@@ -1,5 +1,5 @@
 import * as rwc from 'random-weighted-choice';
-import {IManor, Topology} from '../models/manor.model';
+import {Manor, Topology} from '../models/manor.model';
 import {Craftsman, craftsmanFees, ITenant} from '../models/tenant.model';
 import {TenantType} from '../models/tenant.model';
 
@@ -22,11 +22,11 @@ export const craftsmanTable = [
 ];
 
 export class CraftsmanGenerator {
-  private _manor: IManor;
+  private _manor: Manor;
 
   constructor() {}
 
-  assignCraftsmen(manor: IManor) {
+  assignCraftsmen(manor: Manor) {
     this._manor = manor;
     let craft: Craftsman;
     for (const tenant of this._manor.population.tenants) {
@@ -87,13 +87,13 @@ export class CraftsmanGenerator {
 
   private _noteMissing() {
     if (!this._exists(Craftsman.Miller)) {
-      this._manor.Notes.push('No Miller!');
+      this._manor.notes.push('No Miller!');
     }
     if (!this._exists(Craftsman.Metalsmith)) {
-      this._manor.Notes.push('No Metalsmith!');
+      this._manor.notes.push('No Metalsmith!');
     }
     if (!this._exists(Craftsman.Woodcrafter)) {
-      this._manor.Notes.push('No Woodcrafter!');
+      this._manor.notes.push('No Woodcrafter!');
     }
   }
 }

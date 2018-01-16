@@ -5,77 +5,56 @@
   <div class="col text-right h4">{{manor.name}}</div>
 </div>
 <div class="container container-fluid mb-2">
-  <div class="row sm-gutters">
+  <div class="row">
+
     <div class="input-group input-group-sm mt-1">
       <div class="input-group-prepend">
         <span class="input-group-text">Name:</span>
       </div>
-      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.name">
-      <a class="btn btn-sm btn-info" (click)="onGenerateClick()" *ngIf="showGenerationInput">
+      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+             [(ngModel)]="manor.name">
+      <a class="btn btn-sm btn-primary" (click)="onGenerateClick()" *ngIf="showGenerationInput">
         <i class="fa fa-users"></i>
         Generate</a>
       <a class="btn btn-sm btn-danger" (click)="onResetClick()" *ngIf="!showGenerationInput">
         <i class="far fa-trash-alt"></i>
         Reset</a>
+      <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#collapsePolicies" role="button" aria-expanded="false" aria-controls="collapsePolicies"><i class="fas fa-cog"></i>
+        Policies
+      </a>
     </div>
 
-    <div class="input-group input-group-sm my-1 px-3" *ngIf="showGenerationInput">
-      <div class="form-check form-check-inline col">
-        <input type="checkbox" class="form-check-input form-check-input-condensed" [checked]="manor.isSlaveState" (change)="manor.isSlaveState = !manor.isSlaveState"
-          name="isSlaveState">
-        <label class="form-check-label">Slave State?</label>
-      </div>
-      <div class="input-group input-group-sm col">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Freeman Rent:</span>
+  <hr>
+    <div class="row">
+      <div class="collapse" id="collapsePolicies">
+        <div class="card card-body">
+          Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
+          keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
         </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.freeRent">
-      </div>
-      <div class="input-group input-group-sm col">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Serf Labor:</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.serfLabor">
       </div>
     </div>
-
-    <div class="input-group input-group-sm mb-2 px-3" *ngIf="showGenerationInput">
-      <div class="col text-right">
-        Feudal Obligation:
-      </div>
-      <div class="input-group input-group-sm col">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Heavy Horse:</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.foAcresPerHH">
-      </div>
-      <div class="input-group input-group-sm col">
-        <div class="input-group-prepend">
-          <span class="input-group-text">Light Foot:</span>
-        </div>
-        <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.foAcresPerLF">
-      </div>
-    </div>
-
     <div class="card">
       <div class="card-header font-weight-bold">Manor Data</div>
       <div class="card-body">
-        <div class="row sm-gutters">
+        <div class="row">
           <div class="col-md-6 col-sm-6 col-xsm-6 small">Realm</div>
           <div class="col-sm-6 small">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.realm">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     [(ngModel)]="manor.realm">
             </div>
           </div>
         </div>
-        <div class="row sm-gutters">
+        <div class="row">
           <div class="col-md-6 col-sm-6 col-xsm-6 small">Topology</div>
           <div class="col-sm-6 small">
             <div class="input-group input-group-sm">
-              <select class="px-1 py-1 col-sm-12" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.topology"
-                [disabled]="!showGenerationInput" (change)="onTopologySelect()">
+              <select class="px-1 py-1 col-sm-12" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                      [(ngModel)]="manor.topology"
+                      [disabled]="!showGenerationInput" (change)="onTopologySelect()">
                 <option value="" disabled [ngValue]="null">--choose</option>
-                <option *ngFor="let topography of topologyChoices()" [ngValue]="topography" [selected]="manor.topology === topography">{{topography}}
+                <option *ngFor="let topography of topologyChoices()" [ngValue]="topography"
+                        [selected]="manor.topology === topography">{{topography}}
                 </option>
               </select>
             </div>
@@ -84,109 +63,110 @@
 
         <hr class="small">
 
-        <div class="row sm-gutters">
+        <div class="row">
           <div class="col-md-6 col-sm-6 col-xsm-6 small">Gross Acres</div>
           <div class="col-sm-6 small">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [disabled]="!showGenerationInput"
-                (change)="onGrossAcresChange()" [(ngModel)]="manor.grossAcres">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     [disabled]="!showGenerationInput"
+                     (change)="onGrossAcresChange()" [(ngModel)]="manor.grossAcres">
             </div>
           </div>
         </div>
-        <div class="row sm-gutters">
+        <div class="row">
           <div class="col-md-6 col-sm-6 col-xsm-6 small"> - Woodland Acres</div>
           <div class="col-sm-6 small">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [disabled]="!showGenerationInput"
-                (change)="onWoodlandAcresChange()" [(ngModel)]="manor.woodlandAcres">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     [disabled]="!showGenerationInput"
+                     (change)="onWoodlandAcresChange()" [(ngModel)]="manor.woodlandAcres">
             </div>
           </div>
         </div>
-        <div class="row field-box sm-gutters">
+        <div class="row field-box">
           <div class="col-md-6 col-sm-6 col-xsm-6 small"> = Cleared Acres</div>
           <div class="col-sm-6 small">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [disabled]="!showGenerationInput"
-                (change)="onClearedAcresChange()" [(ngModel)]="manor.clearedAcres">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     [disabled]="!showGenerationInput"
+                     (change)="onClearedAcresChange()" [(ngModel)]="manor.clearedAcres">
             </div>
           </div>
         </div>
-        <div class="row field-box sm-gutters">
+        <div class="row field-box">
           <div class="col-md-6 col-sm-6 col-xsm-6 small"> - Tenant Acres</div>
           <div class="col-sm-6 small">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" (change)="onClearedAcresChange()"
-                [value]="manor.population.tenantAcres()" disabled>
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     (change)="onClearedAcresChange()"
+                     [value]="manor.population.tenantAcres()" disabled>
             </div>
           </div>
         </div>
-        <div class="row field-box sm-gutters">
+        <div class="row field-box">
           <div class="col-md-6 col-sm-6 col-xsm-6 small"> = Demesne Acres</div>
           <div class="col-sm-6 small">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" (change)="onClearedAcresChange()"
-                [value]="manor.demenseAcres()" disabled>
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     (change)="onClearedAcresChange()"
+                     [value]="manor.demenseAcres()" disabled>
             </div>
           </div>
         </div>
 
         <hr class="small">
 
-        <div class="row sm-gutters">
+        <div class="row">
           <div class="col-md-6 col-sm-6 col-xsm-6 small">Labor Pool</div>
           <div class="col-sm-6 small">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [value]="manor.population.tenantLaborPool()"
-                disabled>
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     [value]="manor.population.tenantLaborPool()"
+                     disabled>
             </div>
           </div>
         </div>
-        <div class="row sm-gutters">
+        <div class="row">
           <div class="col-md-6 col-sm-6 col-xsm-6 small">Labor Obligation</div>
           <div class="col-sm-6 small">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [value]="manor.population.tenantLaborDays()"
-                disabled>
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     [value]="manor.population.tenantLaborDays()"
+                     disabled>
             </div>
           </div>
         </div>
 
         <hr class="small">
 
-        <div class="row sm-gutters">
+        <div class="row">
           <div class="col-md-6 col-sm-6 col-xsm-6 small">Land Quality</div>
           <div class="col-sm-6 small">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [disabled]="!showGenerationInput"
-                [(ngModel)]="manor.landQuality">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     [disabled]="!showGenerationInput"
+                     [(ngModel)]="manor.landQuality">
             </div>
           </div>
         </div>
-        <div class="row sm-gutters">
+        <div class="row">
           <div class="col-md-6 col-sm-6 col-xsm-6 small">Fief Index</div>
           <div class="col-sm-6 small">
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.fiefIndex"
-                [disabled]="showGenerationInput">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     [(ngModel)]="manor.fiefIndex"
+                     [disabled]="showGenerationInput">
             </div>
           </div>
         </div>
-        <div class="row sm-gutters">
+        <div class="row">
           <div class="col-md-6 col-sm-6 col-xsm-6 small">Trade Index</div>
           <div class="col-sm-6 small">
 
             <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.tradeIndex"
-                [disabled]="showGenerationInput">
-            </div>
-          </div>
-        </div>
-        <div class="row sm-gutters">
-          <div class="col-md-6 col-sm-6 col-xsm-6 small">Weather Index</div>
-          <div class="col-sm-6 small">
-
-            <div class="input-group input-group-sm">
-              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.weatherIndex">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     [(ngModel)]="manor.tradeIndex"
+                     [disabled]="showGenerationInput">
             </div>
           </div>
         </div>
@@ -200,18 +180,27 @@
       <app-household-list [manor]="manor"></app-household-list>
     </div>
   </div>
+
   <div class="row">
     <div class="col">
-      Fief Budget
+      Future Home of Fief Budget
     </div>
     <div class="col">
-      <app-crop-list [manor]="manor"></app-crop-list>
+      Future Home of Crop List
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      Future Home of Lords Budget
+    </div>
+    <div class="col">
+      Future Home of Livestock List
     </div>
   </div>
   <div class="row">
     <p class="lead">
-      <strong>Notes:</strong> {{manor.Notes.join('. ')}}</p>
+      <strong>Notes:</strong> {{manor.notes.join('. ')}}</p>
   </div>
 </div>
 
-<app-tenant-list></app-tenant-list>
+<app-tenant-list [manor]="manor"></app-tenant-list>

@@ -1,12 +1,12 @@
 import { NumberGenerator } from '../../../shared/generators/number-generator';
 import { Military } from '../models/military.models';
-import { IManor, ManorFactory, Topology } from '../models/manor.model';
+import { Manor, ManorFactory, Topology } from '../models/manor.model';
 import { Officer, TenantType } from '../models/tenant.model';
 import { TenantOfficerGenerator } from './tenant-officer.generator';
 
 describe('Generator: Tenant Officers', () => {
   let generator: TenantOfficerGenerator;
-  let manor: IManor;
+  let manor: Manor;
   let dice: NumberGenerator;
 
   function makeTenants(n: number, tc: TenantType) {
