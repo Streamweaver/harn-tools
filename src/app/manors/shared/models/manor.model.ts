@@ -12,6 +12,7 @@ export class IManor {
   landQuality: number;
   fiefIndex: number;
   tradeIndex: number;
+  weatherIndex: number;
 
   population: Population;
   crops: ICrop[];
@@ -71,6 +72,7 @@ export class Manor implements IManor {
   landQuality: number;
   fiefIndex: number;
   tradeIndex: number;
+  weatherIndex: number;
 
   population: Population;
   crops: ICrop[];
@@ -96,6 +98,7 @@ export class Manor implements IManor {
     this.landQuality = 1.0;
     this.fiefIndex = 0.0;
     this.tradeIndex = 0.0;
+    this.weatherIndex = 1.0;
 
     this.population = new Population();
     this.crops = [];

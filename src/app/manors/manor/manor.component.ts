@@ -12,6 +12,7 @@ import { ManorService } from '../shared/manor.service';
 import { TenantOfficerGenerator } from '../shared/generators/tenant-officer.generator';
 import { NumberGenerator } from '../../shared/generators/number-generator';
 import { HouseholdGenerator } from '../shared/generators/household.generator';
+import { CropGeneratorService } from '../shared/services/crop-generator.service';
 
 @Component({
   selector: 'app-manor',
@@ -28,7 +29,10 @@ export class ManorComponent implements OnInit {
   private _to: TenantOfficerGenerator;
   private _hg: HouseholdGenerator;
 
-  constructor(private manorService: ManorService) {}
+  constructor(
+    private manorService: ManorService,
+    private cropService: CropGeneratorService
+  ) {}
 
   ngOnInit() {
     this.dice = new NumberGenerator();
@@ -99,6 +103,7 @@ export class ManorComponent implements OnInit {
     this._to.electOfficers(this.manor);
     this._hg.generateHousehold(this.manor);
     this.manor.setFiefIndex();
+    this.cropService.generateCrops(this.manor);
   }
 
   topologyChoices(): string[] {

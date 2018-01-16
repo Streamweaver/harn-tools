@@ -1,9 +1,10 @@
+import { ICrop } from './crop.model';
+
 export interface ICrop {
   name: string;
   yield: number;
   acres: number;
   labor: number;
-  kind: number;
 }
 
 export enum CropType {
@@ -66,3 +67,10 @@ export const CropData = {
     dYield: 90
   }
 };
+
+export class Crop implements ICrop {
+  name: string;
+  yield: number;
+  acres: number;
+  labor: number;
+}

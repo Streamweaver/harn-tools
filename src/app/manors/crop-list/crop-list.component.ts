@@ -1,3 +1,4 @@
+import { ICrop } from './../shared/models/crop.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { IManor } from '../shared/models/manor.model';
 import { CropGeneratorService } from '../shared/services/crop-generator.service';
@@ -10,15 +11,18 @@ import { CropGeneratorService } from '../shared/services/crop-generator.service'
 export class CropListComponent implements OnInit {
   @Input('manor') manor: IManor;
 
-  constructor(private cropService: CropGeneratorService) { }
+  constructor(private cropService: CropGeneratorService) {}
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  cropKind(crop: ICrop): number {
+    return Math.floor(crop.acres * crop.yield);
   }
 
   cropTotal(): number {
     let total = 0;
     for (const crop of this.manor.crops) {
-      total += crop.acres * crop.kind;
+      total += Math.floor(crop.acres * crop.yield);
     }
     return total;
   }

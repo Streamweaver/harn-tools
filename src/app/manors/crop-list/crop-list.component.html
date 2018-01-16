@@ -35,7 +35,7 @@
       </div>
       <div class="col-sm-2 text-center">
         <div class="input-group input-group-sm">
-          <input type="text" class="form-control" [value]="crop.acres * crop.yield" disabled>
+          <input type="text" class="form-control" [value]="cropKind(crop)" disabled>
         </div>
       </div>
       <div class="col-sm-1 text-center">
@@ -56,7 +56,7 @@
       </div>
       <div class="col-sm-2">
         <button type="button" class="btn btn-primary btn-sm" (click)="onAddCropClick()">
-          <i class="fas fa-user-plus"></i>
+          <i class="fas fa-leaf"></i> +
         </button>
       </div>
     </div>

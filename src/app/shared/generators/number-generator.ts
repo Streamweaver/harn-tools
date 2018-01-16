@@ -1,3 +1,10 @@
+export enum CheckResult {
+  CF,
+  MF,
+  MS,
+  CS
+}
+
 export class NumberGenerator {
   rollDie(sides: number): number {
     return this.numberBetween(1, sides);
@@ -19,6 +26,11 @@ export class NumberGenerator {
     return this.numBetween(Math.random(), min, max);
   }
 
+  /**
+   * Returns the sum of times number of sides dice.
+   * @param sides type of dice to roll
+   * @param times number of dice to roll
+   */
   public rollTotal(sides: number, times: number): number {
     const roll = this.rollDice(sides, times);
     return roll.reduce((a, b) => a + b);
@@ -33,6 +45,21 @@ export class NumberGenerator {
       count += this.rollDie(6) > threshold ? 1 : 0;
     }
     return count;
+  }
+
+  public checkResult(eml: number): CheckResult {
+    const result = this.rollDie(100);
+    if (result <= eml) {
+      if (result % 5 === 0) {
+        return CheckResult.CS;
+      }
+      return CheckResult.MS;
+    } else {
+      if (result % 5 === 0) {
+        return CheckResult.CF;
+      }
+      return CheckResult.MF;
+    }
   }
 
   public gaussianNumberBetween(min: number, max: number): number {
