@@ -1,11 +1,12 @@
 import { Population } from './population.model';
 import {
+  CropType,
   PlantingProfile,
 } from './crop.model';
 import { NumberGenerator } from '../../../shared/generators/number-generator';
 import { AnnualReportInterface } from './annualreport.model';
 
-class Policies {
+export class Policies {
   baseRent: number;
   freeholderRent: number;
   serfLabor: number;
@@ -24,6 +25,11 @@ class Policies {
     this.foAcresPerHH = 1200;
     this.foAcresPerLF = 600;
     this.plantingProfile = [];
+    for (const key of Object.keys(CropType)) {
+      if (CropType[key]) {
+        this.plantingProfile.push({name: key, acres: 0});
+      }
+    }
   }
 }
 

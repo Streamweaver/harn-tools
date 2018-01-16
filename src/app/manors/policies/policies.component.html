@@ -1,0 +1,91 @@
+<form [formGroup]="policiesForm">
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        Tenant Policies
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xsm-6 small">Base Rent</div>
+          <div class="col-sm-6 small">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     formControlName="baseRent"
+                     [(ngModel)]="policies.baseRent">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xsm-6 small">Freeholder Rent</div>
+          <div class="col-sm-6 small">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     formControlName="freeholderRent"
+                     [(ngModel)]="policies.freeholderRent">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xsm-6 small">Serf Labor</div>
+          <div class="col-sm-6 small">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     formControlName="serfLabor"
+                     [(ngModel)]="policies.serfLabor">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <div class="card-header">
+        Feudal Policies
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xsm-6 small">
+            <div class="form-check form-check-inline">
+              <input type="checkbox" class="form-check-input form-check-input-condensed"
+                     formConrol="policies.isSlaveState"
+                     [(ngModel)]="policies.isSlaveState"
+                     (change)="policies.isSlaveState = !policies.isSlaveState">
+              <label class="form-check-label">Slave State?</label>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-sm-6 col-xsm-6 small">
+            <div class="form-check form-check-inline">
+              <input type="checkbox" class="form-check-input form-check-input-condensed"
+                     formConrol="policies.isBaliffRun"
+                     [(ngModel)]="policies.isBailiffRun"
+                     (change)="policies.isBailiffRun = !policies.isBailiffRun">
+              <label class="form-check-label">Bailiff Run?</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xsm-6 small">Acres/Heavy Horse</div>
+          <div class="col-sm-6 small">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     formControlName="foAcresPerHH"
+                     [(ngModel)]="policies.foAcresPerHH">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xsm-6 small">Acres/Light Foot</div>
+          <div class="col-sm-6 small">
+            <div class="input-group input-group-sm">
+              <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+                     formControlName="foAcresPerLF"
+                     [(ngModel)]="policies.foAcresPerLF">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

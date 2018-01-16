@@ -19,7 +19,8 @@
       <a class="btn btn-sm btn-danger" (click)="onResetClick()" *ngIf="!showGenerationInput">
         <i class="far fa-trash-alt"></i>
         Reset</a>
-      <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#collapsePolicies" role="button" aria-expanded="false" aria-controls="collapsePolicies"><i class="fas fa-cog"></i>
+      <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#collapsePolicies" role="button"
+         aria-expanded="false" aria-controls="collapsePolicies"><i class="fas fa-cog"></i>
         Policies
       </a>
     </div>
@@ -29,10 +30,8 @@
 
   <div class="row">
     <div class="collapse" id="collapsePolicies">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim
-        keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
+      <app-policies [policies]="manor.policies"></app-policies>
+      <hr class="small">
     </div>
   </div>
 
@@ -62,9 +61,16 @@
     </div>
   </div>
   <div class="row">
-    <p class="lead">
-      <strong>Notes:</strong> {{manor.notes.join('. ')}}</p>
+    <div class="col">
+      <p class="lead">
+        <strong>Notes:</strong> {{manor.notes.join('. ')}}
+      </p>
+    </div>
   </div>
 </div>
 
 <app-tenant-list [manor]="manor"></app-tenant-list>
+
+<code>
+  {{manor | json}}
+</code>
