@@ -168,7 +168,7 @@ describe('Generator: Tenant', () => {
     }
   });
 
-  it('should generate labor days for anyone with serf acres properly', () => {
+  it('should generate baseLabor days for anyone with serf acres properly', () => {
     manor.policies.isSlaveState = true;
     generator.generateTenants(manor);
     for (const tenant of manor.population.tenants) {

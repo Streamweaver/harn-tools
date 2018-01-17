@@ -17,7 +17,7 @@ export class CropListComponent implements OnInit {
   ngOnInit() {}
 
   cropKind(crop: Crop): number {
-    return Math.floor(crop.acres * crop.yield);
+    return Math.floor(crop.acres * crop.baseYield);
   }
 
   onAddCropClick() {

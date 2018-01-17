@@ -1,25 +1,51 @@
 import { CheckResult } from '../../../shared/generators/number-generator';
 
-export interface PlantingProfile {
-  name: CropType;
+export class Crop {
+  crop: CropType;
   acres: number;
+  baseYield: number;
+  yield: number;
+  baseLabor: number;
+  labor: number;
+  checkResult: CheckResult;
+  hardiness: number;
+
+  constructor(crop: CropType, acres: number, baseYield: number, baseLabor: number, checkResult: CheckResult, hardiness: number) {
+    this.crop = crop;
+    this.acres = acres;
+    this.baseYield = baseYield;
+    this.yield = 0;
+    this.baseLabor = baseLabor;
+    this.labor = 0;
+    this.checkResult = checkResult;
+    this.hardiness = hardiness;
+  }
 }
 
-interface FarmParcel {
+export class CropFactory {
+  newCrop(ct: CropType): Crop {
+    return new Crop(ct, 0, CropData[ct].yield, CropData[ct].labor, CheckResult.CF, CropData[ct].hr);
+  }
+}
+
+export class Herd {
+  head: HerdType;
+  size: number;
   acres: number;
   yield: number;
   labor: number;
   kind: number;
   checkResult: CheckResult;
-}
 
-export interface Crop extends FarmParcel {
-  name: CropType;
-}
-
-export interface Livestock extends FarmParcel {
-  name: HerdType;
-  size: number;
+  constructor(head: HerdType, size: number, acres: number, yld: number, labor: number, kind: number, checkResult: CheckResult) {
+    this.head = head;
+    this.size = size;
+    this.acres = acres;
+    this.yield = yld;
+    this.labor = labor;
+    this.kind = kind;
+    this.checkResult = checkResult;
+  }
 }
 
 export enum HerdType {

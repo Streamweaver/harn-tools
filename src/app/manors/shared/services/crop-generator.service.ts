@@ -67,19 +67,19 @@ export class CropGeneratorService {
     // const crop = this.newCrop();
     // crop.name = cropType as string;
     // crop.acres = acres;
-    // crop.yield = parseFloat(
+    // crop.baseYield = parseFloat(
     //   (manor.fiefIndex * manor.landQuality * 1 * 1).toFixed(2)
     // );
-    // crop.labor = CropData[cropType].labor * crop.acres;
+    // crop.baseLabor = CropData[cropType].baseLabor * crop.acres;
     // manor.crops.push(crop);
   }
 
   newCrop(): Crop {
     return {
       name: 'New Crop',
-      yield: 0,
+      baseYield: 0,
       acres: 0,
-      labor: 0,
+      baseLabor: 0,
       kind: 0
     };
   }

@@ -12,7 +12,7 @@ import { CropListComponent } from './crop-list/crop-list.component';
 import { CropGeneratorService } from './shared/services/crop-generator.service';
 import { GeneralDataComponent } from './general-data/general-data.component';
 import { PoliciesComponent } from './policies/policies.component';
-import { AnnnualReportComponent } from './annnual-report/annnual-report.component';
+import { AnnualReportComponent } from './annual-report/annual-report.component';
 
 @NgModule({
   imports: [
@@ -31,7 +31,6 @@ import { AnnnualReportComponent } from './annnual-report/annnual-report.componen
     CropListComponent,
     GeneralDataComponent,
     PoliciesComponent,
-    AnnnualReportComponent
-  ]
+    AnnualReportComponent
 })
 export class ManorsModule {}
