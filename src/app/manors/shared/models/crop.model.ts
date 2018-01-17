@@ -1,15 +1,24 @@
+import { CheckResult } from '../../../shared/generators/number-generator';
+
 export interface PlantingProfile {
-  name: string;
+  name: CropType;
   acres: number;
 }
 
-export interface Crop extends PlantingProfile {
+interface FarmParcel {
+  acres: number;
   yield: number;
   labor: number;
   kind: number;
+  checkResult: CheckResult;
 }
 
-export interface LivestockInterface extends Crop {
+export interface Crop extends FarmParcel {
+  name: CropType;
+}
+
+export interface Livestock extends FarmParcel {
+  name: HerdType;
   size: number;
 }
 

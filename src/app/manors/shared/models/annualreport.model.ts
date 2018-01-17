@@ -1,4 +1,4 @@
-import { Crop, LivestockInterface } from './crop.model';
+import { Crop, Livestock } from './crop.model';
 import { CheckResult } from './../../../shared/generators/number-generator';
 
 interface LaborInterface {
@@ -12,9 +12,10 @@ interface AcresInterface extends LaborInterface {
 
 interface YieldInterface extends AcresInterface {
   yield: number;
+  checkResult: CheckResult;
 }
 
-export class AnnualReportInterface {
+export class AnnualReport {
   year: number;
   landQuality: number;
   weatherIndex: number;
@@ -37,7 +38,7 @@ export class AnnualReportInterface {
   assart: AcresInterface;
   fiefIncome: LaborInterface;
   fields: Crop[];
-  pastures: LivestockInterface[];
+  pastures: Livestock[];
 
   // Lords Budget
   demesneIncome: number;
