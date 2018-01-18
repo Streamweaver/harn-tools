@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CraftsmanGenerator} from '../shared/generators/craftsman-generator';
+import {HerdGenerator} from '../shared/generators/herd.generator';
 import {HouseholdGenerator} from '../shared/generators/household.generator';
 import {TenantGenerator} from '../shared/generators/tenant-generator';
 import {TenantOfficerGenerator} from '../shared/generators/tenant-officer.generator';
@@ -26,6 +27,7 @@ export class ManorComponent implements OnInit {
   private officerGenerator: TenantOfficerGenerator;
   private householdGenerator: HouseholdGenerator;
   private cropGenerator: CropGenerator;
+  private herdGenerator: HerdGenerator;
 
   constructor() {}
 
@@ -37,6 +39,7 @@ export class ManorComponent implements OnInit {
     this.officerGenerator = new TenantOfficerGenerator();
     this.householdGenerator = new HouseholdGenerator();
     this.cropGenerator = new CropGenerator();
+    this.herdGenerator = new HerdGenerator();
     this._reset();
   }
 
@@ -57,6 +60,7 @@ export class ManorComponent implements OnInit {
     this.officerGenerator.electOfficers(this.manor);
     this.householdGenerator.generateHousehold(this.manor);
     this.cropGenerator.generateCrops(this.manor);
+    this.herdGenerator.generateHerds(this.manor);
   }
 
 }

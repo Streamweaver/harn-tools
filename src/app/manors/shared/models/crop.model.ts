@@ -34,42 +34,6 @@ export class CropFactory {
   }
 }
 
-export class Herd {
-  head: HerdType;
-  size: number;
-  acres: number;
-  yield: number;
-  labor: number;
-  kind: number;
-  checkResult: CheckResult;
-
-  constructor(
-    head: HerdType,
-    size: number,
-    acres: number,
-    yld: number,
-    labor: number,
-    kind: number,
-    checkResult: CheckResult
-  ) {
-    this.head = head;
-    this.size = size;
-    this.acres = acres;
-    this.yield = yld;
-    this.labor = labor;
-    this.kind = kind;
-    this.checkResult = checkResult;
-  }
-}
-
-export enum HerdType {
-  Oxen = 'Oxen',
-  Cows = 'Cows',
-  Goats = 'Goats',
-  Sheep = 'Sheep',
-  Swine = 'Swine'
-}
-
 export enum CropType {
   Rye = 'Rye',
   Barley = 'Barley',

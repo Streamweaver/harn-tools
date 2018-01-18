@@ -11,6 +11,7 @@ import { HouseholdMemberComponent } from './household-member/household-member.co
 import { CropListComponent } from './crop-list/crop-list.component';
 import { GeneralDataComponent } from './general-data/general-data.component';
 import { PoliciesComponent } from './policies/policies.component';
+import { HerdListComponent } from './herd-list/herd-list.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { PoliciesComponent } from './policies/policies.component';
     HouseholdMemberComponent,
     CropListComponent,
     GeneralDataComponent,
-    PoliciesComponent
+    PoliciesComponent,
+    HerdListComponent
     ]
 })
 export class ManorsModule {}

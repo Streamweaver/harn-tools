@@ -23,8 +23,10 @@
       <td class="col-md-2 text-right">{{cropKind(crop) | number}}</td>
     </tr>
     <tr class="row">
-      <td class="col text-right font-weight-bold" colspan="5">Totals:</td>
-      <td class="col-md-2 text-right">{{totalKind() | number}}d</td>
+      <td class="col text-right font-weight-bold" colspan="3">Totals:</td>
+      <td class="col-md-2 text-right">{{cropTotal().acres | number}}</td>
+      <td class="col-md-2 text-right">{{cropTotal().labor | number}}</td>
+      <td class="col-md-2 text-right">{{cropTotal().kind | number}}d</td>
     </tr>
   </tbody>
 </table>

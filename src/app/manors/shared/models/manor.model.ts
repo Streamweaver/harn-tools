@@ -1,5 +1,6 @@
 import { Population } from './population.model';
-import { Crop, Herd } from './crop.model';
+import { Crop } from './crop.model';
+import { Herd } from './herd.model';
 import {CheckResult, NumberGenerator} from '../../../shared/generators/number-generator';
 
 export class Policies {

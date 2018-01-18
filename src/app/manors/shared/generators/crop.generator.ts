@@ -1,3 +1,5 @@
+import { Officer } from './../models/tenant.model';
+import { checkSkill } from './../../shared/utilities';
 import { NumberGenerator } from '../../../shared/generators/number-generator';
 import { CropType, CropTypes, CropFactory } from '../models/crop.model';
 import { Manor } from '../models/manor.model';
@@ -55,7 +57,7 @@ export class CropGenerator {
       acresPlanted += crop.acres;
     }
     const targetAcres = Math.floor(manor.clearedAcres / 2); // normally only plant half cleared acres in a year.
-    let planting = acresPlanted <= targetAcres;
+    let planting = acresPlanted < targetAcres;
     while (planting) {
       const cropType = rwc(plantingTable);
       let plantedParcel = this.dice.rollTotal(6, 3);
@@ -65,6 +67,23 @@ export class CropGenerator {
       }
       acresPlanted += plantedParcel; // Add it to the planted fields total
       this.addParcel(manor, cropType, plantedParcel);
+    }
+    this.reeveCheck(manor);
+  }
+
+  /**
+   * Generates a check result by the reeve for a given crop.
+   * @param manor
+   */
+  reeveCheck(manor: Manor) {
+    let ml = 0;
+    for (const tenant of manor.population.tenants) {
+      if (tenant.office === Officer.Reeve) {
+        ml = tenant.ml;
+      }
+    }
+    for (const crop of manor.crops) {
+      crop.checkResult = checkSkill(ml + crop.hardiness);
     }
   }
 

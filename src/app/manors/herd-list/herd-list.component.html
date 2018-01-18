@@ -1,0 +1,32 @@
+<table class="table table-bordered table-striped table-hover table-sm">
+  <thead class="thead-light">
+  <tr class="row">
+    <th class="small font-weight-bold col">Herd</th>
+    <th class="small font-weight-bold col-md-1 text-center">RI</th>
+    <th class="small font-weight-bold col-md-1 text-center">Yield</th>
+    <th class="small font-weight-bold col-md-2 text-center">Acres</th>
+    <th class="small font-weight-bold col-md-2 text-center">Labor</th>
+    <th class="small font-weight-bold col-md-2 text-right">Kind</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let herd of manor.livestock" class="row">
+    <td class="col">{{herd.herdType}}: {{herdHeadCount(herd)}}</td>
+    <td class="col-md-1 text-center">{{herderIndex(herd)}}</td>
+    <td class="col-md-1 text-center">{{herdYield(herd)}}</td>
+    <td class="col-md-2">
+      <div class="input-group input-group-sm">
+        <input type="text" class="form-control" [(ngModel)]="herd.acres">
+      </div>
+    </td>
+    <td class="col-md-2 text-center">{{herdLabor(herd)}}</td>
+    <td class="col-md-2 text-right">{{herdKind(herd) | number}}</td>
+  </tr>
+  <tr class="row">
+    <td class="col text-right font-weight-bold" colspan="3">Totals:</td>
+    <td class="col-md-2 text-right">{{herdTotal().acres | number}}</td>
+    <td class="col-md-2 text-right">{{herdTotal().labor | number}}</td>
+    <td class="col-md-2 text-right">{{herdTotal().kind | number}}d</td>
+  </tr>
+  </tbody>
+</table>

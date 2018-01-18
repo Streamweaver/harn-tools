@@ -38,26 +38,16 @@ export class CropListComponent implements OnInit {
     return crop.baseLabor * crop.acres;
   }
 
-  totalKind(): number {
-    let total = 0;
+  cropTotal(): {kind: number, labor: number, acres: number} {
+    const total = {
+      kind: 0,
+      labor: 0,
+      acres: 0
+    };
     for (const crop of this.manor.crops) {
-      total += this.cropKind(crop);
-    }
-    return total;
-  }
-
-  totalLabor(): number {
-    let total = 0;
-    for (const crop of this.manor.crops) {
-      total += this.cropLabor(crop);
-    }
-    return total;
-  }
-
-  totalAcres(): number {
-    let total = 0;
-    for (const crop of this.manor.crops) {
-      total += crop.acres;
+      total.kind += this.cropKind(crop);
+      total.labor += this.cropLabor(crop);
+      total.acres += crop.acres;
     }
     return total;
   }
