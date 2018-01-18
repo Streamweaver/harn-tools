@@ -1,7 +1,6 @@
 import { Crop } from './../shared/models/crop.model';
 import { Component, OnInit, Input } from '@angular/core';
 import { Manor } from '../shared/models/manor.model';
-import { CropGeneratorService } from '../shared/services/crop-generator.service';
 
 @Component({
   selector: 'app-crop-list',
@@ -10,9 +9,8 @@ import { CropGeneratorService } from '../shared/services/crop-generator.service'
 })
 export class CropListComponent implements OnInit {
   @Input('manor') manor: Manor;
-  @Input('weatherIndex') weatherIndex;
 
-  constructor(private cropService: CropGeneratorService) {}
+  constructor() {}
 
   ngOnInit() {}
 

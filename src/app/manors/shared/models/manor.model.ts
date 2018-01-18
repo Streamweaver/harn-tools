@@ -1,10 +1,6 @@
 import { Population } from './population.model';
-import {
-  CropType,
-  PlantingProfile,
-} from './crop.model';
-import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { AnnualReportInterface } from './annualreport.model';
+import { Crop, Herd } from './crop.model';
+import {CheckResult, NumberGenerator} from '../../../shared/generators/number-generator';
 
 export class Policies {
   baseRent: number;
@@ -14,7 +10,6 @@ export class Policies {
   isBailiffRun: boolean;
   foAcresPerHH: number;
   foAcresPerLF: number;
-  plantingProfile: PlantingProfile[];
 
   constructor() {
     this.baseRent = 60;
@@ -22,14 +17,8 @@ export class Policies {
     this.serfLabor = 4;
     this.isSlaveState = false;
     this.isBailiffRun = true;
-    this.foAcresPerHH = 1200;
+    this.foAcresPerHH = 1500;
     this.foAcresPerLF = 600;
-    this.plantingProfile = [];
-    for (const key of Object.keys(CropType)) {
-      if (CropType[key]) {
-        this.plantingProfile.push({name: key, acres: 0});
-      }
-    }
   }
 }
 
@@ -79,10 +68,27 @@ export class Manor {
   landQuality: number;
   fiefIndex: number;
   tradeIndex: number;
+  weatherIndex: number;
 
   policies: Policies;
   population: Population;
-  annualReports: AnnualReportInterface[];
+
+  crops: Crop[];
+  livestock: Herd[];
+
+  woods: {
+    basicYield: number;
+    acresWorked: number;
+    checkResult: CheckResult
+  };
+  waste: number;
+  winterFeed: {
+    acresPlanned: number;
+    checkResult: CheckResult;
+  }
+  fiefMaintenance: number;  // Percent of effort 0 - 200 increments of 20.
+  assart: number;
+
 
   notes: string[];
 
@@ -100,14 +106,20 @@ export class Manor {
     this.clearedAcres = this.grossAcres - this.woodlandAcres;
     this.landQuality = 0.74 + this.dice.rollDie(51) / 100;
     this.setFiefIndex();
+    this.setWeatherIndex();
     this.tradeIndex = 0.5;
 
     this.policies = new Policies();
     this.population = new Population();
+    this.crops = [];
+    this.livestock = [];
+    this.woods = { basicYield: 18, acresWorked: 0, checkResult: CheckResult.CF}
+    this.waste = 0;
+    this.winterFeed = {acresPlanned: 0, checkResult: CheckResult.CF};
+    this.fiefMaintenance = 0;
+    this.assart = 0;
 
     this.notes = [];
-
-
   }
 
   /**
@@ -131,5 +143,11 @@ export class Manor {
     this.fiefIndex = parseFloat(
       (this.dice.rollTotal(6, 2) * 0.05 + 0.65).toFixed(2)
     );
+  }
+
+  setWeatherIndex() {
+    let roll = this.dice.rollTotal(6, 3);
+    roll = roll > 10 ? roll - 1 : roll;
+    this.weatherIndex = (50 + roll * 5) / 100;
   }
 }

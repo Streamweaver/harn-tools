@@ -4,27 +4,33 @@ export class Crop {
   crop: CropType;
   acres: number;
   baseYield: number;
-  yield: number;
   baseLabor: number;
-  labor: number;
   checkResult: CheckResult;
   hardiness: number;
 
-  constructor(crop: CropType, acres: number, baseYield: number, baseLabor: number, checkResult: CheckResult, hardiness: number) {
+  constructor(
+    crop: CropType,
+    baseYield: number,
+    baseLabor: number,
+    hardiness: number
+  ) {
     this.crop = crop;
-    this.acres = acres;
+    this.acres = 0;
     this.baseYield = baseYield;
-    this.yield = 0;
     this.baseLabor = baseLabor;
-    this.labor = 0;
-    this.checkResult = checkResult;
+    this.checkResult = CheckResult.CF;
     this.hardiness = hardiness;
   }
 }
 
 export class CropFactory {
   newCrop(ct: CropType): Crop {
-    return new Crop(ct, 0, CropData[ct].yield, CropData[ct].labor, CheckResult.CF, CropData[ct].hr);
+    return new Crop(
+      ct,
+      CropData[ct].baseYield,
+      CropData[ct].baseLabor,
+      CropData[ct].hardiness
+    );
   }
 }
 
@@ -37,7 +43,15 @@ export class Herd {
   kind: number;
   checkResult: CheckResult;
 
-  constructor(head: HerdType, size: number, acres: number, yld: number, labor: number, kind: number, checkResult: CheckResult) {
+  constructor(
+    head: HerdType,
+    size: number,
+    acres: number,
+    yld: number,
+    labor: number,
+    kind: number,
+    checkResult: CheckResult
+  ) {
     this.head = head;
     this.size = size;
     this.acres = acres;
@@ -67,52 +81,63 @@ export enum CropType {
   Fruit = 'Fruit'
 }
 
-interface ICropData {
+export const CropTypes = [
+  CropType.Rye,
+  CropType.Barley,
+  CropType.Oats,
+  CropType.Hay,
+  CropType.Vegetables,
+  CropType.Flax,
+  CropType.Wheat,
+  CropType.Fruit
+];
+
+interface CropDataInterface {
   [key: string]: {
-    hr: number;
-    labor: number;
-    yield: number;
+    hardiness: number;
+    baseLabor: number;
+    baseYield: number;
   };
 }
-export const CropData: ICropData = {
+export const CropData: CropDataInterface = {
   [CropType.Rye]: {
-    hr: 10,
-    labor: 5,
-    yield: 45
+    hardiness: 10,
+    baseLabor: 5,
+    baseYield: 45
   },
   [CropType.Barley]: {
-    hr: 20,
-    labor: 6,
-    yield: 48
+    hardiness: 20,
+    baseLabor: 6,
+    baseYield: 48
   },
   [CropType.Oats]: {
-    hr: 15,
-    labor: 5,
-    yield: 42
+    hardiness: 15,
+    baseLabor: 5,
+    baseYield: 42
   },
   [CropType.Hay]: {
-    hr: 20,
-    labor: 5,
-    yield: 40
+    hardiness: 20,
+    baseLabor: 5,
+    baseYield: 40
   },
   [CropType.Vegetables]: {
-    hr: 0,
-    labor: 8,
-    yield: 80
+    hardiness: 0,
+    baseLabor: 8,
+    baseYield: 80
   },
   [CropType.Flax]: {
-    hr: -10,
-    labor: 6,
-    yield: 66
+    hardiness: -10,
+    baseLabor: 6,
+    baseYield: 66
   },
   [CropType.Wheat]: {
-    hr: -20,
-    labor: 6,
-    yield: 72
+    hardiness: -20,
+    baseLabor: 6,
+    baseYield: 72
   },
   [CropType.Fruit]: {
-    hr: -30,
-    labor: 7,
-    yield: 90
+    hardiness: -30,
+    baseLabor: 7,
+    baseYield: 90
   }
 };

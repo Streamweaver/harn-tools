@@ -4,12 +4,12 @@ import {HouseholdGenerator} from '../shared/generators/household.generator';
 import {TenantGenerator} from '../shared/generators/tenant-generator';
 import {TenantOfficerGenerator} from '../shared/generators/tenant-officer.generator';
 import {YeomanGenerator} from '../shared/generators/yeoman-generator';
+import { CropGenerator } from '../shared/generators/crop.generator';
 import {
   Manor,
   ManorFactory
 } from '../shared/models/manor.model';
 import { NumberGenerator } from '../../shared/generators/number-generator';
-import { CropGeneratorService } from '../shared/services/crop-generator.service';
 
 @Component({
   selector: 'app-manor',
@@ -25,10 +25,9 @@ export class ManorComponent implements OnInit {
   private yeomanGenerator: YeomanGenerator;
   private officerGenerator: TenantOfficerGenerator;
   private householdGenerator: HouseholdGenerator;
+  private cropGenerator: CropGenerator;
 
-  constructor(
-    private cropService: CropGeneratorService
-  ) {}
+  constructor() {}
 
   ngOnInit() {
     this.dice = new NumberGenerator();
@@ -37,6 +36,7 @@ export class ManorComponent implements OnInit {
     this.yeomanGenerator = new YeomanGenerator();
     this.officerGenerator = new TenantOfficerGenerator();
     this.householdGenerator = new HouseholdGenerator();
+    this.cropGenerator = new CropGenerator();
     this._reset();
   }
 
@@ -56,8 +56,7 @@ export class ManorComponent implements OnInit {
     this.yeomanGenerator.recruitYeoman(this.manor);
     this.officerGenerator.electOfficers(this.manor);
     this.householdGenerator.generateHousehold(this.manor);
-
-    this.cropService.generateCrops(this.manor);
+    this.cropGenerator.generateCrops(this.manor);
   }
 
 }

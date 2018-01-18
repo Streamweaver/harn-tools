@@ -9,10 +9,8 @@ import { TenantComponent } from './tenant/tenant.component';
 import { HouseholdListComponent } from './household-list/household-list.component';
 import { HouseholdMemberComponent } from './household-member/household-member.component';
 import { CropListComponent } from './crop-list/crop-list.component';
-import { CropGeneratorService } from './shared/services/crop-generator.service';
 import { GeneralDataComponent } from './general-data/general-data.component';
 import { PoliciesComponent } from './policies/policies.component';
-import { AnnualReportComponent } from './annual-report/annual-report.component';
 
 @NgModule({
   imports: [
@@ -21,7 +19,7 @@ import { AnnualReportComponent } from './annual-report/annual-report.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [CropGeneratorService],
+  providers: [],
   declarations: [
     ManorComponent,
     TenantListComponent,
@@ -30,7 +28,7 @@ import { AnnualReportComponent } from './annual-report/annual-report.component';
     HouseholdMemberComponent,
     CropListComponent,
     GeneralDataComponent,
-    PoliciesComponent,
-    AnnualReportComponent
+    PoliciesComponent
+    ]
 })
 export class ManorsModule {}
