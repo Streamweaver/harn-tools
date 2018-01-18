@@ -11,16 +11,15 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Name:</span>
       </div>
-      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
-             [(ngModel)]="manor.name">
+      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.name">
       <a class="btn btn-sm btn-primary" (click)="onGenerateClick()" *ngIf="showGenerationInput">
         <i class="fa fa-users"></i>
         Generate</a>
       <a class="btn btn-sm btn-danger" (click)="onResetClick()" *ngIf="!showGenerationInput">
         <i class="far fa-trash-alt"></i>
         Reset</a>
-      <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#collapsePolicies" role="button"
-         aria-expanded="false" aria-controls="collapsePolicies"><i class="fas fa-cog"></i>
+      <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#collapsePolicies" role="button" aria-expanded="false" aria-controls="collapsePolicies">
+        <i class="fas fa-cog"></i>
         Policies
       </a>
     </div>
@@ -28,10 +27,10 @@
 
   <hr class="small">
 
-    <div class="collapse" id="collapsePolicies">
-      <app-policies [policies]="manor.policies"></app-policies>
-      <hr class="small">
-    </div>
+  <div class="collapse" id="collapsePolicies">
+    <app-policies [policies]="manor.policies"></app-policies>
+    <hr class="small">
+  </div>
 
   <div class="row sm-gutters">
     <div class="col-md-4">
@@ -47,7 +46,7 @@
       Future Home of Fief Budget
     </div>
     <div class="col">
-      Future Home of Crop List
+      <app-crop-list [manor]="manor"></app-crop-list>
     </div>
   </div>
   <div class="row">

@@ -1,37 +1,42 @@
 <div class="row title-box bg-dark text-white px-3 py-2 mx-1">
-  <div class="col"><strong>Manor Census ({{ manor.population.tenants.length}})</strong></div>
-  <div class="col text-right"><strong>{{manor.name}}</strong></div>
+  <div class="col">
+    <strong>Manor Census ({{ manor.population.tenants.length}})</strong>
+  </div>
+  <div class="col text-right">
+    <strong>{{manor.name}}</strong>
+  </div>
 </div>
 <div class="container-fluid mb-2">
   <table class="table table-bordered table-striped table-hover table-sm">
     <thead class="thead-light">
-    <tr>
-      <th class="small font-weight-bold">Occupation</th>
-      <th class="small font-weight-bold">Size</th>
-      <th class="small font-weight-bold">ML</th>
-      <th class="small font-weight-bold">Serf</th>
-      <th class="small font-weight-bold">Free</th>
-      <th class="small font-weight-bold">Labor<br>Days</th>
-      <th class="small font-weight-bold">Rent</th>
-      <th class="small font-weight-bold">Fees</th>
-      <th class="small font-weight-bold">Notes</th>
-    </tr>
+      <tr>
+        <th class="small font-weight-bold">Occupation</th>
+        <th class="small font-weight-bold">Size</th>
+        <th class="small font-weight-bold">ML</th>
+        <th class="small font-weight-bold">Serf</th>
+        <th class="small font-weight-bold">Free</th>
+        <th class="small font-weight-bold">Labor
+          <br>Days</th>
+        <th class="small font-weight-bold">Rent</th>
+        <th class="small font-weight-bold">Fees</th>
+        <th class="small font-weight-bold">Notes</th>
+      </tr>
     </thead>
     <tbody *ngIf="manor.population.tenants.length > 0">
-    <tr app-tenant *ngFor="let tenant of manor.population.tenants" [tenant]="tenant">
+      <tr app-tenant *ngFor="let tenant of manor.population.tenants" [tenant]="tenant">
 
-    </tr>
-    <tr class="table-info">
-      <td class="font-weight-bold text-right">Totals:</td>
-      <td>{{manor.population.tenantSize()}}</td>
-      <td></td>
-      <td>{{manor.population.tenantSerfAcres()}}</td>
-      <td>{{manor.population.tenantFreeAcres()}}</td>
-      <td>{{manor.population.tenantLaborDays()}}</td>
-      <td>{{manor.population.tenantRent()}}</td>
-      <td>{{manor.population.tenantFees()}}</td>
-      <td></td>
-    </tr>
+      </tr>
+      <tr class="table-info">
+        <td class="font-weight-bold text-right">Totals:</td>
+        <td>{{manor.population.tenantSize()}}</td>
+        <td></td>
+        <td>{{manor.population.tenantSerfAcres()}}</td>
+        <td>{{manor.population.tenantFreeAcres()}}</td>
+        <td>{{manor.population.tenantLaborDays()}}</td>
+        <td>{{manor.population.tenantRent()}}</td>
+        <td>{{manor.population.tenantFees()}}</td>
+        <td></td>
+      </tr>
     </tbody>
   </table>
 </div>

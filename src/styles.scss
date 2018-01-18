@@ -97,3 +97,11 @@ select.condensed {
 input.form-control {
   width: auto;
 }
+
+caption.header {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  color: black;
+  font-size: 110%;
+  caption-side: top;
+}

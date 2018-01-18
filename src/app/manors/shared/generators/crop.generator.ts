@@ -1,5 +1,5 @@
-import {NumberGenerator} from '../../../shared/generators/number-generator';
-import {CropType, CropTypes, CropFactory} from '../models/crop.model';
+import { NumberGenerator } from '../../../shared/generators/number-generator';
+import { CropType, CropTypes, CropFactory } from '../models/crop.model';
 import { Manor } from '../models/manor.model';
 import * as rwc from 'random-weighted-choice';
 
@@ -27,23 +27,21 @@ export class CropGenerator {
    * Initilizes a manor with all crops in the enum at zero.
    * @param {Manor} manor
    */
-  initCrops (manor: Manor) {
+  initCrops(manor: Manor) {
     for (const cropType of CropTypes) {
-      if (!this.cropExists(manor, cropType)) {
-        manor.crops.push(this.cf.newCrop(cropType));
-      }
+      this.addParcel(manor, cropType, 0);
     }
   }
 
   /**
-   * Checks if a particular crop exists in the crops array.
+   * Checks if a particular cropType exists in the crops array.
    * @param {Manor} manor
    * @param {CropType} cropType
    * @returns {boolean}
    */
   cropExists(manor: Manor, cropType: CropType): boolean {
     for (const crop of manor.crops) {
-      if (crop.crop === cropType) {
+      if (crop.cropType === cropType) {
         return true;
       }
     }
@@ -70,9 +68,21 @@ export class CropGenerator {
     }
   }
 
+  /**
+   * Adds acres of cropType to manor, creating cropType if it does not exist.
+   * @param manor
+   * @param cropType
+   * @param acres
+   */
   addParcel(manor: Manor, cropType: CropType, acres: number) {
+    if (!this.cropExists(manor, cropType)) {
+      const crop = this.cf.newCrop(cropType);
+      crop.acres = acres;
+      manor.crops.push(crop);
+      return;
+    }
     for (const crop of manor.crops) {
-      if (crop.crop === cropType) {
+      if (crop.cropType === cropType) {
         crop.acres += acres;
       }
     }

@@ -1,7 +1,7 @@
 import { CheckResult } from '../../../shared/generators/number-generator';
 
 export class Crop {
-  crop: CropType;
+  cropType: CropType;
   acres: number;
   baseYield: number;
   baseLabor: number;
@@ -9,12 +9,12 @@ export class Crop {
   hardiness: number;
 
   constructor(
-    crop: CropType,
+    cropType: CropType,
     baseYield: number,
     baseLabor: number,
     hardiness: number
   ) {
-    this.crop = crop;
+    this.cropType = cropType;
     this.acres = 0;
     this.baseYield = baseYield;
     this.baseLabor = baseLabor;

@@ -1,64 +1,30 @@
-<div class="card">
-  <div class="card-header font-weight-bold">
-    Crops
-  </div>
-  <div class="card-body">
-    <div class="row form-row">
-      <div class="col small">Crop</div>
-      <div class="col-sm-2 text-center small">Yield</div>
-      <div class="col-sm-2 text-center small">Acres</div>
-      <div class="col-sm-2 text-center small">Labor</div>
-      <div class="col-sm-2 text-center small">Kind</div>
-      <div class="col-sm-1 text-center">&nbsp;</div>
-    </div>
-
-    <div *ngFor="let crop of manor.crops; index as idx" class="form-row">
-      <div class="col">
-        <div class="input-group input-group-sm">
-          <input type="text" class="form-control" [(ngModel)]="crop.name">
-        </div>
-      </div>
-      <div class="col-sm-2 text-center">
-        <div class="input-group input-group-sm">
-          <input type="text" class="form-control" [(ngModel)]="crop.baseYield">
-        </div>
-      </div>
-      <div class="col-sm-2 text-center">
+<table class="table table-bordered table-striped table-hover table-sm">
+  <thead class="thead-light">
+    <tr class="row">
+      <th class="small font-weight-bold col">Crop</th>
+      <th class="small font-weight-bold col-md-1 text-center">RI</th>
+      <th class="small font-weight-bold col-md-1 text-center">Yield</th>
+      <th class="small font-weight-bold col-md-2 text-center">Acres</th>
+      <th class="small font-weight-bold col-md-2 text-center">Labor</th>
+      <th class="small font-weight-bold col-md-2 text-right">Kind</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let crop of manor.crops" class="row">
+      <td class="col">{{crop.cropType}}</td>
+      <td class="col-md-1 text-center">{{reeveIndex(crop)}}</td>
+      <td class="col-md-1 text-center">{{cropYield(crop)}}</td>
+      <td class="col-md-2">
         <div class="input-group input-group-sm">
           <input type="text" class="form-control" [(ngModel)]="crop.acres">
         </div>
-      </div>
-      <div class="col-sm-2 text-center">
-        <div class="input-group input-group-sm">
-          <input type="text" class="form-control" [(ngModel)]="crop.baseLabor">
-        </div>
-      </div>
-      <div class="col-sm-2 text-center">
-        <div class="input-group input-group-sm">
-          <input type="text" class="form-control" [value]="cropKind(crop)" disabled>
-        </div>
-      </div>
-      <div class="col-sm-1 text-center">
-        <div class="input-group input-group-sm">
-          <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteCropClick(idx)">
-            <i class="far fa-trash-alt"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card-footer">
-    <div class="row">
-      <div class="col text-right font-weight-bold">Total Kind:</div>
-      <div class="col-sm-2">
-        {{cropTotal() | number}}d
-      </div>
-      <div class="col-sm-2">
-        <button type="button" class="btn btn-primary btn-sm" (click)="onAddCropClick()">
-          <i class="fas fa-leaf"></i> +
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+      </td>
+      <td class="col-md-2 text-center">{{cropLabor(crop)}}</td>
+      <td class="col-md-2 text-right">{{cropKind(crop) | number}}</td>
+    </tr>
+    <tr class="row">
+      <td class="col text-right font-weight-bold" colspan="5">Totals:</td>
+      <td class="col-md-2 text-right">{{totalKind() | number}}d</td>
+    </tr>
+  </tbody>
+</table>
