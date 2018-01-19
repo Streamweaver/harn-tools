@@ -62,6 +62,7 @@ export const TopologyEffects = {
 export class Manor {
   name: string;
   realm: string;
+  year: number;
   topology: Topology;
   grossAcres: number;
   woodlandAcres: number;
@@ -86,7 +87,7 @@ export class Manor {
   winterFeed: {
     acresPlanned: number;
     checkResult: CheckResult;
-  }
+  };
   fiefMaintenance: number;  // Percent of effort 0 - 200 increments of 20.
   assart: number;
 
@@ -99,13 +100,14 @@ export class Manor {
     this.dice = new NumberGenerator();
     this.name = null;
     this.realm = null;
+    this.year = null;
     this.topology = Topology.Lowlands;
     this.grossAcres = 900 + this.dice.rollTotal(6, 3) * 100;
     this.woodlandAcres = Math.floor(
       this.grossAcres * (this.dice.rollDie(10) / 100 + 0.05)
     );
     this.clearedAcres = this.grossAcres - this.woodlandAcres;
-    this.landQuality = 0.74 + this.dice.rollDie(51) / 100;
+    this.landQuality = parseFloat((0.74 + this.dice.rollDie(51) / 100).toFixed(2));
     this.setFiefIndex();
     this.setWeatherIndex();
     this.tradeIndex = 0.5;
@@ -114,7 +116,7 @@ export class Manor {
     this.population = new Population();
     this.crops = [];
     this.livestock = [];
-    this.woods = { basicYield: 18, acresWorked: 0, checkResult: CheckResult.CF}
+    this.woods = { basicYield: 18, acresWorked: 0, checkResult: CheckResult.CF};
     this.waste = 0;
     this.winterFeed = {acresPlanned: 0, checkResult: CheckResult.CF};
     this.fiefMaintenance = 0;
@@ -149,6 +151,6 @@ export class Manor {
   setWeatherIndex() {
     let roll = this.dice.rollTotal(6, 3);
     roll = roll > 10 ? roll - 1 : roll;
-    this.weatherIndex = (50 + roll * 5) / 100;
+    this.weatherIndex = parseFloat(((50 + roll * 5) / 100).toFixed(2));
   }
 }
