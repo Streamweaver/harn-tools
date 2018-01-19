@@ -48,8 +48,9 @@ export class HerdListComponent implements OnInit {
     for (const herd of this.manor.livestock) {
       total.kind += this.herdKind(herd);
       total.labor += this.herdLabor(herd);
-      total.acres += parseInt(herd.acres);
+      total.acres += herd.acres;
     }
     return total;
   }
+
 }

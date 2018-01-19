@@ -31,7 +31,7 @@
       <div class="col-md-6 col-sm-6 col-xsm-6 small">Gross Acres</div>
       <div class="col-sm-6 small">
         <div class="input-group input-group-sm">
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                  (change)="onGrossAcresChange()" [(ngModel)]="manor.grossAcres">
         </div>
       </div>
@@ -40,7 +40,7 @@
       <div class="col-md-6 col-sm-6 col-xsm-6 small"> - Woodland Acres</div>
       <div class="col-sm-6 small">
         <div class="input-group input-group-sm">
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                  (change)="onWoodlandAcresChange()" [(ngModel)]="manor.woodlandAcres">
         </div>
       </div>
@@ -49,7 +49,7 @@
       <div class="col-md-6 col-sm-6 col-xsm-6 small"> = Cleared Acres</div>
       <div class="col-sm-6 small">
         <div class="input-group input-group-sm">
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                  (change)="onClearedAcresChange()" [(ngModel)]="manor.clearedAcres">
         </div>
       </div>
@@ -58,7 +58,7 @@
       <div class="col-md-6 col-sm-6 col-xsm-6 small"> - Tenant Acres</div>
       <div class="col-sm-6 small">
         <div class="input-group input-group-sm">
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                  (change)="onClearedAcresChange()"
                  [value]="manor.population.tenantAcres()" disabled>
         </div>
@@ -68,7 +68,7 @@
       <div class="col-md-6 col-sm-6 col-xsm-6 small"> = Demesne Acres</div>
       <div class="col-sm-6 small">
         <div class="input-group input-group-sm">
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                  (change)="onClearedAcresChange()"
                  [value]="manor.demenseAcres()" disabled>
         </div>
@@ -81,7 +81,7 @@
       <div class="col-md-6 col-sm-6 col-xsm-6 small">Labor Pool</div>
       <div class="col-sm-6 small">
         <div class="input-group input-group-sm">
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                  [value]="manor.population.tenantLaborPool()"
                  disabled>
         </div>
@@ -91,7 +91,7 @@
       <div class="col-md-6 col-sm-6 col-xsm-6 small">Labor Obligation</div>
       <div class="col-sm-6 small">
         <div class="input-group input-group-sm">
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                  [value]="manor.population.tenantLaborDays()"
                  disabled>
         </div>
@@ -104,7 +104,7 @@
       <div class="col-md-6 col-sm-6 col-xsm-6 small">Land Quality</div>
       <div class="col-sm-6 small">
         <div class="input-group input-group-sm">
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                  [(ngModel)]="manor.landQuality">
         </div>
       </div>
@@ -113,7 +113,7 @@
       <div class="col-md-6 col-sm-6 col-xsm-6 small">Fief Index</div>
       <div class="col-sm-6 small">
         <div class="input-group input-group-sm">
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                  [(ngModel)]="manor.fiefIndex"
                  [disabled]="showGenerationInput">
         </div>
@@ -124,7 +124,7 @@
       <div class="col-sm-6 small">
 
         <div class="input-group input-group-sm">
-          <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+          <input type="number" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                  [(ngModel)]="manor.tradeIndex"
                  [disabled]="showGenerationInput">
         </div>
