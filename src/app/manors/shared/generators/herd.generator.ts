@@ -1,7 +1,7 @@
 import { Officer } from './../models/tenant.model';
 import { checkSkill } from './../../shared/utilities';
 import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { Herd, HerdType, HerdFactory, Livestock } from '../models/herd.model';
+import { HerdType, HerdFactory, Livestock } from '../models/herd.model';
 import { Manor } from '../models/manor.model';
 import * as rwc from 'random-weighted-choice';
 
@@ -37,13 +37,12 @@ export class HerdGenerator {
    * @returns {number} Acres of oxen added.
    */
   addOxen(manor: Manor, targetAcres: number): number {
-    let oxenAcres = 0;
     for (const herd of manor.livestock) {
       if (herd.herdType === HerdType.Oxen && herd.acres > 0) {
         return 0;
       }
     }
-    oxenAcres = Math.floor(targetAcres * .2);
+    const oxenAcres = Math.floor(targetAcres * 0.2);
     this.addParcel(manor, HerdType.Oxen, oxenAcres);
     return oxenAcres;
   }
@@ -84,11 +83,8 @@ export class HerdGenerator {
       }
     }
     for (const herd of manor.livestock) {
-      console.log(herd);
       const eml = ml + herd.hardiness;
-      console.log(eml)
       herd.checkResult = checkSkill(eml);
-      console.log('Skill: ' + ml + herd.hardiness + '; Result:' + herd.checkResult);
     }
   }
 

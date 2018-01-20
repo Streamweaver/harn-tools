@@ -16,7 +16,7 @@
     <td class="col-md-1 text-center">{{herdYield(herd)}}</td>
     <td class="col-md-2">
       <div class="input-group input-group-sm">
-        <input type="number" class="form-control" [(ngModel)]="herd.acres">
+        <input type="number" class="form-control" [(ngModel)]="herd.acres" (input)="updateTotals()">
       </div>
     </td>
     <td class="col-md-2 text-center">{{herdLabor(herd)}}</td>
@@ -24,9 +24,9 @@
   </tr>
   <tr class="row">
     <td class="col text-right font-weight-bold" colspan="3">Totals:</td>
-    <td class="col-md-2 text-right">{{herdTotal().acres | number}}</td>
-    <td class="col-md-2 text-right">{{herdTotal().labor | number}}</td>
-    <td class="col-md-2 text-right">{{herdTotal().kind | number}}d</td>
+    <td class="col-md-2 text-right">{{herdTotals.acres | number}}</td>
+    <td class="col-md-2 text-right">{{herdTotals.labor | number}}</td>
+    <td class="col-md-2 text-right">{{herdTotals.kind | number}}d</td>
   </tr>
   </tbody>
 </table>

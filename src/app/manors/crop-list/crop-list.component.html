@@ -16,7 +16,7 @@
       <td class="col-md-1 text-center">{{cropYield(crop)}}</td>
       <td class="col-md-2">
         <div class="input-group input-group-sm">
-          <input type="number" class="form-control" [(ngModel)]="crop.acres">
+          <input type="number" class="form-control" [(ngModel)]="crop.acres" (input)="updateTotals()">
         </div>
       </td>
       <td class="col-md-2 text-center">{{cropLabor(crop)}}</td>
@@ -24,9 +24,9 @@
     </tr>
     <tr class="row">
       <td class="col text-right font-weight-bold" colspan="3">Totals:</td>
-      <td class="col-md-2 text-right">{{cropTotal().acres | number}}</td>
-      <td class="col-md-2 text-right">{{cropTotal().labor | number}}</td>
-      <td class="col-md-2 text-right">{{cropTotal().kind | number}}d</td>
+      <td class="col-md-2 text-right">{{cropTotals.acres | number}}</td>
+      <td class="col-md-2 text-right">{{cropTotals.labor | number}}</td>
+      <td class="col-md-2 text-right">{{cropTotals.kind | number}}d</td>
     </tr>
   </tbody>
 </table>

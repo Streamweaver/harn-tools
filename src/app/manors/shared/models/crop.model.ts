@@ -1,4 +1,5 @@
 import { CheckResult } from '../../../shared/generators/number-generator';
+import {checkResultIndex} from '../utilities';
 
 export class Crop {
   cropType: CropType;

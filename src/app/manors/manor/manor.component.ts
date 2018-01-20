@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild } from '@angular/core';
+import {CropListComponent} from '../crop-list/crop-list.component';
+import {HerdListComponent} from '../herd-list/herd-list.component';
 import {CraftsmanGenerator} from '../shared/generators/craftsman-generator';
 import {HerdGenerator} from '../shared/generators/herd.generator';
 import {HouseholdGenerator} from '../shared/generators/household.generator';
@@ -28,6 +30,8 @@ export class ManorComponent implements OnInit {
   private householdGenerator: HouseholdGenerator;
   private cropGenerator: CropGenerator;
   private herdGenerator: HerdGenerator;
+  @ViewChild(CropListComponent) private cropListComponent: CropListComponent;
+  @ViewChild(HerdListComponent) private herdListComponent: HerdListComponent;
 
   constructor() {}
 
@@ -61,6 +65,8 @@ export class ManorComponent implements OnInit {
     this.householdGenerator.generateHousehold(this.manor);
     this.cropGenerator.generateCrops(this.manor);
     this.herdGenerator.generateHerds(this.manor);
+    this.cropListComponent.updateTotals();
+    this.herdListComponent.updateTotals();
   }
 
 }

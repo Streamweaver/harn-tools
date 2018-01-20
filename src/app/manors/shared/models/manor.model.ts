@@ -3,6 +3,17 @@ import { Crop } from './crop.model';
 import { Herd } from './herd.model';
 import {CheckResult, NumberGenerator} from '../../../shared/generators/number-generator';
 
+export interface SectionSummary {
+  acres: number;
+  labor: number;
+  kind: number;
+}
+
+export interface TenantSummary extends SectionSummary {
+  fees: number;
+  rent: number;
+}
+
 export class Policies {
   baseRent: number;
   freeholderRent: number;
@@ -115,6 +126,7 @@ export class Manor {
     this.policies = new Policies();
     this.population = new Population();
     this.crops = [];
+
     this.livestock = [];
     this.woods = { basicYield: 18, acresWorked: 0, checkResult: CheckResult.CF};
     this.waste = 0;

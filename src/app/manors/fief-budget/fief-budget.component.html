@@ -1,0 +1,57 @@
+<div class="card">
+  <div class="card-header font-weight-bold">
+   Fief Budget <span [hidden]="!manor.year">(Year: {{manor.year}})</span>
+  </div>
+  <div class="card-body">
+    <table class="table table-bordered table-striped table-hover table-sm">
+      <thead class="thead-light">
+      <tr class="row">
+        <th class="small font-weight-bold col"></th>
+        <th class="small font-weight-bold col-md-1 text-center">RI</th>
+        <th class="small font-weight-bold col-md-1 text-center">Yield</th>
+        <th class="small font-weight-bold col-md-2 text-center">Acres</th>
+        <th class="small font-weight-bold col-md-2 text-center">Labor</th>
+        <th class="small font-weight-bold col-md-2 text-right">Kind</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="row">
+        <td class="small font-weight-bold col">Woods</td>
+        <td class="small col-md-1 text-center">{{checkResultIndex(manor.woods.checkResult)}}</td>
+        <td class="small col-md-1 text-center">{{woodsYield()}}</td>
+        <td class="small col-md-2 text-center">
+          <div class="input-group input-group-sm">
+            <input type="number" class="form-control" [(ngModel)]="manor.woods.acresWorked">
+          </div>
+        </td>
+        <td class="small col-md-2 text-center">{{woodsLabor()}}</td>
+        <td class="small col-md-2 text-right">{{woodsKind() | number}}d</td>
+      </tr>
+      <tr class="row">
+        <td class="small font-weight-bold col">Crop</td>
+        <td class="small col-md-1 text-center"></td>
+        <td class="small col-md-1 text-center"></td>
+        <td class="small col-md-2 text-center">{{crops.acres | number}}</td>
+        <td class="small col-md-2 text-center">{{crops.labor | number}}</td>
+        <td class="small col-md-2 text-right">{{crops.kind | number}}</td>
+      </tr>
+      <tr class="row">
+        <td class="small font-weight-bold col">Pastures</td>
+        <td class="small col-md-1 text-center"></td>
+        <td class="small col-md-1 text-center"></td>
+        <td class="small col-md-2 text-center">{{herds.acres | number}}</td>
+        <td class="small col-md-2 text-center">{{herds.labor | number}}</td>
+        <td class="small col-md-2 text-right">{{herds.kind | number}}</td>
+      </tr>
+      <tr class="row">
+        <td class="col text-right font-weight-bold" colspan="4">Totals:</td>
+        <td class="col-md-2 text-right">0</td>
+        <td class="col-md-2 text-right">0d</td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="card-footer">
+  </div>
+</div>

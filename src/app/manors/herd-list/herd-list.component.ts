@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {Herd} from '../shared/models/herd.model';
 import {Manor} from '../shared/models/manor.model';
+import {SectionSummary} from '../shared/models/summaries.model';
+import {SharedDataService} from '../shared/services/shared-data.service';
 import {checkResultIndex} from '../shared/utilities';
 
 @Component({
@@ -10,10 +12,12 @@ import {checkResultIndex} from '../shared/utilities';
 })
 export class HerdListComponent implements OnInit {
   @Input('manor') manor: Manor;
+  herdTotals
 
-  constructor() { }
+  constructor(private dataService: SharedDataService) { }
 
   ngOnInit() {
+    this.dataService.herds.subscribe(ht => this.herdTotals = ht);
   }
 
   herderIndex(herd: Herd): number {
@@ -43,14 +47,14 @@ export class HerdListComponent implements OnInit {
     return this.herdHeadCount(herd) * this.herdYield(herd);
   }
 
-  herdTotal(): {kind: number, labor: number, acres: number} {
-    const total = {kind: 0, labor: 0, acres: 0};
+  updateTotals() {
+    const total: SectionSummary = {kind: 0, labor: 0, acres: 0};
     for (const herd of this.manor.livestock) {
       total.kind += this.herdKind(herd);
       total.labor += this.herdLabor(herd);
       total.acres += herd.acres;
     }
-    return total;
+    this.dataService.setHerdTotals(total);
   }
 
 }

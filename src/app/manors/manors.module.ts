@@ -14,6 +14,8 @@ import { PoliciesComponent } from './policies/policies.component';
 import { HerdListComponent } from './herd-list/herd-list.component';
 import { FiefBudgetComponent } from './fief-budget/fief-budget.component';
 
+import { SharedDataService } from './shared/services/shared-data.service';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -21,7 +23,7 @@ import { FiefBudgetComponent } from './fief-budget/fief-budget.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [SharedDataService],
   declarations: [
     ManorComponent,
     TenantListComponent,

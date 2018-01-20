@@ -1,5 +1,7 @@
+import {SectionSummary} from '../shared/models/summaries.model';
+import {SharedDataService } from '../shared/services/shared-data.service';
 import { Crop } from './../shared/models/crop.model';
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input } from '@angular/core';
 import { Manor } from '../shared/models/manor.model';
 import { checkResultIndex } from './../shared/utilities';
 
@@ -10,10 +12,15 @@ import { checkResultIndex } from './../shared/utilities';
 })
 export class CropListComponent implements OnInit {
   @Input('manor') manor: Manor;
+  cropTotals: SectionSummary;
 
-  constructor() {}
+  constructor(
+    private dataService: SharedDataService
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dataService.crops.subscribe(ct => this.cropTotals = ct);
+  }
 
   reeveIndex(crop: Crop): number {
     return checkResultIndex(crop.checkResult);
@@ -38,17 +45,17 @@ export class CropListComponent implements OnInit {
     return crop.baseLabor * crop.acres;
   }
 
-  cropTotal(): {kind: number, labor: number, acres: number} {
-    const total = {
+  updateTotals() {
+    const totals: SectionSummary = {
       kind: 0,
       labor: 0,
       acres: 0
     };
     for (const crop of this.manor.crops) {
-      total.kind += this.cropKind(crop);
-      total.labor += this.cropLabor(crop);
-      total.acres += crop.acres;
+      totals.kind += this.cropKind(crop);
+      totals.labor += this.cropLabor(crop);
+      totals.acres += crop.acres;
     }
-    return total;
+    this.dataService.setCropTotals(totals);
   }
 }
