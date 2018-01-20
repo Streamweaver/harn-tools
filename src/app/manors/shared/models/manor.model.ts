@@ -95,6 +95,10 @@ export class Manor {
     checkResult: CheckResult
   };
   waste: number;
+  cropSeed: {
+    acresPlanned: number;
+    checkResult: CheckResult;
+  }
   winterFeed: {
     acresPlanned: number;
     checkResult: CheckResult;
@@ -130,6 +134,7 @@ export class Manor {
     this.livestock = [];
     this.woods = { basicYield: 18, acresWorked: 0, checkResult: CheckResult.CF};
     this.waste = 0;
+    this.cropSeed = {acresPlanned: 0, checkResult: CheckResult.CF};
     this.winterFeed = {acresPlanned: 0, checkResult: CheckResult.CF};
     this.fiefMaintenance = 0;
     this.assart = 0;

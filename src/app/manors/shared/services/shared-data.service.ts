@@ -27,12 +27,16 @@ export class SharedDataService {
   crops: Observable<SectionSummary>;
   private herdSummaries: BehaviorSubject<SectionSummary>;
   herds: Observable<SectionSummary>;
+  private tenantSummaries: BehaviorSubject<TenantSummary>;
+  tenants: Observable<TenantSummary>;
 
   constructor() {
     this.cropSummaries = new BehaviorSubject<SectionSummary>({acres: 0, labor: 0, kind: 0});
     this.crops = this.cropSummaries.asObservable();
     this.herdSummaries = new BehaviorSubject<SectionSummary>({acres: 0, labor: 0, kind: 0});
     this.herds = this.herdSummaries.asObservable();
+    this.tenantSummaries = new BehaviorSubject<TenantSummary>({acres: 0, labor: 0, kind: 0, fees: 0, rent: 0});
+    this.tenants = this.tenantSummaries.asObservable();
   }
 
   setCropTotals(ct: SectionSummary) {
@@ -41,5 +45,9 @@ export class SharedDataService {
 
   setHerdTotals(ht: SectionSummary) {
     this.herdSummaries.next(ht);
+  }
+
+  setTenantTotals(tt: TenantSummary) {
+    this.tenantSummaries.next(tt);
   }
 }
