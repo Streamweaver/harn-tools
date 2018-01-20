@@ -1,25 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { Observable } from 'rxjs/Observable';
-
-export interface SectionSummary {
-  acres: number;
-  labor: number;
-  kind: number;
-}
-
-export interface TenantSummary extends SectionSummary {
-  fees: number;
-  rent: number;
-}
-
-export class Summaries {
-
-
-  constructor() {
-
-  }
-}
+import { SectionSummary, TenantSummary } from '../models/summaries.model';
 
 @Injectable()
 export class SharedDataService {
@@ -35,7 +17,7 @@ export class SharedDataService {
     this.crops = this.cropSummaries.asObservable();
     this.herdSummaries = new BehaviorSubject<SectionSummary>({acres: 0, labor: 0, kind: 0});
     this.herds = this.herdSummaries.asObservable();
-    this.tenantSummaries = new BehaviorSubject<TenantSummary>({acres: 0, labor: 0, kind: 0, fees: 0, rent: 0});
+    this.tenantSummaries = new BehaviorSubject<TenantSummary>({serf_acres: 0, free_acres: 0, labor: 0, size: 0, fees: 0, rent: 0});
     this.tenants = this.tenantSummaries.asObservable();
   }
 

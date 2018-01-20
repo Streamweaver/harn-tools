@@ -22,19 +22,19 @@
         <th class="small font-weight-bold">Notes</th>
       </tr>
     </thead>
-    <tbody *ngIf="manor.population.tenants.length > 0">
+    <tbody>
       <tr app-tenant *ngFor="let tenant of manor.population.tenants" [tenant]="tenant">
 
       </tr>
       <tr class="table-info">
         <td class="font-weight-bold text-right">Totals:</td>
-        <td>{{manor.population.tenantSize()}}</td>
+        <td>{{tenantTotals.size}}</td>
         <td></td>
-        <td>{{manor.population.tenantSerfAcres()}}</td>
-        <td>{{manor.population.tenantFreeAcres()}}</td>
-        <td>{{manor.population.tenantLaborDays()}}</td>
-        <td>{{manor.population.tenantRent()}}</td>
-        <td>{{manor.population.tenantFees()}}</td>
+        <td>{{tenantTotals.serf_acres | number}}</td>
+        <td>{{tenantTotals.free_acres | number}}</td>
+        <td>{{tenantTotals.labor | number}}</td>
+        <td>{{tenantTotals.rent | number}}d</td>
+        <td>{{tenantTotals.fees | number}}d</td>
         <td></td>
       </tr>
     </tbody>

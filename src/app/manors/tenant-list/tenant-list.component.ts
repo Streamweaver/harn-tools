@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Manor } from '../shared/models/manor.model';
+import {TenantSummary} from '../shared/models/summaries.model';
+import {SharedDataService} from '../shared/services/shared-data.service';
 
 @Component({
   selector: 'app-tenant-list',
@@ -8,56 +10,26 @@ import { Manor } from '../shared/models/manor.model';
 })
 export class TenantListComponent implements OnInit {
   @Input('manor') manor: Manor;
+  tenantTotals: TenantSummary;
 
-  constructor() {}
+  constructor(
+    private dataService: SharedDataService
+  ) {}
 
-  ngOnInit() {}
-
-  populationSize(): number {
-    let size = 0;
-    for (const tenant of this.manor.population.tenants) {
-      size += tenant.size;
-    }
-    return size;
+  ngOnInit() {
+    this.dataService.tenants.subscribe(tt => this.tenantTotals = tt);
   }
 
-  serfAcres(): number {
-    let acres = 0;
+  updateTotals() {
+    const tenantTotals: TenantSummary = {serf_acres: 0, free_acres: 0, labor: 0, size: 0, fees: 0, rent: 0};
     for (const tenant of this.manor.population.tenants) {
-      acres += tenant.serf_acres;
+      tenantTotals.serf_acres += tenant.serf_acres;
+      tenantTotals.free_acres += tenant.free_acres;
+      tenantTotals.size += tenant.size;
+      tenantTotals.labor += tenant.labor_days;
+      tenantTotals.fees += tenant.fees;
+      tenantTotals.rent += tenant.rent;
     }
-    return acres;
-  }
-
-  freeAcres(): number {
-    let acres = 0;
-    for (const tenant of this.manor.population.tenants) {
-      acres += tenant.free_acres;
-    }
-    return acres;
-  }
-
-  laborDays(): number {
-    let days = 0;
-    for (const tenant of this.manor.population.tenants) {
-      days += tenant.labor_days;
-    }
-    return days;
-  }
-
-  rent(): number {
-    let rent = 0;
-    for (const tenant of this.manor.population.tenants) {
-      rent += tenant.rent;
-    }
-    return rent;
-  }
-
-  fees(): number {
-    let fees = 0;
-    for (const tenant of this.manor.population.tenants) {
-      fees += tenant.fees;
-    }
-    return fees;
+    this.dataService.setTenantTotals(tenantTotals);
   }
 }

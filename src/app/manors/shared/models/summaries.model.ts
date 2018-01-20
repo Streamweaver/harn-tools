@@ -4,7 +4,11 @@ export interface SectionSummary {
   kind: number;
 }
 
-export interface TenantSummary extends SectionSummary {
+export interface TenantSummary {
+  serf_acres: number;
+  free_acres: number;
+  size: number;
+  labor: number;
   fees: number;
   rent: number;
 }

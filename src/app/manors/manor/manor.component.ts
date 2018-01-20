@@ -13,6 +13,7 @@ import {
   ManorFactory
 } from '../shared/models/manor.model';
 import { NumberGenerator } from '../../shared/generators/number-generator';
+import {TenantListComponent} from '../tenant-list/tenant-list.component';
 
 @Component({
   selector: 'app-manor',
@@ -32,6 +33,7 @@ export class ManorComponent implements OnInit {
   private herdGenerator: HerdGenerator;
   @ViewChild(CropListComponent) private cropListComponent: CropListComponent;
   @ViewChild(HerdListComponent) private herdListComponent: HerdListComponent;
+  @ViewChild(TenantListComponent) private tenantListComponent: TenantListComponent;
 
   constructor() {}
 
@@ -65,6 +67,7 @@ export class ManorComponent implements OnInit {
     this.householdGenerator.generateHousehold(this.manor);
     this.cropGenerator.generateCrops(this.manor);
     this.herdGenerator.generateHerds(this.manor);
+    this.tenantListComponent.updateTotals();
     this.cropListComponent.updateTotals();
     this.herdListComponent.updateTotals();
   }

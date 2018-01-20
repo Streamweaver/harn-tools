@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {CheckType} from '@angular/core/src/view';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {CheckResult} from '../../shared/generators/number-generator';
 import { Manor } from '../shared/models/manor.model';
-import {SectionSummary, SharedDataService, Summaries} from '../shared/services/shared-data.service';
+import {SectionSummary } from '../shared/models/summaries.model';
+import { SharedDataService } from '../shared/services/shared-data.service';
 import { checkResultIndex } from '../shared/utilities';
 
 @Component({

@@ -1,32 +1,32 @@
 <table class="table table-bordered table-striped table-hover table-sm">
-  <thead class="thead-light">
-  <tr class="row">
+  <thead class="thead-dark">
+  <tr>
     <th class="small font-weight-bold col">Herd</th>
     <th class="small font-weight-bold col-md-1 text-center">RI</th>
     <th class="small font-weight-bold col-md-1 text-center">Yield</th>
-    <th class="small font-weight-bold col-md-2 text-center">Acres</th>
+    <th class="small font-weight-bold col-md-4 text-center">Acres</th>
     <th class="small font-weight-bold col-md-2 text-center">Labor</th>
     <th class="small font-weight-bold col-md-2 text-right">Kind</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let herd of manor.livestock" class="row">
-    <td class="col">{{herd.herdType}}: {{herdHeadCount(herd)}}</td>
-    <td class="col-md-1 text-center">{{herderIndex(herd)}}</td>
-    <td class="col-md-1 text-center">{{herdYield(herd)}}</td>
-    <td class="col-md-2">
+  <tr *ngFor="let herd of manor.livestock">
+    <td class="small col">{{herd.herdType}}: {{herdHeadCount(herd)}}</td>
+    <td class="small col-md-1 text-center">{{herderIndex(herd)}}</td>
+    <td class="small col-md-1 text-center">{{herdYield(herd)}}</td>
+    <td class="small col-md-4">
       <div class="input-group input-group-sm">
         <input type="number" class="form-control" [(ngModel)]="herd.acres" (input)="updateTotals()">
       </div>
     </td>
-    <td class="col-md-2 text-center">{{herdLabor(herd)}}</td>
-    <td class="col-md-2 text-right">{{herdKind(herd) | number}}</td>
+    <td class="small col-md-2 text-center">{{herdLabor(herd)}}</td>
+    <td class="small col-md-2 text-right">{{herdKind(herd) | number}}</td>
   </tr>
-  <tr class="row">
-    <td class="col text-right font-weight-bold" colspan="3">Totals:</td>
-    <td class="col-md-2 text-right">{{herdTotals.acres | number}}</td>
-    <td class="col-md-2 text-right">{{herdTotals.labor | number}}</td>
-    <td class="col-md-2 text-right">{{herdTotals.kind | number}}d</td>
+  <tr>
+    <td class="small col text-right font-weight-bold" colspan="3">Totals:</td>
+    <td class="small col-md-4 text-right">{{herdTotals.acres | number}}</td>
+    <td class="small col-md-2 text-right">{{herdTotals.labor | number}}</td>
+    <td class="small col-md-2 text-right">{{herdTotals.kind | number}}d</td>
   </tr>
   </tbody>
 </table>

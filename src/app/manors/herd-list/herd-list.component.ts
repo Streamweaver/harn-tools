@@ -12,7 +12,7 @@ import {checkResultIndex} from '../shared/utilities';
 })
 export class HerdListComponent implements OnInit {
   @Input('manor') manor: Manor;
-  herdTotals
+  herdTotals: SectionSummary;
 
   constructor(private dataService: SharedDataService) { }
 

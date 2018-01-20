@@ -1,6 +1,6 @@
 <table class="table table-bordered table-striped table-hover table-sm" [formGroup]="budgetForm">
-  <thead class="thead-light">
-  <tr class="row">
+  <thead class="thead-dark">
+  <tr>
     <th class="small font-weight-bold col"></th>
     <th class="small font-weight-bold col-md-1 text-center">RI</th>
     <th class="small font-weight-bold col-md-1 text-center">Yield</th>
@@ -10,7 +10,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr class="row">
+  <tr>
     <td class="small col">Woods</td>
     <td class="small col-md-1 text-center">{{checkResultIndex(manor.woods.checkResult)}}</td>
     <td class="small col-md-1 text-center">{{woodsYield()}}</td>
@@ -23,7 +23,7 @@
     <td class="small col-md-2 text-center">{{woodsLabor()}}</td>
     <td class="small col-md-2 text-right">{{woodsKind() | number}}d</td>
   </tr>
-  <tr class="row">
+  <tr>
     <td class="small col">Crop</td>
     <td class="small col-md-1 text-center"></td>
     <td class="small col-md-1 text-center"></td>
@@ -31,7 +31,7 @@
     <td class="small col-md-2 text-center">{{crops.labor | number}}</td>
     <td class="small col-md-2 text-right">{{crops.kind | number}}</td>
   </tr>
-  <tr class="row">
+  <tr>
     <td class="small col">Pastures</td>
     <td class="small col-md-1 text-center"></td>
     <td class="small col-md-1 text-center"></td>
@@ -39,7 +39,7 @@
     <td class="small col-md-2 text-center">{{herds.labor | number}}</td>
     <td class="small col-md-2 text-right">{{herds.kind | number}}</td>
   </tr>
-  <tr class="row">
+  <tr>
     <td class="small col">Waste</td>
     <td class="small col-md-1 text-center"></td>
     <td class="small col-md-1 text-center"></td>
@@ -47,7 +47,7 @@
     <td class="small col-md-2 text-center"></td>
     <td class="small col-md-2 text-right"></td>
   </tr>
-  <tr class="row">
+  <tr>
     <td class="small font-weight-bold font-italic col">Total Harvest:</td>
     <td class="small col-md-1 text-center"></td>
     <td class="small col-md-1 text-center"></td>
@@ -55,7 +55,7 @@
     <td class="small col-md-2 text-center font-weight-bold font-italic">{{totalHarvestLabor() | number}}</td>
     <td class="small col-md-2 text-right font-weight-bold font-italic">{{totalHarvestKind() | number }}d</td>
   </tr>
-  <tr class="row">
+  <tr>
     <td class="small col">Crop Seed</td>
     <td class="small col-md-1 text-center">{{beadleIndex(manor.cropSeed.checkResult)}}</td>
     <td class="small col-md-1 text-center"></td>
@@ -68,7 +68,7 @@
     <td class="small col-md-2 text-center"></td>
     <td class="small col-md-2 text-right">{{cropSeedKind() | number}}d</td>
   </tr>
-  <tr class="row">
+  <tr>
     <td class="small col">Winter Feed</td>
     <td class="small col-md-1 text-center">{{beadleIndex(manor.winterFeed.checkResult)}}</td>
     <td class="small col-md-1 text-center"></td>
@@ -81,7 +81,7 @@
     <td class="small col-md-2 text-center"></td>
     <td class="small col-md-2 text-right">{{winterFeedKind() | number}}d</td>
   </tr>
-  <tr class="row">
+  <tr>
     <td class="small col">Fief maintenance</td>
     <td class="small col-md-1 text-center"></td>
     <td class="small col-md-1 text-center"></td>
@@ -94,7 +94,7 @@
     <td class="small col-md-2 text-center">{{fiefMaintLabor() | number}}</td>
     <td class="small col-md-2 text-right">{{fiefMaintKind() | number}}d</td>
   </tr>
-  <tr class="row">
+  <tr>
     <td class="small col">Assart</td>
     <td class="small col-md-1 text-center"></td>
     <td class="small col-md-1 text-center"></td>
@@ -107,7 +107,7 @@
     <td class="small col-md-2 text-center">{{assartLabor() | number}}</td>
     <td class="small col-md-2 text-right">{{assartKind() | number}}d</td>
   </tr>
-  <tr class="row">
+  <tr>
     <td class="small font-weight-bold col">Fief Income</td>
     <td class="small col-md-1 text-center"></td>
     <td class="small col-md-1 text-center"></td>
