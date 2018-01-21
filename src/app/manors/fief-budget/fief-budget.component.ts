@@ -93,7 +93,9 @@ export class FiefBudgetComponent implements OnInit {
   }
 
   fiefIncomeKind(): number {
-    return this.totalHarvestKind() - this.cropSeedKind() - this.winterFeedKind() - this.fiefMaintKind() - this.assartKind();
+    const income = this.totalHarvestKind() - this.cropSeedKind() - this.winterFeedKind() - this.fiefMaintKind() - this.assartKind();
+    this.dataService.setFiefIncome(income);
+    return income;
   }
 
   beadleIndex(cr: CheckResult): number {

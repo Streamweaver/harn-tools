@@ -15,6 +15,7 @@ import { HerdListComponent } from './herd-list/herd-list.component';
 import { FiefBudgetComponent } from './fief-budget/fief-budget.component';
 
 import { SharedDataService } from './shared/services/shared-data.service';
+import { LordsBudgetComponent } from './lords-budget/lords-budget.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import { SharedDataService } from './shared/services/shared-data.service';
     GeneralDataComponent,
     PoliciesComponent,
     HerdListComponent,
-    FiefBudgetComponent
+    FiefBudgetComponent,
+    LordsBudgetComponent
     ]
 })
 export class ManorsModule {}

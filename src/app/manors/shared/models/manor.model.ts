@@ -105,7 +105,14 @@ export class Manor {
   };
   fiefMaintenance: number;  // Percent of effort 0 - 200 increments of 20.
   assart: number;
-
+  taxIncome: number;
+  amercements: number;
+  feudalIncome: number;
+  feudalPayments: number;
+  tithe: number;
+  laborHired: number;
+  politicalExpenses: number;
+  privyPurse: number;
 
   notes: string[];
 
@@ -138,6 +145,14 @@ export class Manor {
     this.winterFeed = {acresPlanned: 0, checkResult: CheckResult.CF};
     this.fiefMaintenance = 0;
     this.assart = 0;
+    this.taxIncome = 0;
+    this.amercements = 0;
+    this.feudalIncome = 0;
+    this.feudalPayments = 0;
+    this.tithe = 0;
+    this.laborHired = 0;
+    this.politicalExpenses = 0;
+    this.privyPurse = 0;
 
     this.notes = [];
   }
