@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'scss/variables';
+@import 'scss/bwvariables';
+//@import 'scss/bootswatch';
 @import '../node_modules/bootstrap/scss/bootstrap';
 
 .page {
