@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "@fortawesome/fontawesome": "^1.1.0",
-    "bootstrap": "^4.0.0-beta.2",
+    "bootswatch": "^4.0.0",
     "core-js": "^2.4.1",
     "jquery": "^3.2.1",
     "popper.js": "^1.12.9",

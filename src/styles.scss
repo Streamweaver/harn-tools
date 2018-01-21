@@ -1,8 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'scss/variables';
-@import 'scss/bwvariables';
-//@import 'scss/bootswatch';
-@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/bootswatch/dist/spacelab/variables';
+@import '../node_modules/bootswatch/node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/bootswatch/dist/spacelab/bootswatch';
 
 .page {
   margin-top: 4rem;
@@ -89,8 +89,8 @@ select.condensed {
   font-size: 14px;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }

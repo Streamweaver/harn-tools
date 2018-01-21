@@ -1,119 +1,114 @@
 <table class="table table-bordered table-striped table-hover table-sm" [formGroup]="budgetForm">
   <thead class="thead-dark">
-  <tr>
-    <th class="small font-weight-bold col"></th>
-    <th class="small font-weight-bold col-md-1 text-center">RI</th>
-    <th class="small font-weight-bold col-md-1 text-center">Yield</th>
-    <th class="small font-weight-bold col-md-2 text-center">Acres</th>
-    <th class="small font-weight-bold col-md-2 text-center">Labor</th>
-    <th class="small font-weight-bold col-md-2 text-right">Kind</th>
-  </tr>
+    <tr>
+      <th class="small font-weight-bold col"></th>
+      <th class="small font-weight-bold col-md-1 text-center">RI</th>
+      <th class="small font-weight-bold col-md-1 text-center">Yield</th>
+      <th class="small font-weight-bold col-md-2 text-center">Acres</th>
+      <th class="small font-weight-bold col-md-2 text-center">Labor</th>
+      <th class="small font-weight-bold col-md-2 text-right">Kind</th>
+    </tr>
   </thead>
   <tbody>
-  <tr>
-    <td class="small col">Woods</td>
-    <td class="small col-md-1 text-center">{{checkResultIndex(manor.woods.checkResult)}}</td>
-    <td class="small col-md-1 text-center">{{woodsYield()}}</td>
-    <td class="small col-md-2 text-center">
-      <div class="input-group input-group-sm">
-        <input type="number" class="form-control text-center" formControlName="woodsWorked"
-               [(ngModel)]="manor.woods.acresWorked">
-      </div>
-    </td>
-    <td class="small col-md-2 text-center">{{woodsLabor()}}</td>
-    <td class="small col-md-2 text-right">{{woodsKind() | number}}d</td>
-  </tr>
-  <tr>
-    <td class="small col">Crop</td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-2 text-center">{{crops.acres | number}}</td>
-    <td class="small col-md-2 text-center">{{crops.labor | number}}</td>
-    <td class="small col-md-2 text-right">{{crops.kind | number}}</td>
-  </tr>
-  <tr>
-    <td class="small col">Pastures</td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-2 text-center">{{herds.acres | number}}</td>
-    <td class="small col-md-2 text-center">{{herds.labor | number}}</td>
-    <td class="small col-md-2 text-right">{{herds.kind | number}}</td>
-  </tr>
-  <tr>
-    <td class="small col">Waste</td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-2 text-center">{{manor.waste}}</td>
-    <td class="small col-md-2 text-center"></td>
-    <td class="small col-md-2 text-right"></td>
-  </tr>
-  <tr>
-    <td class="small font-weight-bold font-italic col">Total Harvest:</td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-2 text-center"></td>
-    <td class="small col-md-2 text-center font-weight-bold font-italic">{{totalHarvestLabor() | number}}</td>
-    <td class="small col-md-2 text-right font-weight-bold font-italic">{{totalHarvestKind() | number }}d</td>
-  </tr>
-  <tr>
-    <td class="small col">Crop Seed</td>
-    <td class="small col-md-1 text-center">{{beadleIndex(manor.cropSeed.checkResult)}}</td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-2 text-center">
-      <div class="input-group input-group-sm">
-        <input type="number" class="form-control text-center" formControlName="cropSeed"
-               [(ngModel)]="manor.cropSeed.acresPlanned">
-      </div>
-    </td>
-    <td class="small col-md-2 text-center"></td>
-    <td class="small col-md-2 text-right">{{cropSeedKind() | number}}d</td>
-  </tr>
-  <tr>
-    <td class="small col">Winter Feed</td>
-    <td class="small col-md-1 text-center">{{beadleIndex(manor.winterFeed.checkResult)}}</td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-2 text-center">
-      <div class="input-group input-group-sm">
-        <input type="number" class="form-control text-center" formControlName="winterFeed"
-               [(ngModel)]="manor.winterFeed.acresPlanned">
-      </div>
-    </td>
-    <td class="small col-md-2 text-center"></td>
-    <td class="small col-md-2 text-right">{{winterFeedKind() | number}}d</td>
-  </tr>
-  <tr>
-    <td class="small col">Fief maintenance</td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-2 text-center">
-      <div class="input-group input-group-sm">
-        <input type="number" class="form-control text-center" formControlName="fiefMaintenance"
-               [(ngModel)]="manor.fiefMaintenance">
-      </div>
-    </td>
-    <td class="small col-md-2 text-center">{{fiefMaintLabor() | number}}</td>
-    <td class="small col-md-2 text-right">{{fiefMaintKind() | number}}d</td>
-  </tr>
-  <tr>
-    <td class="small col">Assart</td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-2 text-center">
-      <div class="input-group input-group-sm">
-        <input type="number" class="form-control text-center" formControlName="assart"
-               [(ngModel)]="manor.assart">
-      </div>
-    </td>
-    <td class="small col-md-2 text-center">{{assartLabor() | number}}</td>
-    <td class="small col-md-2 text-right">{{assartKind() | number}}d</td>
-  </tr>
-  <tr>
-    <td class="small font-weight-bold col">Fief Income</td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-1 text-center"></td>
-    <td class="small col-md-2 text-center"></td>
-    <td class="small col-md-2 text-right">{{fiefIncomeLabor() | number}}</td>
-    <td class="small col-md-2 text-right">{{fiefIncomeKind() | number}}d</td>
-  </tr>
+    <tr>
+      <td class="small col">Woods</td>
+      <td class="small col-md-1 text-center">{{checkResultIndex(manor.woods.checkResult)}}</td>
+      <td class="small col-md-1 text-center">{{woodsYield()}}</td>
+      <td class="small col-md-2 text-center">
+        <div class="input-group input-group-sm">
+          <input type="number" class="form-control text-center" formControlName="woodsWorked" [(ngModel)]="manor.woods.acresWorked">
+        </div>
+      </td>
+      <td class="small col-md-2 text-center">{{woodsLabor()}}</td>
+      <td class="small col-md-2 text-right">{{woodsKind() | number}}d</td>
+    </tr>
+    <tr>
+      <td class="small col">Crop</td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-2 text-center">{{crops.acres | number}}</td>
+      <td class="small col-md-2 text-center">{{crops.labor | number}}</td>
+      <td class="small col-md-2 text-right">{{crops.kind | number}}</td>
+    </tr>
+    <tr>
+      <td class="small col">Pastures</td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-2 text-center">{{herds.acres | number}}</td>
+      <td class="small col-md-2 text-center">{{herds.labor | number}}</td>
+      <td class="small col-md-2 text-right">{{herds.kind | number}}</td>
+    </tr>
+    <tr>
+      <td class="small col">Waste</td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-2 text-center">{{manor.waste}}</td>
+      <td class="small col-md-2 text-center"></td>
+      <td class="small col-md-2 text-right"></td>
+    </tr>
+    <tr class="table-warning">
+      <td class="small font-weight-bold font-italic col">Total Harvest:</td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-2 text-center"></td>
+      <td class="small col-md-2 text-center font-weight-bold font-italic">{{totalHarvestLabor() | number}}</td>
+      <td class="small col-md-2 text-right font-weight-bold font-italic">{{totalHarvestKind() | number }}d</td>
+    </tr>
+    <tr>
+      <td class="small col">Crop Seed</td>
+      <td class="small col-md-1 text-center">{{beadleIndex(manor.cropSeed.checkResult)}}</td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-2 text-center">
+        <div class="input-group input-group-sm">
+          <input type="number" class="form-control text-center" formControlName="cropSeed" [(ngModel)]="manor.cropSeed.acresPlanned">
+        </div>
+      </td>
+      <td class="small col-md-2 text-center"></td>
+      <td class="small col-md-2 text-right">{{cropSeedKind() | number}}d</td>
+    </tr>
+    <tr>
+      <td class="small col">Winter Feed</td>
+      <td class="small col-md-1 text-center">{{beadleIndex(manor.winterFeed.checkResult)}}</td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-2 text-center">
+        <div class="input-group input-group-sm">
+          <input type="number" class="form-control text-center" formControlName="winterFeed" [(ngModel)]="manor.winterFeed.acresPlanned">
+        </div>
+      </td>
+      <td class="small col-md-2 text-center"></td>
+      <td class="small col-md-2 text-right">{{winterFeedKind() | number}}d</td>
+    </tr>
+    <tr>
+      <td class="small col">Fief maintenance</td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-2 text-center">
+        <div class="input-group input-group-sm">
+          <input type="number" class="form-control text-center" formControlName="fiefMaintenance" [(ngModel)]="manor.fiefMaintenance">
+        </div>
+      </td>
+      <td class="small col-md-2 text-center">{{fiefMaintLabor() | number}}</td>
+      <td class="small col-md-2 text-right">{{fiefMaintKind() | number}}d</td>
+    </tr>
+    <tr>
+      <td class="small col">Assart</td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-2 text-center">
+        <div class="input-group input-group-sm">
+          <input type="number" class="form-control text-center" formControlName="assart" [(ngModel)]="manor.assart">
+        </div>
+      </td>
+      <td class="small col-md-2 text-center">{{assartLabor() | number}}</td>
+      <td class="small col-md-2 text-right">{{assartKind() | number}}d</td>
+    </tr>
+    <tr class="table-success">
+      <td class="small font-weight-bold col">Fief Income</td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-1 text-center"></td>
+      <td class="small col-md-2 text-center"></td>
+      <td class="small col-md-2 text-right">{{fiefIncomeLabor() | number}}</td>
+      <td class="small col-md-2 text-right">{{fiefIncomeKind() | number}}d</td>
+    </tr>
   </tbody>
 </table>
