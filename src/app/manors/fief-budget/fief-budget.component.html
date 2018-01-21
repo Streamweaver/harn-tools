@@ -1,7 +1,7 @@
 <table class="table table-bordered table-striped table-hover table-sm" [formGroup]="budgetForm">
   <thead class="thead-dark">
     <tr>
-      <th class="small font-weight-bold col"></th>
+      <th class="font-weight-bold col">Fief's Budget</th>
       <th class="small font-weight-bold col-md-1 text-center">RI</th>
       <th class="small font-weight-bold col-md-1 text-center">Yield</th>
       <th class="small font-weight-bold col-md-2 text-center">Acres</th>
@@ -46,13 +46,13 @@
       <td class="small col-md-2 text-center"></td>
       <td class="small col-md-2 text-right"></td>
     </tr>
-    <tr class="table-warning">
-      <td class="small font-weight-bold font-italic col">Total Harvest:</td>
-      <td class="small col-md-1 text-center"></td>
-      <td class="small col-md-1 text-center"></td>
-      <td class="small col-md-2 text-center"></td>
-      <td class="small col-md-2 text-center font-weight-bold font-italic">{{totalHarvestLabor() | number}}</td>
-      <td class="small col-md-2 text-right font-weight-bold font-italic">{{totalHarvestKind() | number }}d</td>
+    <tr class="table-secondary">
+      <td class="font-weight-bold font-italic col">Total Harvest:</td>
+      <td class="col-md-1 text-center"></td>
+      <td class="col-md-1 text-center"></td>
+      <td class="col-md-2 text-center"></td>
+      <td class="col-md-2 text-center font-weight-bold font-italic">{{totalHarvestLabor() | number}}</td>
+      <td class="col-md-2 text-right font-weight-bold font-italic">{{totalHarvestKind() | number }}d</td>
     </tr>
     <tr>
       <td class="small col">Crop Seed</td>
@@ -102,13 +102,13 @@
       <td class="small col-md-2 text-center">{{assartLabor() | number}}</td>
       <td class="small col-md-2 text-right">{{assartKind() | number}}d</td>
     </tr>
-    <tr class="table-success">
-      <td class="small font-weight-bold col">Fief Income</td>
-      <td class="small col-md-1 text-center"></td>
-      <td class="small col-md-1 text-center"></td>
-      <td class="small col-md-2 text-center"></td>
-      <td class="small col-md-2 text-right">{{fiefIncomeLabor() | number}}</td>
-      <td class="small col-md-2 text-right">{{fiefIncomeKind() | number}}d</td>
+    <tr class="table-secondary">
+      <td class="font-weight-bold col">Fief Income</td>
+      <td class="col-md-1 text-center"></td>
+      <td class="col-md-1 text-center"></td>
+      <td class="col-md-2 text-center"></td>
+      <td class="font-weight-bold col-md-2 text-right">{{fiefIncomeLabor() | number}}</td>
+      <td class="font-weight-bold col-md-2 text-right">{{fiefIncomeKind() | number}}d</td>
     </tr>
   </tbody>
 </table>

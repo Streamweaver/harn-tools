@@ -1,7 +1,7 @@
 <table class="table table-bordered table-striped table-hover table-sm">
   <thead class="thead-dark">
     <tr>
-      <th class="small font-weight-bold col">Crop</th>
+      <th class="font-weight-bold col">Crops</th>
       <th class="small font-weight-bold text-center">RI</th>
       <th class="small font-weight-bold text-center">Yield</th>
       <th class="small font-weight-bold text-center">Acres</th>
@@ -22,11 +22,11 @@
       <td class="small text-center">{{cropLabor(crop)}}</td>
       <td class="small text-right">{{cropKind(crop) | number}}</td>
     </tr>
-    <tr>
+    <tr class="table-secondary">
       <td class="text-right font-weight-bold" colspan="3">Totals:</td>
-      <td class="text-right">{{cropTotals.acres | number}}</td>
-      <td class="text-right">{{cropTotals.labor | number}}</td>
-      <td class="text-right">{{cropTotals.kind | number}}d</td>
+      <td class="text-right font-weight-bold">{{cropTotals.acres | number}}</td>
+      <td class="text-right font-weight-bold">{{cropTotals.labor | number}}</td>
+      <td class="text-right font-weight-bold">{{cropTotals.kind | number}}d</td>
     </tr>
   </tbody>
 </table>

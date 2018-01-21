@@ -26,16 +26,16 @@
       <tr app-tenant *ngFor="let tenant of manor.population.tenants" [tenant]="tenant">
 
       </tr>
-      <tr class="table-info">
+      <tr class="table-secondary">
         <td class="font-weight-bold text-right">Totals:</td>
-        <td>{{tenantTotals.size}}</td>
-        <td></td>
-        <td>{{tenantTotals.serf_acres | number}}</td>
-        <td>{{tenantTotals.free_acres | number}}</td>
-        <td>{{tenantTotals.labor | number}}</td>
-        <td>{{tenantTotals.rent | number}}d</td>
-        <td>{{tenantTotals.fees | number}}d</td>
-        <td></td>
+        <td class="font-weight-bold">{{tenantTotals.size}}</td>
+        <td class="font-weight-bold"></td>
+        <td class="font-weight-bold">{{tenantTotals.serf_acres | number}}</td>
+        <td class="font-weight-bold">{{tenantTotals.free_acres | number}}</td>
+        <td class="font-weight-bold">{{tenantTotals.labor | number}}</td>
+        <td class="font-weight-bold">{{tenantTotals.rent | number}}d</td>
+        <td class="font-weight-bold">{{tenantTotals.fees | number}}d</td>
+        <td class="font-weight-bold"></td>
       </tr>
     </tbody>
   </table>

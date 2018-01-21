@@ -18,6 +18,25 @@ export function checkResultIndex(cr: CheckResult): number {
   }
 }
 
+export function beadleResultIndex(cr: CheckResult): number {
+  let beadleIndex = 0;
+  switch (cr) {
+    case CheckResult.CS:
+      beadleIndex = 0.95;
+      break;
+    case CheckResult.MS:
+      beadleIndex = 0.9;
+      break;
+    case CheckResult.MF:
+      beadleIndex = 0.85;
+      break;
+    default:
+      beadleIndex = 0.8;
+      break;
+  }
+  return beadleIndex;
+}
+
 export function checkSkill(eml: number): CheckResult {
   const result = dice.rollDie(100);
   if (result <= eml || result < 5) {

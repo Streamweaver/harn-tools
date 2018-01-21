@@ -12,12 +12,12 @@
         <span class="input-group-text">Name:</span>
       </div>
       <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.name">
-      <a class="btn btn-sm btn-primary" (click)="onGenerateClick()" *ngIf="showGenerationInput">
-        <i class="fa fa-users"></i>
-        Generate</a>
-      <a class="btn btn-sm btn-danger" (click)="onResetClick()" *ngIf="!showGenerationInput">
+      <button class="btn btn-sm btn-primary" (click)="onGenerateClick()" *ngIf="showGenerationInput">
+        <i class="fas fa-users"></i>
+        Generate</button>
+      <button class="btn btn-sm btn-danger" (click)="onResetClick()" *ngIf="!showGenerationInput">
         <i class="far fa-trash-alt"></i>
-        Reset</a>
+        Reset</button>
       <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#collapsePolicies" role="button" aria-expanded="false" aria-controls="collapsePolicies">
         <i class="fas fa-cog"></i>
         Policies
@@ -67,4 +67,3 @@
 </div>
 
 <app-tenant-list [manor]="manor"></app-tenant-list>
-

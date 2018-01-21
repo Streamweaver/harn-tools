@@ -1,7 +1,10 @@
 import { Population } from './population.model';
 import { Crop } from './crop.model';
 import { Herd } from './herd.model';
-import {CheckResult, NumberGenerator} from '../../../shared/generators/number-generator';
+import {
+  CheckResult,
+  NumberGenerator
+} from '../../../shared/generators/number-generator';
 
 export interface SectionSummary {
   acres: number;
@@ -92,21 +95,24 @@ export class Manor {
   woods: {
     basicYield: number;
     acresWorked: number;
-    checkResult: CheckResult
+    checkResult: CheckResult;
   };
   waste: number;
   cropSeed: {
     acresPlanned: number;
     checkResult: CheckResult;
-  }
+  };
   winterFeed: {
     acresPlanned: number;
     checkResult: CheckResult;
   };
-  fiefMaintenance: number;  // Percent of effort 0 - 200 increments of 20.
+  fiefMaintenance: number; // Percent of effort 0 - 200 increments of 20.
   assart: number;
   taxIncome: number;
-  amercements: number;
+  amercements: {
+    amount: number;
+    beadleCheck: CheckResult;
+  };
   feudalIncome: number;
   feudalPayments: number;
   tithe: number;
@@ -129,7 +135,9 @@ export class Manor {
       this.grossAcres * (this.dice.rollDie(10) / 100 + 0.05)
     );
     this.clearedAcres = this.grossAcres - this.woodlandAcres;
-    this.landQuality = parseFloat((0.74 + this.dice.rollDie(51) / 100).toFixed(2));
+    this.landQuality = parseFloat(
+      (0.74 + this.dice.rollDie(51) / 100).toFixed(2)
+    );
     this.setFiefIndex();
     this.setWeatherIndex();
     this.tradeIndex = 0.5;
@@ -139,14 +147,18 @@ export class Manor {
     this.crops = [];
 
     this.livestock = [];
-    this.woods = { basicYield: 18, acresWorked: 0, checkResult: CheckResult.CF};
+    this.woods = {
+      basicYield: 18,
+      acresWorked: 0,
+      checkResult: CheckResult.CF
+    };
     this.waste = 0;
-    this.cropSeed = {acresPlanned: 0, checkResult: CheckResult.CF};
-    this.winterFeed = {acresPlanned: 0, checkResult: CheckResult.CF};
+    this.cropSeed = { acresPlanned: 0, checkResult: CheckResult.CF };
+    this.winterFeed = { acresPlanned: 0, checkResult: CheckResult.CF };
     this.fiefMaintenance = 0;
     this.assart = 0;
     this.taxIncome = 0;
-    this.amercements = 0;
+    this.amercements = { amount: 0, beadleCheck: CheckResult.CF };
     this.feudalIncome = 0;
     this.feudalPayments = 0;
     this.tithe = 0;
