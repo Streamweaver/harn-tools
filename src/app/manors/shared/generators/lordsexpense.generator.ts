@@ -40,7 +40,6 @@ export class LordsExpenseGenerator {
     }
     let payment = 3 * manor.grossAcres;
     if (manor.policies.isPayingScootage) {
-      console.log('Paying Scootage!');
       payment = 5 * manor.grossAcres;
     }
     if (manor.policies.isBailiffRun) {
