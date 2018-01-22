@@ -1,6 +1,5 @@
-import { ITenant } from './tenant.model';
-import { Officer } from './tenant.model';
-import { HouseholdMember } from './housemember.model';
+import {HouseholdMember} from './housemember.model';
+import {ITenant, Officer} from './tenant.model';
 
 export class Population {
   tenants: ITenant[];

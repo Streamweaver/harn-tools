@@ -1,10 +1,7 @@
-import { Population } from './population.model';
-import { Crop } from './crop.model';
-import { Herd } from './herd.model';
-import {
-  CheckResult,
-  NumberGenerator
-} from '../../../shared/generators/number-generator';
+import {CheckResult, NumberGenerator} from '../../../shared/generators/number-generator';
+import {Crop} from './crop.model';
+import {Herd} from './herd.model';
+import {Population} from './population.model';
 
 export interface SectionSummary {
   acres: number;
@@ -156,12 +153,12 @@ export class Manor {
       checkResult: CheckResult.CF
     };
     this.waste = 0;
-    this.cropSeed = { acresPlanned: 0, checkResult: CheckResult.CF };
-    this.winterFeed = { acresPlanned: 0, checkResult: CheckResult.CF };
+    this.cropSeed = {acresPlanned: 0, checkResult: CheckResult.CF};
+    this.winterFeed = {acresPlanned: 0, checkResult: CheckResult.CF};
     this.fiefMaintenance = 0;
     this.assart = 0;
     this.taxIncome = 0;
-    this.amercements = { amount: 0, beadleCheck: CheckResult.CF };
+    this.amercements = {amount: 0, beadleCheck: CheckResult.CF};
     this.feudalIncome = 0;
     this.totalIncome = 0;
     this.feudalPayments = 0;

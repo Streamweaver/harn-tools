@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { CropListComponent } from './crop-list.component';
+import {CropListComponent} from './crop-list.component';
 
 xdescribe('CropListComponent', () => {
   let component: CropListComponent;
@@ -8,9 +8,9 @@ xdescribe('CropListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CropListComponent ]
+      declarations: [CropListComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

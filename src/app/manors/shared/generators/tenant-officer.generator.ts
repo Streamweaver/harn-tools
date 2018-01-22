@@ -1,6 +1,6 @@
-import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { Manor, Topology } from '../models/manor.model';
-import { ITenant, Officer, TenantType } from '../models/tenant.model';
+import {NumberGenerator} from '../../../shared/generators/number-generator';
+import {Manor, Topology} from '../models/manor.model';
+import {ITenant, Officer, TenantType} from '../models/tenant.model';
 
 export class TenantOfficerGenerator {
   private _dice: NumberGenerator;

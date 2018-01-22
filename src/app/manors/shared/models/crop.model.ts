@@ -1,5 +1,4 @@
-import { CheckResult } from '../../../shared/generators/number-generator';
-import {checkResultIndex} from '../utilities';
+import {CheckResult} from '../../../shared/generators/number-generator';
 
 export class Crop {
   cropType: CropType;
@@ -9,12 +8,10 @@ export class Crop {
   checkResult: CheckResult;
   hardiness: number;
 
-  constructor(
-    cropType: CropType,
-    baseYield: number,
-    baseLabor: number,
-    hardiness: number
-  ) {
+  constructor(cropType: CropType,
+              baseYield: number,
+              baseLabor: number,
+              hardiness: number) {
     this.cropType = cropType;
     this.acres = 0;
     this.baseYield = baseYield;
@@ -64,6 +61,7 @@ interface CropDataInterface {
     baseYield: number;
   };
 }
+
 export const CropData: CropDataInterface = {
   [CropType.Rye]: {
     hardiness: 10,

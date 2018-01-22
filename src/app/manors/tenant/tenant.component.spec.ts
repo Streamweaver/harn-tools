@@ -1,7 +1,5 @@
-import {Component, DebugElement} from '@angular/core';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { TenantComponent } from './tenant.component';
-import { ITenant } from '../shared/models/tenant.model';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {TenantComponent} from './tenant.component';
 
 xdescribe('TenantComponent', () => {
   let component: TenantComponent;
@@ -11,7 +9,7 @@ xdescribe('TenantComponent', () => {
     TestBed.configureTestingModule({
       declarations: [TenantComponent],
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

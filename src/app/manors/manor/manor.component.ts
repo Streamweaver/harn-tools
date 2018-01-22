@@ -1,21 +1,21 @@
-import { LordsBudgetComponent } from '../lords-budget/lords-budget.component';
-import { LordsIncomeGenerator } from '../shared/generators/lordsincome.generator';
-import { LordsExpenseGenerator } from '../shared/generators/lordsexpense.generator';
-import { FiefGenerator } from '../shared/generators/fief.generator';
-import { HouseholdListComponent } from '../household-list/household-list.component';
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { CropListComponent } from '../crop-list/crop-list.component';
-import { HerdListComponent } from '../herd-list/herd-list.component';
-import { CraftsmanGenerator } from '../shared/generators/craftsman-generator';
-import { HerdGenerator } from '../shared/generators/herd.generator';
-import { HouseholdGenerator } from '../shared/generators/household.generator';
-import { TenantGenerator } from '../shared/generators/tenant-generator';
-import { TenantOfficerGenerator } from '../shared/generators/tenant-officer.generator';
-import { YeomanGenerator } from '../shared/generators/yeoman-generator';
-import { CropGenerator } from '../shared/generators/crop.generator';
-import { Manor, ManorFactory } from '../shared/models/manor.model';
-import { NumberGenerator } from '../../shared/generators/number-generator';
-import { TenantListComponent } from '../tenant-list/tenant-list.component';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {NumberGenerator} from '../../shared/generators/number-generator';
+import {CropListComponent} from '../crop-list/crop-list.component';
+import {HerdListComponent} from '../herd-list/herd-list.component';
+import {HouseholdListComponent} from '../household-list/household-list.component';
+import {LordsBudgetComponent} from '../lords-budget/lords-budget.component';
+import {CraftsmanGenerator} from '../shared/generators/craftsman-generator';
+import {CropGenerator} from '../shared/generators/crop.generator';
+import {FiefGenerator} from '../shared/generators/fief.generator';
+import {HerdGenerator} from '../shared/generators/herd.generator';
+import {HouseholdGenerator} from '../shared/generators/household.generator';
+import {LordsExpenseGenerator} from '../shared/generators/lordsexpense.generator';
+import {LordsIncomeGenerator} from '../shared/generators/lordsincome.generator';
+import {TenantGenerator} from '../shared/generators/tenant-generator';
+import {TenantOfficerGenerator} from '../shared/generators/tenant-officer.generator';
+import {YeomanGenerator} from '../shared/generators/yeoman-generator';
+import {Manor, ManorFactory} from '../shared/models/manor.model';
+import {TenantListComponent} from '../tenant-list/tenant-list.component';
 
 @Component({
   selector: 'app-manor',
@@ -44,7 +44,8 @@ export class ManorComponent implements OnInit {
   private householdListComponent: HouseholdListComponent;
   @ViewChild(LordsBudgetComponent) private lordsBudgetComponent: LordsBudgetComponent;
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
     this.dice = new NumberGenerator();

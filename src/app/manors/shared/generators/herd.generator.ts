@@ -1,15 +1,15 @@
-import { Officer } from './../models/tenant.model';
-import { checkSkill } from './../../shared/utilities';
-import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { HerdType, HerdFactory, Livestock } from '../models/herd.model';
-import { Manor } from '../models/manor.model';
 import * as rwc from 'random-weighted-choice';
+import {NumberGenerator} from '../../../shared/generators/number-generator';
+import {HerdFactory, HerdType, Livestock} from '../models/herd.model';
+import {Manor} from '../models/manor.model';
+import {checkSkill} from './../../shared/utilities';
+import {Officer} from './../models/tenant.model';
 
 const liveStockTable = [
-  { weight: 10, id: HerdType.Cows },
-  { weight: 30, id: HerdType.Goats },
-  { weight: 40, id: HerdType.Sheep },
-  { weight: 20, id: HerdType.Swine }
+  {weight: 10, id: HerdType.Cows},
+  {weight: 30, id: HerdType.Goats},
+  {weight: 40, id: HerdType.Sheep},
+  {weight: 20, id: HerdType.Swine}
 ];
 
 export class HerdGenerator {

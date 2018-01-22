@@ -1,7 +1,7 @@
-import { Manor } from './../models/manor.model';
-import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { Officer } from '../models/tenant.model';
-import { checkSkill, beadleResultIndex } from '../utilities';
+import {NumberGenerator} from '../../../shared/generators/number-generator';
+import {Officer} from '../models/tenant.model';
+import {beadleResultIndex, checkSkill} from '../utilities';
+import {Manor} from './../models/manor.model';
 
 export class LordsIncomeGenerator {
   private dice: NumberGenerator;

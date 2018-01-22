@@ -1,6 +1,6 @@
-import { TenantGenerator } from './tenant-generator';
-import { Manor, ManorFactory, Topology } from '../models/manor.model';
-import { TenantType } from '../models/tenant.model';
+import {Manor, ManorFactory, Topology} from '../models/manor.model';
+import {TenantType} from '../models/tenant.model';
+import {TenantGenerator} from './tenant-generator';
 
 describe('Generator: Tenant', () => {
   let generator: TenantGenerator;
@@ -110,6 +110,7 @@ describe('Generator: Tenant', () => {
       }
     });
   }
+
   checkSerfAcres(TenantType.VILLEIN, 20, 41);
   checkSerfAcres(TenantType.HALFVILLEIN, 10, 21);
   checkSerfAcres(TenantType.COTTAR, -1, 6);
@@ -126,6 +127,7 @@ describe('Generator: Tenant', () => {
       }
     });
   }
+
   checkFreeAcres(TenantType.VILLEIN, -1, 31);
   checkFreeAcres(TenantType.HALFVILLEIN, -1, 1);
   checkFreeAcres(TenantType.COTTAR, -1, 1);

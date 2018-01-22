@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NumberGenerator} from '../../shared/generators/number-generator';
 import {Manor, Topology, TopologyEffects} from '../shared/models/manor.model';
 
@@ -11,7 +11,8 @@ export class GeneralDataComponent implements OnInit {
   @Input('manor') manor: Manor;
   private dice: NumberGenerator;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.dice = new NumberGenerator();
@@ -57,6 +58,7 @@ export class GeneralDataComponent implements OnInit {
   onClearedAcresChange() {
     this.manor.woodlandAcres = this.manor.grossAcres - this.manor.clearedAcres;
   }
+
   /**
    * Parses a string array of topologies from the enum for use in select option.
    * @returns {string[]}

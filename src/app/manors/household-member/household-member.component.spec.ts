@@ -1,7 +1,7 @@
-import { FormsModule } from '@angular/forms';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { HouseholdMemberComponent } from './household-member.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {FormsModule} from '@angular/forms';
+import {HouseholdMemberComponent} from './household-member.component';
 
 xdescribe('HouseholdMemberComponent', () => {
   let component: HouseholdMemberComponent;

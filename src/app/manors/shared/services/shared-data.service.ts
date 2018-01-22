@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
-import { Observable } from 'rxjs/Observable';
-import { SectionSummary, TenantSummary } from '../models/summaries.model';
+import {Injectable} from '@angular/core';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
+import {Observable} from 'rxjs/Observable';
+import {SectionSummary, TenantSummary} from '../models/summaries.model';
 
 @Injectable()
 export class SharedDataService {

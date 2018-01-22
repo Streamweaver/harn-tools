@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HerdListComponent } from './herd-list.component';
+import {HerdListComponent} from './herd-list.component';
 
-describe('HerdListComponent', () => {
+xdescribe('HerdListComponent', () => {
   let component: HerdListComponent;
   let fixture: ComponentFixture<HerdListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HerdListComponent ]
+      declarations: [HerdListComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

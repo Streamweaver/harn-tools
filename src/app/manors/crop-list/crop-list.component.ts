@@ -1,9 +1,9 @@
+import {Component, Input, OnInit} from '@angular/core';
+import {Manor} from '../shared/models/manor.model';
 import {SectionSummary} from '../shared/models/summaries.model';
-import {SharedDataService } from '../shared/services/shared-data.service';
-import { Crop } from './../shared/models/crop.model';
-import {Component, OnInit, Input } from '@angular/core';
-import { Manor } from '../shared/models/manor.model';
-import { checkResultIndex } from './../shared/utilities';
+import {SharedDataService} from '../shared/services/shared-data.service';
+import {Crop} from './../shared/models/crop.model';
+import {checkResultIndex} from './../shared/utilities';
 
 @Component({
   selector: 'app-crop-list',
@@ -14,9 +14,8 @@ export class CropListComponent implements OnInit {
   @Input('manor') manor: Manor;
   cropTotals: SectionSummary;
 
-  constructor(
-    private dataService: SharedDataService
-  ) {}
+  constructor(private dataService: SharedDataService) {
+  }
 
   ngOnInit() {
     this.dataService.crops.subscribe(ct => this.cropTotals = ct);
@@ -33,10 +32,10 @@ export class CropListComponent implements OnInit {
   cropYield(crop: Crop): number {
     const result = Math.floor(
       crop.baseYield *
-        this.manor.landQuality *
-        this.manor.fiefIndex *
-        this.manor.weatherIndex *
-        checkResultIndex(crop.checkResult)
+      this.manor.landQuality *
+      this.manor.fiefIndex *
+      this.manor.weatherIndex *
+      checkResultIndex(crop.checkResult)
     );
     return result;
   }

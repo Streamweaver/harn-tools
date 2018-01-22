@@ -13,7 +13,7 @@ export const MilitaryData = {
     pts: 2,
     title: 'Light Foot',
     kind: 0
-    },
+  },
   [Military.MF]: {
     pts: 3,
     title: 'Medium Foot',

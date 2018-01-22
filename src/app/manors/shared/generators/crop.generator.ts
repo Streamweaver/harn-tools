@@ -1,19 +1,19 @@
-import { Officer } from './../models/tenant.model';
-import { checkSkill } from './../../shared/utilities';
-import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { CropType, CropTypes, CropFactory } from '../models/crop.model';
-import { Manor } from '../models/manor.model';
 import * as rwc from 'random-weighted-choice';
+import {NumberGenerator} from '../../../shared/generators/number-generator';
+import {CropFactory, CropType, CropTypes} from '../models/crop.model';
+import {Manor} from '../models/manor.model';
+import {checkSkill} from './../../shared/utilities';
+import {Officer} from './../models/tenant.model';
 
 const plantingTable = [
-  { weight: 10, id: CropType.Rye },
-  { weight: 15, id: CropType.Barley },
-  { weight: 15, id: CropType.Oats },
-  { weight: 25, id: CropType.Hay },
-  { weight: 10, id: CropType.Vegetables },
-  { weight: 5, id: CropType.Flax },
-  { weight: 5, id: CropType.Wheat },
-  { weight: 15, id: CropType.Fruit }
+  {weight: 10, id: CropType.Rye},
+  {weight: 15, id: CropType.Barley},
+  {weight: 15, id: CropType.Oats},
+  {weight: 25, id: CropType.Hay},
+  {weight: 10, id: CropType.Vegetables},
+  {weight: 5, id: CropType.Flax},
+  {weight: 5, id: CropType.Wheat},
+  {weight: 15, id: CropType.Fruit}
 ];
 
 export class CropGenerator {

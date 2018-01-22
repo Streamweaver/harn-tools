@@ -1,5 +1,5 @@
-import { Manor } from './../models/manor.model';
-import { NumberGenerator } from '../../../shared/generators/number-generator';
+import {NumberGenerator} from '../../../shared/generators/number-generator';
+import {Manor} from './../models/manor.model';
 
 export class LordsExpenseGenerator {
   private dice: NumberGenerator;

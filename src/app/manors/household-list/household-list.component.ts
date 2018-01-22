@@ -1,7 +1,7 @@
-import { HouseholdGenerator } from './../shared/generators/household.generator';
-import { Manor } from './../shared/models/manor.model';
-import { Component, OnInit, Input } from '@angular/core';
-import { SharedDataService } from '../shared/services/shared-data.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {SharedDataService} from '../shared/services/shared-data.service';
+import {HouseholdGenerator} from './../shared/generators/household.generator';
+import {Manor} from './../shared/models/manor.model';
 
 @Component({
   selector: 'app-household-list',
@@ -13,7 +13,8 @@ export class HouseholdListComponent implements OnInit {
   private _hg: HouseholdGenerator;
   householdKind: number;
 
-  constructor(private dataService: SharedDataService) {}
+  constructor(private dataService: SharedDataService) {
+  }
 
   ngOnInit() {
     this._hg = new HouseholdGenerator();

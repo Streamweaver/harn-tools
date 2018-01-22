@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { GeneralDataComponent } from './general-data.component';
+import {GeneralDataComponent} from './general-data.component';
 
 xdescribe('GeneralDataComponent', () => {
   let component: GeneralDataComponent;
@@ -8,9 +8,9 @@ xdescribe('GeneralDataComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GeneralDataComponent ]
+      declarations: [GeneralDataComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

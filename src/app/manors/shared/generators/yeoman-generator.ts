@@ -1,8 +1,8 @@
+import * as rwc from 'random-weighted-choice';
 import {NumberGenerator} from '../../../shared/generators/number-generator';
 import {Manor} from '../models/manor.model';
 import {Military, MilitaryData} from '../models/military.models';
 import {TenantType} from '../models/tenant.model';
-import * as rwc from 'random-weighted-choice';
 
 /**
  * Genreal odds of recruitment of each class type

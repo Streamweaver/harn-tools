@@ -1,6 +1,6 @@
-import { NumberGenerator } from './../../../shared/generators/number-generator';
-import { HouseholdMember, Noble, Servant, Stable } from './../models/housemember.model';
-import { Manor } from './../models/manor.model';
+import {NumberGenerator} from './../../../shared/generators/number-generator';
+import {HouseholdMember, Noble, Servant} from './../models/housemember.model';
+import {Manor} from './../models/manor.model';
 
 /**
  * Determines the number of household nobles based on the effective acres.  Manors held
@@ -67,11 +67,13 @@ export class HouseholdGenerator {
     );
   }
 
-  private generateStables(manor: Manor) {}
+  private generateStables(manor: Manor) {
+  }
 
-  private generateCraftsmen(manor: Manor) {}
+  private generateCraftsmen(manor: Manor) {
+  }
 
-  private generateExtraServants (manor: Manor) {
+  private generateExtraServants(manor: Manor) {
 
   }
 
@@ -81,12 +83,10 @@ export class HouseholdGenerator {
     }
   }
 
-  generateHouseMember(
-    title: string,
-    each: number,
-    count: number,
-    loyaltybase: number
-  ): HouseholdMember {
+  generateHouseMember(title: string,
+                      each: number,
+                      count: number,
+                      loyaltybase: number): HouseholdMember {
     return {
       title: title,
       ml: this.dice.rollTotal(6, 3) * 5 + 25,

@@ -1,7 +1,4 @@
-import {
-  CheckResult,
-  NumberGenerator
-} from './../../shared/generators/number-generator';
+import {CheckResult, NumberGenerator} from './../../shared/generators/number-generator';
 
 const dice = new NumberGenerator();
 

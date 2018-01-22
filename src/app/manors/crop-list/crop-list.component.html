@@ -1,32 +1,32 @@
 <table class="table table-bordered table-striped table-hover table-sm">
   <thead class="thead-dark">
-    <tr>
-      <th class="font-weight-bold col">Crops</th>
-      <th class="small font-weight-bold text-center">RI</th>
-      <th class="small font-weight-bold text-center">Yield</th>
-      <th class="small font-weight-bold text-center">Acres</th>
-      <th class="small font-weight-bold text-center">Labor</th>
-      <th class="small font-weight-bold text-right">Kind</th>
-    </tr>
+  <tr>
+    <th class="font-weight-bold col">Crops</th>
+    <th class="small font-weight-bold text-center">RI</th>
+    <th class="small font-weight-bold text-center">Yield</th>
+    <th class="small font-weight-bold text-center">Acres</th>
+    <th class="small font-weight-bold text-center">Labor</th>
+    <th class="small font-weight-bold text-right">Kind</th>
+  </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let crop of manor.crops">
-      <td class="small">{{crop.cropType}}</td>
-      <td class="small text-center">{{reeveIndex(crop)}}</td>
-      <td class="small text-center">{{cropYield(crop)}}</td>
-      <td class="small">
-        <div class="input-group input-group-sm">
-          <input type="number" class="form-control" [(ngModel)]="crop.acres" (input)="updateTotals()">
-        </div>
-      </td>
-      <td class="small text-center">{{cropLabor(crop)}}</td>
-      <td class="small text-right">{{cropKind(crop) | number}}</td>
-    </tr>
-    <tr class="table-secondary">
-      <td class="text-right font-weight-bold" colspan="3">Totals:</td>
-      <td class="text-right font-weight-bold">{{cropTotals.acres | number}}</td>
-      <td class="text-right font-weight-bold">{{cropTotals.labor | number}}</td>
-      <td class="text-right font-weight-bold">{{cropTotals.kind | number}}d</td>
-    </tr>
+  <tr *ngFor="let crop of manor.crops">
+    <td class="small">{{crop.cropType}}</td>
+    <td class="small text-center">{{reeveIndex(crop)}}</td>
+    <td class="small text-center">{{cropYield(crop)}}</td>
+    <td class="small">
+      <div class="input-group input-group-sm">
+        <input type="number" class="form-control" [(ngModel)]="crop.acres" (input)="updateTotals()">
+      </div>
+    </td>
+    <td class="small text-center">{{cropLabor(crop)}}</td>
+    <td class="small text-right">{{cropKind(crop) | number}}</td>
+  </tr>
+  <tr class="table-secondary">
+    <td class="text-right font-weight-bold" colspan="3">Totals:</td>
+    <td class="text-right font-weight-bold">{{cropTotals.acres | number}}</td>
+    <td class="text-right font-weight-bold">{{cropTotals.labor | number}}</td>
+    <td class="text-right font-weight-bold">{{cropTotals.kind | number}}d</td>
+  </tr>
   </tbody>
 </table>

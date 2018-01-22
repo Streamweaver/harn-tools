@@ -1,5 +1,5 @@
-import { Manor } from './../models/manor.model';
-import { NumberGenerator } from '../../../shared/generators/number-generator';
+import {NumberGenerator} from '../../../shared/generators/number-generator';
+import {Manor} from './../models/manor.model';
 
 export class FiefGenerator {
   private dice: NumberGenerator;
@@ -17,22 +17,37 @@ export class FiefGenerator {
   }
 
   woodAcresWorked(manor: Manor) {
+    if (manor.woods.acresWorked !== 0) {
+      return;
+    }
     manor.woods.acresWorked = manor.woodlandAcres;
   }
 
   cropSeedStored(manor: Manor) {
+    if (manor.cropSeed.acresPlanned !== 0) {
+      return;
+    }
     manor.crops.forEach(c => (manor.cropSeed.acresPlanned += c.acres));
   }
 
   winterFeedStored(manor: Manor) {
+    if (manor.winterFeed.acresPlanned !== 0) {
+      return;
+    }
     manor.livestock.forEach(h => (manor.winterFeed.acresPlanned += h.acres));
   }
 
   fiefMaintenance(manor: Manor) {
+    if (manor.fiefMaintenance !== 0) {
+      return;
+    }
     manor.fiefMaintenance = manor.clearedAcres;
   }
 
   assart(manor: Manor) {
+    if (manor.assart !== 0) {
+      return;
+    }
     manor.assart = Math.floor(manor.woodlandAcres * 0.02);
   }
 }

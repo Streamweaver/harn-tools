@@ -1,16 +1,16 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { LordsBudgetComponent } from './lords-budget.component';
+import {LordsBudgetComponent} from './lords-budget.component';
 
-describe('LordsBudgetComponent', () => {
+xdescribe('LordsBudgetComponent', () => {
   let component: LordsBudgetComponent;
   let fixture: ComponentFixture<LordsBudgetComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LordsBudgetComponent ]
+      declarations: [LordsBudgetComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

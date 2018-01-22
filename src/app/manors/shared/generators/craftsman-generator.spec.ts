@@ -1,7 +1,6 @@
-import { Manor, ManorFactory, Topology } from '../models/manor.model';
-import { CraftsmanGenerator } from './craftsman-generator';
-import { TenantType } from '../models/tenant.model';
-import { Craftsman, craftsmanFees } from '../models/tenant.model';
+import {Manor, ManorFactory, Topology} from '../models/manor.model';
+import {Craftsman, craftsmanFees, TenantType} from '../models/tenant.model';
+import {CraftsmanGenerator} from './craftsman-generator';
 
 describe('Generator: Craftsman', () => {
   let generator: CraftsmanGenerator;
@@ -36,11 +35,11 @@ describe('Generator: Craftsman', () => {
     manor = null;
   });
 
-  it('should properly instantiate the generator', function() {
+  it('should properly instantiate the generator', function () {
     expect(generator).toBeTruthy();
   });
 
-  it('should have no unassigned craftsmen', function() {
+  it('should have no unassigned craftsmen', function () {
     makeTenants(10, TenantType.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     for (const tenant of manor.population.tenants) {
@@ -48,7 +47,7 @@ describe('Generator: Craftsman', () => {
     }
   });
 
-  it('should not assign a craft to non-craftsmen', function() {
+  it('should not assign a craft to non-craftsmen', function () {
     makeTenants(10, TenantType.VILLEIN);
     generator.assignCraftsmen(manor);
     for (const tenant of manor.population.tenants) {
@@ -58,7 +57,7 @@ describe('Generator: Craftsman', () => {
     }
   });
 
-  it('should not assign shipwright to non-coastal manors', function() {
+  it('should not assign shipwright to non-coastal manors', function () {
     manor.topology = Topology.Lowlands;
     makeTenants(15, TenantType.CRAFTSMAN);
     generator.assignCraftsmen(manor);
@@ -67,7 +66,7 @@ describe('Generator: Craftsman', () => {
     }
   });
 
-  it('should assign shipwright to coastal manors', function() {
+  it('should assign shipwright to coastal manors', function () {
     manor.topology = Topology.Coastal;
     makeTenants(15, TenantType.CRAFTSMAN);
     generator.assignCraftsmen(manor);
@@ -78,7 +77,7 @@ describe('Generator: Craftsman', () => {
     expect(shipwrightCount).toBe(1);
   });
 
-  it('should NOT assign GM Determine craftsman if under 15', function() {
+  it('should NOT assign GM Determine craftsman if under 15', function () {
     makeTenants(14, TenantType.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     let gmdCount = 0;
@@ -88,7 +87,7 @@ describe('Generator: Craftsman', () => {
     expect(gmdCount).toBe(0);
   });
 
-  it('should assign crafts only once and then all become GM Determine', function() {
+  it('should assign crafts only once and then all become GM Determine', function () {
     makeTenants(150, TenantType.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     let gmdCount = 0;
@@ -98,7 +97,7 @@ describe('Generator: Craftsman', () => {
     expect(gmdCount).toBe(136);
   });
 
-  it('should assess appropriate fees', function() {
+  it('should assess appropriate fees', function () {
     makeTenants(10, TenantType.CRAFTSMAN);
     makeTenants(30, TenantType.VILLEIN);
     generator.assignCraftsmen(manor);
@@ -112,7 +111,7 @@ describe('Generator: Craftsman', () => {
     }
   });
 
-  it('should NOT reassign existing crafts', function() {
+  it('should NOT reassign existing crafts', function () {
     makeTenants(10, TenantType.CRAFTSMAN);
     for (const tenant of manor.population.tenants) {
       tenant.craft = Craftsman.Metalsmith;
@@ -123,7 +122,7 @@ describe('Generator: Craftsman', () => {
     }
   });
 
-  it('should add notes for missing critical craftsmen', function() {
+  it('should add notes for missing critical craftsmen', function () {
     makeTenants(10, TenantType.CRAFTSMAN);
     for (const tenant of manor.population.tenants) {
       tenant.craft = Craftsman.Armourer;

@@ -1,21 +1,22 @@
-import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { Manor, Topology } from '../models/manor.model';
-import { ITenant, TenantType } from '../models/tenant.model';
 import * as rwc from 'random-weighted-choice';
+import {NumberGenerator} from '../../../shared/generators/number-generator';
+import {Manor, Topology} from '../models/manor.model';
+import {ITenant, TenantType} from '../models/tenant.model';
 
 const CLASSTABLE = [
-  { weight: 10, id: TenantType.CRAFTSMAN },
-  { weight: 15, id: TenantType.FARMER },
-  { weight: 35, id: TenantType.VILLEIN },
-  { weight: 20, id: TenantType.HALFVILLEIN },
-  { weight: 10, id: TenantType.COTTAR },
-  { weight: 10, id: TenantType.SLAVE }
+  {weight: 10, id: TenantType.CRAFTSMAN},
+  {weight: 15, id: TenantType.FARMER},
+  {weight: 35, id: TenantType.VILLEIN},
+  {weight: 20, id: TenantType.HALFVILLEIN},
+  {weight: 10, id: TenantType.COTTAR},
+  {weight: 10, id: TenantType.SLAVE}
 ];
 
 export class TenantGenerator {
   private _dice = new NumberGenerator();
 
-  constructor() {}
+  constructor() {
+  }
 
   /**
    * Begins the generation process for manor passed.

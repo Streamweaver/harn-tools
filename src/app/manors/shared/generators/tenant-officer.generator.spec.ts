@@ -1,8 +1,8 @@
-import { NumberGenerator } from '../../../shared/generators/number-generator';
-import { Military } from '../models/military.models';
-import { Manor, ManorFactory, Topology } from '../models/manor.model';
-import { Officer, TenantType } from '../models/tenant.model';
-import { TenantOfficerGenerator } from './tenant-officer.generator';
+import {NumberGenerator} from '../../../shared/generators/number-generator';
+import {Manor, ManorFactory, Topology} from '../models/manor.model';
+import {Military} from '../models/military.models';
+import {Officer, TenantType} from '../models/tenant.model';
+import {TenantOfficerGenerator} from './tenant-officer.generator';
 
 describe('Generator: Tenant Officers', () => {
   let generator: TenantOfficerGenerator;
@@ -75,11 +75,11 @@ describe('Generator: Tenant Officers', () => {
     manor = null;
   });
 
-  it('should properly instantiate the generator', function() {
+  it('should properly instantiate the generator', function () {
     expect(generator).toBeTruthy();
   });
 
-  it('should assign Reeve properly', function() {
+  it('should assign Reeve properly', function () {
     populateVillage();
     generator.electOfficers(manor);
     let reeveCount = 0;
@@ -92,7 +92,7 @@ describe('Generator: Tenant Officers', () => {
     expect(reeveCount).toBe(1);
   });
 
-  it('should assign Woodward properly', function() {
+  it('should assign Woodward properly', function () {
     populateVillage();
     generator.electOfficers(manor);
     let officerCount = 0;
@@ -106,7 +106,7 @@ describe('Generator: Tenant Officers', () => {
     expect(officerCount).toBe(1);
   });
 
-  it('should assign Herder properly', function() {
+  it('should assign Herder properly', function () {
     populateVillage();
     generator.electOfficers(manor);
     let officerCount = 0;
@@ -120,7 +120,7 @@ describe('Generator: Tenant Officers', () => {
     expect(officerCount).toBe(1);
   });
 
-  it('should assign Beadle properly', function() {
+  it('should assign Beadle properly', function () {
     populateVillage();
     generator.electOfficers(manor);
     let officerCount = 0;
@@ -135,7 +135,7 @@ describe('Generator: Tenant Officers', () => {
     expect(officerCount).toBe(1);
   });
 
-  it('should assign Fish Warden properly', function() {
+  it('should assign Fish Warden properly', function () {
     manor.topology = Topology.Coastal;
     populateVillage();
     generator.electOfficers(manor);
@@ -150,7 +150,7 @@ describe('Generator: Tenant Officers', () => {
     expect(officerCount).toBe(1);
   });
 
-  it('should assign Forest Warden properly', function() {
+  it('should assign Forest Warden properly', function () {
     manor.topology = Topology.Forest;
     populateVillage();
     generator.electOfficers(manor);
@@ -165,7 +165,7 @@ describe('Generator: Tenant Officers', () => {
     expect(officerCount).toBe(1);
   });
 
-  it('should NOT assign an office to a craftsman', function() {
+  it('should NOT assign an office to a craftsman', function () {
     populateVillage();
     generator.electOfficers(manor);
     for (const tenant of manor.population.tenants) {
@@ -175,7 +175,7 @@ describe('Generator: Tenant Officers', () => {
     }
   });
 
-  it('should assign a Glebe poperly', function() {
+  it('should assign a Glebe poperly', function () {
     populateVillage();
     generator.electOfficers(manor);
     for (const tenant of manor.population.tenants) {
@@ -196,13 +196,13 @@ describe('Generator: Tenant Officers', () => {
     generator.electOfficers(manor);
     let officerCount = 0;
     for (const tenant of manor.population.tenants) {
-      officerCount += tenant.office !== null ? 1 :0;
+      officerCount += tenant.office !== null ? 1 : 0;
     }
     expect(officerCount).toBe(5);
     officerCount = 0;
     generator.electOfficers(manor);
     for (const tenant of manor.population.tenants) {
-      officerCount += tenant.office !== null ? 1 :0;
+      officerCount += tenant.office !== null ? 1 : 0;
     }
     expect(officerCount).toBe(5);
   });

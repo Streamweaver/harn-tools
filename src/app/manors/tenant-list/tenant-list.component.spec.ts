@@ -1,7 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { TenantListComponent } from './tenant-list.component';
-import { NO_ERRORS_SCHEMA } from '@angular/core';
+import {TenantListComponent} from './tenant-list.component';
 
 xdescribe('TenantListComponent', () => {
   let component: TenantListComponent;
@@ -9,10 +9,10 @@ xdescribe('TenantListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TenantListComponent ],
-      schemas: [ NO_ERRORS_SCHEMA ]
+      declarations: [TenantListComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

@@ -1,8 +1,8 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit, Input } from '@angular/core';
-import { Manor } from '../shared/models/manor.model';
-import { TenantSummary } from '../shared/models/summaries.model';
-import { SharedDataService } from '../shared/services/shared-data.service';
+import {Component, Input, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Manor} from '../shared/models/manor.model';
+import {TenantSummary} from '../shared/models/summaries.model';
+import {SharedDataService} from '../shared/services/shared-data.service';
 
 @Component({
   selector: 'app-lords-budget',
@@ -16,10 +16,9 @@ export class LordsBudgetComponent implements OnInit {
   householdKind: number;
   lordsBudgetForm: FormGroup;
 
-  constructor(
-    private dataService: SharedDataService,
-    private fb: FormBuilder
-  ) {}
+  constructor(private dataService: SharedDataService,
+              private fb: FormBuilder) {
+  }
 
   ngOnInit() {
     this.dataService.fiefIncome.subscribe(income => (this.fiefIncome = income));

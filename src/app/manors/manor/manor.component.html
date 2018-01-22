@@ -11,14 +11,18 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Name:</span>
       </div>
-      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm" [(ngModel)]="manor.name">
+      <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
+             [(ngModel)]="manor.name">
       <button class="btn btn-sm btn-primary" (click)="onGenerateClick()" *ngIf="showGenerationInput">
         <i class="fas fa-users"></i>
-        Generate</button>
+        Generate
+      </button>
       <button class="btn btn-sm btn-danger" (click)="onResetClick()" *ngIf="!showGenerationInput">
         <i class="far fa-trash-alt"></i>
-        Reset</button>
-      <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#collapsePolicies" role="button" aria-expanded="false" aria-controls="collapsePolicies">
+        Reset
+      </button>
+      <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#collapsePolicies" role="button"
+         aria-expanded="false" aria-controls="collapsePolicies">
         <i class="fas fa-cog"></i>
         Policies
       </a>

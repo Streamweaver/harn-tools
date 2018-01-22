@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Herd} from '../shared/models/herd.model';
 import {Manor} from '../shared/models/manor.model';
 import {SectionSummary} from '../shared/models/summaries.model';
@@ -14,7 +14,8 @@ export class HerdListComponent implements OnInit {
   @Input('manor') manor: Manor;
   herdTotals: SectionSummary;
 
-  constructor(private dataService: SharedDataService) { }
+  constructor(private dataService: SharedDataService) {
+  }
 
   ngOnInit() {
     this.dataService.herds.subscribe(ht => this.herdTotals = ht);

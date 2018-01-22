@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ITenant } from '../shared/models/tenant.model';
+import {Component, Input, OnInit} from '@angular/core';
+import {ITenant} from '../shared/models/tenant.model';
 
 @Component({
   selector: '[app-tenant]',
@@ -9,9 +9,11 @@ import { ITenant } from '../shared/models/tenant.model';
 export class TenantComponent implements OnInit {
   @Input('tenant') tenant: ITenant;
 
-  constructor() { }
+  constructor() {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   title(): string {
     let title = 'Unknown';

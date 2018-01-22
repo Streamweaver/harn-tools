@@ -1,4 +1,4 @@
-import { CheckResult } from '../../../shared/generators/number-generator';
+import {CheckResult} from '../../../shared/generators/number-generator';
 
 export class Herd {
   herdType: HerdType;
@@ -9,14 +9,12 @@ export class Herd {
   checkResult: CheckResult;
   hardiness: number;
 
-  constructor(
-    herdType: HerdType,
-    graze: number,
-    baseYield: number,
-    baseLabor: number,
-    hardiness: number,
-    checkResult: CheckResult
-  ) {
+  constructor(herdType: HerdType,
+              graze: number,
+              baseYield: number,
+              baseLabor: number,
+              hardiness: number,
+              checkResult: CheckResult) {
     this.herdType = herdType;
     this.acres = 0;
     this.graze = graze;

@@ -1,6 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Policies } from '../shared/models/manor.model';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {Component, Input, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Policies} from '../shared/models/manor.model';
 
 @Component({
   selector: 'app-policies',
@@ -11,7 +11,8 @@ export class PoliciesComponent implements OnInit {
   @Input('policies') policies: Policies;
   policiesForm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit() {
     this.createForm();

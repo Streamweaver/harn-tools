@@ -1,5 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { Manor } from '../shared/models/manor.model';
+import {Component, Input, OnInit} from '@angular/core';
+import {Manor} from '../shared/models/manor.model';
 import {TenantSummary} from '../shared/models/summaries.model';
 import {SharedDataService} from '../shared/services/shared-data.service';
 
@@ -12,9 +12,8 @@ export class TenantListComponent implements OnInit {
   @Input('manor') manor: Manor;
   tenantTotals: TenantSummary;
 
-  constructor(
-    private dataService: SharedDataService
-  ) {}
+  constructor(private dataService: SharedDataService) {
+  }
 
   ngOnInit() {
     this.dataService.tenants.subscribe(tt => this.tenantTotals = tt);

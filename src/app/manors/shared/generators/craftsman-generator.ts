@@ -1,7 +1,6 @@
 import * as rwc from 'random-weighted-choice';
 import {Manor, Topology} from '../models/manor.model';
-import {Craftsman, craftsmanFees, ITenant} from '../models/tenant.model';
-import {TenantType} from '../models/tenant.model';
+import {Craftsman, craftsmanFees, ITenant, TenantType} from '../models/tenant.model';
 
 export const craftsmanTable = [
   {weight: 25, id: Craftsman.Miller},
@@ -23,7 +22,8 @@ export const craftsmanTable = [
 
 export class CraftsmanGenerator {
 
-  constructor() {}
+  constructor() {
+  }
 
   assignCraftsmen(manor: Manor) {
     let craft: Craftsman;
@@ -51,7 +51,7 @@ export class CraftsmanGenerator {
   }
 
   private _validCraftForManor(manor: Manor, craft: string): boolean {
-    return  !(manor.topology === Topology.Coastal) && craft === Craftsman.Shipwright ? false : true;
+    return !(manor.topology === Topology.Coastal) && craft === Craftsman.Shipwright ? false : true;
   }
 
   private _exists(manor: Manor, craft: string): boolean {
