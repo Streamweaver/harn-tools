@@ -57,7 +57,7 @@ export class LordsBudgetComponent implements OnInit {
     income += this.manor.taxIncome;
     income += this.manor.amercements.amount;
     income += this.manor.feudalIncome;
-    this.dataService.setTotalIncome(income);
+    this.manor.totalIncome = income;
     return income;
   }
 

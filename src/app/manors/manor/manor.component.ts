@@ -1,6 +1,8 @@
-import { LordsBudgetGenerator } from './../shared/generators/lordsbudget.generator';
-import { FiefGenerator } from './../shared/generators/fief.generator';
-import { HouseholdListComponent } from './../household-list/household-list.component';
+import { LordsBudgetComponent } from '../lords-budget/lords-budget.component';
+import { LordsIncomeGenerator } from '../shared/generators/lordsincome.generator';
+import { LordsExpenseGenerator } from '../shared/generators/lordsexpense.generator';
+import { FiefGenerator } from '../shared/generators/fief.generator';
+import { HouseholdListComponent } from '../household-list/household-list.component';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CropListComponent } from '../crop-list/crop-list.component';
 import { HerdListComponent } from '../herd-list/herd-list.component';
@@ -32,18 +34,21 @@ export class ManorComponent implements OnInit {
   private cropGenerator: CropGenerator;
   private herdGenerator: HerdGenerator;
   private fiefGenerator: FiefGenerator;
-  private lordsBudgeGenerator: LordsBudgetGenerator;
+  private lordsIncomeGenerator: LordsIncomeGenerator;
+  private lordsExpenseGenerator: LordsExpenseGenerator;
   @ViewChild(CropListComponent) private cropListComponent: CropListComponent;
   @ViewChild(HerdListComponent) private herdListComponent: HerdListComponent;
   @ViewChild(TenantListComponent)
   private tenantListComponent: TenantListComponent;
   @ViewChild(HouseholdListComponent)
   private householdListComponent: HouseholdListComponent;
+  @ViewChild(LordsBudgetComponent) private lordsBudgetComponent: LordsBudgetComponent;
 
   constructor() {}
 
   ngOnInit() {
     this.dice = new NumberGenerator();
+
     this.tenantGenerator = new TenantGenerator();
     this.craftsmanGenerator = new CraftsmanGenerator();
     this.yeomanGenerator = new YeomanGenerator();
@@ -52,7 +57,8 @@ export class ManorComponent implements OnInit {
     this.cropGenerator = new CropGenerator();
     this.herdGenerator = new HerdGenerator();
     this.fiefGenerator = new FiefGenerator();
-    this.lordsBudgeGenerator = new LordsBudgetGenerator();
+    this.lordsIncomeGenerator = new LordsIncomeGenerator();
+    this.lordsExpenseGenerator = new LordsExpenseGenerator();
     this._reset();
   }
 
@@ -79,6 +85,8 @@ export class ManorComponent implements OnInit {
     this.householdListComponent.updateTotal();
     this.cropListComponent.updateTotals();
     this.herdListComponent.updateTotals();
-    this.lordsBudgeGenerator.generateBudget(this.manor);
+    this.lordsIncomeGenerator.generateIncome(this.manor);
+    this.lordsBudgetComponent.totalIncome(); // Allows totals to be calculated and continues below.
+    this.lordsExpenseGenerator.generateExpenses(this.manor);
   }
 }

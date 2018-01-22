@@ -23,6 +23,7 @@ export class Policies {
   serfLabor: number;
   isSlaveState: boolean;
   isBailiffRun: boolean;
+  isPayingScootage: boolean;
   foAcresPerHH: number;
   foAcresPerLF: number;
 
@@ -31,7 +32,8 @@ export class Policies {
     this.freeholderRent = 6;
     this.serfLabor = 4;
     this.isSlaveState = false;
-    this.isBailiffRun = true;
+    this.isBailiffRun = false;
+    this.isPayingScootage = false;
     this.foAcresPerHH = 1500;
     this.foAcresPerLF = 600;
   }
@@ -114,6 +116,7 @@ export class Manor {
     beadleCheck: CheckResult;
   };
   feudalIncome: number;
+  totalIncome: number;
   feudalPayments: number;
   tithe: number;
   laborHired: number;
@@ -160,6 +163,7 @@ export class Manor {
     this.taxIncome = 0;
     this.amercements = { amount: 0, beadleCheck: CheckResult.CF };
     this.feudalIncome = 0;
+    this.totalIncome = 0;
     this.feudalPayments = 0;
     this.tithe = 0;
     this.laborHired = 0;
