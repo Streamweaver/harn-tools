@@ -52,6 +52,16 @@ export class SharedDataService {
     this.totalIncome = this.totalIncomeBehavior.asObservable();
   }
 
+  reset() {
+    this.setCropTotals({acres: 0, labor: 0, kind: 0});
+    this.setHerdTotals({acres: 0, labor: 0, kind: 0});
+    this.setTenantTotals({serf_acres: 0, free_acres: 0, labor: 0, size: 0, fees: 0, rent: 0});
+    this.setFiefIncome(0);
+    this.setFiefLabor(0);
+    this.setHouseholdKind(0)
+    this.setTotalIncome(0);
+  }
+
   setCropTotals(ct: SectionSummary) {
     this.cropSummaries.next(ct);
   }

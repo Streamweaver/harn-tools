@@ -17,6 +17,7 @@ export class FiefBudgetComponent implements OnInit {
   herds: SectionSummary;
   budgetForm: FormGroup;
   beadleIndex: any;
+  warnLabor: boolean;
 
   constructor(private dataService: SharedDataService, private fb: FormBuilder) {
     this.beadleIndex = beadleResultIndex;
@@ -26,6 +27,7 @@ export class FiefBudgetComponent implements OnInit {
     this.dataService.crops.subscribe(cropTotals => (this.crops = cropTotals));
     this.dataService.herds.subscribe(herdTotals => (this.herds = herdTotals));
     this.createForm();
+    this.warnLabor = false;
   }
 
   createForm() {
@@ -101,8 +103,15 @@ export class FiefBudgetComponent implements OnInit {
   }
 
   fiefIncomeLabor(): number {
-    return this.totalHarvestLabor() + this.fiefMaintLabor();
+    const labor =  this.totalHarvestLabor() + this.fiefMaintLabor();
+    if (labor > this.manor.population.tenantLaborPool()) {
+      this.warnLabor = true;
+    } else {
+      this.warnLabor = false;
+    }
+    return labor;
   }
+
 
   fiefIncomeKind(): number {
     const income =

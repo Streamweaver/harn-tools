@@ -15,6 +15,7 @@ import {TenantGenerator} from '../shared/generators/tenant-generator';
 import {TenantOfficerGenerator} from '../shared/generators/tenant-officer.generator';
 import {YeomanGenerator} from '../shared/generators/yeoman-generator';
 import {Manor, ManorFactory} from '../shared/models/manor.model';
+import {SharedDataService} from '../shared/services/shared-data.service';
 import {TenantListComponent} from '../tenant-list/tenant-list.component';
 
 @Component({
@@ -44,7 +45,7 @@ export class ManorComponent implements OnInit {
   private householdListComponent: HouseholdListComponent;
   @ViewChild(LordsBudgetComponent) private lordsBudgetComponent: LordsBudgetComponent;
 
-  constructor() {
+  constructor(private dataService: SharedDataService) {
   }
 
   ngOnInit() {
@@ -65,6 +66,7 @@ export class ManorComponent implements OnInit {
 
   private _reset() {
     this.manor = ManorFactory.getManor();
+    this.dataService.reset();
     this.showGenerationInput = true;
   }
 

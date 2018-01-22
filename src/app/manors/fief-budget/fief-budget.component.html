@@ -111,7 +111,11 @@
     <td class="col-md-1 text-center"></td>
     <td class="col-md-1 text-center"></td>
     <td class="col-md-2 text-center"></td>
-    <td class="font-weight-bold col-md-2 text-right">{{fiefIncomeLabor() | number}}</td>
+    <td class="table-danger font-weight-bold col-md-2 text-right">
+      <span [ngClass]="{'badge badge-pill badge-danger': warnLabor}">
+      {{fiefIncomeLabor() | number}}
+      </span>
+    </td>
     <td class="font-weight-bold col-md-2 text-right">{{fiefIncomeKind() | number}}d</td>
   </tr>
   </tbody>
