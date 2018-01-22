@@ -1,4 +1,3 @@
-import {TenantType} from '../models/tenant.model';
 import {LordsExpenseGenerator} from './lordsexpense.generator';
 import {Manor, ManorFactory} from '../models/manor.model';
 
