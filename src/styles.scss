@@ -113,3 +113,9 @@ caption.header {
   font-size: 110%;
   caption-side: top;
 }
+
+@for $i from 1 through $grid-columns {
+  .table .col-#{$i} {
+    width: percentage($i / $grid-columns);
+  }
+}

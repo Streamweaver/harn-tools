@@ -42,9 +42,9 @@ export class LordsIncomeGenerator {
         manor.amercements.beadleCheck = checkSkill(tenant.ml);
       }
     }
-    manor.amercements.amount =
+    manor.amercements.amount = Math.floor(
       this.dice.rollDie(6) *
       manor.population.tenants.length *
-      beadleResultIndex(manor.amercements.beadleCheck);
+      beadleResultIndex(manor.amercements.beadleCheck));
   }
 }

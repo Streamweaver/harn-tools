@@ -43,10 +43,9 @@ export class LordsExpenseGenerator {
       payment = 5 * manor.grossAcres;
     }
     if (manor.policies.isBailiffRun) {
-      console.log('Paying as Bailiff');
-      payment = Math.floor(manor.totalIncome / 3);
+      payment = manor.totalIncome / 3;
     }
-    manor.feudalPayments = payment;
+    manor.feudalPayments = Math.floor(payment);
   }
 
   laborHired(manor: Manor) {
