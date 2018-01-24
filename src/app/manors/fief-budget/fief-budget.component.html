@@ -1,4 +1,4 @@
-<table class="table table-bordered table-striped table-hover table-sm" [formGroup]="budgetForm">
+<table class="table table-striped table-hover table-sm" [formGroup]="budgetForm">
   <thead class="thead-dark">
   <tr>
     <th class="font-weight-bold">Fief's Budget</th>
@@ -47,13 +47,13 @@
     <td class="small text-center"></td>
     <td class="small text-right"></td>
   </tr>
-  <tr class="table-secondary">
-    <td class="font-weight-bold font-italic ">Total Harvest:</td>
+  <tr class="table-summary">
+    <td class="font-weight-bold">Harvest Total:</td>
     <td class=" text-center"></td>
     <td class=" text-center"></td>
     <td class=" text-center"></td>
-    <td class=" text-center font-weight-bold font-italic">{{totalHarvestLabor() | number}}</td>
-    <td class=" text-right font-weight-bold font-italic">{{totalHarvestKind() | number }}d</td>
+    <td class=" text-center font-weight-bold">{{totalHarvestLabor() | number}}</td>
+    <td class=" text-right font-weight-bold">{{totalHarvestKind() | number }}d</td>
   </tr>
   <tr>
     <td class="small">Crop Seed</td>
@@ -106,12 +106,12 @@
     <td class="small text-center">{{assartLabor() | number}}</td>
     <td class="small text-right">{{assartKind() | number}}d</td>
   </tr>
-  <tr class="table-secondary">
-    <td class="font-weight-bold ">Fief Income</td>
+  <tr class="table-summary">
+    <td class="font-weight-bold ">Fief Total:</td>
     <td class=" text-center"></td>
     <td class=" text-center"></td>
     <td class=" text-center"></td>
-    <td class="table-danger font-weight-bold text-right">
+    <td class="table-danger font-weight-bold text-center">
    <span [ngClass]="{'badge badge-pill badge-danger': warnLabor}">
    {{fiefIncomeLabor() | number}}
    </span>

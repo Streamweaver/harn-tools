@@ -1,17 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'scss/variables';
-@import '../node_modules/bootswatch/dist/spacelab/variables';
+@import '../node_modules/bootswatch/dist/materia/variables';
 @import '../node_modules/bootswatch/node_modules/bootstrap/scss/bootstrap';
-@import '../node_modules/bootswatch/dist/spacelab/bootswatch';
+@import '../node_modules/bootswatch/dist/materia/bootswatch';
 
 .page {
   margin-top: 4rem;
   margin-bottom: 0.2rem;
-}
-
-.text-rotate {
-  transform: rotate(90deg);
-  position: relative;
 }
 
 .alert-success p,
@@ -22,17 +17,15 @@
   padding: 0;
 }
 
-.google-red {
-  background-color: #dd4b39;
-}
-
-.loader-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Table additions */
+.table-summary, .table-summary > th, .table-summary > td {
+  background-color: $gray-100;
 }
 
 /* fix for stacked form checkbox inputs */
+.navbar {
+  padding: 0rem 1rem;
+}
 .form-check-input-condensed {
   margin-left: 0;
   margin-top: 0.65rem;
@@ -54,16 +47,6 @@ hr.small {
   margin-bottom: 0.2rem;
 }
 
-.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
-
-  > .col,
-  > [class*='col-'] {
-    padding-right: 0;
-    padding-left: 0;
-  }
-}
 
 .sm-gutters {
   margin-right: 0.2rem;
@@ -104,18 +87,4 @@ input[type='number']::-webkit-outer-spin-button {
 
 input.form-control {
   width: auto;
-}
-
-caption.header {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  color: black;
-  font-size: 110%;
-  caption-side: top;
-}
-
-@for $i from 1 through $grid-columns {
-  .table .col-#{$i} {
-    width: percentage($i / $grid-columns);
-  }
 }
