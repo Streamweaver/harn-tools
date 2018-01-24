@@ -34,7 +34,9 @@ export class FiefGenerator {
     if (manor.winterFeed.acresPlanned !== 0) {
       return;
     }
-    manor.livestock.forEach(h => (manor.winterFeed.acresPlanned += h.acres));
+    let springHerdAcres = 0;
+    manor.livestock.forEach(h => (springHerdAcres += h.acres));
+    manor.winterFeed.acresPlanned = Math.floor(springHerdAcres / 2);
   }
 
   fiefMaintenance(manor: Manor) {

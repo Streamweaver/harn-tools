@@ -1,4 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NumberGenerator} from '../../shared/generators/number-generator';
 import {CropListComponent} from '../crop-list/crop-list.component';
 import {HerdListComponent} from '../herd-list/herd-list.component';
@@ -25,6 +26,7 @@ import {TenantListComponent} from '../tenant-list/tenant-list.component';
 })
 export class ManorComponent implements OnInit {
   manor: Manor;
+  manorForm: FormGroup;
   private dice: NumberGenerator;
   showGenerationInput: boolean;
   private tenantGenerator: TenantGenerator;
@@ -45,11 +47,15 @@ export class ManorComponent implements OnInit {
   private householdListComponent: HouseholdListComponent;
   @ViewChild(LordsBudgetComponent) private lordsBudgetComponent: LordsBudgetComponent;
 
-  constructor(private dataService: SharedDataService) {
+  constructor(
+    private dataService: SharedDataService,
+    private fb: FormBuilder
+  ) {
   }
 
   ngOnInit() {
     this.dice = new NumberGenerator();
+    this.createForm();
 
     this.tenantGenerator = new TenantGenerator();
     this.craftsmanGenerator = new CraftsmanGenerator();
@@ -91,5 +97,12 @@ export class ManorComponent implements OnInit {
     this.lordsIncomeGenerator.generateIncome(this.manor);
     this.lordsBudgetComponent.totalIncome(); // Allows totals to be calculated and continues below.
     this.lordsExpenseGenerator.generateExpenses(this.manor);
+  }
+
+  createForm() {
+    this.manorForm = this.fb.group({
+      name: [''],
+      realm: [''],
+    });
   }
 }

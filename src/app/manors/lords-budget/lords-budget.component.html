@@ -1,41 +1,41 @@
-<table class="table table-bordered table-striped table-hover table-sm" [formGroup]="lordsBudgetForm">
+<table class="table table-striped table-hover table-sm" [formGroup]="lordsBudgetForm">
   <thead class="thead-dark
 ">
   <tr>
     <th class="font-weight-bold">Lord's Budget</th>
-    <th class="small font-weight-bold text-center" width="10%">CR</th>
-    <th class="small font-weight-bold text-right" width="15%">Kind</th>
+    <th class="font-weight-bold text-center" width="10%">CR</th>
+    <th class="font-weight-bold text-right" width="15%">Kind</th>
   </tr>
   </thead>
   <tbody>
   <tr>
-    <td class="small">Demesne Income</td>
-    <td class="small text-center"></td>
-    <td class="small text-right">{{demesneIncome() | number}}d</td>
+    <td >Demesne Income</td>
+    <td class="text-center"></td>
+    <td class="text-right">{{demesneIncome() | number}}d</td>
   </tr>
   <tr>
-    <td class="small">Tenant Rents & Fees</td>
-    <td class="small text-center"></td>
-    <td class="small text-right">{{this.tenants.rent + this.tenants.fees | number}}d</td>
+    <td >Tenant Rents & Fees</td>
+    <td class="text-center"></td>
+    <td class="text-right">{{this.tenants.rent + this.tenants.fees | number}}d</td>
   </tr>
   <tr>
-    <td class="small">Glebe Revenue</td>
-    <td class="small text-center"></td>
-    <td class="small text-right">{{getGlebeRevenue() | number}}d</td>
+    <td >Glebe Revenue</td>
+    <td class="text-center"></td>
+    <td class="text-right">{{getGlebeRevenue() | number}}d</td>
   </tr>
   <tr>
-    <td class="small">Taxes & Tolls</td>
-    <td class="small text-center"></td>
-    <td class="small text-right">
+    <td >Taxes & Tolls</td>
+    <td class="text-center"></td>
+    <td class="text-right">
       <div class="input-group input-group-sm">
         <input type="number" class="form-control text-right" formControlName="taxes" [(ngModel)]="manor.taxIncome">
       </div>
     </td>
   </tr>
   <tr>
-    <td class="small">Amercements</td>
-    <td class="small text-center">{{manor.amercements.beadleCheck}}</td>
-    <td class="small text-right">
+    <td >Amercements</td>
+    <td class="text-center">{{manor.amercements.beadleCheck}}</td>
+    <td class="text-right">
       <div class="input-group input-group-sm">
         <input type="number" class="form-control text-right" formControlName="amercements"
                [(ngModel)]="manor.amercements.amount">
@@ -43,29 +43,29 @@
     </td>
   </tr>
   <tr>
-    <td class="small">Feudal Income</td>
-    <td class="small text-center"></td>
-    <td class="small text-right">
+    <td >Feudal Income</td>
+    <td class="text-center"></td>
+    <td class="text-right">
       <div class="input-group input-group-sm">
         <input type="number" class="form-control text-right" formControlName="feudalIncome"
                [(ngModel)]="manor.feudalIncome">
       </div>
     </td>
   </tr>
-  <tr class="table-secondary">
+  <tr class="table-summary">
     <td class="font-weight-bold">Total Income</td>
     <td class="font-weight-bold text-center"></td>
     <td class="font-weight-bold text-right">{{totalIncome() | number}}d</td>
   </tr>
   <tr>
-    <td class="small">Household</td>
-    <td class="small text-center"></td>
-    <td class="small text-right">{{householdKind | number}}d</td>
+    <td >Household</td>
+    <td class="text-center"></td>
+    <td class="text-right">{{householdKind | number}}d</td>
   </tr>
   <tr>
-    <td class="small">Feudal Payments</td>
-    <td class="small text-center"></td>
-    <td class="small text-right">
+    <td >Feudal Payments</td>
+    <td class="text-center"></td>
+    <td class="text-right">
       <div class="input-group input-group-sm">
         <input type="number" class="form-control text-right" formControlName="feudalPayments"
                [(ngModel)]="manor.feudalPayments">
@@ -73,18 +73,18 @@
     </td>
   </tr>
   <tr>
-    <td class="small">Tithe</td>
-    <td class="small text-center"></td>
-    <td class="small text-right">
+    <td >Tithe</td>
+    <td class="text-center"></td>
+    <td class="text-right">
       <div class="input-group input-group-sm">
         <input type="number" class="form-control text-right" formControlName="tithe" [(ngModel)]="manor.tithe">
       </div>
     </td>
   </tr>
   <tr>
-    <td class="small">Labor Hired</td>
-    <td class="small text-center"></td>
-    <td class="small text-right">
+    <td >Labor Hired</td>
+    <td class="text-center"></td>
+    <td class="text-right">
       <div class="input-group input-group-sm">
         <input type="number" class="form-control text-right" formControlName="laborHired"
                [(ngModel)]="manor.laborHired">
@@ -92,21 +92,21 @@
     </td>
   </tr>
   <tr>
-    <td class="small">Political Expenses</td>
-    <td class="small text-center"></td>
-    <td class="small text-right">
+    <td >Political Expenses</td>
+    <td class="text-center"></td>
+    <td class="text-right">
       <div class="input-group input-group-sm">
         <input type="number" class="form-control text-right" formControlName="politicalExpenses"
                [(ngModel)]="manor.politicalExpenses">
       </div>
     </td>
   </tr>
-  <tr class="table-secondary">
+  <tr class="table-summary">
     <td class="font-weight-bold">Total Expenses</td>
     <td class="font-weight-bold text-center"></td>
     <td class="font-weight-bold text-right">{{totalExpenses() | number}}d</td>
   </tr>
-  <tr class="table-primary">
+  <tr class="table-success">
     <td class="font-weight-bold">To Privy Purse</td>
     <td class="font-weight-bold text-center"></td>
     <td class="font-weight-bold text-right">{{privyPurse() | number}}d</td>

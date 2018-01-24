@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NumberGenerator} from '../../shared/generators/number-generator';
 import {Manor, Topology, TopologyEffects} from '../shared/models/manor.model';
 
@@ -9,13 +10,29 @@ import {Manor, Topology, TopologyEffects} from '../shared/models/manor.model';
 })
 export class GeneralDataComponent implements OnInit {
   @Input('manor') manor: Manor;
+  generalDataForm: FormGroup;
   private dice: NumberGenerator;
 
-  constructor() {
+  constructor(private fb: FormBuilder) {
   }
 
   ngOnInit() {
     this.dice = new NumberGenerator();
+    this.createForm();
+  }
+
+  createForm() {
+    this.generalDataForm = this.fb.group({
+      year: [null],
+      topology: [null, Validators.required],
+      grossAcres: [0, Validators.required],
+      woodlandAcres: [0, Validators.required],
+      clearedAcres: [0, Validators.required],
+      landQuality: [0, Validators.required],
+      fiefIndex: [0, Validators.required],
+      tradeIndex: [0, Validators.required],
+      weatherIndex: [0, [Validators.required, Validators.min(0.65), Validators.max(1.35)]]
+    });
   }
 
   /**

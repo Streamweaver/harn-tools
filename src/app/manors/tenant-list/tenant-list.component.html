@@ -7,36 +7,34 @@
   </div>
 </div>
 <div class="container-fluid mb-2">
-  <table class="table table-bordered table-striped table-hover table-sm">
+  <table class="table table-striped table-hover table-sm">
     <thead class="thead-light">
     <tr>
-      <th class="small font-weight-bold">Occupation</th>
-      <th class="small font-weight-bold">Size</th>
-      <th class="small font-weight-bold">ML</th>
-      <th class="small font-weight-bold">Serf</th>
-      <th class="small font-weight-bold">Free</th>
-      <th class="small font-weight-bold">Labor
-        <br>Days
-      </th>
-      <th class="small font-weight-bold">Rent</th>
-      <th class="small font-weight-bold">Fees</th>
-      <th class="small font-weight-bold">Notes</th>
+      <th class="font-weight-bold">Occupation</th>
+      <th class="font-weight-bold text-center" width="10%">Size</th>
+      <th class="font-weight-bold text-center" width="10%">ML</th>
+      <th class="font-weight-bold text-center" width="10%">Serf</th>
+      <th class="font-weight-bold text-center" width="10%">Free</th>
+      <th class="font-weight-bold text-center" width="10%">Labor</th>
+      <th class="font-weight-bold text-center" width="10%">Rent</th>
+      <th class="font-weight-bold text-center" width="10%">Fees</th>
+      <th class="font-weight-bold">Notes</th>
     </tr>
     </thead>
     <tbody>
     <tr app-tenant *ngFor="let tenant of manor.population.tenants" [tenant]="tenant">
 
     </tr>
-    <tr class="table-secondary">
+    <tr class="table-summary">
       <td class="font-weight-bold text-right">Totals:</td>
-      <td class="font-weight-bold">{{tenantTotals.size}}</td>
-      <td class="font-weight-bold"></td>
-      <td class="font-weight-bold">{{tenantTotals.serf_acres | number}}</td>
-      <td class="font-weight-bold">{{tenantTotals.free_acres | number}}</td>
-      <td class="font-weight-bold">{{tenantTotals.labor | number}}</td>
-      <td class="font-weight-bold">{{tenantTotals.rent | number}}d</td>
-      <td class="font-weight-bold">{{tenantTotals.fees | number}}d</td>
-      <td class="font-weight-bold"></td>
+      <td class="font-weight-bold text-center">{{tenantTotals.size}}</td>
+      <td class="font-weight-bold text-center"></td>
+      <td class="font-weight-bold text-center">{{tenantTotals.serf_acres | number}}</td>
+      <td class="font-weight-bold text-center">{{tenantTotals.free_acres | number}}</td>
+      <td class="font-weight-bold text-center">{{tenantTotals.labor | number}}</td>
+      <td class="font-weight-bold text-center">{{tenantTotals.rent | number}}d</td>
+      <td class="font-weight-bold text-center">{{tenantTotals.fees | number}}d</td>
+      <td class="font-weight-bold text-center"></td>
     </tr>
     </tbody>
   </table>

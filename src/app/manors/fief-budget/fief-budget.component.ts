@@ -104,11 +104,7 @@ export class FiefBudgetComponent implements OnInit {
 
   fiefIncomeLabor(): number {
     const labor =  this.totalHarvestLabor() + this.fiefMaintLabor();
-    if (labor > this.manor.population.tenantLaborPool()) {
-      this.warnLabor = true;
-    } else {
-      this.warnLabor = false;
-    }
+    this.warnLabor = labor > this.manor.population.tenantLaborPool();
     return labor;
   }
 

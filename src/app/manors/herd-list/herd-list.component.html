@@ -1,28 +1,28 @@
-<table class="table table-bordered table-striped table-hover table-sm">
+<table class="table table-striped table-hover table-sm">
   <thead class="thead-dark">
   <tr>
     <th class="font-weight-bold">Herds</th>
-    <th class="small font-weight-bold text-center" width="10%">RI</th>
-    <th class="small font-weight-bold text-center" width="10%">Yield</th>
-    <th class="small font-weight-bold text-center" width="15%">Acres</th>
-    <th class="small font-weight-bold text-center" width="10%">Labor</th>
-    <th class="small font-weight-bold text-right" width="15%">Kind</th>
+    <th class="font-weight-bold text-center" width="10%">RI</th>
+    <th class="font-weight-bold text-center" width="10%">Yield</th>
+    <th class="font-weight-bold text-center" width="15%">Acres</th>
+    <th class="font-weight-bold text-center" width="10%">Labor</th>
+    <th class="font-weight-bold text-right" width="15%">Kind</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let herd of manor.livestock">
-    <td class="small">{{herd.herdType}}: {{herdHeadCount(herd)}}</td>
-    <td class="small text-center">{{herderIndex(herd)}}</td>
-    <td class="small text-center">{{herdYield(herd)}}</td>
-    <td class="small">
+    <td >{{herd.herdType}}: {{herdHeadCount(herd)}}</td>
+    <td class="text-center">{{herderIndex(herd)}}</td>
+    <td class="text-center">{{herdYield(herd)}}</td>
+    <td >
       <div class="input-group input-group-sm">
         <input type="number" class="form-control text-center" [(ngModel)]="herd.acres" (input)="updateTotals()">
       </div>
     </td>
-    <td class="small text-center">{{herdLabor(herd)}}</td>
-    <td class="small text-right">{{herdKind(herd) | number}}</td>
+    <td class="text-center">{{herdLabor(herd)}}</td>
+    <td class="text-right">{{herdKind(herd) | number}}</td>
   </tr>
-  <tr class="table-secondary">
+  <tr class="table-summary">
     <td class="text-right font-weight-bold" colspan="3">Totals:</td>
     <td class="text-right font-weight-bold text-center">{{herdTotals.acres | number}}</td>
     <td class="text-right font-weight-bold text-center">{{herdTotals.labor | number}}</td>
