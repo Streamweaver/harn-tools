@@ -133,7 +133,7 @@
       <div class="input-group input-group-sm">
         <input #weatherIndex type="number" class="form-control" formControlName="weatherIndex" [(ngModel)]="manor.weatherIndex">
         <div *ngIf="weatherIndex.invalid && (weatherIndex.dirty || weatherIndex.touched)"
-             class="alert alert-danger">
+             class="alert alert-danger">ERROR
 
           <div *ngIf="weatherIndex.errors.required">
             Weather Index is Required

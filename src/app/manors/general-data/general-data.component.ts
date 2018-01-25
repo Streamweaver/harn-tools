@@ -31,7 +31,7 @@ export class GeneralDataComponent implements OnInit {
       landQuality: [0, Validators.required],
       fiefIndex: [0, Validators.required],
       tradeIndex: [0, Validators.required],
-      weatherIndex: [0, [Validators.required, Validators.min(0.65), Validators.max(1.35)]]
+      weatherIndex: [0, Validators.compose([Validators.required, Validators.min(0.65), Validators.max(1.35)])]
     });
   }
 
