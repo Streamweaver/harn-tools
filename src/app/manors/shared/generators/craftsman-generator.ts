@@ -34,19 +34,25 @@ export class CraftsmanGenerator {
     let craft: Craftsman;
     for (const tenant of manor.population.tenants) {
       if (tenant.occupation === TenantType.CRAFTSMAN && tenant.craft === null) {
-        craft = this.getCraft(manor);
+        tenant.craft = this.getCraft(manor);
         this._adjustFees(tenant);
       }
     }
     this._noteMissing(manor);
   }
 
+  /**
+   * Gets a random craft based on remaining values in the crafting table
+   * or returns default GMDetermine craft if all are taken.
+   * @param {Manor} manor
+   * @returns {Craftsman}
+   */
   private getCraft(manor: Manor): Craftsman {
     const craftsmanTable = this.getCrafterTable(manor);
     if (craftsmanTable.length > 1) {
       return rwc(craftsmanTable);
     }
-    return this._firstOpenCraft(manor);
+    return this.firstOpenCraft(manor);
   }
 
   private _exists(manor: Manor, craft: Craftsman): boolean {
@@ -58,7 +64,7 @@ export class CraftsmanGenerator {
     return false;
   }
 
-  private _firstOpenCraft(manor: Manor): Craftsman {
+  firstOpenCraft(manor: Manor): Craftsman {
     const crafters = this.getCrafters(manor);
     if (crafters.length > 0) {
       return crafters[0];

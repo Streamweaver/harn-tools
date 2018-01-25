@@ -51,24 +51,24 @@ export enum Topology {
 
 export const TopologyEffects = {
   [Topology.Lowlands]: {
-    woods: 10,
-    crops: 45,
-    pasture: 45
+    woods: 20,
+    crops: 67,
+    pasture: 33
   },
   [Topology.Highlands]: {
     woods: 20,
-    crops: 30,
+    crops: 50,
     pasture: 50
   },
   [Topology.Coastal]: {
-    woods: 10,
-    crops: 40,
-    pasture: 50
+    woods: 30,
+    crops: 67,
+    pasture: 33
   },
   [Topology.Forest]: {
     woods: 50,
-    crops: 25,
-    pasture: 25
+    crops: 67,
+    pasture: 33
   }
 };
 
@@ -130,10 +130,8 @@ export class Manor {
     this.realm = null;
     this.year = null;
     this.topology = Topology.Lowlands;
-    this.grossAcres = 900 + this.dice.rollTotal(6, 3) * 100;
-    this.woodlandAcres = Math.floor(
-      this.grossAcres * (this.dice.rollDie(10) / 100 + 0.05)
-    );
+    this.grossAcres = 600 + this.dice.rollTotal(100, 15);
+    this.woodlandAcres = 0;
     this.clearedAcres = this.grossAcres - this.woodlandAcres;
     this.landQuality = parseFloat(
       (0.74 + this.dice.rollDie(51) / 100).toFixed(2)
@@ -168,6 +166,12 @@ export class Manor {
     this.privyPurse = 0;
 
     this.notes = [];
+    this.setWoodlandAcres();
+  }
+
+  private setWoodlandAcres() {
+    const woodsPercent = (TopologyEffects[this.topology].woods - 5 + this.dice.rollDie(10)) / 100;
+    this.woodlandAcres = Math.floor(this.grossAcres * woodsPercent);
   }
 
   /**

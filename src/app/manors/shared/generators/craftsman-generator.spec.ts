@@ -1,6 +1,6 @@
 import {Manor, ManorFactory, Topology} from '../models/manor.model';
 import {Craftsman, craftsmanFees, TenantType} from '../models/tenant.model';
-import {CraftsmanGenerator} from './craftsman-generator';
+import {CraftsmanGenerator, defaultCraftsmanTable} from './craftsman-generator';
 
 describe('Generator: Craftsman', () => {
   let generator: CraftsmanGenerator;
@@ -40,9 +40,10 @@ describe('Generator: Craftsman', () => {
   });
 
   it('should have no unassigned craftsmen', function () {
-    makeTenants(10, TenantType.CRAFTSMAN);
+    makeTenants(100, TenantType.CRAFTSMAN);
     generator.assignCraftsmen(manor);
     for (const tenant of manor.population.tenants) {
+      console.log(tenant);
       expect(tenant.craft).not.toBeNull();
     }
   });
@@ -57,24 +58,27 @@ describe('Generator: Craftsman', () => {
     }
   });
 
-  it('should not assign shipwright to non-coastal manors', function () {
+  it('should not include shipwright for non-coastal manors', function () {
+    let isShipwright = false;
     manor.topology = Topology.Lowlands;
-    makeTenants(15, TenantType.CRAFTSMAN);
-    generator.assignCraftsmen(manor);
-    for (const tenant of manor.population.tenants) {
-      expect(tenant.craft).not.toBe(Craftsman.Shipwright);
+    for (const craft of generator.getCrafterTable(manor)) {
+      if (craft.id === Craftsman.Shipwright) {
+        isShipwright = true;
+      }
     }
+    expect(isShipwright).not.toBeTruthy();
   });
 
-  it('should assign shipwright to coastal manors', function () {
+  it('should include shipwright for coastal manors', function () {
+    let isShipwright = false;
     manor.topology = Topology.Coastal;
-    makeTenants(15, TenantType.CRAFTSMAN);
-    generator.assignCraftsmen(manor);
-    let shipwrightCount = 0;
-    for (const tenant of manor.population.tenants) {
-      shipwrightCount += tenant.craft === Craftsman.Shipwright ? 1 : 0;
+    for (const craft of generator.getCrafterTable(manor)) {
+      if (craft.id === Craftsman.Shipwright) {
+        isShipwright = true;
+        expect(craft.weight).toBe(5);
+      }
     }
-    expect(shipwrightCount).toBe(1);
+    expect(isShipwright).toBeTruthy();
   });
 
   it('should NOT assign GM Determine craftsman if under 15', function () {
@@ -85,6 +89,16 @@ describe('Generator: Craftsman', () => {
       gmdCount += tenant.craft === Craftsman.GMDetermine ? 1 : 0;
     }
     expect(gmdCount).toBe(0);
+  });
+
+  it('should return the first open craft properly', function () {
+    manor.topology = Topology.Coastal;
+    for (let i = 0; i < defaultCraftsmanTable.length; i++) {
+      const craft = generator.firstOpenCraft(manor);
+      expect(craft).toBe(defaultCraftsmanTable[i].id);
+      makeTenants(1, TenantType.CRAFTSMAN);
+      manor.population.tenants[i].craft = craft;
+    }
   });
 
   it('should assign crafts only once and then all become GM Determine', function () {
@@ -130,4 +144,5 @@ describe('Generator: Craftsman', () => {
     generator.assignCraftsmen(manor);
     expect(manor.notes.length).toBe(3);
   });
+  
 });

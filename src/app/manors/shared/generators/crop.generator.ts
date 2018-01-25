@@ -1,7 +1,7 @@
 import * as rwc from 'random-weighted-choice';
 import {NumberGenerator} from '../../../shared/generators/number-generator';
 import {CropFactory, CropType, CropTypes} from '../models/crop.model';
-import {Manor} from '../models/manor.model';
+import {Manor, TopologyEffects} from '../models/manor.model';
 import {checkSkill} from './../../shared/utilities';
 import {Officer} from './../models/tenant.model';
 
@@ -56,7 +56,7 @@ export class CropGenerator {
     for (const crop of manor.crops) {
       acresPlanted += crop.acres;
     }
-    const targetAcres = Math.floor(manor.clearedAcres / 2); // normally only plant half cleared acres in a year.
+    const targetAcres = this.targetAcres(manor);
     let planting = acresPlanted < targetAcres;
     while (planting) {
       const cropType = rwc(plantingTable);
@@ -69,6 +69,16 @@ export class CropGenerator {
       this.addParcel(manor, cropType, plantedParcel);
     }
     this.reeveCheck(manor);
+  }
+
+  /**
+   * Returns a small variation on the topology effect on the percent of crops planted.
+   * @param {Manor} manor
+   * @returns {number}
+   */
+  targetAcres(manor: Manor): number {
+    const percentCrops = (TopologyEffects[manor.topology].crops - 5 + this.dice.rollDie(10)) / 100;
+    return Math.floor(manor.clearedAcres * percentCrops);
   }
 
   /**

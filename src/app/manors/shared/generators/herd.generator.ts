@@ -6,10 +6,10 @@ import {checkSkill} from './../../shared/utilities';
 import {Officer} from './../models/tenant.model';
 
 const liveStockTable = [
-  {weight: 10, id: HerdType.Cows},
+  {weight: 15, id: HerdType.Cows},
   {weight: 30, id: HerdType.Goats},
   {weight: 40, id: HerdType.Sheep},
-  {weight: 20, id: HerdType.Swine}
+  {weight: 15, id: HerdType.Swine}
 ];
 
 export class HerdGenerator {
