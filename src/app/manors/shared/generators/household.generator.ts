@@ -83,17 +83,15 @@ export class HouseholdGenerator {
     }
   }
 
-  generateHouseMember(title: string,
+  generateHouseMember(role: string,
                       each: number,
                       count: number,
                       loyaltybase: number): HouseholdMember {
-    return {
-      title: title,
-      ml: this.dice.rollTotal(6, 3) * 5 + 25,
-      each: each,
-      count: count,
-      loyalty:
-        loyaltybase !== null ? this.dice.rollTotal(6, 5) + loyaltybase : null
-    };
+    const hm = new HouseholdMember(role);
+    hm.ml = this.dice.rollTotal(6, 3) * 5 + 25;
+    hm.each = each;
+    hm.count = count;
+    hm.loyalty = loyaltybase !== null ? this.dice.rollTotal(6, 5) + loyaltybase : null;
+    return hm;
   }
 }

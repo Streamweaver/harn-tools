@@ -160,12 +160,14 @@ export class TenantGenerator {
     t.fees = 6 + t.free_acres + t.serf_acres;
     if (t.occupation === TenantType.FISHERMAN) {
       const activityRate = 40 - t.serf_acres - t.free_acres;
-      t.fees += 24;
-      t.notes.push('Fishing fee 24d added, ' + activityRate + '(2d6)d/yr');
+      const fishingFee = 24 + this._dice.rollTotal(6, 2) * activityRate;
+      t.fees += fishingFee;
+      t.notes.push(`Fee includes ${fishingFee}d for fishing`);
     } else if (t.occupation === TenantType.TRAPPER) {
       const activityRate = 40 - t.serf_acres - t.free_acres;
-      t.fees += 24;
-      t.notes.push('Trapper fee 24d added, ' + activityRate + '(2d6)d/yr');
+      const trappingFee = 24 + this._dice.rollTotal(6, 2) * activityRate;
+      t.fees += trappingFee;
+      t.notes.push(`Fee includes ${trappingFee}d for trapping`);
     }
   }
 

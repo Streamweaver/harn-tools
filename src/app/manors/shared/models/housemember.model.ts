@@ -1,9 +1,29 @@
-export interface HouseholdMember {
-  title: string;
+import {Craftsman} from './tenant.model';
+
+export class HouseholdMember {
+  name: string;
+  role: string;
   ml: number;
   each: number;
   count: number;
   loyalty: number;
+
+  constructor(role: string, name: string = null) {
+    this.name = name;
+    this.role = role;
+    this.ml = 0;
+    this.each = 0;
+    this.count = 1;
+    this.loyalty = 0;
+  }
+
+  displayName(): string {
+    let name = this.role;
+    if (this.name) {
+      name = this.name + ' (' + this.role + ')';
+    }
+    return name;
+  }
 }
 
 export enum Noble {

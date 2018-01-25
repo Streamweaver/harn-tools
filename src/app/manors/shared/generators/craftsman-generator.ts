@@ -20,6 +20,24 @@ export const craftsmanTable = [
   {weight: 1, id: Craftsman.Armourer}
 ];
 
+const villageCraftsman = [
+  Craftsman.Miller,
+  Craftsman.Metalsmith,
+  Craftsman.Woodcrafter,
+  Craftsman.Salter,
+  Craftsman.Hideworker,
+  Craftsman.Timberwright,
+  Craftsman.Charcoaler,
+  Craftsman.Shipwright,
+  Craftsman.Innkeeper,
+  Craftsman.Ostler,
+  Craftsman.Potter,
+  Craftsman.Apothecary,
+  Craftsman.Glassworker,
+  Craftsman.Weaponsmith,
+  Craftsman.Armourer
+]
+
 export class CraftsmanGenerator {
 
   constructor() {
@@ -51,7 +69,8 @@ export class CraftsmanGenerator {
   }
 
   private _validCraftForManor(manor: Manor, craft: string): boolean {
-    return !(manor.topology === Topology.Coastal) && craft === Craftsman.Shipwright ? false : true;
+    const isInlandSailor = manor.topology !== Topology.Coastal && craft === Craftsman.Shipwright;
+    return  !isInlandSailor;
   }
 
   private _exists(manor: Manor, craft: string): boolean {
@@ -64,11 +83,9 @@ export class CraftsmanGenerator {
   }
 
   private _firstOpenCraft(manor: Manor): string {
-    for (const item in Craftsman) {
-      if (!Number(item)) {
-        if (!this._exists(manor, item) && this._validCraftForManor(manor, item)) {
-          return Craftsman[item];
-        }
+    for (const craft in villageCraftsman) {
+      if (!this._exists(manor, craft) && this._validCraftForManor(manor, craft)) {
+        return craft;
       }
     }
     return Craftsman.GMDetermine;

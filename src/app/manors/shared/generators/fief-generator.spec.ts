@@ -59,14 +59,14 @@ describe('Generator: Fief', () => {
     expect(manor.cropSeed.acresPlanned).toBe(600);
   });
 
-  it('should default to winter feed for all acres', function () {
+  it('should default to winter feed for half acres', function () {
     addHerd(HerdType.Oxen, 200);
     addHerd(HerdType.Sheep, 500);
     generator.winterFeedStored(manor);
-    expect(manor.winterFeed.acresPlanned).toBe(700);
+    expect(manor.winterFeed.acresPlanned).toBe(350);
     addHerd(HerdType.Goats, 1000);
     generator.winterFeedStored(manor);
-    expect(manor.winterFeed.acresPlanned).toBe(700);
+    expect(manor.winterFeed.acresPlanned).toBe(350);
   });
 
   it('should default to standard fief maintinance', function () {

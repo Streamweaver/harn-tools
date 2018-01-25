@@ -1,70 +1,24 @@
-<div class="card">
-  <div class="card-header font-weight-bold">
-    Lords Household
-  </div>
-  <div class="card-body">
-    <div class="row form-row">
-      <div class="col small">Title/Name</div>
-      <div class="col-sm-1 text-center small">ML</div>
-      <div class="col-sm-1 text-center small">Each</div>
-      <div class="col-sm-1 text-center small">#</div>
-      <div class="col-sm-1 text-center small">Total</div>
-      <div class="col-sm-1 text-center small">Loyalty</div>
-      <div class="col-sm-1 text-center">&nbsp;</div>
-    </div>
-
-    <div *ngFor="let member of manor.population.household; index as idx" class="form-row">
-      <div class="col">
-        <div class="input-group input-group-sm">
-          <input type="text" class="form-control" [(ngModel)]="member.title">
-        </div>
-      </div>
-      <div class="col-sm-1 text-center">
-        <div class="input-group input-group-sm">
-          <input type="number" class="form-control" [(ngModel)]="member.ml">
-        </div>
-      </div>
-      <div class="col-sm-1 text-center">
-        <div class="input-group input-group-sm">
-          <input type="number" class="form-control" [(ngModel)]="member.each">
-        </div>
-      </div>
-      <div class="col-sm-1 text-center">
-        <div class="input-group input-group-sm">
-          <input type="number" class="form-control" [(ngModel)]="member.count">
-        </div>
-      </div>
-      <div class="col-sm-1 text-center">
-        <div class="input-group input-group-sm">
-          <input type="number" class="form-control" [value]="member.count * member.each" disabled>
-        </div>
-      </div>
-      <div class="col-sm-1 text-center">
-        <div class="input-group input-group-sm">
-          <input type="number" class="form-control" [(ngModel)]="member.loyalty">
-        </div>
-      </div>
-      <div class="col-sm-1 text-center">
-        <div class="input-group input-group-sm">
-          <button type="button" class="btn btn-danger btn-sm" (click)="onDeleteMemberClick(idx)">
-            <i class="far fa-trash-alt"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card-footer">
-    <div class="row">
-      <div class="col text-right font-weight-bold">Total Kind:</div>
-      <div class="col-sm-2">
-        {{householdKind | number}}d
-      </div>
-      <div class="col-sm-1">
-        <button type="button" class="btn btn-primary btn-sm" (click)="onAddMemberClick()">
-          <i class="fas fa-user-plus"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</div>
+<table class="table table-sm">
+  <thead class="thead-dark">
+  <tr>
+    <th width="40%">Lord's Household Member</th>
+    <th width="10%">ML</th>
+    <th width="10%">Each</th>
+    <th width="10%">#</th>
+    <th width="15%">Total</th>
+    <th width="15%">Loyalty</th>
+  </tr>
+  </thead>
+  <tbody>
+  <ng-container *ngFor="let member of manor.population.household">
+    <tr>
+      <td>{{member.displayName()}}</td>
+      <td>{{member.ml}}</td>
+      <td>{{member.each}}</td>
+      <td>{{member.count}}</td>
+      <td>{{member.count * member.each | number}}d</td>
+      <td>{{member.loyalty}}</td>
+    </tr>
+  </ng-container>
+  </tbody>
+</table>

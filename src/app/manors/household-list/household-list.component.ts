@@ -28,17 +28,4 @@ export class HouseholdListComponent implements OnInit {
     }
     this.dataService.setHouseholdKind(total);
   }
-
-  onAddMemberClick() {
-    this.manor.population.household.push(
-      this._hg.generateHouseMember('New memeber', 0, 0, 50)
-    );
-  }
-
-  onDeleteMemberClick(idx: number) {
-    const member = this.manor.population.household[idx];
-    if (confirm('Are you sure you want to DELETE ' + member.title + '?')) {
-      this.manor.population.household.splice(idx, 1);
-    }
-  }
 }
