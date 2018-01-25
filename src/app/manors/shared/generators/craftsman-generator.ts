@@ -1,8 +1,13 @@
 import * as rwc from 'random-weighted-choice';
-import {Manor, Topology} from '../models/manor.model';
+import {Manor, Topology, TopologyEffects} from '../models/manor.model';
 import {Craftsman, craftsmanFees, ITenant, TenantType} from '../models/tenant.model';
 
-export const craftsmanTable = [
+interface WeightedEntry {
+  weight: number;
+  id: Craftsman;
+}
+
+export const defaultCraftsmanTable: WeightedEntry[] = [
   {weight: 25, id: Craftsman.Miller},
   {weight: 20, id: Craftsman.Metalsmith},
   {weight: 15, id: Craftsman.Woodcrafter},
@@ -20,24 +25,6 @@ export const craftsmanTable = [
   {weight: 1, id: Craftsman.Armourer}
 ];
 
-const villageCraftsman = [
-  Craftsman.Miller,
-  Craftsman.Metalsmith,
-  Craftsman.Woodcrafter,
-  Craftsman.Salter,
-  Craftsman.Hideworker,
-  Craftsman.Timberwright,
-  Craftsman.Charcoaler,
-  Craftsman.Shipwright,
-  Craftsman.Innkeeper,
-  Craftsman.Ostler,
-  Craftsman.Potter,
-  Craftsman.Apothecary,
-  Craftsman.Glassworker,
-  Craftsman.Weaponsmith,
-  Craftsman.Armourer
-]
-
 export class CraftsmanGenerator {
 
   constructor() {
@@ -48,11 +35,6 @@ export class CraftsmanGenerator {
     for (const tenant of manor.population.tenants) {
       if (tenant.occupation === TenantType.CRAFTSMAN && tenant.craft === null) {
         craft = this.getCraft(manor);
-        if (!this._exists(manor, craft)) {
-          tenant.craft = craft;
-        } else {
-          tenant.craft = this._firstOpenCraft(manor);
-        }
         this._adjustFees(tenant);
       }
     }
@@ -60,20 +42,14 @@ export class CraftsmanGenerator {
   }
 
   private getCraft(manor: Manor): Craftsman {
-    let craft;
-    do {
-      craft = rwc(craftsmanTable);
+    const craftsmanTable = this.getCrafterTable(manor);
+    if (craftsmanTable.length > 1) {
+      return rwc(craftsmanTable);
     }
-    while (!this._validCraftForManor(manor, craft));
-    return craft;
+    return this._firstOpenCraft(manor);
   }
 
-  private _validCraftForManor(manor: Manor, craft: string): boolean {
-    const isInlandSailor = manor.topology !== Topology.Coastal && craft === Craftsman.Shipwright;
-    return  !isInlandSailor;
-  }
-
-  private _exists(manor: Manor, craft: string): boolean {
+  private _exists(manor: Manor, craft: Craftsman): boolean {
     for (const tenant of manor.population.tenants) {
       if (tenant.craft === craft) {
         return true;
@@ -82,11 +58,10 @@ export class CraftsmanGenerator {
     return false;
   }
 
-  private _firstOpenCraft(manor: Manor): string {
-    for (const craft in villageCraftsman) {
-      if (!this._exists(manor, craft) && this._validCraftForManor(manor, craft)) {
-        return craft;
-      }
+  private _firstOpenCraft(manor: Manor): Craftsman {
+    const crafters = this.getCrafters(manor);
+    if (crafters.length > 0) {
+      return crafters[0];
     }
     return Craftsman.GMDetermine;
   }
@@ -110,5 +85,30 @@ export class CraftsmanGenerator {
     if (!this._exists(manor, Craftsman.Woodcrafter)) {
       manor.notes.push('No Woodcrafter!');
     }
+  }
+
+  getCrafterTable(manor: Manor): WeightedEntry[] {
+    const weightedTable: WeightedEntry[] = [];
+    for (const item of defaultCraftsmanTable) {
+      if (manor.topology !== Topology.Coastal && item.id === Craftsman.Shipwright) {
+        continue; // Don't add shipwright if not a coastal town.
+      }
+      if (this._exists(manor, item.id)) {
+        continue;
+      }
+      if (item.id === Craftsman.Timberwright) {
+        item.weight = Math.floor(manor.woodlandAcres / manor.grossAcres * 50);
+      }
+      weightedTable.push(item);
+    }
+    return weightedTable;
+  }
+
+  getCrafters(manor: Manor): Craftsman[] {
+    const crafters: Craftsman[] = [];
+    for (const item of this.getCrafterTable(manor)) {
+      crafters.push(item.id);
+    }
+    return crafters;
   }
 }
