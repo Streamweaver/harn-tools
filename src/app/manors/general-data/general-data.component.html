@@ -132,18 +132,17 @@
     <td width="34%">
       <div class="input-group input-group-sm">
         <input #weatherIndex type="number" class="form-control" formControlName="weatherIndex" [(ngModel)]="manor.weatherIndex">
-        <div *ngIf="weatherIndex.invalid && (weatherIndex.dirty || weatherIndex.touched)"
-             class="alert alert-danger">ERROR
-
-          <div *ngIf="weatherIndex.errors.required">
-            Weather Index is Required
-          </div>
-          <div *ngIf="weatherIndex.errors.min">
-            Weather Index cannot be less than 0.65
-          </div>
-          <div *ngIf="weatherIndex.errors.max">
-            Weather Index cannot be more than 1.35
-          </div>
+      </div>
+      <div *ngIf="generalDataForm.controls['weatherIndex'].invalid && (generalDataForm.controls['weatherIndex'].dirty || generalDataForm.controls['weatherIndex'].touched)"
+           class="alert alert-danger small">
+        <div *ngIf="generalDataForm.controls['weatherIndex'].errors.required">
+          Required
+        </div>
+        <div *ngIf="generalDataForm.controls['weatherIndex'].errors.min">
+          cannot be less than 0.65
+        </div>
+        <div *ngIf="generalDataForm.controls['weatherIndex'].errors.max">
+          cannot be more than 1.35
         </div>
       </div>
     </td>
