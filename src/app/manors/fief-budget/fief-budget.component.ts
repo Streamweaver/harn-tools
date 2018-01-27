@@ -4,7 +4,7 @@ import {CheckResult} from '../../shared/generators/number-generator';
 import {Manor} from '../shared/models/manor.model';
 import {SectionSummary} from '../shared/models/summaries.model';
 import {SharedDataService} from '../shared/services/shared-data.service';
-import {beadleResultIndex, checkResultIndex} from '../shared/utilities';
+import {beadleResultIndex, checkResultIndex, maxManorWoodlands} from '../shared/utilities';
 
 @Component({
   selector: 'app-fief-budget',
@@ -32,7 +32,7 @@ export class FiefBudgetComponent implements OnInit {
 
   createForm() {
     this.budgetForm = this.fb.group({
-      woodsWorked: [0, Validators.required],
+      woodsWorked: [0, [Validators.required, maxManorWoodlands(this.manor)]],
       waste: [0, Validators.required],
       cropSeed: [0, Validators.required],
       winterFeed: [0, Validators.required],

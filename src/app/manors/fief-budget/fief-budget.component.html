@@ -10,7 +10,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr>
+  <tr [ngClass]="{'alert alert-danger': budgetForm.controls['woodsWorked'].invalid && (budgetForm.controls['woodsWorked'].dirty || budgetForm.controls['woodsWorked'].touched)}">
     <td>Woods</td>
     <td class="text-center">{{checkResultIndex(manor.woods.checkResult)}}</td>
     <td class="text-center">{{woodsYield()}}</td>

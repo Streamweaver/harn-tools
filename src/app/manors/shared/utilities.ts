@@ -1,4 +1,6 @@
 import {CheckResult, NumberGenerator} from './../../shared/generators/number-generator';
+import {AbstractControl, FormControl, ValidatorFn} from '@angular/forms';
+import {Manor} from './models/manor.model';
 
 const dice = new NumberGenerator();
 
@@ -47,4 +49,22 @@ export function checkSkill(eml: number): CheckResult {
     }
     return CheckResult.MF;
   }
+}
+
+export function maxGrossAcres(c: FormControl) {
+  const group = c.parent;
+  let grossAcres: number;
+  if (group) {
+    grossAcres = group.controls['grossAcres'].value;
+  }
+  if (grossAcres && grossAcres < c.value) {
+    return { maxGrossAcres: {valid: false}};
+  }
+  return null;
+}
+
+export function maxManorWoodlands(m: Manor): ValidatorFn {
+  return (control: AbstractControl): {[key: string]: any} => {
+      return m.woodlandAcres < control.value ? {'maxManorWoodlands': {valid: false}} : null;
+  };
 }

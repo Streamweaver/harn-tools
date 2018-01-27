@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NumberGenerator} from '../../shared/generators/number-generator';
 import {Manor, Topology, TopologyEffects} from '../shared/models/manor.model';
+import {maxGrossAcres} from '../shared/utilities';
 
 @Component({
   selector: 'app-general-data',
@@ -25,12 +26,12 @@ export class GeneralDataComponent implements OnInit {
     this.generalDataForm = this.fb.group({
       year: [null],
       topology: [null, Validators.required],
-      grossAcres: [0, Validators.required],
-      woodlandAcres: [0, Validators.required],
-      clearedAcres: [0, Validators.required],
-      landQuality: [0, Validators.required],
-      fiefIndex: [0, Validators.required],
-      tradeIndex: [0, Validators.required],
+      grossAcres: [0, [Validators.required, Validators.min(0)]],
+      woodlandAcres: [0, [Validators.required, Validators.min(0), maxGrossAcres]],
+      clearedAcres: [0, [Validators.required, Validators.min(0), maxGrossAcres]],
+      landQuality: [0, [Validators.required, Validators.min(0.75), Validators.max(1.3)]],
+      fiefIndex: [0, [Validators.required, Validators.min(0.75), Validators.max(1.25)]],
+      tradeIndex: [0, [Validators.required, Validators.min(0.5), Validators.max(1.7)]],
       weatherIndex: [0, Validators.compose([Validators.required, Validators.min(0.65), Validators.max(1.35)])]
     });
   }
