@@ -2,7 +2,7 @@
   <div class="col">
     <strong>Manor Budget</strong>
   </div>
-  <div class="col text-right h4">{{manor?.name}}</div>
+  <div class="col text-right h4">{{manor?.name}}<span *ngIf="manor && manor.realm">, {{manor.realm}}</span></div>
 </div>
 <div class="container-fluid mb-2">
 
