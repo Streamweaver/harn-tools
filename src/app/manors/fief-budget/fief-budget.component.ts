@@ -1,10 +1,13 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {
+  AbstractControl, AsyncValidator, AsyncValidatorFn, FormBuilder, FormControl, FormGroup, ValidatorFn,
+  Validators
+} from '@angular/forms';
 import {CheckResult} from '../../shared/generators/number-generator';
 import {Manor} from '../shared/models/manor.model';
 import {SectionSummary} from '../shared/models/summaries.model';
 import {SharedDataService} from '../shared/services/shared-data.service';
-import {beadleResultIndex, checkResultIndex, maxManorWoodlands} from '../shared/utilities';
+import {beadleResultIndex, checkResultIndex} from '../shared/utilities';
 
 @Component({
   selector: 'app-fief-budget',
@@ -12,7 +15,8 @@ import {beadleResultIndex, checkResultIndex, maxManorWoodlands} from '../shared/
   styleUrls: ['./fief-budget.component.scss']
 })
 export class FiefBudgetComponent implements OnInit {
-  @Input('manor') manor: Manor;
+
+  private _manor: Manor;
   crops: SectionSummary;
   herds: SectionSummary;
   budgetForm: FormGroup;
@@ -30,14 +34,22 @@ export class FiefBudgetComponent implements OnInit {
     this.warnLabor = false;
   }
 
+  @Input('manor')
+  set manor(manor: Manor) {
+    this._manor = manor;
+  }
+
+  get manor(): Manor {
+    return this._manor;
+  }
+
   createForm() {
     this.budgetForm = this.fb.group({
-      woodsWorked: [0, [Validators.required, maxManorWoodlands(this.manor)]],
-      waste: [0, Validators.required],
-      cropSeed: [0, Validators.required],
-      winterFeed: [0, Validators.required],
-      fiefMaintenance: [0, Validators.required],
-      assart: [0, Validators]
+      woodsWorked: [0, [Validators.required, Validators.min(0)]],
+      cropSeed: [0, [Validators.required, Validators.min(0)]],
+      winterFeed: [0, [Validators.required, Validators.min(0)]],
+      fiefMaintenance: [0, [Validators.required, Validators.min(0)]],
+      assart: [0, [Validators.required, Validators.min(0)]]
     });
   }
 
@@ -107,7 +119,6 @@ export class FiefBudgetComponent implements OnInit {
     this.warnLabor = labor > this.manor.population.tenantLaborPool();
     return labor;
   }
-
 
   fiefIncomeKind(): number {
     let income =

@@ -1,4 +1,4 @@
-<table class="table table-striped table-hover table-sm" [formGroup]="budgetForm">
+<table class="table table-striped table-sm" [formGroup]="budgetForm">
   <thead class="thead-dark">
   <tr>
     <th class="font-weight-bold">Fief's Budget</th>
@@ -55,7 +55,7 @@
     <td class=" text-center font-weight-bold">{{totalHarvestLabor() | number}}</td>
     <td class=" text-right font-weight-bold">{{totalHarvestKind() | number }}d</td>
   </tr>
-  <tr>
+  <tr [ngClass]="{'alert alert-danger': budgetForm.controls['cropSeed'].invalid && (budgetForm.controls['cropSeed'].dirty || budgetForm.controls['cropSeed'].touched)}">
     <td>Crop Seed</td>
     <td class="text-center">{{beadleIndex(manor.cropSeed.checkResult)}}</td>
     <td class="text-center"></td>
@@ -68,7 +68,18 @@
     <td class="text-center"></td>
     <td class="text-right">{{cropSeedKind() | number}}d</td>
   </tr>
-  <tr>
+  <tr *ngIf="budgetForm.controls['cropSeed'].invalid && (budgetForm.controls['cropSeed'].dirty || budgetForm.controls['cropSeed'].touched)" class="alert alert-danger small">
+    <td colspan="6">
+      <div *ngIf="budgetForm.controls['cropSeed'].errors.required">
+        Required
+      </div>
+      <div *ngIf="budgetForm.controls['cropSeed'].errors.min">
+        cannot be less than 0
+      </div>
+    </td>
+  </tr>
+
+  <tr [ngClass]="{'alert alert-danger': budgetForm.controls['winterFeed'].invalid && (budgetForm.controls['winterFeed'].dirty || budgetForm.controls['winterFeed'].touched)}">
     <td>Winter Feed</td>
     <td class="text-center">{{beadleIndex(manor.winterFeed.checkResult)}}</td>
     <td class="text-center"></td>
@@ -81,6 +92,17 @@
     <td class="text-center"></td>
     <td class="text-right">{{winterFeedKind() | number}}d</td>
   </tr>
+  <tr *ngIf="budgetForm.controls['winterFeed'].invalid && (budgetForm.controls['winterFeed'].dirty || budgetForm.controls['winterFeed'].touched)" class="alert alert-danger small">
+    <td colspan="6">
+      <div *ngIf="budgetForm.controls['winterFeed'].errors.required">
+        Required
+      </div>
+      <div *ngIf="budgetForm.controls['winterFeed'].errors.min">
+        cannot be less than 0
+      </div>
+    </td>
+  </tr>
+
   <tr>
     <td>Fief maintenance</td>
     <td class="text-center"></td>

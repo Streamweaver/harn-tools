@@ -21,21 +21,21 @@ export class LordsBudgetComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.createForm();
     this.dataService.fiefIncome.subscribe(income => (this.fiefIncome = income));
     this.dataService.tenants.subscribe(t => (this.tenants = t));
     this.dataService.householdKind.subscribe(k => (this.householdKind = k));
-    this.createForm();
   }
 
   createForm() {
     this.lordsBudgetForm = this.fb.group({
-      taxes: [0, Validators.required],
-      amercements: [0, Validators.required],
-      feudalIncome: [0, Validators.required],
-      feudalPayments: [0, Validators.required],
-      tithe: [0, Validators.required],
-      laborHired: [0, Validators.required],
-      politicalExpenses: [0, Validators]
+      taxes: [0, [Validators.required, Validators.min(0)]],
+      amercements: [0, [Validators.required, Validators.min(0)]],
+      feudalIncome: [0, [Validators.required, Validators.min(0)]],
+      feudalPayments: [0, [Validators.required, Validators.min(0)]],
+      tithe: [0, [Validators.required, Validators.min(0)]],
+      laborHired: [0, [Validators.required, Validators.min(0)]],
+      politicalExpenses: [0, [Validators.required, Validators.min(0)]]
     });
   }
 

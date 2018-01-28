@@ -2,7 +2,7 @@
   <div class="col">
     <strong>Manor Budget</strong>
   </div>
-  <div class="col text-right h4">{{manor.name}}</div>
+  <div class="col text-right h4">{{manor?.name}}</div>
 </div>
 <div class="container-fluid mb-2">
 
@@ -78,5 +78,3 @@
 </div>
 
 <app-tenant-list [manor]="manor"></app-tenant-list>
-
-{{manor | json}}

@@ -62,9 +62,3 @@ export function maxGrossAcres(c: FormControl) {
   }
   return null;
 }
-
-export function maxManorWoodlands(m: Manor): ValidatorFn {
-  return (control: AbstractControl): {[key: string]: any} => {
-      return m.woodlandAcres < control.value ? {'maxManorWoodlands': {valid: false}} : null;
-  };
-}

@@ -126,8 +126,8 @@ export class Manor {
 
   constructor() {
     this.dice = new NumberGenerator();
-    this.name = null;
-    this.realm = null;
+    this.name = '';
+    this.realm = '';
     this.year = null;
     this.topology = Topology.Lowlands;
     this.grossAcres = 600 + this.dice.rollTotal(100, 15);
