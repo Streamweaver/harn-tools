@@ -12,6 +12,7 @@ import {ManorComponent} from './manor/manor.component';
 
 import {ManorsRoutingModule} from './manors-routing.module';
 import {PoliciesComponent} from './policies/policies.component';
+import {ManorService} from './shared/services/manor.service';
 
 import {SharedDataService} from './shared/services/shared-data.service';
 import {TenantListComponent} from './tenant-list/tenant-list.component';
@@ -24,7 +25,7 @@ import {TenantComponent} from './tenant/tenant.component';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [SharedDataService],
+  providers: [SharedDataService, ManorService],
   declarations: [
     ManorComponent,
     TenantListComponent,

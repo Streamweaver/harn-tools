@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, DoCheck, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {
   AbstractControl, AsyncValidator, AsyncValidatorFn, FormBuilder, FormControl, FormGroup, ValidatorFn,
   Validators
@@ -14,7 +14,7 @@ import {beadleResultIndex, checkResultIndex} from '../shared/utilities';
   templateUrl: './fief-budget.component.html',
   styleUrls: ['./fief-budget.component.scss']
 })
-export class FiefBudgetComponent implements OnInit {
+export class FiefBudgetComponent implements OnInit, DoCheck {
 
   private _manor: Manor;
   crops: SectionSummary;
@@ -130,5 +130,13 @@ export class FiefBudgetComponent implements OnInit {
     income = Math.floor(income);
     this.dataService.setFiefIncome(income);
     return income;
+  }
+
+  ngDoCheck() {
+    this.budgetForm.controls['woodsWorked'].setValidators([
+      Validators.required,
+      Validators.min(0),
+      Validators.max(this.manor.woodlandAcres)]);
+    this.budgetForm.controls['woodsWorked'].updateValueAndValidity();
   }
 }

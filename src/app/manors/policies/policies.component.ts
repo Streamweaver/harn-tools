@@ -24,7 +24,7 @@ export class PoliciesComponent implements OnInit {
       baseRent: [0, [Validators.required, Validators.min(30), Validators.max(120)]],
       freeholderRent: [0, [Validators.required, Validators.min(3), Validators.max(12)]],
       serfLabor: [0, [Validators.required, Validators.min(0), Validators.max(8)]],
-      foAcresPerHH: [0, Validators.required],
+      foAcresPerHH: [0, [Validators.required, Validators.min(0)]],
       foAcresPerLF: [0, Validators.required],
       isSlaveState: '',
       isBailiffRun: '',

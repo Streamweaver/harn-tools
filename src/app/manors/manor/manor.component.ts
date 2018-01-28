@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Component, OnChanges, OnInit, SimpleChanges, ViewChild} from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
 import {NumberGenerator} from '../../shared/generators/number-generator';
 import {CropListComponent} from '../crop-list/crop-list.component';
 import {HerdListComponent} from '../herd-list/herd-list.component';
@@ -16,6 +16,7 @@ import {TenantGenerator} from '../shared/generators/tenant-generator';
 import {TenantOfficerGenerator} from '../shared/generators/tenant-officer.generator';
 import {YeomanGenerator} from '../shared/generators/yeoman-generator';
 import {Manor, ManorFactory} from '../shared/models/manor.model';
+import {ManorService} from '../shared/services/manor.service';
 import {SharedDataService} from '../shared/services/shared-data.service';
 import {TenantListComponent} from '../tenant-list/tenant-list.component';
 
@@ -49,12 +50,14 @@ export class ManorComponent implements OnInit {
 
   constructor(
     private dataService: SharedDataService,
+    private manorService: ManorService,
     private fb: FormBuilder
   ) {
   }
 
   ngOnInit() {
     this.dice = new NumberGenerator();
+    this.manor = ManorFactory.getManor();
     this.createForm();
 
     this.tenantGenerator = new TenantGenerator();
@@ -71,7 +74,7 @@ export class ManorComponent implements OnInit {
   }
 
   private _reset() {
-    this.manor = ManorFactory.getManor();
+    this.manor.reset();
     this.dataService.reset();
     this.showGenerationInput = true;
   }

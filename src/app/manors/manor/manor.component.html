@@ -29,7 +29,8 @@
       Reset
     </button>
     <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#collapsePolicies" role="button"
-       aria-expanded="false" aria-controls="collapsePolicies">
+       aria-expanded="false" aria-controls="collapsePolicies"
+    *ngIf="showGenerationInput">
       <i class="fas fa-cog"></i>
       Policies
     </a>
@@ -38,7 +39,7 @@
 
   <hr class="small">
 
-  <div class="collapse" id="collapsePolicies">
+  <div class="collapse" id="collapsePolicies" *ngIf="showGenerationInput">
     <app-policies [policies]="manor.policies"></app-policies>
     <hr class="small">
   </div>
@@ -78,3 +79,4 @@
 </div>
 
 <app-tenant-list [manor]="manor"></app-tenant-list>
+ {{manor | json}}

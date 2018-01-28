@@ -126,12 +126,16 @@ export class Manor {
 
   constructor() {
     this.dice = new NumberGenerator();
+    this.reset();
+  }
+
+  reset() {
     this.name = '';
     this.realm = '';
     this.year = null;
     this.topology = Topology.Lowlands;
     this.grossAcres = 600 + this.dice.rollTotal(100, 15);
-    this.woodlandAcres = 0;
+    this.setWoodlandAcres();
     this.clearedAcres = this.grossAcres - this.woodlandAcres;
     this.landQuality = parseFloat(
       (0.74 + this.dice.rollDie(51) / 100).toFixed(2)
@@ -166,7 +170,6 @@ export class Manor {
     this.privyPurse = 0;
 
     this.notes = [];
-    this.setWoodlandAcres();
   }
 
   private setWoodlandAcres() {
