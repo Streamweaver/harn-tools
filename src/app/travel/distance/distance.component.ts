@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-distance',
@@ -12,35 +13,67 @@ export class DistanceComponent implements OnInit {
   miles: number;
   km: number;
 
-  constructor() { }
+  distanceForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+  }
 
   ngOnInit() {
-    this.leagues = 5;
+    this.createForm();
     this.onLeagueChange();
   }
 
+  createForm() {
+    this.distanceForm = this.fb.group({
+      leagues: [5, [Validators.required, Validators.min(0)]],
+      hexes: [0, [Validators.required, Validators.min(0)]],
+      miles: [0, [Validators.required, Validators.min(0)]],
+      km: [0, [Validators.required, Validators.min(0)]]
+    });
+  }
+
   onLeagueChange() {
-    this.hexes = this._round(this.leagues / 5);
-    this.miles = this._round(this.leagues * 2.5);
-    this.km = this._round(this.leagues * 4);
+    if (this.distanceForm.valid) {
+      this.distanceForm.controls['hexes'].setValue(this._round(
+        this.distanceForm.controls['leagues'].value * .2));
+      this.distanceForm.controls['miles'].setValue(this._round(
+        this.distanceForm.controls['leagues'].value * 2.5));
+      this.distanceForm.controls['km'].setValue(this._round(
+        this.distanceForm.controls['leagues'].value * 4));
+    }
   }
 
   onHexesChange() {
-    this.leagues = this._round(this.hexes * 5);
-    this.miles = this._round(this.hexes * 12.5);
-    this.km = this._round(this.hexes * 20);
+    if (this.distanceForm.valid) {
+      this.distanceForm.controls['leagues'].setValue(this._round(
+        this.distanceForm.controls['hexes'].value * 5));
+      this.distanceForm.controls['miles'].setValue(this._round(
+        this.distanceForm.controls['hexes'].value * 12.5));
+      this.distanceForm.controls['km'].setValue(this._round(
+        this.distanceForm.controls['hexes'].value * 20));
+    }
   }
 
   onMilesChange() {
-    this.leagues = this._round(this.miles / 2.5);
-    this.hexes = this._round(this.miles / 12.5);
-    this.km = this._round(this.miles * 1.6);
+    if (this.distanceForm.valid) {
+      this.distanceForm.controls['leagues'].setValue(this._round(
+        this.distanceForm.controls['miles'].value * 0.4));
+      this.distanceForm.controls['hexes'].setValue(this._round(
+        this.distanceForm.controls['miles'].value * 0.08));
+      this.distanceForm.controls['km'].setValue(this._round(
+        this.distanceForm.controls['miles'].value * 1.6));
+    }
   }
 
   onKilometersChange() {
-    this.leagues = this._round(this.km / 4);
-    this.hexes = this._round(this.km / 20);
-    this.miles = this._round(this.km * 0.625);
+    if (this.distanceForm.valid) {
+      this.distanceForm.controls['leagues'].setValue(this._round(
+        this.distanceForm.controls['km'].value * 0.25));
+      this.distanceForm.controls['hexes'].setValue(this._round(
+        this.distanceForm.controls['km'].value * 0.05));
+      this.distanceForm.controls['miles'].setValue(this._round(
+        this.distanceForm.controls['km'].value * 0.625));
+    }
   }
 
   private _round(n: number): number {

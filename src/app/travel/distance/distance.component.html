@@ -5,29 +5,29 @@
     <div class="col-md-4">
       <div class="card">
         <div class="card-header"><h4>Distance Conversion</h4></div>
-        <div class="card-body">
+        <div class="card-body" [formGroup]="distanceForm">
           <div class="form-group row">
             <label class="col-sm-4 col-form-label">Leagues</label>
             <div class="col">
-              <input type="number" class="form-control" [(ngModel)]="leagues" (change)="onLeagueChange()" name="leagues">
+              <input type="number" class="form-control" (input)="onLeagueChange()" formControlName="leagues" name="leagues">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-4 col-form-label">Map Hexes</label>
             <div class="col">
-              <input type="number" class="form-control" [(ngModel)]="hexes" (change)="onHexesChange()" name="hexes">
+              <input type="number" class="form-control" (input)="onHexesChange()" formControlName="hexes">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-4 col-form-label">Miles<small>*</small></label>
             <div class="col">
-              <input type="number" class="form-control" [(ngModel)]="miles" (change)="onMilesChange()" name="miles">
+              <input type="number" class="form-control" (input)="onMilesChange()" formControlName="miles">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-4 col-form-label">Kilometers<small>*</small></label>
             <div class="col">
-              <input type="number" class="form-control" [(ngModel)]="km" (change)="onKilometersChange()" name="km">
+              <input type="number" class="form-control" (input)="onKilometersChange()" formControlName="km">
             </div>
           </div>
         </div>
