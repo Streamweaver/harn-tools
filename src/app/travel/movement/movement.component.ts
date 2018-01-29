@@ -1,7 +1,7 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input} from '@angular/core';
 import {IMovementRate} from '../shared/movementrate.interface';
 import { Units } from '../shared/units.enum';
-import { Condition } from '../shared/condition.enum';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-movement',
@@ -9,28 +9,22 @@ import { Condition } from '../shared/condition.enum';
   styleUrls: ['./movement.component.scss']
 })
 export class MovementComponent implements OnInit {
+  @Input('distances') distances: FormGroup;
   movementRatesFlat: IMovementRate[];
   movementRatesRough: IMovementRate[];
   movementRatesMountain: IMovementRate[];
+  leagues = Units.LEAGUES;
+  hexes = Units.HEXES;
+  miles = Units.MILES;
+  km = Units.KILOMETERS;
+  displayTravelTimes: boolean;
   selectedUnits: Units;
-  unitChoices = [
-    {
-      id: Units.LEAGUES,
-      value: 'Leagues'
-    },
-    {
-      id: Units.HEXES,
-      value: 'Hexes'
-    },
-    {
-      id: Units.MILES,
-      value: 'Miles'
-    },
-    {
-      id: Units.KILOMETERS,
-      value: 'KM'
-    }
-  ];
+  unitChoices: {[id: number]: string} = {
+    [Units.LEAGUES]: 'leagues',
+    [Units.HEXES]: 'hexes',
+    [Units.MILES]: 'miles',
+    [Units.KILOMETERS]: 'km'
+  };
   conditions = {
     weather: {
       rain: false,
@@ -50,6 +44,58 @@ export class MovementComponent implements OnInit {
   ngOnInit() {
     this._loadMovementRates();
     this.selectedUnits = Units.KILOMETERS;
+    this.displayTravelTimes = true;
+  }
+
+  /**
+   * Sets any snow condition not passed to function as false.
+   * @param {string} c - condition name to keep true.
+   */
+  onSnowClick(c: string) {
+    for (const condition of ['lightSnow', 'snow', 'deepSnow']) {
+      if (condition !== c) {
+        this.conditions.ground[condition] = false;
+      }
+    }
+  }
+
+  onRainClick() {
+    this.conditions.weather.blizzard = false;
+  }
+
+  onBlizzardClick() {
+    this.conditions.weather.rain = false;
+  }
+
+  /**
+   * Toggles the display variable for Travel Times or Travel Rates.
+   */
+  onTravelTabsClick() {
+    this.displayTravelTimes = !this.displayTravelTimes;
+  }
+
+  /**
+   * Returns a display value for the travel time calculations.
+   * @param {number} rate
+   * @returns {string}
+   */
+  travelTimeDisplay(rate: number): string {
+    const tt = this.calculateHours(rate);
+    if (tt === Infinity) {
+      return 'n/a';
+    }
+    return tt + ' hrs';
+  }
+  /**
+   * Calculates the number if hours it would take to travel the current distances value.
+   * @param {number} Base rate of travel for selected units per hour.
+   * @returns {number}
+   */
+  calculateHours(rate: number): number {
+    const adjustedRate = rate * 0.25 * this.conditionsAdjustment();
+    // distance / adjustedRate = hours
+    const travelHours = this.distances.controls['leagues'].value / adjustedRate;
+    return parseFloat(travelHours.toFixed(1));
   }
 
   adjustedRate(rate: number): number {
@@ -86,8 +132,11 @@ export class MovementComponent implements OnInit {
     return condition;
   }
 
-  onUnitSelect(u: number) {
-    console.log(u);
+  getUnitLabel(): string {
+    return 'uknown';
+  }
+
+  onUnitSelectClick(u: Units) {
     this.selectedUnits = u;
   }
 
