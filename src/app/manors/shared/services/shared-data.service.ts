@@ -19,6 +19,8 @@ export class SharedDataService {
   householdKind: Observable<number>;
   private totalIncomeBehavior: BehaviorSubject<number>;
   totalIncome: Observable<number>;
+  private generatedInputBehavior: BehaviorSubject<boolean>;
+  showGenerationInput: Observable<boolean>;
 
   constructor() {
     this.cropSummaries = new BehaviorSubject<SectionSummary>({
@@ -50,6 +52,8 @@ export class SharedDataService {
     this.householdKind = this.householdKindBehavior.asObservable();
     this.totalIncomeBehavior = new BehaviorSubject<number>(0);
     this.totalIncome = this.totalIncomeBehavior.asObservable();
+    this.generatedInputBehavior = new BehaviorSubject<boolean>(true);
+    this.showGenerationInput = this.generatedInputBehavior.asObservable();
   }
 
   reset() {
@@ -60,6 +64,7 @@ export class SharedDataService {
     this.setFiefLabor(0);
     this.setHouseholdKind(0)
     this.setTotalIncome(0);
+    this.setShowGenerationInput(true);
   }
 
   setCropTotals(ct: SectionSummary) {
@@ -88,5 +93,9 @@ export class SharedDataService {
 
   setTotalIncome(d: number) {
     this.totalIncomeBehavior.next(d);
+  }
+
+  setShowGenerationInput(b: boolean) {
+    this.generatedInputBehavior.next(b);
   }
 }

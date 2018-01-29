@@ -11,12 +11,14 @@ import {SharedDataService} from '../shared/services/shared-data.service';
 export class TenantListComponent implements OnInit {
   @Input('manor') manor: Manor;
   tenantTotals: TenantSummary;
+  showGenerationInput: boolean;
 
   constructor(private dataService: SharedDataService) {
   }
 
   ngOnInit() {
     this.dataService.tenants.subscribe(tt => this.tenantTotals = tt);
+    this.dataService.showGenerationInput.subscribe(g => this.showGenerationInput = g);
   }
 
   updateTotals() {

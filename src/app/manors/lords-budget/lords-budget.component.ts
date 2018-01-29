@@ -15,6 +15,7 @@ export class LordsBudgetComponent implements OnInit {
   tenants: TenantSummary;
   householdKind: number;
   lordsBudgetForm: FormGroup;
+  showGenerationInput: boolean;
 
   constructor(private dataService: SharedDataService,
               private fb: FormBuilder) {
@@ -25,6 +26,7 @@ export class LordsBudgetComponent implements OnInit {
     this.dataService.fiefIncome.subscribe(income => (this.fiefIncome = income));
     this.dataService.tenants.subscribe(t => (this.tenants = t));
     this.dataService.householdKind.subscribe(k => (this.householdKind = k));
+    this.dataService.showGenerationInput.subscribe(g => this.showGenerationInput = g);
   }
 
   createForm() {

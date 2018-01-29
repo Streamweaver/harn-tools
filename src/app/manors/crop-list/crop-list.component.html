@@ -1,4 +1,4 @@
-<table class="table table-striped table-hover table-sm">
+<table class="table table-striped table-sm" *ngIf="!showGenerationInput">
   <thead class="thead-dark">
   <tr>
     <th class="font-weight-bold">Crops</th>
@@ -24,9 +24,14 @@
   </tr>
   <tr class="table-summary">
     <td class="text-right font-weight-bold" colspan="3">Totals:</td>
-    <td class="text-right font-weight-bold text-center">{{cropTotals.acres | number}}</td>
+    <td class="text-right font-weight-bold text-center" [ngClass]="{'alert alert-danger': warnTotalAcres()}">{{cropTotals.acres | number}}</td>
     <td class="text-right font-weight-bold text-center">{{cropTotals.labor | number}}</td>
     <td class="text-right font-weight-bold">{{cropTotals.kind | number}}d</td>
+  </tr>
+  <tr class="alert alert-danger" *ngIf="warnTotalAcres()">
+    <td colspan="6">
+      Total acres used for crops and herds cannot exceed cleared acres.  Adjust until the total is below.
+    </td>
   </tr>
   </tbody>
 </table>

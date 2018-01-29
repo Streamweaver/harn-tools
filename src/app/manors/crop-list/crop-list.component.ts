@@ -13,12 +13,16 @@ import {checkResultIndex} from './../shared/utilities';
 export class CropListComponent implements OnInit {
   @Input('manor') manor: Manor;
   cropTotals: SectionSummary;
+  herdTotals: SectionSummary;
+  showGenerationInput: boolean;
 
   constructor(private dataService: SharedDataService) {
   }
 
   ngOnInit() {
     this.dataService.crops.subscribe(ct => this.cropTotals = ct);
+    this.dataService.herds.subscribe(ht => this.herdTotals = ht);
+    this.dataService.showGenerationInput.subscribe(g => this.showGenerationInput = g);
   }
 
   reeveIndex(crop: Crop): number {
@@ -56,5 +60,10 @@ export class CropListComponent implements OnInit {
       totals.acres += crop.acres;
     }
     this.dataService.setCropTotals(totals);
+  }
+
+  warnTotalAcres(): boolean {
+    const usedAcres = this.herdTotals.acres + this.cropTotals.acres;
+    return usedAcres > this.manor.clearedAcres;
   }
 }

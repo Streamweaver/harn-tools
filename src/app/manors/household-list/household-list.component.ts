@@ -12,6 +12,7 @@ export class HouseholdListComponent implements OnInit {
   @Input('manor') manor: Manor;
   private _hg: HouseholdGenerator;
   householdKind: number;
+  showGenerationInput: boolean;
 
   constructor(private dataService: SharedDataService) {
   }
@@ -19,6 +20,7 @@ export class HouseholdListComponent implements OnInit {
   ngOnInit() {
     this._hg = new HouseholdGenerator();
     this.dataService.householdKind.subscribe(k => (this.householdKind = k));
+    this.dataService.showGenerationInput.subscribe(g => this.showGenerationInput = g);
   }
 
   updateTotal() {

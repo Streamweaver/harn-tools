@@ -58,6 +58,7 @@ export class ManorComponent implements OnInit {
   ngOnInit() {
     this.dice = new NumberGenerator();
     this.manor = ManorFactory.getManor();
+    this.dataService.showGenerationInput.subscribe(g => this.showGenerationInput = g);
     this.createForm();
 
     this.tenantGenerator = new TenantGenerator();
@@ -76,7 +77,7 @@ export class ManorComponent implements OnInit {
   private _reset() {
     this.manor.reset();
     this.dataService.reset();
-    this.showGenerationInput = true;
+    this.setShowGenerationInput(true);
   }
 
   onResetClick() {
@@ -84,7 +85,7 @@ export class ManorComponent implements OnInit {
   }
 
   onGenerateClick() {
-    this.showGenerationInput = false;
+    this.toggleShowGenerationInput();
     this.tenantGenerator.generateTenants(this.manor);
     this.craftsmanGenerator.assignCraftsmen(this.manor);
     this.yeomanGenerator.recruitYeoman(this.manor);
@@ -107,5 +108,14 @@ export class ManorComponent implements OnInit {
       name: [''],
       realm: [''],
     });
+  }
+
+  toggleShowGenerationInput() {
+    this.setShowGenerationInput(!this.showGenerationInput);
+  }
+
+  setShowGenerationInput(b: boolean) {
+    this.showGenerationInput = b;
+    this.dataService.setShowGenerationInput(b);
   }
 }

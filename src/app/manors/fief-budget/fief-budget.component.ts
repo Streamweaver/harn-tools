@@ -22,6 +22,7 @@ export class FiefBudgetComponent implements OnInit, DoCheck {
   budgetForm: FormGroup;
   beadleIndex: any;
   warnLabor: boolean;
+  showGenerationInput: boolean;
 
   constructor(private dataService: SharedDataService, private fb: FormBuilder) {
     this.beadleIndex = beadleResultIndex;
@@ -30,6 +31,7 @@ export class FiefBudgetComponent implements OnInit, DoCheck {
   ngOnInit() {
     this.dataService.crops.subscribe(cropTotals => (this.crops = cropTotals));
     this.dataService.herds.subscribe(herdTotals => (this.herds = herdTotals));
+    this.dataService.showGenerationInput.subscribe(g => this.showGenerationInput = g);
     this.createForm();
     this.warnLabor = false;
   }
@@ -45,11 +47,18 @@ export class FiefBudgetComponent implements OnInit, DoCheck {
 
   createForm() {
     this.budgetForm = this.fb.group({
-      woodsWorked: [0, [Validators.required, Validators.min(0)]],
+      woodsWorked: [0, [
+        Validators.required,
+        Validators.min(0),
+        Validators.max(this.manor.woodlandAcres)]],
       cropSeed: [0, [Validators.required, Validators.min(0)]],
       winterFeed: [0, [Validators.required, Validators.min(0)]],
-      fiefMaintenance: [0, [Validators.required, Validators.min(0)]],
-      assart: [0, [Validators.required, Validators.min(0)]]
+      fiefMaintenance: [0, [
+        Validators.required,
+        Validators.min(0),
+        Validators.max(this.manor.clearedAcres)
+      ]],
+      assart: [0, [Validators.required, Validators.min(0), Validators.max(this.manor.woodlandAcres)]]
     });
   }
 
@@ -138,5 +147,16 @@ export class FiefBudgetComponent implements OnInit, DoCheck {
       Validators.min(0),
       Validators.max(this.manor.woodlandAcres)]);
     this.budgetForm.controls['woodsWorked'].updateValueAndValidity();
+    this.budgetForm.controls['fiefMaintenance'].setValidators([
+      Validators.required,
+      Validators.min(0),
+      Validators.max(this.manor.clearedAcres)
+    ]);
+    this.budgetForm.controls['fiefMaintenance'].updateValueAndValidity();
+    this.budgetForm.controls['assart'].setValidators([
+      Validators.required,
+      Validators.min(0),
+      Validators.max(this.manor.woodlandAcres)]);
+    this.budgetForm.controls['assart'].updateValueAndValidity();
   }
 }

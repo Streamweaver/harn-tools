@@ -28,21 +28,10 @@
       <i class="far fa-trash-alt"></i>
       Reset
     </button>
-    <a class="btn btn-secondary btn-sm" data-toggle="collapse" href="#collapsePolicies" role="button"
-       aria-expanded="false" aria-controls="collapsePolicies"
-    *ngIf="showGenerationInput">
-      <i class="fas fa-cog"></i>
-      Policies
-    </a>
     </div>
   </div>
 
   <hr class="small">
-
-  <div class="collapse" id="collapsePolicies" *ngIf="showGenerationInput">
-    <app-policies [policies]="manor.policies"></app-policies>
-    <hr class="small">
-  </div>
 
   <div class="row sm-gutters">
     <div class="col-md-4">
@@ -50,6 +39,7 @@
     </div>
     <div class="col">
       <app-household-list [manor]="manor"></app-household-list>
+      <app-policies [policies]="manor.policies"></app-policies>
     </div>
   </div>
 
@@ -61,6 +51,7 @@
       <app-crop-list [manor]="manor"></app-crop-list>
     </div>
   </div>
+
   <div class="row">
     <div class="col">
       <app-lords-budget [manor]="manor"></app-lords-budget>
@@ -79,4 +70,3 @@
 </div>
 
 <app-tenant-list [manor]="manor"></app-tenant-list>
- {{manor | json}}

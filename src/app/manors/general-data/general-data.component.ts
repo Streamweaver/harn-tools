@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NumberGenerator} from '../../shared/generators/number-generator';
 import {Manor, Topology, TopologyEffects} from '../shared/models/manor.model';
+import {SharedDataService} from '../shared/services/shared-data.service';
 import {maxGrossAcres} from '../shared/utilities';
 
 @Component({
@@ -12,13 +13,18 @@ import {maxGrossAcres} from '../shared/utilities';
 export class GeneralDataComponent implements OnInit {
   @Input('manor') manor: Manor;
   generalDataForm: FormGroup;
+  showGenerationInput: boolean;
   private dice: NumberGenerator;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private dataService: SharedDataService
+  ) {
   }
 
   ngOnInit() {
     this.dice = new NumberGenerator();
+    this.dataService.showGenerationInput.subscribe(g => this.showGenerationInput = g);
     this.createForm();
   }
 

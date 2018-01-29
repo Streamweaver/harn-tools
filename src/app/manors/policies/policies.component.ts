@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Policies} from '../shared/models/manor.model';
+import {SharedDataService} from '../shared/services/shared-data.service';
 
 @Component({
   selector: 'app-policies',
@@ -10,13 +11,18 @@ import {Policies} from '../shared/models/manor.model';
 export class PoliciesComponent implements OnInit {
   @Input('policies') policies: Policies;
   policiesForm: FormGroup;
+  showGenerationInput: boolean;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private dataService: SharedDataService
+  ) {
   }
 
   ngOnInit() {
     this.createForm();
     this.initForm();
+    this.dataService.showGenerationInput.subscribe(g => this.showGenerationInput = g);
   }
 
   createForm() {

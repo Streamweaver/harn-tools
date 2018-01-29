@@ -1,4 +1,4 @@
-<table class="table table-striped table-sm" [formGroup]="budgetForm">
+<table class="table table-striped table-sm" [formGroup]="budgetForm" *ngIf="!showGenerationInput">
   <thead class="thead-dark">
   <tr>
     <th class="font-weight-bold">Fief's Budget</th>
@@ -138,6 +138,10 @@
     </td>
     <td class="font-weight-bold text-right">{{fiefIncomeKind() | number}}d</td>
   </tr>
+  <tr *ngIf="warnLabor">
+    <td colspan="6" class="alert alert-danger">
+      Current work plan requires more labor than is available, adjust to reduce below Labor Obligation.
+    </td>
+  </tr>
   </tbody>
 </table>
-{{ manor.grossAcres }}

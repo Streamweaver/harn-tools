@@ -13,12 +13,16 @@ import {checkResultIndex} from '../shared/utilities';
 export class HerdListComponent implements OnInit {
   @Input('manor') manor: Manor;
   herdTotals: SectionSummary;
+  cropTotals: SectionSummary;
+  showGenerationInput: boolean;
 
   constructor(private dataService: SharedDataService) {
   }
 
   ngOnInit() {
     this.dataService.herds.subscribe(ht => this.herdTotals = ht);
+    this.dataService.crops.subscribe(ct => this.cropTotals = ct);
+    this.dataService.showGenerationInput.subscribe(g => this.showGenerationInput = g);
   }
 
   herderIndex(herd: Herd): number {
@@ -58,4 +62,8 @@ export class HerdListComponent implements OnInit {
     this.dataService.setHerdTotals(total);
   }
 
+  warnTotalAcres(): boolean {
+    const usedAcres = this.herdTotals.acres + this.cropTotals.acres;
+    return usedAcres > this.manor.clearedAcres;
+  }
 }
