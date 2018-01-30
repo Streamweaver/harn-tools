@@ -2,7 +2,7 @@
   <h1>Distance & Travel Tool</h1>
   <p>This is used to calculate various distances and travel rates in Harn.</p>
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 mt-1">
       <div class="card">
         <div class="card-header"><h4>Distance Conversion</h4></div>
         <div class="card-body" [formGroup]="distanceForm">
@@ -34,7 +34,7 @@
         <div class="card-footer"><small>* Miles & Kilometers use round conversion numbers for consistency with Harn World.</small></div>
       </div>
     </div>
-    <div class="col">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 mt-1">
       <app-movement [distances]="distanceForm"></app-movement>
     </div>
   </div>

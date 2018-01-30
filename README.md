@@ -30,3 +30,10 @@ For testing we're using github-pages and deploying via thoughts from the post by
 ```
 git subtree push --prefix dist origin gh-pages
 ```
+
+**Reminder to myself of process**
+# Run the normal build `ng build --base-href=/harn-tools/`
+# Commit the changes (generally doing this on master since it's a build)
+# Push branch to github
+# Subtree push to gh-pages `git subtree push --prefix dist origin gh-pages`
+# Sometimes this seems to cause a problem, delete gh-pages branch on GitHub and repush.
