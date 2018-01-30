@@ -2,9 +2,9 @@ import csv, json
 
 def writeNames():
     names = { 'male': [], 'female': [] }
-    with open('englishGivenNames.data.json', 'w') as jsonFile:
-        names['male'] = parseNames('MaleNames.csv')
-        names['female'] = parseNames('FemaleNames.csv')
+    with open('SaxonGivenNames.data.json', 'w') as jsonFile:
+        names['male'] = parseNames('SaxonMaleNames.csv')
+        names['female'] = parseNames('SaxonFemaleNames.csv')
         json.dump(names, jsonFile)
 
 def parseNames(filename):
@@ -14,8 +14,9 @@ def parseNames(filename):
         for row in nameReader:
             for item in row:
                 if item:
-                    words = item.split()
-                    names.append(words[0].replace('?', ''))
+                    words = item.split(',')
+                    for word in words:
+                      names.append(word.replace('?', '').strip())
     return names
 
 if __name__ == '__main__':

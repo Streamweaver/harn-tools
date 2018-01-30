@@ -6,31 +6,36 @@
   <div class="row">
     <div class="col-md-2">
       <div class="btn-group" role="group" aria-label="Gender">
-        <button type="button" class="btn"
-          [ngClass]="selectedGender === gender.FEMALE ? 'active btn-dark' : 'btn-secondary'"
+        <button type="button" class="btn btn-secondary btn-outline-dark"
+          [ngClass]="selectedGender === gender.FEMALE ? 'active btn-dark' : null"
                 (click)="onGenderSelect(gender.FEMALE)"
         >Female</button>
-        <button type="button" class="btn"
-          [ngClass]="selectedGender === gender.MALE ? 'active btn-dark' : 'btn-secondary'"
+        <button type="button" class="btn btn-secondary btn-outline-dark"
+          [ngClass]="selectedGender === gender.MALE ? 'active btn-dark' : null"
                 (click)="onGenderSelect(gender.MALE)"
         >Male</button>
       </div>
     </div>
     <div class="col">
       <div class="btn-group float-right" role="group" aria-label="Culture">
-        <button type="button" class="btn btn-secondary active btn-dark selected disabled">Feudal</button>
-        <button type="button" class="btn btn-secondary disabled">Jarin</button>
-        <button type="button" class="btn btn-secondary disabled">Orbaleese</button>
-        <button type="button" class="btn btn-secondary disabled">Ivanian</button>
+        <button type="button" class="btn btn-secondary btn-outline-dark" (click)="onCultureSelect(culture.ENGLISH)"
+                [ngClass]="selectedCulture === culture.ENGLISH ? 'active btn-dark' : null">Feudal</button>
+        <button type="button" class="btn btn-secondary btn-outline-dark" (click)="onCultureSelect(culture.WELSH)"
+                [ngClass]="selectedCulture === culture.WELSH ? 'active btn-dark' : null">Jarin</button>
+        <button type="button" class="btn btn-secondary btn-outline-dark" (click)="onCultureSelect(culture.SAXON)"
+                [ngClass]="selectedCulture === culture.SAXON ? 'active btn-dark' : null">Pharic</button>
+        <button type="button" class="btn btn-secondary btn-outline-dark" disabled>Orbaleese</button>
+        <button type="button" class="btn btn-secondary btn-outline-dark" disabled>Ivanian</button>
       </div>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <h6 class="mt-2">Select Female/Male to Generate</h6>
+      <h6 class="mt-2">Select Gender or Culture to Generate</h6>
       <ul>
         <li *ngFor="let name of generatedNames">{{name}}</li>
       </ul>
+      <app-loading-spinner *ngIf="showSpinner" [msg]="'Loading names ...'"></app-loading-spinner>
     </div>
     <div class="col">
       <p class="mt-2">Currently, only Feudal names are generated.</p>

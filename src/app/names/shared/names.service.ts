@@ -4,23 +4,20 @@ import { of } from 'rxjs/observable/of';
 import { HttpClient} from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 import { IGivenNames } from './i-given-names';
+import {NameData} from './name-data.model';
 
 
 @Injectable()
 export class NamesService {
   lastNames: Observable<string[]>;
   givenNames: Observable<IGivenNames>;
+  nameData: Observable<NameData>;
 
   constructor(private http: HttpClient) {}
 
-  getLastNames(): Observable<string[]> {
-    this.lastNames = this.http.get<string[]>('/assets/data/englishSurnames.data.json');
-    return this.lastNames;
-  }
-
-  getGivenNames(): Observable<IGivenNames> {
-    this.givenNames = this.http.get<IGivenNames>('/assets/data/englishGivenNames.data.json');
-    return this.givenNames;
+  getEnglishNames(): Observable<NameData> {
+    this.nameData = this.http.get<NameData>('/assets/data/EnglishNames.data.json');
+    return this.nameData;
   }
 
   /**
@@ -31,13 +28,7 @@ export class NamesService {
    */
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-
-      // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
-
-      // TODO: better job of transforming error for user consumption
       this.log(`${operation} failed: ${error.message}`);
-
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
