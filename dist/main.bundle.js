@@ -289,7 +289,7 @@ var LoadingSpinnerComponent = (function () {
 /***/ "../../../../../src/app/core/main-page/main-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container page\">\n\n  <!-- Introduction Row -->\n  <h1 class=\"my-4\">Harn Tools</h1>\n  <p>This site contains a few tools I created to support play in my <a href=\"\" target=\"_blank\">Harn</a> and <a href=\"\" target=\"_blank\">HarnMaster</a> table-top RPG. </p>\n\n  <!-- Team Members Row -->\n  <div class=\"row\">\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"manors\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/assets/images/manor.png\" alt=\"Manor House\">\n      </a>\n      <h3>Manor Generator</h3>\n      <p>Generates a manor and villiage based on rules form the Harn Manor supplement and allows users to tweak and edit details as needed.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"names\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/assets/images/names.png\" alt=\"\">\n      </a>\n      <h3>Name Generator</h3>\n      <p>Generates random names for various culture on Harn.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"travel\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"/assets/images/travel.png\" alt=\"\">\n      </a>\n      <h3>Travel Distances/Converter</h3>\n      <p>Converts distances between various units and provides a dynamic travel speed table.</p>\n    </div>\n  </div>\n\n</div>\n"
+module.exports = "<div class=\"container page\">\n\n  <!-- Introduction Row -->\n  <h1 class=\"my-4\">Harn Tools</h1>\n  <p>This site contains a few tools I created to support play in my <a href=\"\" target=\"_blank\">Harn</a> and <a href=\"\" target=\"_blank\">HarnMaster</a> table-top RPG. </p>\n\n  <!-- Team Members Row -->\n  <div class=\"row\">\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"manors\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/manor.png\" alt=\"Manor House\">\n      </a>\n      <h3>Manor Generator</h3>\n      <p>Generates a manor and villiage based on rules form the Harn Manor supplement and allows users to tweak and edit details as needed.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"names\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/names.png\" alt=\"Harnic Names\">\n      </a>\n      <h3>Name Generator</h3>\n      <p>Generates random names for various culture on Harn.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"travel\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/travel.png\" alt=\"Travel\">\n      </a>\n      <h3>Travel Distances/Converter</h3>\n      <p>Converts distances between various units and provides a dynamic travel speed table.</p>\n    </div>\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -4155,13 +4155,13 @@ var NamesService = (function () {
         this.http = http;
     }
     NamesService.prototype.getEnglishNames = function () {
-        return this.getNames('/assets/data/EnglishNames.data.json');
+        return this.getNames('assets/data/EnglishNames.data.json');
     };
     NamesService.prototype.getWelshNames = function () {
-        return this.getNames('/assets/data/WelshNames.data.json');
+        return this.getNames('assets/data/WelshNames.data.json');
     };
     NamesService.prototype.getSaxonNames = function () {
-        return this.getNames('/assets/data/SaxonNames.data.json');
+        return this.getNames('assets/data/SaxonNames.data.json');
     };
     /**
      * Loads name data from the named file.

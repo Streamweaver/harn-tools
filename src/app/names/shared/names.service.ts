@@ -14,15 +14,15 @@ export class NamesService {
   constructor(private http: HttpClient) {}
 
   getEnglishNames(): Observable<NameData> {
-    return this.getNames('/assets/data/EnglishNames.data.json');
+    return this.getNames('assets/data/EnglishNames.data.json');
   }
 
   getWelshNames(): Observable<NameData> {
-    return this.getNames('/assets/data/WelshNames.data.json');
+    return this.getNames('assets/data/WelshNames.data.json');
   }
 
   getSaxonNames(): Observable<NameData> {
-    return this.getNames('/assets/data/SaxonNames.data.json');
+    return this.getNames('assets/data/SaxonNames.data.json');
   }
 
   /**
