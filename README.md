@@ -6,38 +6,27 @@ These are some simple tools for the tabletop roleplaying system Harn Master and 
 
 Name data derived from the following sources:
 * English Surnames in Northumberland https://www.s-gabriel.org/names/juetta/parish/surnames.html 
-* Medieval English Names http://www.infernaldreams.com/names/Europe/Medieval/England.htm
+* Medieval English, Welsh & Saxon Names http://www.infernaldreams.com/names/Europe/
 
-## Dependencies
 
-The 'dice-typescript' npm library requires global installation of the typings library. 
+## Development
+This is a standard angular 5 app. 
+
+1. Install node.js on your local system and `npm install -g @angular/cli typescript`
+1. Clone this repository.
+1. cd to project directory and install dependencies via `npm install`
+1. Serve just like any other angular app `ng serve --open`
+
+## Building
+
+Build via the standard `ng build` command. If deploying to subdirectory you can set the base href value through ng build like so:
+```bash
+ng build --base-href=/harn-tools/
 ```
-npm install -g typings
+
+## Publishing
+
+For testing we're using github-pages and deploying via thoughts from the post by @cobyism [here](https://gist.github.com/cobyism/4730490).  Run the actual build as above, commit those changes and push them to github, then do a subtree push via:
 ```
-
-## Development & Build Info
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.1.
-
-### Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-### Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-### Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-### Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-### Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-### Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+git subtree push --prefix dist origin gh-pages
+```
