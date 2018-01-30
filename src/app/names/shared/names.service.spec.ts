@@ -1,6 +1,6 @@
-import { TestBed, inject } from '@angular/core/testing';
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-import { NamesService } from './names.service';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {inject, TestBed} from '@angular/core/testing';
+import {NamesService} from './names.service';
 
 describe('NamesService', () => {
   beforeEach(() => {

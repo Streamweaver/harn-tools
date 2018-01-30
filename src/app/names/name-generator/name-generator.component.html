@@ -7,25 +7,31 @@
     <div class="col-xs-10 col-sm-10 col-md-6 mt-1">
       <div class="btn-group" role="group" aria-label="Gender">
         <button type="button" class="btn btn-secondary btn-outline-dark"
-          [ngClass]="selectedGender === gender.FEMALE ? 'active btn-dark' : null"
+                [ngClass]="selectedGender === gender.FEMALE ? 'active btn-dark' : null"
                 (click)="onGenderSelect(gender.FEMALE)"
-        >Female</button>
+        >Female
+        </button>
         <button type="button" class="btn btn-secondary btn-outline-dark"
-          [ngClass]="selectedGender === gender.MALE ? 'active btn-dark' : null"
+                [ngClass]="selectedGender === gender.MALE ? 'active btn-dark' : null"
                 (click)="onGenderSelect(gender.MALE)"
-        >Male</button>
+        >Male
+        </button>
       </div>
     </div>
     <div class="col-xs-10 col-sm-10 col-md-6 mt-1">
       <div class="btn-group" role="group" aria-label="Culture">
         <button type="button" class="btn btn-secondary btn-outline-dark" (click)="onCultureSelect(culture.ENGLISH)"
-                [ngClass]="selectedCulture === culture.ENGLISH ? 'active btn-dark' : null">Feudal</button>
+                [ngClass]="selectedCulture === culture.ENGLISH ? 'active btn-dark' : null">Feudal
+        </button>
         <button type="button" class="btn btn-secondary btn-outline-dark" (click)="onCultureSelect(culture.WELSH)"
-                [ngClass]="selectedCulture === culture.WELSH ? 'active btn-dark' : null">Jarin</button>
+                [ngClass]="selectedCulture === culture.WELSH ? 'active btn-dark' : null">Jarin
+        </button>
         <button type="button" class="btn btn-secondary btn-outline-dark" (click)="onCultureSelect(culture.SAXON)"
-                [ngClass]="selectedCulture === culture.SAXON ? 'active btn-dark' : null">Pharic</button>
+                [ngClass]="selectedCulture === culture.SAXON ? 'active btn-dark' : null">Pharic
+        </button>
         <button type="button" class="btn btn-secondary btn-outline-dark" (click)="onCultureSelect(culture.SCANDINAVIAN)"
-                [ngClass]="selectedCulture === culture.SCANDINAVIAN ? 'active btn-dark' : null">Ivinian</button>
+                [ngClass]="selectedCulture === culture.SCANDINAVIAN ? 'active btn-dark' : null">Ivinian
+        </button>
       </div>
     </div>
   </div>
@@ -39,14 +45,32 @@
     </div>
     <div class="col-xs-10 col-sm-10 col-md-6">
       <ul>
-        <li><strong>Feudal:</strong> Includes most common harnic names among the main kingdoms of Harn and the Thardic Republic.  In this generator this includes lists of names and surnames derived from cencus in England between the 15th and 16th centry.</li>
-        <li><strong>Jarin:</strong> Includes the older tribal/clannish cultures on Harn.  Somtimes these names appear in the Feudal Kingdoms, particularly in families on the frontier.  These names are also common in Harnic Barbarian Jarin clans.  In this generator this draws from a list of Welsh and Celtic names from the mid to early middle ages.</li>
-        <li><strong>Pharic:</strong> Includes various barbarian groups of Pharic origin on Harn such as the Chelni, Gozyda, Hodiri, Kath, Pagaelin and Tulwyn.  In this generator this draws from a list of Saxon names from the early-mid middle ages.</li>
-        <li><strong>Ivanian:</strong> Includes anyone of Ivanian descent, includin the occupying clans in Orbaal.  In th is generator this includes list of Scandinavian names from the mid to late middle ages.</li>
-        <li><strong>Orbaleese (Not Implemented):</strong> Includes the Orbaleese Jarin people in northern Harn and some northern Harnic Barbarian clans.  In this generator this includes list of Scots and Celtic names.</li>
+        <li><strong>Feudal:</strong> Includes most common harnic names among the main kingdoms of Harn and the Thardic
+          Republic. In this generator this includes lists of names and surnames derived from cencus in England between
+          the 15th and 16th centry.
+        </li>
+        <li><strong>Jarin:</strong> Includes the older tribal/clannish cultures on Harn. Somtimes these names appear in
+          the Feudal Kingdoms, particularly in families on the frontier. These names are also common in Harnic Barbarian
+          Jarin clans. In this generator this draws from a list of Welsh and Celtic names from the mid to early middle
+          ages.
+        </li>
+        <li><strong>Pharic:</strong> Includes various barbarian groups of Pharic origin on Harn such as the Chelni,
+          Gozyda, Hodiri, Kath, Pagaelin and Tulwyn. In this generator this draws from a list of Saxon names from the
+          early-mid middle ages.
+        </li>
+        <li><strong>Ivanian:</strong> Includes anyone of Ivanian descent, includin the occupying clans in Orbaal. In th
+          is generator this includes list of Scandinavian names from the mid to late middle ages.
+        </li>
+        <li><strong>Orbaleese (Not Implemented):</strong> Includes the Orbaleese Jarin people in northern Harn and some
+          northern Harnic Barbarian clans. In this generator this includes list of Scots and Celtic names.
+        </li>
       </ul>
       <h5>Note on Surnames</h5>
-      <p>Cultures that return only a given name don't have a deep tradition of lasting family surnames.  This is common in most of the regions of Harn outside the main Feudal Kingdoms.  Instead they often use descriptive, bynames or generational names such as 'the Red Beard' or 'daugher/son of' but even these practices vary greatly between groups.  Some may use a clan name, others may have multiple descriptive names.  Often in the Feudal Kingdoms, outsiders are referred to by their ehtnic group such as 'Wulfgar the Ivinian' or 'Grogar the Hodiri'.</p>
+      <p>Cultures that return only a given name don't have a deep tradition of lasting family surnames. This is common
+        in most of the regions of Harn outside the main Feudal Kingdoms. Instead they often use descriptive, bynames or
+        generational names such as 'the Red Beard' or 'daugher/son of' but even these practices vary greatly between
+        groups. Some may use a clan name, others may have multiple descriptive names. Often in the Feudal Kingdoms,
+        outsiders are referred to by their ehtnic group such as 'Wulfgar the Ivinian' or 'Grogar the Hodiri'.</p>
     </div>
   </div>
 </div>

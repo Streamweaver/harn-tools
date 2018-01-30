@@ -16,7 +16,7 @@ export class NameGeneratorComponent implements OnInit {
   selectedCulture: Culture;
   gender = Gender;
   culture = Culture;
-  nameData: NameData;
+  private nameData: NameData;
   generatedNames: string[];
 
   constructor(private namesService: NamesService) { }
@@ -29,7 +29,7 @@ export class NameGeneratorComponent implements OnInit {
     this.loadNames();
   }
 
-  loadNames(): void {
+  private loadNames(): void {
     this.showSpinner = true;
     switch (this.selectedCulture) {
       case Culture.ENGLISH:
@@ -88,7 +88,8 @@ export class NameGeneratorComponent implements OnInit {
     }
   }
 
-  generateRandomNames(n: number) {
+  private generateRandomNames(n: number) {
+    n = Math.min(n, this.numberNames());
     const result: string[] = [];
     const gn = (this.selectedGender === Gender.FEMALE) ? this.getFemaleFirstNames(n) : this.getMaleFirstNames(n);
     const sn = this.getRandomSurnames(n);
@@ -103,6 +104,19 @@ export class NameGeneratorComponent implements OnInit {
       result.push(name);
     }
     this.generatedNames = result;
+  }
+
+  private numberNames(): number {
+    let givenNameLength = 0;
+    if (this.selectedGender === Gender.FEMALE) {
+      givenNameLength = this.nameData.givenNames.female.length;
+    } else {
+      givenNameLength = this.nameData.givenNames.male.length;
+    }
+    if (this.nameData.surnames.length === 0) {
+      return givenNameLength;
+    }
+    return Math.max(this.nameData.surnames.length, givenNameLength);
   }
 
   private getMaleFirstNames(n: number): string[] {

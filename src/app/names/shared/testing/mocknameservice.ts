@@ -1,23 +1,35 @@
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
-import {IGivenNames} from '../i-given-names';
-import {HttpClient} from '@angular/common/http';
+import {NameData} from '../name-data.model';
 
 
 export class MockNamesService {
-  lastNames: Observable<string[]>;
-  givenNames: Observable<IGivenNames>;
 
-  getLastNames(): Observable<string[]> {
-    this.lastNames = Observable.of(['Lennon', 'McCartney', 'Starr', 'Harrison']);
-    return this.lastNames;
+
+  getEnglishNames(): Observable<NameData> {
+    return this.getNames('assets/data/EnglishNames.data.json');
   }
 
-  getGivenNames(): Observable<IGivenNames> {
-    this.givenNames = Observable.of({
-      male: ['John', 'Paul', 'Ringo', 'George'],
-      female: ['Yoko', 'Linda', 'Barbara', 'Olivia']
-    });
-    return this.givenNames;
+  getWelshNames(): Observable<NameData> {
+    return this.getNames('assets/data/WelshNames.data.json');
+  }
+
+  getSaxonNames(): Observable<NameData> {
+    return this.getNames('assets/data/SaxonNames.data.json');
+  }
+
+  getScandinavianNames(): Observable<NameData> {
+    return this.getNames('assets/data/ScandinavianNames.data.json');
+  }
+
+  private getNames(url: string): Observable<NameData> {
+    const nameDataFixture: NameData = {
+      givenNames: {
+        male: ['John', 'George', 'Ringo', 'Paul'],
+        female: ['Joan', 'Lita', 'Cheri', 'Vicki']
+      },
+      surnames: []
+    };
+    return Observable.of(nameDataFixture);
   }
 }
