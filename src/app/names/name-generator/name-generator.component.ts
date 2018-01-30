@@ -27,7 +27,6 @@ export class NameGeneratorComponent implements OnInit {
     this.selectedGender = Gender.FEMALE;
     this.selectedCulture = Culture.ENGLISH;
     this.loadNames();
-    this.generateRandomNames(10);
   }
 
   loadNames(): void {
@@ -37,19 +36,29 @@ export class NameGeneratorComponent implements OnInit {
         this.namesService.getEnglishNames().subscribe(
           nameData => { this.nameData = nameData; },
           err => console.log(err),
-          () => this.showSpinner = false);
+          () => {
+            this.showSpinner = false;
+            this.generateRandomNames(10);
+          });
         break;
-      // case Culture.WELSH:
-      //   this.namesService.getWelshGivenNames().subscribe(
-      //     givenNames => { this.givenNames = givenNames; },
-      //     err => console.log(err));
-      //   this.surnames = [];
-      //   break;
-      // case Culture.SAXON:
-      //   this.namesService.getSaxonGivenNames().subscribe(
-      //     givenNames => { this.givenNames = givenNames; },
-      //     err => console.log(err));
-      //   break;
+      case Culture.WELSH:
+        this.namesService.getWelshNames().subscribe(
+          nameData => this.nameData = nameData,
+          err => console.log(err),
+          () => {
+            this.showSpinner = false;
+            this.generateRandomNames(10);
+          });
+        break;
+      case Culture.SAXON:
+        this.namesService.getSaxonNames().subscribe(
+          nameData => this.nameData = nameData,
+          err => console.log(err),
+          () => {
+            this.showSpinner = false;
+            this.generateRandomNames(10);
+          });
+        break;
       default:
         this.nameData = {givenNames: {male: [], female: []}, surnames: []};
         break;
@@ -62,9 +71,12 @@ export class NameGeneratorComponent implements OnInit {
   }
 
   onCultureSelect(c: Culture) {
-    this.selectedCulture = c;
-    this.loadNames();
-    this.generateRandomNames(10);
+    if (this.selectedCulture !== c) {
+      this.selectedCulture = c;
+      this.loadNames();
+    } else {
+      this.generateRandomNames(10);
+    }
   }
 
   generateRandomNames(n: number) {

@@ -9,14 +9,28 @@ import {NameData} from './name-data.model';
 
 @Injectable()
 export class NamesService {
-  lastNames: Observable<string[]>;
-  givenNames: Observable<IGivenNames>;
   nameData: Observable<NameData>;
 
   constructor(private http: HttpClient) {}
 
   getEnglishNames(): Observable<NameData> {
-    this.nameData = this.http.get<NameData>('/assets/data/EnglishNames.data.json');
+    return this.getNames('/assets/data/EnglishNames.data.json');
+  }
+
+  getWelshNames(): Observable<NameData> {
+    return this.getNames('/assets/data/WelshNames.data.json');
+  }
+
+  getSaxonNames(): Observable<NameData> {
+    return this.getNames('/assets/data/SaxonNames.data.json');
+  }
+
+  /**
+   * Loads name data from the named file.
+   * @param {string} f string of namedata json file
+   */
+  private getNames(f: string): Observable<NameData> {
+    this.nameData = this.http.get<NameData>(f);
     return this.nameData;
   }
 
