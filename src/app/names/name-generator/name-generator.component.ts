@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NameData} from '../shared/name-data.model';
 import { NamesService } from '../shared/names.service';
 import { IGivenNames } from '../shared/i-given-names';
 import { Gender } from '../shared/gender.enum';
@@ -15,15 +16,8 @@ export class NameGeneratorComponent implements OnInit {
   selectedCulture: Culture;
   gender = Gender;
   culture = Culture;
-  givenNames: IGivenNames;
-  surnames: string[];
+  nameData: NameData;
   generatedNames: string[];
-  nameData: {
-      [key: number]: {
-        givenNames: IGivenNames,
-        lastNames: string[]
-      },
-    };
 
   constructor(private namesService: NamesService) { }
 
@@ -37,29 +31,28 @@ export class NameGeneratorComponent implements OnInit {
   }
 
   loadNames(): void {
+    this.showSpinner = true;
     switch (this.selectedCulture) {
       case Culture.ENGLISH:
-        this.namesService.getEnglishLastNames().subscribe(
-          lastNames => { this.surnames = lastNames; },
-          err => console.log(err));
-        this.namesService.getEnglishGivenNames().subscribe(
-          givenNames => { this.givenNames = givenNames; },
-          err => console.log(err));
+        this.namesService.getEnglishNames().subscribe(
+          nameData => { this.nameData = nameData; },
+          err => console.log(err),
+          () => this.showSpinner = false);
         break;
-      case Culture.WELSH:
-        this.namesService.getWelshGivenNames().subscribe(
-          givenNames => { this.givenNames = givenNames; },
-          err => console.log(err));
-        this.surnames = [];
-        break;
-      case Culture.SAXON:
-        this.namesService.getSaxonGivenNames().subscribe(
-          givenNames => { this.givenNames = givenNames; },
-          err => console.log(err));
-        break;
+      // case Culture.WELSH:
+      //   this.namesService.getWelshGivenNames().subscribe(
+      //     givenNames => { this.givenNames = givenNames; },
+      //     err => console.log(err));
+      //   this.surnames = [];
+      //   break;
+      // case Culture.SAXON:
+      //   this.namesService.getSaxonGivenNames().subscribe(
+      //     givenNames => { this.givenNames = givenNames; },
+      //     err => console.log(err));
+      //   break;
       default:
-        this.givenNames = {male: [], female: []};
-        this.surnames = [];
+        this.nameData = {givenNames: {male: [], female: []}, surnames: []};
+        break;
     }
   }
 
@@ -95,8 +88,8 @@ export class NameGeneratorComponent implements OnInit {
     const result: string[] = [];
     for (let i = 0; i < n; i++) {
       result.push(
-        this.givenNames.male[
-          Math.floor(Math.random() * this.givenNames.male.length)
+        this.nameData.givenNames.male[
+          Math.floor(Math.random() * this.nameData.givenNames.male.length)
           ]);
     }
     return result;
@@ -106,8 +99,8 @@ export class NameGeneratorComponent implements OnInit {
     const result: string[] = [];
     for (let i = 0; i < n; i++) {
       result.push(
-        this.givenNames.female[
-          Math.floor(Math.random() * this.givenNames.female.length)
+        this.nameData.givenNames.female[
+          Math.floor(Math.random() * this.nameData.givenNames.female.length)
           ]);
     }
     return result;
@@ -115,11 +108,11 @@ export class NameGeneratorComponent implements OnInit {
 
   private getRandomSurnames(n: number = 1): string[] {
     const result: string[] = [];
-    if (this.surnames.length > 0) {
+    if (this.nameData.surnames.length > 0) {
       for (let i = 0; i < n; i++) {
         result.push(
-          this.surnames[Math.floor(
-            Math.random() * this.surnames.length
+          this.nameData.surnames[Math.floor(
+            Math.random() * this.nameData.surnames.length
           )]);
       }
     }

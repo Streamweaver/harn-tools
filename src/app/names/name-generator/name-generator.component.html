@@ -24,8 +24,6 @@
                 [ngClass]="selectedCulture === culture.WELSH ? 'active btn-dark' : null">Jarin</button>
         <button type="button" class="btn btn-secondary btn-outline-dark" (click)="onCultureSelect(culture.SAXON)"
                 [ngClass]="selectedCulture === culture.SAXON ? 'active btn-dark' : null">Pharic</button>
-        <button type="button" class="btn btn-secondary btn-outline-dark" disabled>Orbaleese</button>
-        <button type="button" class="btn btn-secondary btn-outline-dark" disabled>Ivanian</button>
       </div>
     </div>
   </div>
@@ -41,9 +39,10 @@
       <p class="mt-2">Currently, only Feudal names are generated.</p>
       <ul>
         <li><strong>Feudal:</strong> Includes most common harnic names among the main kingdoms of Harn and the Thardic Republic.  In this generator this includes lists of names and surnames derived from cencus in England between the 15th and 16th centry.</li>
-        <li><strong>Jarin:</strong> Includes the older tribal/clannish cultures on Harn.  Somtimes these names appear in the Feudal Kingdoms, particularly in families on the frontier.  These names are also common in Harnic Barbarian Jarin clans.  In this generator this includes list of Welsh and Celtic names from the mid to early middle ages.</li>
-        <li><strong>Orbaleese:</strong> Includes the Orbaleese Jarin people in northern Harn and some northern Harnic Barbarian clans.  In this generator this includes list of Scots and Celtic names.</li>
-        <li><strong>Ivanian:</strong> Includes anyone of Ivanian descent, includin the occupying clans in Orbaal.  In th is generator this includes list of Scandinavian names from the mid to late middle ages.</li>
+        <li><strong>Jarin:</strong> Includes the older tribal/clannish cultures on Harn.  Somtimes these names appear in the Feudal Kingdoms, particularly in families on the frontier.  These names are also common in Harnic Barbarian Jarin clans.  In this generator this draws from a list of Welsh and Celtic names from the mid to early middle ages.</li>
+        <li><strong>Pharic:</strong> Includes various barbarian groups of Pharic origin on Harn such as the Chelni, Gozyda, Hodiri, Kath, Pagaelin and Tulwyn.  In this generator this draws from a list of Saxon names from the early-mid middle ages.</li>
+        <li><strong>Orbaleese (Not Implemented):</strong> Includes the Orbaleese Jarin people in northern Harn and some northern Harnic Barbarian clans.  In this generator this includes list of Scots and Celtic names.</li>
+        <li><strong>Ivanian (Not Implemented):</strong> Includes anyone of Ivanian descent, includin the occupying clans in Orbaal.  In th is generator this includes list of Scandinavian names from the mid to late middle ages.</li>
       </ul>
     </div>
   </div>
