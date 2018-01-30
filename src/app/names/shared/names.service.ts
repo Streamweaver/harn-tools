@@ -25,6 +25,10 @@ export class NamesService {
     return this.getNames('assets/data/SaxonNames.data.json');
   }
 
+  getScandinavianNames(): Observable<NameData> {
+    return this.getNames('assets/data/ScandinavianNames.data.json');
+  }
+
   /**
    * Loads name data from the named file.
    * @param {string} f string of namedata json file

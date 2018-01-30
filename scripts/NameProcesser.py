@@ -1,15 +1,17 @@
 import csv, json
 
 def writeNames():
-    names = { 'male': [], 'female': [] }
-    with open('SaxonGivenNames.data.json', 'w') as jsonFile:
-        names['male'] = parseNames('SaxonMaleNames.csv')
-        names['female'] = parseNames('SaxonFemaleNames.csv')
-        json.dump(names, jsonFile)
+    given_names = { 'male': [], 'female': [] }
+    surnames = []
+    with open('ScandinavianNames.data.json', 'w', encoding='utf-8') as jsonFile:
+        given_names['male'] = parseNames('ScandinavianMaleNames.csv')
+        given_names['female'] = parseNames('ScandinavianFemaleNames.csv')
+        # surnames = praseNames()
+        json.dump({'given_names': given_names, 'surnames': surnames}, jsonFile)
 
 def parseNames(filename):
     names = []
-    with open(filename) as nameFile:
+    with open(filename, encoding='utf-8') as nameFile:
         nameReader = csv.reader(nameFile)
         for row in nameReader:
             for item in row:

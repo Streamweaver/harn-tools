@@ -59,6 +59,15 @@ export class NameGeneratorComponent implements OnInit {
             this.generateRandomNames(10);
           });
         break;
+        case Culture.SCANDINAVIAN:
+          this.namesService.getScandinavianNames().subscribe(
+            nameData => this.nameData = nameData,
+            err => console.log(err),
+            () => {
+              this.showSpinner = false;
+              this.generateRandomNames(10);
+            });
+          break;
       default:
         this.nameData = {givenNames: {male: [], female: []}, surnames: []};
         break;

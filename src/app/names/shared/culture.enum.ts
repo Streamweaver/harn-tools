@@ -1,5 +1,6 @@
 export enum Culture {
   ENGLISH,
   WELSH,
-  SAXON
+  SAXON,
+  SCANDINAVIAN
 }
