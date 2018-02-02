@@ -1,6 +1,6 @@
 import {ArmorType} from './armor-type.enum';
 
-export interface ArmorData {
+export interface Armor {
   name: string;
   type: string;
   skull: boolean;
@@ -23,18 +23,4 @@ export interface ArmorData {
   feet: boolean;
   baseWeight: number;
   baseCost: number;
-}
-
-export class ArmorEntryModel {
-  type: ArmorType;
-  quality: number;
-  data: ArmorData;
-
-  constructor(data: ArmorData) {
-    this.data = data;
-  }
-
-  displayName(): string {
-    return `${this.data.type} ${this.data.name}`;
-  }
 }

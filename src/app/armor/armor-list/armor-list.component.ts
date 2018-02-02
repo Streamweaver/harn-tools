@@ -1,6 +1,7 @@
 import {TitleCasePipe} from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import {ArmorEntryModel} from '../shared/armor-entry.model';
+import {Observable} from 'rxjs/Observable';
+import {Armor} from '../shared/armor-entry.model';
 import {ArmorService} from '../shared/armor.service';
 
 @Component({
@@ -9,17 +10,12 @@ import {ArmorService} from '../shared/armor.service';
   styleUrls: ['./armor-list.component.scss']
 })
 export class ArmorListComponent implements OnInit {
-  armorList: ArmorEntryModel[];
+  armorList: Armor[];
 
   constructor(private armorService: ArmorService) { }
 
   ngOnInit() {
-    this.armorList = [];
-    this.armorService.loadArmor().subscribe(data => {
-      for (const item of data) {
-        this.armorList.push(new ArmorEntryModel(item));
-      }
-    });
+    this.armorService.loadArmor().subscribe(data => this.armorList = data);
   }
 
 }

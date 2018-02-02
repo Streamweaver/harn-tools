@@ -1,6 +1,13 @@
 <div class="container page">
-  armor-list works!
-  <ul>
-    <li *ngFor="let item of armorList">{{item.displayName() | titlecase}}</li>
-  </ul>
+  <h2>Armor.... look out behind you!!!</h2>
+  <div class="card border">
+    <div class="card-header text-primary">
+      <span class="font-weight-bold large">Armor List</span>
+    </div>
+    <div class="card-body">
+      <div class="list-group-item" *ngFor="let item of armorList">
+        {{item.type | titlecase}} {{item.name | titlecase}}
+      </div>
+    </div>
+  </div>
 </div>
