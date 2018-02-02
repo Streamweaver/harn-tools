@@ -11,11 +11,18 @@ import {ArmorService} from '../shared/armor.service';
 })
 export class ArmorListComponent implements OnInit {
   armorList: Armor[];
+  armorWorn: Armor[];
+  receivedData: Array<any> = [];
 
   constructor(private armorService: ArmorService) { }
 
   ngOnInit() {
+    this.armorWorn = [];
     this.armorService.loadArmor().subscribe(data => this.armorList = data);
   }
 
+  transferDataSuccess($event: any) {
+    this.armorWorn.push($event.dragData);
+    this.receivedData.push($event);
+  }
 }

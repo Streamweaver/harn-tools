@@ -25,6 +25,7 @@
     "bootstrap": "^4.0.0",
     "core-js": "^2.4.1",
     "jquery": "^3.3.1",
+    "ng2-dnd": "^5.0.2",
     "pinkie": "^2.0.4",
     "popper.js": "^1.13.0",
     "random-weighted-choice": "^0.1.3",
