@@ -1,4 +1,4 @@
-import {ArmorType} from './armor-type.enum';
+import {ArmorType} from './armor.enum';
 
 export interface Armor {
   name: string;
