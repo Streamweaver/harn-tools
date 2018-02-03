@@ -21,8 +21,18 @@ export class ArmorListComponent implements OnInit {
     this.armorService.loadArmor().subscribe(data => this.armorList = data);
   }
 
-  transferDataSuccess($event: any) {
-    this.armorWorn.push($event.dragData);
-    this.receivedData.push($event);
+  addWornArmor($event: any) {
+    this.armorWorn.push($event.dragData[0]);
+    console.log($event);
+  }
+
+  armorCoverageDescription(armor: Armor): string {
+    const props: string[] = [];
+    for (const prop in armor) {
+      if (typeof armor[prop] === 'boolean' && armor[prop]) {
+        props.push(prop);
+      }
+    }
+    return props.join('-');
   }
 }
