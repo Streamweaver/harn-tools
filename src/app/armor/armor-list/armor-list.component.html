@@ -20,6 +20,7 @@
           </div>
         </div>
         <div class="card-body">
+
           <div *ngFor="let item of armorList; let i = index" class="list-group-item row" dnd-draggable
                [dragEnabled]="true" [dragData]="item" [dropZones]="['body']">
             <div class="d-flex w-100 justify-content-between">
@@ -27,6 +28,7 @@
               <small>{{item.basePrice}}d/{{item.baseWeight}}lb</small>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -39,10 +41,10 @@
           <div *ngFor="let item of armorWorn" dnd-draggable [dragEnabled]="true"
                [dragData]="item" [dropZones]="['trash']">
             <div class="list-group-item">
-              <div class="d-flex w-100 justify-content-between">
-                <h5 class="mb-1">{{item.name | titlecase}}</h5>
-                <small>{{item.price()}}d/{{item.baseWeight}}lb</small>
-                <div>
+              <div class="d-flex">
+                <h5 class="mr-auto p-1">{{item.name | titlecase}}</h5>
+                <div class="p-1 pr-2">{{item.price()}}d/{{item.baseWeight}}lb</div>
+                <div class="p-1 text-center">Qlty:
                   <a (click)="item.decreaseQuality()"><i class="far fa-minus-square"></i></a>
                   {{item.quality}}
                   <a (click)="item.increaseQuality()"><i class="far fa-plus-square"></i></a>
