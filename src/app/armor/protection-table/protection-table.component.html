@@ -1,0 +1,22 @@
+<h5>Total Protection Values</h5>
+<table class="table table-striped table-bordered table-sm">
+  <thead class="thead-light">
+  <tr>
+    <th class="font-weight-bold">Location</th>
+    <th class="font-weight-bold text-center">B</th>
+    <th class="font-weight-bold text-center">E</th>
+    <th class="font-weight-bold text-center">P</th>
+    <th class="font-weight-bold text-center">F</th>
+  </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let location of locationList()">
+      <tr>
+        <td class="font-weight-bold">{{locationLabels[location] | titlecase}}</td>
+        <ng-container *ngFor="let protectionType of protectionList()">
+          <td class="text-center">{{locationProtection(location, protectionType)}}</td>
+        </ng-container>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

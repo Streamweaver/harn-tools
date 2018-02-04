@@ -1,13 +1,38 @@
-<div class="container page">
-  <h2>Armor.... look out behind you!!!</h2>
-  <div class="card border">
-    <div class="card-header text-primary">
-      <span class="font-weight-bold large">Armor List</span>
-    </div>
-    <div class="card-body">
-      <div class="list-group-item" *ngFor="let item of armorList">
-        {{item.type | titlecase}} {{item.name | titlecase}}
+<div class="container-fluid page">
+  <h2>Armor, because.... look out behind you!!!</h2>
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card border border-dark">
+        <div class="card-header bg-dark text-light"><h5 class="card-title">Available Armor</h5></div>
+        <div class="card-body">
+          <div *ngFor="let item of armorList; let i = index" class="list-group-item row" dnd-draggable [dragEnabled]="true" [dragData]="item">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">{{item.name | titlecase}}</h5>
+              <small>{{item.basePrice}}d/{{item.baseWeight}}lb</small>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="col-md-4">
+      <div class="card border border-dark fixed">
+        <div class="card-header bg-dark"><h5 class="card-title text-light">Armor Worn</h5></div>
+        <div class="card-body" dnd-droppable (onDropSuccess)="addWornArmor($event)">
+          <div [hidden]="!armorWorn.length > 0" *ngFor="let item of armorWorn">
+            <div class="list-group-item">
+              <div>{{item.name | titlecase}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{armorWorn | json}}
+    </div>
+
+    <div class="col-md-4">
+      <app-protection-table [armorWorn]="armorWorn"></app-protection-table>
+    </div>
+
   </div>
 </div>
