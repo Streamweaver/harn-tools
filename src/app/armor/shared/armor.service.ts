@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import { Armor } from './armor-entry.model';
+import { Armor } from './armor.model';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable()

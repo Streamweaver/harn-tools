@@ -1,7 +1,8 @@
 import {TitleCasePipe} from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {Armor} from '../shared/armor-entry.model';
+import {ArmorType} from '../shared/armor.enum';
+import {Armor, ArmorPiece} from '../shared/armor.model';
 import {ArmorList} from '../shared/armor.data';
 import {ArmorService} from '../shared/armor.service';
 
@@ -12,18 +13,40 @@ import {ArmorService} from '../shared/armor.service';
 })
 export class ArmorListComponent implements OnInit {
   armorList: Armor[];
-  armorWorn: Armor[];
+  armorWorn: ArmorPiece[];
+  armorType = ArmorType;
 
   constructor() { }
 
   ngOnInit() {
     this.armorWorn = [];
-    this.armorList = ArmorList;
+    this.filterArmor();
   }
 
   addWornArmor($event: any) {
-    console.log($event);
-    this.armorWorn.push($event.dragData);
+    const data: Armor = <Armor>$event.dragData;
+    this.armorWorn.push(new ArmorPiece(
+      data.name,
+      data.type,
+      data.baseWeight,
+      data.basePrice,
+      data.coverage
+    ));
+  }
+
+  removeWornArmor($event: any) {
+    const idx = this.armorWorn.indexOf($event.dragData);
+    if (idx > -1) {
+      this.armorWorn.splice(idx, 1);
+    }
+  }
+
+  filterArmor(armorType: ArmorType = null) {
+    if (armorType === null) {
+      this.armorList = ArmorList;
+    } else {
+      this.armorList = ArmorList.filter(armor => armor.type === armorType);
+    }
   }
 
   armorCoverageDescription(armor: Armor): string {

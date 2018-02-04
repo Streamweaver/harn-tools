@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ArmorType, ArmorLocation, ArmorProtection, ArmorLocationLabels, ArmorLabelType } from '../shared/armor.enum';
-import {Armor} from '../shared/armor-entry.model';
+import {Armor, ArmorPiece} from '../shared/armor.model';
 import {ProtectionValue} from '../shared/armor.data';
 
 @Component({
@@ -9,7 +9,7 @@ import {ProtectionValue} from '../shared/armor.data';
   styleUrls: ['./protection-table.component.scss']
 })
 export class ProtectionTableComponent implements OnInit {
-  @Input('armorWorn') armorWorn: Armor[];
+  @Input('armorWorn') armorWorn: ArmorPiece[];
   protection = ArmorProtection;
   location = ArmorLocation;
   locationLabels = ArmorLocationLabels;
@@ -23,10 +23,26 @@ export class ProtectionTableComponent implements OnInit {
     let protection = 0;
     for (const item of this.armorWorn) {
       if (item.coverage[location]) {
-        protection += ProtectionValue[item.type][damageType];
+        protection += item.protection(damageType);
       }
     }
     return protection;
+  }
+
+  totalWeight(): number {
+    let weight = 0;
+    for (const item of this.armorWorn) {
+      weight += item.baseWeight;
+    }
+    return weight;
+  }
+
+  totalValue(): number {
+    let price = 0;
+    for (const item of this.armorWorn) {
+      price += item.price();
+    }
+    return price;
   }
 
   locationList(): ArmorLocation[] {

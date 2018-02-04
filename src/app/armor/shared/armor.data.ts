@@ -1,4 +1,4 @@
-import {Armor} from './armor-entry.model';
+import {Armor} from './armor.model';
 import {ArmorLocation, ArmorProtection, ArmorType} from './armor.enum';
 
 export const ProtectionValue = {
