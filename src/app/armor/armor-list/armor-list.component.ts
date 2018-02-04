@@ -2,6 +2,7 @@ import {TitleCasePipe} from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import {Armor} from '../shared/armor-entry.model';
+import {ArmorList} from '../shared/armor.data';
 import {ArmorService} from '../shared/armor.service';
 
 @Component({
@@ -12,18 +13,17 @@ import {ArmorService} from '../shared/armor.service';
 export class ArmorListComponent implements OnInit {
   armorList: Armor[];
   armorWorn: Armor[];
-  receivedData: Array<any> = [];
 
-  constructor(private armorService: ArmorService) { }
+  constructor() { }
 
   ngOnInit() {
     this.armorWorn = [];
-    this.armorService.loadArmor().subscribe(data => this.armorList = data);
+    this.armorList = ArmorList;
   }
 
   addWornArmor($event: any) {
-    this.armorWorn.push($event.dragData[0]);
     console.log($event);
+    this.armorWorn.push($event.dragData);
   }
 
   armorCoverageDescription(armor: Armor): string {

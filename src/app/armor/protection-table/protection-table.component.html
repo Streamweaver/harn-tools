@@ -1,20 +1,22 @@
+<h5>Total Protection Values</h5>
 <table class="table table-striped table-bordered table-sm">
   <thead class="thead-light">
   <tr>
-    <th>Location</th>
-    <th class="text-center">B</th>
-    <th class="text-center">E</th>
-    <th class="text-center">P</th>
-    <th class="text-center">F</th>
+    <th class="font-weight-bold">Location</th>
+    <th class="font-weight-bold text-center">B</th>
+    <th class="font-weight-bold text-center">E</th>
+    <th class="font-weight-bold text-center">P</th>
+    <th class="font-weight-bold text-center">F</th>
   </tr>
   </thead>
   <tbody>
-    <tr>
-      <td class="font-weight-bold">Skull</td>
-      <td class="text-center">{{locationProtection(location.Skull, protection.Blunt)}}</td>
-      <td class="text-center">{{locationProtection(location.Skull, protection.Edge)}}</td>
-      <td class="text-center">{{locationProtection(location.Skull, protection.Pierce)}}</td>
-      <td class="text-center">{{locationProtection(location.Skull, protection.Fire)}}</td>
-    </tr>
+    <ng-container *ngFor="let location of locationList()">
+      <tr>
+        <td class="font-weight-bold">{{locationLabels[location] | titlecase}}</td>
+        <ng-container *ngFor="let protectionType of protectionList()">
+          <td class="text-center">{{locationProtection(location, protectionType)}}</td>
+        </ng-container>
+      </tr>
+    </ng-container>
   </tbody>
 </table>
