@@ -34,8 +34,8 @@ git subtree push --prefix dist origin gh-pages
 ```
 
 **Reminder to myself of process**
-# Run the normal build `ng build --base-href=/harn-tools/`
-# Commit the changes (generally doing this on master since it's a build)
-# Push branch to github
-# Subtree push to gh-pages `git subtree push --prefix dist origin gh-pages`
-# Sometimes this seems to cause a problem, delete gh-pages branch on GitHub and repush.
+1. Run the normal build `ng build --base-href=/harn-tools/`
+1. Commit the changes (generally doing this on master since it's a build)
+1. Push branch to github
+1. Subtree push to gh-pages `git subtree push --prefix dist origin gh-pages`
+1. Sometimes this seems to cause a problem, delete gh-pages branch on GitHub and repush.
