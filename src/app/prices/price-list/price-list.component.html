@@ -1,6 +1,7 @@
 <div class="container-fluid page">
-  <h2>Price List</h2>
+  <h2>Harnic Price List</h2>
   <p>By Dakin Burdick (2015) based on Steve McDonald's work, v. 2.0 Feb 1997 </p>
+  <p>Prices are general base prices and may vary in location based on supply and demand.</p>
   <app-loading-spinner *ngIf="!displayList" [msg]="'Loading Prices ...'"></app-loading-spinner>
   <div class="form-inline" *ngIf="displayList">
     <div class="input-group mb-2 mr-sm-2">
@@ -38,8 +39,8 @@
     <thead class="table-dark">
     <tr>
       <td>Item</td>
-      <td>Price</td>
-      <td></td>
+      <td>Price(d)</td>
+      <td>Common Price</td>
       <td>Vendor</td>
       <td>Catagory</td>
       <td>Subcatagory</td>
