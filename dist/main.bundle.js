@@ -25,11 +25,12 @@ webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy re
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__core_main_page_main_page_component__ = __webpack_require__("../../../../../src/app/core/main-page/main-page.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__core_page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/core/page-not-found/page-not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__travel_distance_distance_component__ = __webpack_require__("../../../../../src/app/travel/distance/distance.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__names_name_generator_name_generator_component__ = __webpack_require__("../../../../../src/app/names/name-generator/name-generator.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__manors_manor_manor_component__ = __webpack_require__("../../../../../src/app/manors/manor/manor.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__armor_armor_list_armor_list_component__ = __webpack_require__("../../../../../src/app/armor/armor-list/armor-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__prices_price_list_price_list_component__ = __webpack_require__("../../../../../src/app/prices/price-list/price-list.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__travel_distance_distance_component__ = __webpack_require__("../../../../../src/app/travel/distance/distance.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__names_name_generator_name_generator_component__ = __webpack_require__("../../../../../src/app/names/name-generator/name-generator.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__manors_manor_manor_component__ = __webpack_require__("../../../../../src/app/manors/manor/manor.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__armor_armor_list_armor_list_component__ = __webpack_require__("../../../../../src/app/armor/armor-list/armor-list.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -44,12 +45,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var routes = [
     { path: '', component: __WEBPACK_IMPORTED_MODULE_1__core_main_page_main_page_component__["a" /* MainPageComponent */] },
-    { path: 'manors', component: __WEBPACK_IMPORTED_MODULE_6__manors_manor_manor_component__["a" /* ManorComponent */] },
-    { path: 'travel', component: __WEBPACK_IMPORTED_MODULE_3__travel_distance_distance_component__["a" /* DistanceComponent */] },
-    { path: 'names', component: __WEBPACK_IMPORTED_MODULE_4__names_name_generator_name_generator_component__["a" /* NameGeneratorComponent */] },
-    { path: 'armor', component: __WEBPACK_IMPORTED_MODULE_7__armor_armor_list_armor_list_component__["a" /* ArmorListComponent */] },
+    { path: 'manors', component: __WEBPACK_IMPORTED_MODULE_7__manors_manor_manor_component__["a" /* ManorComponent */] },
+    { path: 'travel', component: __WEBPACK_IMPORTED_MODULE_4__travel_distance_distance_component__["a" /* DistanceComponent */] },
+    { path: 'names', component: __WEBPACK_IMPORTED_MODULE_5__names_name_generator_name_generator_component__["a" /* NameGeneratorComponent */] },
+    { path: 'armor', component: __WEBPACK_IMPORTED_MODULE_8__armor_armor_list_armor_list_component__["a" /* ArmorListComponent */] },
+    { path: 'prices', component: __WEBPACK_IMPORTED_MODULE_3__prices_price_list_price_list_component__["a" /* PriceListComponent */] },
     { path: '**', component: __WEBPACK_IMPORTED_MODULE_2__core_page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */] }
 ];
 var AppRoutingModule = (function () {
@@ -57,8 +60,8 @@ var AppRoutingModule = (function () {
     }
     AppRoutingModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
-            imports: [__WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* RouterModule */].forRoot(routes)],
-            exports: [__WEBPACK_IMPORTED_MODULE_5__angular_router__["a" /* RouterModule */]]
+            imports: [__WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* RouterModule */].forRoot(routes)],
+            exports: [__WEBPACK_IMPORTED_MODULE_6__angular_router__["a" /* RouterModule */]]
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -136,9 +139,10 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__armor_armor_module__ = __webpack_require__("../../../../../src/app/armor/armor.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__core_core_module__ = __webpack_require__("../../../../../src/app/core/core.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__manors_manors_module__ = __webpack_require__("../../../../../src/app/manors/manors.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__travel_travel_module__ = __webpack_require__("../../../../../src/app/travel/travel.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__names_names_module__ = __webpack_require__("../../../../../src/app/names/names.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__prices_prices_module__ = __webpack_require__("../../../../../src/app/prices/prices.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__travel_travel_module__ = __webpack_require__("../../../../../src/app/travel/travel.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__names_names_module__ = __webpack_require__("../../../../../src/app/names/names.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -155,24 +159,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
-            declarations: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]],
+            declarations: [__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */]],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_5__core_core_module__["a" /* CoreModule */],
                 __WEBPACK_IMPORTED_MODULE_6__manors_manors_module__["a" /* ManorsModule */],
-                __WEBPACK_IMPORTED_MODULE_7__travel_travel_module__["a" /* TravelModule */],
-                __WEBPACK_IMPORTED_MODULE_8__names_names_module__["a" /* NamesModule */],
+                __WEBPACK_IMPORTED_MODULE_8__travel_travel_module__["a" /* TravelModule */],
+                __WEBPACK_IMPORTED_MODULE_9__names_names_module__["a" /* NamesModule */],
                 __WEBPACK_IMPORTED_MODULE_4__armor_armor_module__["a" /* ArmorModule */],
+                __WEBPACK_IMPORTED_MODULE_7__prices_prices_module__["a" /* PricesModule */],
                 __WEBPACK_IMPORTED_MODULE_3__app_routing_module__["a" /* AppRoutingModule */],
                 __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */]
             ],
             providers: [],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_9__app_component__["a" /* AppComponent */]]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
@@ -547,7 +553,7 @@ var ArmorList = [
         basePrice: 16
     },
     {
-        name: 'cloth leggings',
+        name: 'cloth gloves',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Cloth,
         coverage: (_m = {},
             _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
@@ -557,56 +563,56 @@ var ArmorList = [
             _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
-            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
+            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = true,
             _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
             _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
             _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
             _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
-            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
-            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
-            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
-            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
-            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
-            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
-            _m), baseWeight: 4.4,
-        basePrice: 88
+            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
+            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _m[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
+            _m), baseWeight: 0.4,
+        basePrice: 8
     },
     {
-        name: 'cloth robe',
+        name: 'cloth leggings',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Cloth,
         coverage: (_o = {},
             _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
-            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
-            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
-            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
+            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
+            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
+            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
             _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
             _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
             _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
             _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
             _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
-            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _o), baseWeight: 7.9,
-        basePrice: 158
+            _o[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
+            _o), baseWeight: 4.4,
+        basePrice: 88
     },
     {
-        name: 'cloth surcoat',
+        name: 'cloth robe',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Cloth,
         coverage: (_p = {},
             _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
-            _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
-            _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
-            _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
+            _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
+            _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
+            _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
             _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
             _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
@@ -615,21 +621,21 @@ var ArmorList = [
             _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
             _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
             _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
-            _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
-            _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
+            _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
             _p[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _p), baseWeight: 5.3,
-        basePrice: 106
+            _p), baseWeight: 7.9,
+        basePrice: 158
     },
     {
-        name: 'cloth tunic',
+        name: 'cloth surcoat',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Cloth,
         coverage: (_q = {},
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
-            _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
+            _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
@@ -639,22 +645,22 @@ var ArmorList = [
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
-            _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _q[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _q), baseWeight: 4.4,
-        basePrice: 88
+            _q), baseWeight: 5.3,
+        basePrice: 106
     },
     {
-        name: 'cloth vest',
+        name: 'cloth tunic',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Cloth,
         coverage: (_r = {},
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
-            _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
@@ -662,47 +668,47 @@ var ArmorList = [
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
-            _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
-            _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
+            _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _r[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _r), baseWeight: 2.8,
-        basePrice: 56
+            _r), baseWeight: 4.4,
+        basePrice: 88
     },
     {
-        name: 'quilt cap',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Quilt,
+        name: 'cloth vest',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Cloth,
         coverage: (_s = {},
-            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
+            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
-            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
-            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
-            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
+            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
+            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
+            _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _s[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _s), baseWeight: 1.2,
-        basePrice: 16
+            _s), baseWeight: 2.8,
+        basePrice: 56
     },
     {
-        name: 'quilt cowl',
+        name: 'quilt cap',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Quilt,
         coverage: (_t = {},
             _t[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
             _t[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
-            _t[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = true,
+            _t[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _t[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _t[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _t[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
@@ -718,87 +724,87 @@ var ArmorList = [
             _t[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _t[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _t[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _t), baseWeight: 2.4,
+            _t), baseWeight: 1.2,
+        basePrice: 16
+    },
+    {
+        name: 'quilt cowl',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Quilt,
+        coverage: (_u = {},
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = true,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
+            _u), baseWeight: 2.4,
         basePrice: 32
     },
     {
         name: 'quilt gambeson',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Quilt,
-        coverage: (_u = {},
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
-            _u[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _u), baseWeight: 19.8,
-        basePrice: 264
-    },
-    {
-        name: 'quilt leggings',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Quilt,
         coverage: (_v = {},
             _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
-            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
-            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
-            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
+            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
+            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
+            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
+            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
             _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
-            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
-            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
-            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
+            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
+            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
+            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
             _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
             _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
             _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
-            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
-            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
-            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
-            _v), baseWeight: 13.2,
-        basePrice: 176
+            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _v[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
+            _v), baseWeight: 19.8,
+        basePrice: 264
     },
     {
-        name: 'quilt tunic',
+        name: 'quild gloves',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Quilt,
         coverage: (_w = {},
             _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
-            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
+            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
-            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
-            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
-            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
+            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = true,
+            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
+            _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _w[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _w), baseWeight: 13.2,
-        basePrice: 176
+            _w), baseWeight: 1.2,
+        basePrice: 16
     },
     {
-        name: 'leather calftboots',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
+        name: 'quilt leggings',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Quilt,
         coverage: (_x = {},
             _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
@@ -812,47 +818,47 @@ var ArmorList = [
             _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
             _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
             _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
-            _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
-            _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
-            _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
-            _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
+            _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
+            _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
+            _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
             _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
             _x[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
-            _x), baseWeight: 3.2,
-        basePrice: 64
+            _x), baseWeight: 13.2,
+        basePrice: 176
     },
     {
-        name: 'leather cap',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
+        name: 'quilt tunic',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Quilt,
         coverage: (_y = {},
-            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
+            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
-            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
+            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
             _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
-            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
-            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
-            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
-            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
-            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
+            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
+            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
+            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
+            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
+            _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
             _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _y[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _y), baseWeight: 0.8,
-        basePrice: 16
+            _y), baseWeight: 13.2,
+        basePrice: 176
     },
     {
-        name: 'leather cowl',
+        name: 'leather calfboots',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
         coverage: (_z = {},
-            _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
+            _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
-            _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = true,
+            _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
@@ -866,23 +872,23 @@ var ArmorList = [
             _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
-            _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
-            _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _z), baseWeight: 1.6,
-        basePrice: 32
+            _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
+            _z[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
+            _z), baseWeight: 3.2,
+        basePrice: 64
     },
     {
-        name: 'leather gauntlets',
+        name: 'leather cap',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
         coverage: (_0 = {},
-            _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
+            _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
             _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
-            _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = true,
+            _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
             _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
             _0[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
@@ -897,12 +903,12 @@ var ArmorList = [
         basePrice: 16
     },
     {
-        name: 'leather kneeboots',
+        name: 'leather cowl',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
         coverage: (_1 = {},
-            _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
+            _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
             _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
-            _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
+            _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = true,
             _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
@@ -915,19 +921,19 @@ var ArmorList = [
             _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
-            _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
-            _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
-            _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
-            _1), baseWeight: 3.8,
-        basePrice: 76
+            _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _1[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
+            _1), baseWeight: 1.6,
+        basePrice: 32
     },
     {
-        name: 'leather leggings',
+        name: 'leather gorget',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
         coverage: (_2 = {},
             _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
-            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
+            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = true,
             _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
@@ -937,17 +943,17 @@ var ArmorList = [
             _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
             _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
             _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
-            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
-            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
-            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
-            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
-            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
-            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
-            _2), baseWeight: 8.8,
-        basePrice: 176
+            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
+            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _2[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
+            _2), baseWeight: 0.8,
+        basePrice: 16
     },
     {
-        name: 'leather shoes',
+        name: 'leather gauntlets',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
         coverage: (_3 = {},
             _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
@@ -957,7 +963,7 @@ var ArmorList = [
             _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
-            _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
+            _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = true,
             _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
             _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
             _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
@@ -967,88 +973,88 @@ var ArmorList = [
             _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
-            _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
-            _3), baseWeight: 1.2,
-        basePrice: 24
+            _3[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
+            _3), baseWeight: 0.8,
+        basePrice: 16
     },
     {
-        name: 'leather surcoat',
+        name: 'leather kneeboots',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
         coverage: (_4 = {},
             _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
+            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
-            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
-            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
-            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
+            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
+            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
-            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
-            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _4), baseWeight: 11.2,
-        basePrice: 224
+            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
+            _4[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
+            _4), baseWeight: 3.8,
+        basePrice: 76
     },
     {
-        name: 'leather tunic',
+        name: 'leather leggings',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
         coverage: (_5 = {},
             _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
-            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
+            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
+            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
             _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
             _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
             _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
-            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
-            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
-            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _5), baseWeight: 11.8,
-        basePrice: 236
+            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
+            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
+            _5[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
+            _5), baseWeight: 8.8,
+        basePrice: 176
     },
     {
-        name: 'leather vest',
+        name: 'leather shoes',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
         coverage: (_6 = {},
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
+            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
+            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
-            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _6), baseWeight: 5.6,
-        basePrice: 112
+            _6[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
+            _6), baseWeight: 1.2,
+        basePrice: 24
     },
     {
-        name: 'kurbul ailettes',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
+        name: 'leather surcoat',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
         coverage: (_7 = {},
             _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
@@ -1058,59 +1064,59 @@ var ArmorList = [
             _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
-            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
-            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
-            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
-            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
-            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
-            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
-            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
+            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
+            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
+            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
+            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
+            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
+            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
+            _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
             _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _7[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _7), baseWeight: 1.0,
-        basePrice: 20
+            _7), baseWeight: 11.2,
+        basePrice: 224
     },
     {
-        name: 'kurbul breastplate',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
+        name: 'leather tunic',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
         coverage: (_8 = {},
             _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
-            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
+            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
             _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
             _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
-            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
-            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
-            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
+            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
+            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
+            _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
             _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _8[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _8), baseWeight: 3.0,
-        basePrice: 60
+            _8), baseWeight: 11.8,
+        basePrice: 236
     },
     {
-        name: 'kurbul backplate',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
+        name: 'leather vest',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Leather,
         coverage: (_9 = {},
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
@@ -1118,19 +1124,19 @@ var ArmorList = [
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _9[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _9), baseWeight: 3.0,
-        basePrice: 60
+            _9), baseWeight: 5.6,
+        basePrice: 112
     },
     {
-        name: 'kurbul coudes',
+        name: 'kurbul ailettes',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
         coverage: (_10 = {},
             _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
             _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
-            _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
+            _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
@@ -1143,11 +1149,11 @@ var ArmorList = [
             _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _10[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _10), baseWeight: 0.5,
-        basePrice: 10
+            _10), baseWeight: 1.0,
+        basePrice: 20
     },
     {
-        name: 'kurbul greaves',
+        name: 'kurbul breastplate',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
         coverage: (_11 = {},
             _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
@@ -1158,24 +1164,24 @@ var ArmorList = [
             _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
             _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
-            _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
             _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
             _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
-            _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
+            _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _11[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _11), baseWeight: 2.5,
-        basePrice: 50
+            _11), baseWeight: 3.0,
+        basePrice: 60
     },
     {
-        name: 'kurbul halfhelm',
+        name: 'kurbul backplate',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
         coverage: (_12 = {},
-            _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
+            _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
@@ -1184,20 +1190,20 @@ var ArmorList = [
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
-            _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
-            _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _12[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _12), baseWeight: 1.0,
-        basePrice: 20
+            _12), baseWeight: 3.0,
+        basePrice: 60
     },
     {
-        name: 'kurbul kneecops',
+        name: 'kurbul coudes',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
         coverage: (_13 = {},
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
@@ -1205,7 +1211,7 @@ var ArmorList = [
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
-            _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
+            _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
@@ -1215,21 +1221,21 @@ var ArmorList = [
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
-            _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
+            _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _13[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _13), baseWeight: 0.8,
-        basePrice: 15
+            _13), baseWeight: 0.5,
+        basePrice: 10
     },
     {
-        name: 'kurbul rerebraces',
+        name: 'kurbul greaves',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
         coverage: (_14 = {},
             _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
-            _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
+            _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
@@ -1241,22 +1247,22 @@ var ArmorList = [
             _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
-            _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
             _14[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _14), baseWeight: 1.5,
-        basePrice: 30
+            _14), baseWeight: 2.5,
+        basePrice: 50
     },
     {
-        name: 'kurbul vambraces',
+        name: 'kurbul halfhelm',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
         coverage: (_15 = {},
-            _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
+            _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
             _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
-            _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
+            _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
             _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
@@ -1268,46 +1274,46 @@ var ArmorList = [
             _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _15[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _15), baseWeight: 1.3,
-        basePrice: 25
+            _15), baseWeight: 1.0,
+        basePrice: 20
     },
     {
-        name: 'ring byrnie',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Ring,
+        name: 'kurbul kneecops',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
         coverage: (_16 = {},
             _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
-            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
+            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
-            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
-            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
+            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
+            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
-            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
             _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _16[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _16), baseWeight: 17.6,
-        basePrice: 308
+            _16), baseWeight: 0.8,
+        basePrice: 15
     },
     {
-        name: 'ring gauntlets',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Ring,
+        name: 'kurbul rerebraces',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
         coverage: (_17 = {},
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
-            _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
-            _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = true,
+            _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
@@ -1318,20 +1324,20 @@ var ArmorList = [
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _17[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _17), baseWeight: 1.6,
-        basePrice: 28
+            _17), baseWeight: 1.5,
+        basePrice: 30
     },
     {
-        name: 'ring halfhelm',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Ring,
+        name: 'kurbul vambraces',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Kurbul,
         coverage: (_18 = {},
-            _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
+            _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
-            _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
+            _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
             _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
             _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
@@ -1343,11 +1349,11 @@ var ArmorList = [
             _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _18[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _18), baseWeight: 1.6,
-        basePrice: 28
+            _18), baseWeight: 1.3,
+        basePrice: 25
     },
     {
-        name: 'ring hauberk',
+        name: 'ring byrnie',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Ring,
         coverage: (_19 = {},
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
@@ -1355,8 +1361,8 @@ var ArmorList = [
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
-            _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
-            _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
+            _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
+            _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
@@ -1364,15 +1370,15 @@ var ArmorList = [
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
-            _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
+            _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _19[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _19), baseWeight: 26.4,
-        basePrice: 462
+            _19), baseWeight: 17.6,
+        basePrice: 308
     },
     {
-        name: 'ring leggings',
+        name: 'ring gauntlets',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Ring,
         coverage: (_20 = {},
             _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
@@ -1382,56 +1388,56 @@ var ArmorList = [
             _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
-            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
+            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = true,
             _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
             _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
             _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
             _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
-            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
-            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
-            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
-            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
-            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
-            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
-            _20), baseWeight: 17.6,
-        basePrice: 308
+            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
+            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _20[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
+            _20), baseWeight: 1.6,
+        basePrice: 28
     },
     {
-        name: 'ring vest',
+        name: 'ring halfhelm',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Ring,
         coverage: (_21 = {},
-            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
+            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
+            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
+            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _21[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _21), baseWeight: 11.2,
-        basePrice: 196
+            _21), baseWeight: 1.6,
+        basePrice: 28
     },
     {
-        name: 'mail byrnie',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Mail,
+        name: 'ring hauberk',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Ring,
         coverage: (_22 = {},
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
-            _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
-            _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
+            _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
+            _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
@@ -1439,20 +1445,20 @@ var ArmorList = [
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
-            _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _22[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _22), baseWeight: 22.0,
-        basePrice: 660
+            _22), baseWeight: 26.4,
+        basePrice: 462
     },
     {
-        name: 'mail cowl',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Mail,
+        name: 'ring leggings',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Ring,
         coverage: (_23 = {},
-            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
+            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
-            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = true,
+            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
@@ -1462,77 +1468,77 @@ var ArmorList = [
             _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
             _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
             _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
-            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
-            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
-            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
-            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
-            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
-            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _23), baseWeight: 4.0,
-        basePrice: 120
+            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
+            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
+            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
+            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
+            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
+            _23[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
+            _23), baseWeight: 17.6,
+        basePrice: 308
     },
     {
-        name: 'mail hauberk',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Mail,
+        name: 'ring vest',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Ring,
         coverage: (_24 = {},
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
-            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
-            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
-            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
+            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
+            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
-            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
-            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
-            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
+            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
+            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _24[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _24), baseWeight: 33.0,
-        basePrice: 990
+            _24), baseWeight: 11.2,
+        basePrice: 196
     },
     {
-        name: 'mail leggings',
+        name: 'mail byrnie',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Mail,
         coverage: (_25 = {},
             _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
-            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
+            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
             _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
-            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
-            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
-            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
+            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
+            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
+            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
             _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
             _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
-            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
-            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
-            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
-            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
+            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _25[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
             _25), baseWeight: 22.0,
         basePrice: 660
     },
     {
-        name: 'mail mittens',
+        name: 'mail cowl',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Mail,
         coverage: (_26 = {},
-            _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
+            _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
             _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
-            _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
+            _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = true,
             _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
-            _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = true,
+            _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
             _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
             _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
@@ -1543,20 +1549,20 @@ var ArmorList = [
             _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _26[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _26), baseWeight: 2.0,
-        basePrice: 60
+            _26), baseWeight: 4.0,
+        basePrice: 120
     },
     {
-        name: 'scale byrnie',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Scale,
+        name: 'mail hauberk',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Mail,
         coverage: (_27 = {},
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
-            _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
-            _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
+            _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
+            _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
@@ -1564,128 +1570,128 @@ var ArmorList = [
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
-            _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _27[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _27), baseWeight: 30.8,
-        basePrice: 440
+            _27), baseWeight: 33.0,
+        basePrice: 990
     },
     {
-        name: 'scale hauberk',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Scale,
+        name: 'mail leggings',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Mail,
         coverage: (_28 = {},
             _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
-            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
-            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
-            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
+            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
+            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
+            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
             _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
             _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
             _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
-            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
-            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
-            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _28), baseWeight: 46.2,
+            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
+            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
+            _28[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = true,
+            _28), baseWeight: 22.0,
         basePrice: 660
     },
     {
-        name: 'scale vest',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Scale,
+        name: 'mail mittens',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Mail,
         coverage: (_29 = {},
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
+            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
-            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
+            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = true,
+            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _29[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _29), baseWeight: 19.6,
-        basePrice: 280
+            _29), baseWeight: 2.0,
+        basePrice: 60
     },
     {
-        name: 'plate ailettes',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
+        name: 'scale byrnie',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Scale,
         coverage: (_30 = {},
             _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
-            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
             _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
-            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
-            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
-            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
-            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
-            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
+            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
+            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
+            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
+            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
+            _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
             _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _30[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _30), baseWeight: 3.2,
-        basePrice: 100
+            _30), baseWeight: 30.8,
+        basePrice: 440
     },
     {
-        name: 'plate breastplate',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
+        name: 'scale hauberk',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Scale,
         coverage: (_31 = {},
             _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
-            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
-            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
-            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
+            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
+            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
+            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
+            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
             _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
-            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
             _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
-            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
-            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
-            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
-            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
+            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = true,
+            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = true,
+            _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = true,
             _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _31[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _31), baseWeight: 9.6,
-        basePrice: 300
+            _31), baseWeight: 46.2,
+        basePrice: 660
     },
     {
-        name: 'plate backplate',
-        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
+        name: 'scale vest',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Scale,
         coverage: (_32 = {},
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
-            _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
@@ -1693,19 +1699,19 @@ var ArmorList = [
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _32[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _32), baseWeight: 9.6,
-        basePrice: 300
+            _32), baseWeight: 19.6,
+        basePrice: 280
     },
     {
-        name: 'plate coudes',
+        name: 'plate ailettes',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
         coverage: (_33 = {},
             _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
-            _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = true,
             _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
-            _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
+            _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
@@ -1718,24 +1724,24 @@ var ArmorList = [
             _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _33[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _33), baseWeight: 1.6,
-        basePrice: 50
+            _33), baseWeight: 3.2,
+        basePrice: 100
     },
     {
-        name: 'plate great helmet',
+        name: 'plate breastplate',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
         coverage: (_34 = {},
-            _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
-            _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = true,
-            _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = true,
+            _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
+            _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
+            _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
-            _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = true,
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
-            _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = true,
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
@@ -1743,11 +1749,11 @@ var ArmorList = [
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _34[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _34), baseWeight: 8.8,
-        basePrice: 275
+            _34), baseWeight: 9.6,
+        basePrice: 300
     },
     {
-        name: 'plate greaves',
+        name: 'plate backplate',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
         coverage: (_35 = {},
             _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
@@ -1759,28 +1765,28 @@ var ArmorList = [
             _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
-            _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = true,
             _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
-            _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = true,
             _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
-            _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
+            _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _35[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _35), baseWeight: 8.0,
-        basePrice: 250
+            _35), baseWeight: 9.6,
+        basePrice: 300
     },
     {
-        name: 'plate halfhelm',
+        name: 'plate coudes',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
         coverage: (_36 = {},
-            _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
+            _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
-            _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
+            _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = true,
             _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
@@ -1793,16 +1799,16 @@ var ArmorList = [
             _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _36[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _36), baseWeight: 3.2,
-        basePrice: 100
+            _36), baseWeight: 1.6,
+        basePrice: 50
     },
     {
-        name: 'plate kneecops',
+        name: 'plate great helmet',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
         coverage: (_37 = {},
-            _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
-            _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
-            _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
+            _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
+            _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = true,
+            _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = true,
             _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
@@ -1815,21 +1821,21 @@ var ArmorList = [
             _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
-            _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
+            _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _37[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _37), baseWeight: 2.4,
-        basePrice: 75
+            _37), baseWeight: 8.8,
+        basePrice: 275
     },
     {
-        name: 'plate rerebraces',
+        name: 'plate greaves',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
         coverage: (_38 = {},
             _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
             _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
-            _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
+            _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
             _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
@@ -1841,22 +1847,22 @@ var ArmorList = [
             _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
             _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
-            _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = true,
             _38[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _38), baseWeight: 4.8,
-        basePrice: 150
+            _38), baseWeight: 8.0,
+        basePrice: 250
     },
     {
-        name: 'plate vambraces',
+        name: 'plate halfhelm',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
         coverage: (_39 = {},
-            _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
+            _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
             _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
             _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
-            _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
+            _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
             _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
             _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
             _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
@@ -1868,16 +1874,15 @@ var ArmorList = [
             _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
             _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _39[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _39),
-        baseWeight: 4.0,
-        basePrice: 125
+            _39), baseWeight: 3.2,
+        basePrice: 100
     },
     {
-        name: 'plate 3/4 helm',
+        name: 'plate kneecops',
         type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
         coverage: (_40 = {},
-            _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
-            _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = true,
+            _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
+            _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
             _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
             _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
             _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
@@ -1891,14 +1896,90 @@ var ArmorList = [
             _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
             _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
             _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
-            _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = true,
             _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
             _40[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
-            _40), baseWeight: 5.6,
+            _40), baseWeight: 2.4,
+        basePrice: 75
+    },
+    {
+        name: 'plate rerebraces',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
+        coverage: (_41 = {},
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = true,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _41[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
+            _41), baseWeight: 4.8,
+        basePrice: 150
+    },
+    {
+        name: 'plate vambraces',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
+        coverage: (_42 = {},
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = true,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _42[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
+            _42),
+        baseWeight: 4.0,
+        basePrice: 125
+    },
+    {
+        name: 'plate 3/4 helm',
+        type: __WEBPACK_IMPORTED_MODULE_0__armor_enum__["d" /* ArmorType */].Plate,
+        coverage: (_43 = {},
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Skull] = true,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Face] = true,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Neck] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Shoulders] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].UpperArms] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Elbows] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Forearms] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hands] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxFront] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].ThoraxBack] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenFront] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].AbdomenBack] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Hips] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Groin] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Thighs] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Knees] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Calves] = false,
+            _43[__WEBPACK_IMPORTED_MODULE_0__armor_enum__["a" /* ArmorLocation */].Feet] = false,
+            _43), baseWeight: 5.6,
         basePrice: 175
     }
 ];
-var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40;
+var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z, _0, _1, _2, _3, _4, _5, _6, _7, _8, _9, _10, _11, _12, _13, _14, _15, _16, _17, _18, _19, _20, _21, _22, _23, _24, _25, _26, _27, _28, _29, _30, _31, _32, _33, _34, _35, _36, _37, _38, _39, _40, _41, _42, _43;
 
 
 /***/ }),
@@ -2237,7 +2318,7 @@ var LoadingSpinnerComponent = (function () {
 /***/ "../../../../../src/app/core/main-page/main-page.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container page\">\n\n  <!-- Introduction Row -->\n  <h1 class=\"my-4\">Harn Tools</h1>\n  <p>This site contains a few tools I created to support play in my <a href=\"\" target=\"_blank\">Harn</a> and <a href=\"\" target=\"_blank\">HarnMaster</a> table-top RPG. </p>\n\n  <!-- Team Members Row -->\n  <div class=\"row\">\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"manors\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/manor.png\" alt=\"Manor House\">\n      </a>\n      <h3>Manor Generator</h3>\n      <p>Generates a manor and villiage based on rules form the Harn Manor supplement and allows users to tweak and edit details as needed.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"armor\">\n        <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/armor.png\" alt=\"Armor\">\n      </a>\n      <h3>Armor Calculator</h3>\n      <p>Drag and Drop interface for armor in Harn calculates protection, weight, and value.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a href=\"https://docs.google.com/spreadsheets/d/11ioQW6WoxajkDGNq4EYeV0BL3xMUUxg224tiV5jDcW8/copy?usp=sharing\" target=\"_blank\">\n        <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/skillscalc.png\" alt=\"Harnic Names\">\n      </a>\n      <h3>Skills Calculator</h3>\n      <p>External Link to copy a Google Sheet for calculating Harn Character skills.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"names\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/names.png\" alt=\"Harnic Names\">\n      </a>\n      <h3>Name Generator</h3>\n      <p>Generates random names for various culture on Harn.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"travel\">\n      <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/travel.png\" alt=\"Travel\">\n      </a>\n      <h3>Travel Distances/Converter</h3>\n      <p>Converts distances between various units and provides a dynamic travel speed table.</p>\n    </div>\n  </div>\n\n</div>\n"
+module.exports = "<div class=\"container page\">\n\n  <!-- Introduction Row -->\n  <h1 class=\"my-4\">Harn Tools</h1>\n  <p>This site contains a few tools I created to support play in my <a href=\"\" target=\"_blank\">Harn</a> and <a href=\"\" target=\"_blank\">HarnMaster</a> table-top RPG. </p>\n\n  <!-- Team Members Row -->\n  <div class=\"row\">\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"armor\">\n        <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/armor.png\" alt=\"Armor\">\n      </a>\n      <h3>Armor Calculator</h3>\n      <p>Drag and Drop interface for armor in Harn calculates protection, weight, and value.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"prices\">\n        <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/prices.png\" alt=\"Ledger\">\n      </a>\n      <h3>Price List</h3>\n      <p>A Harnic Price List that with basic search and filtering options, compiled by various members of the harn community.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"names\">\n        <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/names.png\" alt=\"Harnic Names\">\n      </a>\n      <h3>Name Generator</h3>\n      <p>Generates random names for various culture on Harn.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"travel\">\n        <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/travel.png\" alt=\"Travel\">\n      </a>\n      <h3>Travel Distances/Converter</h3>\n      <p>Converts distances between various units and provides a dynamic travel speed table.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a routerLink=\"manors\">\n        <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/manor.png\" alt=\"Manor House\">\n      </a>\n      <h3>Manor Generator</h3>\n      <p>Generates a manor and villiage based on rules form the Harn Manor supplement and allows users to tweak and edit details as needed.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a href=\"https://docs.google.com/spreadsheets/d/11ioQW6WoxajkDGNq4EYeV0BL3xMUUxg224tiV5jDcW8/copy?usp=sharing\" target=\"_blank\">\n        <img class=\"rounded-circle img-fluid d-block mx-auto\" src=\"assets/images/skillscalc.png\" alt=\"Spreadsheet\">\n      </a>\n      <h3>Skills Calculator <i class=\"fas fa-external-link-alt\"></i></h3>\n      <p>External Link to copy a Google Sheet for calculating Harn Character skills.</p>\n    </div>\n    <div class=\"col-lg-4 col-sm-6 text-center mb-4\">\n      <a href=\"https://docs.google.com/spreadsheets/d/11ioQW6WoxajkDGNq4EYeV0BL3xMUUxg224tiV5jDcW8/copy?usp=sharing\" target=\"_blank\">\n        <img class=\"img-fluid d-block mx-auto\" src=\"assets/images/Roll20_Logo_200.png\" alt=\"Roll 20 Logo\">\n      </a>\n      <h3>Roll20 Character Sheet <i class=\"fas fa-external-link-alt\"></i></h3>\n      <p>External Link the github repo for the Roll20 Harn Character Sheet I created.  It is included on Roll20 already under the heading Harn (simple).</p>\n    </div>\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -2298,7 +2379,7 @@ var MainPageComponent = (function () {
 /***/ "../../../../../src/app/core/nav/nav.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" href=\"#\">Harn Tools</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/\" [routerLinkActive]=\"['active']\">Home</a>\n      </li>\n      <li class=\"nav-item dropdown\">\n        <a class=\"nav-link dropdown-toggle\" href=\"http://example.com\" id=\"dropdownToolsMenu\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Tools</a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownToolsMenu\">\n          <a class=\"dropdown-item\" [routerLink]=\"['names']\" [routerLinkActive]=\"['active']\">Names</a>\n          <a class=\"dropdown-item\" [routerLink]=\"['manors']\" [routerLinkActive]=\"['active']\">Manor</a>\n          <a class=\"dropdown-item\" [routerLink]=\"['travel']\" [routerLinkActive]=\"['active']\">Travel</a>\n          <a class=\"dropdown-item\" [routerLink]=\"['armor']\" [routerLinkActive]=\"['active']\">Armor</a>\n          <a class=\"dropdown-item disabled\" href=\"#\">Weather</a>\n          <a class=\"dropdown-item disabled\" href=\"#\">Treasure</a>\n\n\n        </div>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"https://github.com/Streamweaver/harn-roll20\" target=\"_blank\">Roll20 Charsheet</a>\n      </li>\n      <li class=\"nav-item dropdown\">\n        <a class=\"nav-link dropdown-toggle\" href=\"http://example.com\" id=\"dropdownLinksMenu\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Info</a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownLinksMenu\">\n          <a class=\"dropdown-item disabled\" href=\"http://columbiagames.com/harn/index.html\" target=\"_blank\">Harn@ColbumbiaGames</a>\n          <a class=\"dropdown-item disabled\" href=\"http://www.kelestia.com/\" target=\"_blank\">Harn@Kelestia</a>\n          <a class=\"dropdown-item disabled\" href=\"https://www.lythia.com/\" target=\"_blank\">Lythia.com</a>\n          <a class=\"dropdown-item disabled\" href=\"http://www.quicenter.com/harn/default_en.asp\" target=\"_blank\">Fenhorns Harnpage</a>\n        </div>\n      </li>\n    </ul>\n  </div>\n</nav>\n"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark fixed-top bg-dark\">\n  <a class=\"navbar-brand\" routerLink=\"/\">Harn Tools</a>\n  <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarsExampleDefault\" aria-controls=\"navbarsExampleDefault\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExampleDefault\">\n    <ul class=\"navbar-nav mr-auto\">\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" routerLink=\"/\" [routerLinkActive]=\"['active']\">Home</a>\n      </li>\n      <li class=\"nav-item dropdown\">\n        <a class=\"nav-link dropdown-toggle\" href=\"http://example.com\" id=\"dropdownToolsMenu\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Tools</a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownToolsMenu\">\n          <a class=\"dropdown-item\" [routerLink]=\"['names']\" [routerLinkActive]=\"['active']\">Names</a>\n          <a class=\"dropdown-item\" [routerLink]=\"['manors']\" [routerLinkActive]=\"['active']\">Manor</a>\n          <a class=\"dropdown-item\" [routerLink]=\"['travel']\" [routerLinkActive]=\"['active']\">Travel</a>\n          <a class=\"dropdown-item\" [routerLink]=\"['armor']\" [routerLinkActive]=\"['active']\">Armor</a>\n          <a class=\"dropdown-item\" [routerLink]=\"['prices']\" [routerLinkActive]=\"['active']\">Prices</a>\n          <a class=\"dropdown-item disabled\" href=\"#\">Weather</a>\n          <a class=\"dropdown-item disabled\" href=\"#\">Treasure</a>\n\n\n        </div>\n      </li>\n      <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"https://github.com/Streamweaver/harn-roll20\" target=\"_blank\">Roll20 Charsheet</a>\n      </li>\n      <li class=\"nav-item dropdown\">\n        <a class=\"nav-link dropdown-toggle\" href=\"http://example.com\" id=\"dropdownLinksMenu\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">Info</a>\n        <div class=\"dropdown-menu\" aria-labelledby=\"dropdownLinksMenu\">\n          <a class=\"dropdown-item disabled\" href=\"http://columbiagames.com/harn/index.html\" target=\"_blank\">Harn@ColbumbiaGames</a>\n          <a class=\"dropdown-item disabled\" href=\"http://www.kelestia.com/\" target=\"_blank\">Harn@Kelestia</a>\n          <a class=\"dropdown-item disabled\" href=\"https://www.lythia.com/\" target=\"_blank\">Lythia.com</a>\n          <a class=\"dropdown-item disabled\" href=\"http://www.quicenter.com/harn/default_en.asp\" target=\"_blank\">Fenhorns Harnpage</a>\n        </div>\n      </li>\n    </ul>\n  </div>\n</nav>\n"
 
 /***/ }),
 
@@ -6167,6 +6248,273 @@ var NamesService = (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
     ], NamesService);
     return NamesService;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/prices/price-list/price-list.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid page\">\n  <h2>Harnic Price List</h2>\n  <p>By Dakin Burdick (2015) based on Steve McDonald's work, v. 2.0 Feb 1997 </p>\n  <p>Prices are general base prices and may vary in location based on supply and demand.</p>\n  <app-loading-spinner *ngIf=\"!displayList\" [msg]=\"'Loading Prices ...'\"></app-loading-spinner>\n  <div class=\"form-inline\" *ngIf=\"displayList\">\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\" for=\"itemSearchInput\">Search: </label>\n      <input type=\"text\" class=\"form-control mb-2 mr-sm-2\" id=\"itemSearchInput\" placeholder=\"Type an item name or category ...\" (change)=\"filterIncludes('name', $event.target.value)\">\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\">Vendor: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\" id=\"vendorSelect\" (change)=\"filterExact('vendor', $event.target.value)\">\n        <option value=\"\">Any</option>\n        <option *ngFor=\"let vendor of vendors\" value=\"{{vendor}}\">{{vendor | titlecase}}</option>\n      </select>\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\">Category: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\" id=\"categorySelect\"\n              (change)=\"onCategorySelect('category', $event.target.value)\">\n        <option [value]=\"null\" [selected]=\"category === null\">All</option>\n        <option *ngFor=\"let selectCategory of categories\" value=\"{{selectCategory}}\"\n                [selected]=\"selectCategory === category\">{{selectCategory |\n          titlecase}}</option>\n      </select>\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\" *ngIf=\"category\">\n      <label class=\"my-1 mr-2\">Sub-Category: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\"\n              id=\"subcategorySelect\" (change)=\"filterExact('subcategory', $event.target.value)\">\n        <option [value]=\"null\">All</option>\n        <option *ngFor=\"let subcategory of subcategories[category]\" value=\"{{subcategory}}\">{{subcategory | titlecase}}</option>\n      </select>\n    </div>\n  </div>\n\n  <table class=\"table table-bordered table-striped\" *ngIf=\"displayList\">\n    <thead class=\"table-dark\">\n    <tr>\n      <td>Item</td>\n      <td>Price(d)</td>\n      <td>Common Price</td>\n      <td>Vendor</td>\n      <td>Catagory</td>\n      <td>Subcatagory</td>\n      <td>Source</td>\n      <td>Comment</td>\n    </tr>\n    </thead>\n    <tbody>\n    <ng-container *ngFor=\"let salesItem of filteredPrices\">\n      <tr>\n        <td>{{salesItem.name | titlecase}}</td>\n        <td>{{salesItem.price}}</td>\n        <td>{{localPrice(salesItem.price)}}</td>\n        <td>{{salesItem.vendor | titlecase}}</td>\n        <td>{{salesItem.category | titlecase}}</td>\n        <td>{{salesItem.subcategory | titlecase}}</td>\n        <td>{{salesItem.source}}</td>\n        <td>{{salesItem.comments}}</td>\n      </tr>\n    </ng-container>\n    </tbody>\n  </table>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/prices/price-list/price-list.component.scss":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/prices/price-list/price-list.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PriceListComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_price_service__ = __webpack_require__("../../../../../src/app/prices/shared/price.service.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var PriceListComponent = (function () {
+    function PriceListComponent(priceService, fb) {
+        this.priceService = priceService;
+        this.fb = fb;
+        this.filters = {};
+    }
+    PriceListComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.displayList = false;
+        this.categories = [];
+        this.vendors = [];
+        this.subcategories = {};
+        this.category = null;
+        this.priceService.getPrices().subscribe(function (prices) { return _this.priceList = prices; }, function (err) { return console.log('Error Loading Price List: ' + err); }, function () {
+            _this.parseSelectOptions();
+            _this.applyFilters();
+            _this.displayList = true;
+        });
+    };
+    PriceListComponent.prototype.applyFilters = function () {
+        this.filteredPrices = __WEBPACK_IMPORTED_MODULE_2_lodash__["filter"](this.priceList, __WEBPACK_IMPORTED_MODULE_2_lodash__["conforms"](this.filters));
+    };
+    // Much of this pulled from the very find AngularFirebase tutorial at
+    // https://angularfirebase.com/lessons/multi-property-data-filtering-with-firebase-and-angular-4/
+    /// filter property by equality to rule
+    PriceListComponent.prototype.filterExact = function (property, rule) {
+        if (!rule) {
+            this.removeFilter(property);
+        }
+        else {
+            this.filters[property] = function (val) { return val === rule; };
+            this.applyFilters();
+        }
+    };
+    PriceListComponent.prototype.filterIncludes = function (property, rule) {
+        this.removeFilter(property);
+        this.filters[property] = function (val) { return val.includes(rule.toLowerCase()); };
+        this.applyFilters();
+    };
+    /// filter  numbers greater than rule
+    PriceListComponent.prototype.filterLessThan = function (property, rule) {
+        this.filters[property] = function (val) { return val < rule; };
+        this.applyFilters();
+    };
+    /// filter properties that resolve to true
+    PriceListComponent.prototype.filterBoolean = function (property, rule) {
+        if (!rule) {
+            this.removeFilter(property);
+        }
+        else {
+            this.filters[property] = function (val) { return val; };
+            this.applyFilters();
+        }
+    };
+    /// removes filter
+    PriceListComponent.prototype.removeFilter = function (property) {
+        delete this.filters[property];
+        this[property] = null;
+        this.applyFilters();
+    };
+    PriceListComponent.prototype.onCategorySelect = function (property, rule) {
+        if (rule === this.category) {
+            return;
+        }
+        if (!rule) {
+            this.removeFilter(property);
+            this.category = null;
+        }
+        else {
+            this.category = rule;
+            this.filters[property] = function (val) { return val === rule; };
+            if (this.subcategory && this.subcategories[property].indexOf(this.subcategory) < 0) {
+                this.removeFilter('subcategory');
+                this.subcategory = null;
+            }
+            console.log(this.category);
+            console.log(this.subcategories);
+            this.applyFilters();
+        }
+    };
+    PriceListComponent.prototype.localPrice = function (price) {
+        var priceLabel = [];
+        if (price / 240 > 1) {
+            priceLabel.push(Math.floor(price / 240) + 'L');
+            price = price % 240;
+        }
+        if (price >= 1) {
+            priceLabel.push(Math.floor(price) + 'd');
+            price = price % 1;
+        }
+        if (price > 0) {
+            priceLabel.push(price * 4 + 'f');
+        }
+        return priceLabel.join(', ');
+    };
+    PriceListComponent.prototype.parseSelectOptions = function () {
+        for (var _i = 0, _a = this.priceList; _i < _a.length; _i++) {
+            var item = _a[_i];
+            if (this.categories.indexOf(item.category) < 0) {
+                this.categories.push(item.category);
+            }
+            if (this.vendors.indexOf(item.vendor) < 0) {
+                this.vendors.push(item.vendor);
+            }
+            if (!(item.category in this.subcategories)) {
+                this.subcategories[item.category] = [];
+            }
+            if (this.subcategories[item.category].indexOf(item.subcategory) < 0) {
+                this.subcategories[item.category].push(item.subcategory);
+            }
+        }
+        // for (const subcat in this.subcategories) {
+        //   if (subcat) {
+        //     this.subcategories[subcat] = this.subcategories[subcat].sort();
+        //   }
+        // }
+        this.categories = this.categories.sort();
+        this.vendors = this.vendors.sort();
+    };
+    PriceListComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'app-price-list',
+            template: __webpack_require__("../../../../../src/app/prices/price-list/price-list.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/prices/price-list/price-list.component.scss")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__shared_price_service__["a" /* PriceService */],
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */]])
+    ], PriceListComponent);
+    return PriceListComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/prices/prices.module.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PricesModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common__ = __webpack_require__("../../../common/esm5/common.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__core_core_module__ = __webpack_require__("../../../../../src/app/core/core.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_price_service__ = __webpack_require__("../../../../../src/app/prices/shared/price.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__price_list_price_list_component__ = __webpack_require__("../../../../../src/app/prices/price-list/price-list.component.ts");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var PricesModule = (function () {
+    function PricesModule() {
+    }
+    PricesModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
+                __WEBPACK_IMPORTED_MODULE_3__core_core_module__["a" /* CoreModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* ReactiveFormsModule */]
+            ],
+            declarations: [__WEBPACK_IMPORTED_MODULE_5__price_list_price_list_component__["a" /* PriceListComponent */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_4__shared_price_service__["a" /* PriceService */]]
+        })
+    ], PricesModule);
+    return PricesModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/prices/shared/price.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PriceService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var PriceService = (function () {
+    function PriceService(http) {
+        this.http = http;
+    }
+    PriceService.prototype.getPrices = function () {
+        if (!this.priceList) {
+            this.priceList = this.http.get('assets/data/price.data.json');
+        }
+        return this.priceList;
+    };
+    PriceService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    ], PriceService);
+    return PriceService;
 }());
 
 
