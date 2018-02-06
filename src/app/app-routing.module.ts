@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { MainPageComponent } from './core/main-page/main-page.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import {PriceListComponent} from './prices/price-list/price-list.component';
 import { DistanceComponent } from './travel/distance/distance.component';
 import { NameGeneratorComponent } from './names/name-generator/name-generator.component';
 import { Routes, RouterModule } from '@angular/router';
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'travel', component: DistanceComponent },
   { path: 'names', component: NameGeneratorComponent },
   { path: 'armor', component: ArmorListComponent },
+  { path: 'prices', component: PriceListComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

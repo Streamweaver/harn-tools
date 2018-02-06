@@ -1,0 +1,65 @@
+<div class="container-fluid page">
+  <h2>Price List</h2>
+  <p>By Dakin Burdick (2015) based on Steve McDonald's work, v. 2.0 Feb 1997 </p>
+  <app-loading-spinner *ngIf="!displayList" [msg]="'Loading Prices ...'"></app-loading-spinner>
+  <div class="form-inline" *ngIf="displayList">
+    <div class="input-group mb-2 mr-sm-2">
+      <label class="my-1 mr-2" for="itemSearchInput">Search: </label>
+      <input type="text" class="form-control mb-2 mr-sm-2" id="itemSearchInput" placeholder="Type an item name or category ..." (change)="filterIncludes('name', $event.target.value)">
+    </div>
+    <div class="input-group mb-2 mr-sm-2">
+      <label class="my-1 mr-2">Vendor: </label>
+      <select class="custom-select" class="condensed list-group-item" id="vendorSelect" (change)="filterExact('vendor', $event.target.value)">
+        <option value="">Any</option>
+        <option *ngFor="let vendor of vendors" value="{{vendor}}">{{vendor | titlecase}}</option>
+      </select>
+    </div>
+    <div class="input-group mb-2 mr-sm-2">
+      <label class="my-1 mr-2">Category: </label>
+      <select class="custom-select" class="condensed list-group-item" id="categorySelect"
+              (change)="onCategorySelect('category', $event.target.value)">
+        <option [value]="null" [selected]="category === null">All</option>
+        <option *ngFor="let selectCategory of categories" value="{{selectCategory}}"
+                [selected]="selectCategory === category">{{selectCategory |
+          titlecase}}</option>
+      </select>
+    </div>
+    <div class="input-group mb-2 mr-sm-2" *ngIf="category">
+      <label class="my-1 mr-2">Sub-Category: </label>
+      <select class="custom-select" class="condensed list-group-item"
+              id="subcategorySelect" (change)="filterExact('subcategory', $event.target.value)">
+        <option [value]="null">All</option>
+        <option *ngFor="let subcategory of subcategories[category]" value="{{subcategory}}">{{subcategory | titlecase}}</option>
+      </select>
+    </div>
+  </div>
+
+  <table class="table table-bordered table-striped" *ngIf="displayList">
+    <thead class="table-dark">
+    <tr>
+      <td>Item</td>
+      <td>Price</td>
+      <td></td>
+      <td>Vendor</td>
+      <td>Catagory</td>
+      <td>Subcatagory</td>
+      <td>Source</td>
+      <td>Comment</td>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let salesItem of filteredPrices">
+      <tr>
+        <td>{{salesItem.name | titlecase}}</td>
+        <td>{{salesItem.price}}</td>
+        <td>{{localPrice(salesItem.price)}}</td>
+        <td>{{salesItem.vendor | titlecase}}</td>
+        <td>{{salesItem.category | titlecase}}</td>
+        <td>{{salesItem.subcategory | titlecase}}</td>
+        <td>{{salesItem.source}}</td>
+        <td>{{salesItem.comments}}</td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>
