@@ -175,7 +175,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_4__armor_armor_module__["a" /* ArmorModule */],
                 __WEBPACK_IMPORTED_MODULE_7__prices_prices_module__["a" /* PricesModule */],
                 __WEBPACK_IMPORTED_MODULE_3__app_routing_module__["a" /* AppRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */]
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* FormsModule */]
             ],
             providers: [],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_10__app_component__["a" /* AppComponent */]]
@@ -2685,18 +2685,18 @@ var FiefBudgetComponent = (function () {
     FiefBudgetComponent.prototype.createForm = function () {
         this.budgetForm = this.fb.group({
             woodsWorked: [0, [
-                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required,
-                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0),
-                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(this.manor.woodlandAcres)
+                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required,
+                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0),
+                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(this.manor.woodlandAcres)
                 ]],
-            cropSeed: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            winterFeed: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
+            cropSeed: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            winterFeed: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
             fiefMaintenance: [0, [
-                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required,
-                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0),
-                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(this.manor.clearedAcres)
+                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required,
+                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0),
+                    __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(this.manor.clearedAcres)
                 ]],
-            assart: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(this.manor.woodlandAcres)]]
+            assart: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(this.manor.woodlandAcres)]]
         });
     };
     FiefBudgetComponent.prototype.checkResultIndex = function (cr) {
@@ -2759,21 +2759,21 @@ var FiefBudgetComponent = (function () {
     };
     FiefBudgetComponent.prototype.ngDoCheck = function () {
         this.budgetForm.controls['woodsWorked'].setValidators([
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required,
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0),
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(this.manor.woodlandAcres)
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required,
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0),
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(this.manor.woodlandAcres)
         ]);
         this.budgetForm.controls['woodsWorked'].updateValueAndValidity();
         this.budgetForm.controls['fiefMaintenance'].setValidators([
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required,
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0),
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(this.manor.clearedAcres)
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required,
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0),
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(this.manor.clearedAcres)
         ]);
         this.budgetForm.controls['fiefMaintenance'].updateValueAndValidity();
         this.budgetForm.controls['assart'].setValidators([
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required,
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0),
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(this.manor.woodlandAcres)
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required,
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0),
+            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(this.manor.woodlandAcres)
         ]);
         this.budgetForm.controls['assart'].updateValueAndValidity();
     };
@@ -2862,14 +2862,14 @@ var GeneralDataComponent = (function () {
     GeneralDataComponent.prototype.createForm = function () {
         this.generalDataForm = this.fb.group({
             year: [null],
-            topology: [null, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required],
-            grossAcres: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            woodlandAcres: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0), __WEBPACK_IMPORTED_MODULE_5__shared_utilities__["d" /* maxGrossAcres */]]],
-            clearedAcres: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0), __WEBPACK_IMPORTED_MODULE_5__shared_utilities__["d" /* maxGrossAcres */]]],
-            landQuality: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0.75), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(1.3)]],
-            fiefIndex: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0.75), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(1.25)]],
-            tradeIndex: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0.5), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(1.7)]],
-            weatherIndex: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0.65), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(1.35)])]
+            topology: [null, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required],
+            grossAcres: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            woodlandAcres: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0), __WEBPACK_IMPORTED_MODULE_5__shared_utilities__["d" /* maxGrossAcres */]]],
+            clearedAcres: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0), __WEBPACK_IMPORTED_MODULE_5__shared_utilities__["d" /* maxGrossAcres */]]],
+            landQuality: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0.75), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(1.3)]],
+            fiefIndex: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0.75), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(1.25)]],
+            tradeIndex: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0.5), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(1.7)]],
+            weatherIndex: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].compose([__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0.65), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(1.35)])]
         });
     };
     /**
@@ -3259,13 +3259,13 @@ var LordsBudgetComponent = (function () {
     };
     LordsBudgetComponent.prototype.createForm = function () {
         this.lordsBudgetForm = this.fb.group({
-            taxes: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            amercements: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            feudalIncome: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            feudalPayments: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            tithe: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            laborHired: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            politicalExpenses: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]]
+            taxes: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            amercements: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            feudalIncome: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            feudalPayments: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            tithe: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            laborHired: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            politicalExpenses: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]]
         });
     };
     LordsBudgetComponent.prototype.demesneIncome = function () {
@@ -3584,8 +3584,8 @@ var ManorsModule = (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_common__["b" /* CommonModule */],
                 __WEBPACK_IMPORTED_MODULE_11__manors_routing_module__["a" /* ManorsRoutingModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* ReactiveFormsModule */]
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* ReactiveFormsModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_14__shared_services_shared_data_service__["a" /* SharedDataService */], __WEBPACK_IMPORTED_MODULE_13__shared_services_manor_service__["a" /* ManorService */]],
             declarations: [
@@ -3670,11 +3670,11 @@ var PoliciesComponent = (function () {
     };
     PoliciesComponent.prototype.createForm = function () {
         this.policiesForm = this.fb.group({
-            baseRent: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(30), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(120)]],
-            freeholderRent: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(3), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(12)]],
-            serfLabor: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].max(8)]],
-            foAcresPerHH: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            foAcresPerLF: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required],
+            baseRent: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(30), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(120)]],
+            freeholderRent: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(3), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(12)]],
+            serfLabor: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0), __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].max(8)]],
+            foAcresPerHH: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            foAcresPerLF: [0, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required],
             isSlaveState: '',
             isBailiffRun: '',
         });
@@ -6257,7 +6257,7 @@ var NamesService = (function () {
 /***/ "../../../../../src/app/prices/price-list/price-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid page\">\n  <h2>Harnic Price List</h2>\n  <p>By Dakin Burdick (2015) based on Steve McDonald's work, v. 2.0 Feb 1997 </p>\n  <p>Prices are general base prices and may vary in location based on supply and demand.</p>\n  <app-loading-spinner *ngIf=\"!displayList\" [msg]=\"'Loading Prices ...'\"></app-loading-spinner>\n  <div class=\"form-inline\" *ngIf=\"displayList\">\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\" for=\"itemSearchInput\">Search: </label>\n      <input type=\"text\" class=\"form-control mb-2 mr-sm-2\" id=\"itemSearchInput\" placeholder=\"Type an item name or category ...\" (change)=\"filterIncludes('name', $event.target.value)\">\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\">Vendor: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\" id=\"vendorSelect\" (change)=\"filterExact('vendor', $event.target.value)\">\n        <option value=\"\">Any</option>\n        <option *ngFor=\"let vendor of vendors\" value=\"{{vendor}}\">{{vendor | titlecase}}</option>\n      </select>\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\">Category: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\" id=\"categorySelect\"\n              (change)=\"onCategorySelect('category', $event.target.value)\">\n        <option [value]=\"null\" [selected]=\"category === null\">All</option>\n        <option *ngFor=\"let selectCategory of categories\" value=\"{{selectCategory}}\"\n                [selected]=\"selectCategory === category\">{{selectCategory |\n          titlecase}}</option>\n      </select>\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\" *ngIf=\"category\">\n      <label class=\"my-1 mr-2\">Sub-Category: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\"\n              id=\"subcategorySelect\" (change)=\"filterExact('subcategory', $event.target.value)\">\n        <option [value]=\"null\">All</option>\n        <option *ngFor=\"let subcategory of subcategories[category]\" value=\"{{subcategory}}\">{{subcategory | titlecase}}</option>\n      </select>\n    </div>\n  </div>\n\n  <table class=\"table table-bordered table-striped\" *ngIf=\"displayList\">\n    <thead class=\"table-dark\">\n    <tr>\n      <td>Item</td>\n      <td>Price(d)</td>\n      <td>Common Price</td>\n      <td>Vendor</td>\n      <td>Catagory</td>\n      <td>Subcatagory</td>\n      <td>Source</td>\n      <td>Comment</td>\n    </tr>\n    </thead>\n    <tbody>\n    <ng-container *ngFor=\"let salesItem of filteredPrices\">\n      <tr>\n        <td>{{salesItem.name | titlecase}}</td>\n        <td>{{salesItem.price}}</td>\n        <td>{{localPrice(salesItem.price)}}</td>\n        <td>{{salesItem.vendor | titlecase}}</td>\n        <td>{{salesItem.category | titlecase}}</td>\n        <td>{{salesItem.subcategory | titlecase}}</td>\n        <td>{{salesItem.source}}</td>\n        <td>{{salesItem.comments}}</td>\n      </tr>\n    </ng-container>\n    </tbody>\n  </table>\n</div>\n"
+module.exports = "<div class=\"container-fluid page\">\n  <h2>Harnic Price List</h2>\n  <p>By Dakin Burdick (2015) based on Steve McDonald's work, v. 2.0 Feb 1997 </p>\n  <p>Prices are general base prices and may vary in location based on supply and demand.</p>\n  <app-loading-spinner *ngIf=\"!displayList\" [msg]=\"'Loading Prices ...'\"></app-loading-spinner>\n  <div class=\"form-inline\" *ngIf=\"displayList\">\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\" for=\"itemSearchInput\">Search: </label>\n      <input type=\"text\" class=\"form-control mb-2 mr-sm-2\" id=\"itemSearchInput\" [formControl]=\"searchField\" placeholder=\"Type an item name or category ...\">\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\">Vendor: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\" id=\"vendorSelect\" (change)=\"filterExact('vendor', $event.target.value)\">\n        <option value=\"\">Any</option>\n        <option *ngFor=\"let vendor of vendors\" value=\"{{vendor}}\">{{vendor | titlecase}}</option>\n      </select>\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\">Category: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\" id=\"categorySelect\"\n              (change)=\"onCategorySelect('category', $event.target.value)\">\n        <option value=\"\" [selected]=\"category === null\">All</option>\n        <option *ngFor=\"let selectCategory of categories\" value=\"{{selectCategory}}\"\n                [selected]=\"selectCategory === category\">{{selectCategory |\n          titlecase}}</option>\n      </select>\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\" *ngIf=\"category\">\n      <label class=\"my-1 mr-2\">Sub-Category: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\"\n              id=\"subcategorySelect\" (change)=\"filterExact('subcategory', $event.target.value)\">\n        <option [value]=\"\">All</option>\n        <option *ngFor=\"let subcategory of subcategories[category]\" value=\"{{subcategory}}\">{{subcategory | titlecase}}</option>\n      </select>\n    </div>\n  </div>\n\n  <table class=\"table table-bordered table-striped\" *ngIf=\"displayList\">\n    <thead class=\"table-dark\">\n    <tr>\n      <td>Item</td>\n      <td>Price(d)</td>\n      <td>Common Price</td>\n      <td>Vendor</td>\n      <td>Catagory</td>\n      <td>Subcatagory</td>\n      <td>Source</td>\n      <td>Comment</td>\n    </tr>\n    </thead>\n    <tbody>\n    <ng-container *ngFor=\"let salesItem of filteredPrices\">\n      <tr>\n        <td>{{salesItem.name | titlecase}}</td>\n        <td>{{salesItem.price}}</td>\n        <td>{{localPrice(salesItem.price)}}</td>\n        <td>{{salesItem.vendor | titlecase}}</td>\n        <td>{{salesItem.category | titlecase}}</td>\n        <td>{{salesItem.subcategory | titlecase}}</td>\n        <td>{{salesItem.source}}</td>\n        <td>{{salesItem.comments}}</td>\n      </tr>\n    </ng-container>\n    </tbody>\n  </table>\n</div>\n"
 
 /***/ }),
 
@@ -6289,6 +6289,8 @@ module.exports = module.exports.toString();
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash__ = __webpack_require__("../../../../lodash/lodash.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_price_service__ = __webpack_require__("../../../../../src/app/prices/shared/price.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_debounceTime__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/debounceTime.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_operator_distinctUntilChanged__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/distinctUntilChanged.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6302,15 +6304,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
+
 var PriceListComponent = (function () {
-    function PriceListComponent(priceService, fb) {
+    function PriceListComponent(priceService) {
         this.priceService = priceService;
-        this.fb = fb;
         this.filters = {};
     }
     PriceListComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.displayList = false;
+        this.searchField = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["c" /* FormControl */]();
+        this.searchField.valueChanges
+            .debounceTime(400)
+            .distinctUntilChanged()
+            .subscribe(function (term) {
+            _this.filterIncludes('name', term);
+        });
         this.categories = [];
         this.vendors = [];
         this.subcategories = {};
@@ -6328,6 +6338,7 @@ var PriceListComponent = (function () {
     // https://angularfirebase.com/lessons/multi-property-data-filtering-with-firebase-and-angular-4/
     /// filter property by equality to rule
     PriceListComponent.prototype.filterExact = function (property, rule) {
+        console.log(property, rule);
         if (!rule) {
             this.removeFilter(property);
         }
@@ -6367,18 +6378,16 @@ var PriceListComponent = (function () {
             return;
         }
         if (!rule) {
+            this.removeFilter('subcategory');
+            this.subcategory = null;
             this.removeFilter(property);
             this.category = null;
         }
         else {
             this.category = rule;
-            this.filters[property] = function (val) { return val === rule; };
-            if (this.subcategory && this.subcategories[property].indexOf(this.subcategory) < 0) {
-                this.removeFilter('subcategory');
-                this.subcategory = null;
-            }
-            console.log(this.category);
-            console.log(this.subcategories);
+            this.filterExact(property, rule);
+            this.removeFilter('subcategory');
+            this.subcategory = null;
             this.applyFilters();
         }
     };
@@ -6427,8 +6436,7 @@ var PriceListComponent = (function () {
             template: __webpack_require__("../../../../../src/app/prices/price-list/price-list.component.html"),
             styles: [__webpack_require__("../../../../../src/app/prices/price-list/price-list.component.scss")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__shared_price_service__["a" /* PriceService */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormBuilder */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__shared_price_service__["a" /* PriceService */]])
     ], PriceListComponent);
     return PriceListComponent;
 }());
@@ -6468,8 +6476,8 @@ var PricesModule = (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
                 __WEBPACK_IMPORTED_MODULE_3__core_core_module__["a" /* CoreModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* ReactiveFormsModule */]
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* ReactiveFormsModule */]
             ],
             declarations: [__WEBPACK_IMPORTED_MODULE_5__price_list_price_list_component__["a" /* PriceListComponent */]],
             providers: [__WEBPACK_IMPORTED_MODULE_4__shared_price_service__["a" /* PriceService */]]
@@ -6666,10 +6674,10 @@ var DistanceComponent = (function () {
     };
     DistanceComponent.prototype.createForm = function () {
         this.distanceForm = this.fb.group({
-            leagues: [5, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            hexes: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            miles: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]],
-            km: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["f" /* Validators */].min(0)]]
+            leagues: [5, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            hexes: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            miles: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]],
+            km: [0, [__WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].required, __WEBPACK_IMPORTED_MODULE_1__angular_forms__["g" /* Validators */].min(0)]]
         });
     };
     DistanceComponent.prototype.onLeagueChange = function () {
@@ -7087,7 +7095,7 @@ var MovementComponent = (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])('distances'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_forms__["c" /* FormGroup */])
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormGroup */])
     ], MovementComponent.prototype, "distances", void 0);
     MovementComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
@@ -7148,8 +7156,8 @@ var TravelModule = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             imports: [
                 __WEBPACK_IMPORTED_MODULE_1__angular_common__["b" /* CommonModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* ReactiveFormsModule */]
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["e" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_2__angular_forms__["f" /* ReactiveFormsModule */]
             ],
             declarations: [__WEBPACK_IMPORTED_MODULE_3__distance_distance_component__["a" /* DistanceComponent */], __WEBPACK_IMPORTED_MODULE_4__movement_movement_component__["a" /* MovementComponent */]]
         })

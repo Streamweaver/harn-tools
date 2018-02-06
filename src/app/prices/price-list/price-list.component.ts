@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormControl} from '@angular/forms';
 import * as _ from 'lodash';
 import {PriceListing} from '../shared/price-listing.model';
 import {PriceService} from '../shared/price.service';
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 @Component({
   selector: 'app-price-list',
@@ -16,7 +18,7 @@ export class PriceListComponent implements OnInit {
   categories: string[];
   vendors: string[];
   subcategories: { [key: string]: string[] };
-  searchForm: FormGroup;
+  searchField: FormControl;
 
   // filter-able properties
   name: string;
@@ -27,13 +29,19 @@ export class PriceListComponent implements OnInit {
   filters = {};
 
   constructor(
-    private priceService: PriceService,
-    private fb: FormBuilder
+    private priceService: PriceService
   ) {
   }
 
   ngOnInit() {
     this.displayList = false;
+    this.searchField = new FormControl();
+    this.searchField.valueChanges
+      .debounceTime(400)
+      .distinctUntilChanged()
+      .subscribe(term => {
+        this.filterIncludes('name', term);
+      });
     this.categories = [];
     this.vendors = [];
     this.subcategories = {};
@@ -57,6 +65,7 @@ export class PriceListComponent implements OnInit {
   // https://angularfirebase.com/lessons/multi-property-data-filtering-with-firebase-and-angular-4/
   /// filter property by equality to rule
   filterExact(property: string, rule: any) {
+    console.log(property, rule);
     if (!rule) {
       this.removeFilter(property);
     } else {
@@ -99,17 +108,15 @@ export class PriceListComponent implements OnInit {
       return;
     }
     if (!rule) {
+      this.removeFilter('subcategory');
+      this.subcategory = null;
       this.removeFilter(property);
       this.category = null;
     } else {
       this.category = rule;
-      this.filters[property] = val => val === rule;
-      if (this.subcategory && this.subcategories[property].indexOf(this.subcategory) < 0) {
-        this.removeFilter('subcategory');
-        this.subcategory = null;
-      }
-      console.log(this.category);
-      console.log(this.subcategories);
+      this.filterExact(property, rule);
+      this.removeFilter('subcategory');
+      this.subcategory = null;
       this.applyFilters();
     }
   }

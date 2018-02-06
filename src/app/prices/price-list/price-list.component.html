@@ -6,7 +6,7 @@
   <div class="form-inline" *ngIf="displayList">
     <div class="input-group mb-2 mr-sm-2">
       <label class="my-1 mr-2" for="itemSearchInput">Search: </label>
-      <input type="text" class="form-control mb-2 mr-sm-2" id="itemSearchInput" placeholder="Type an item name or category ..." (change)="filterIncludes('name', $event.target.value)">
+      <input type="text" class="form-control mb-2 mr-sm-2" id="itemSearchInput" [formControl]="searchField" placeholder="Type an item name or category ...">
     </div>
     <div class="input-group mb-2 mr-sm-2">
       <label class="my-1 mr-2">Vendor: </label>
@@ -19,7 +19,7 @@
       <label class="my-1 mr-2">Category: </label>
       <select class="custom-select" class="condensed list-group-item" id="categorySelect"
               (change)="onCategorySelect('category', $event.target.value)">
-        <option [value]="null" [selected]="category === null">All</option>
+        <option value="" [selected]="category === null">All</option>
         <option *ngFor="let selectCategory of categories" value="{{selectCategory}}"
                 [selected]="selectCategory === category">{{selectCategory |
           titlecase}}</option>
@@ -29,7 +29,7 @@
       <label class="my-1 mr-2">Sub-Category: </label>
       <select class="custom-select" class="condensed list-group-item"
               id="subcategorySelect" (change)="filterExact('subcategory', $event.target.value)">
-        <option [value]="null">All</option>
+        <option [value]="">All</option>
         <option *ngFor="let subcategory of subcategories[category]" value="{{subcategory}}">{{subcategory | titlecase}}</option>
       </select>
     </div>
