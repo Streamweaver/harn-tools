@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {ArmorModule} from './armor/armor.module';
 import { CoreModule } from './core/core.module';
 import { ManorsModule } from './manors/manors.module';
+import {PricesModule} from './prices/prices.module';
 import { TravelModule } from './travel/travel.module';
 import { NamesModule } from './names/names.module';
 
@@ -19,6 +20,7 @@ import { AppComponent } from './app.component';
     TravelModule,
     NamesModule,
     ArmorModule,
+    PricesModule,
     AppRoutingModule,
     FormsModule
   ],

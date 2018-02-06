@@ -104,6 +104,31 @@ export const ArmorList: Armor[] = [
     basePrice: 16
   },
   {
+    name: 'cloth gloves',
+    type: ArmorType.Cloth,
+    coverage: {
+      [ArmorLocation.Skull]: false,
+      [ArmorLocation.Face]: false,
+      [ArmorLocation.Neck]: false,
+      [ArmorLocation.Shoulders]: false,
+      [ArmorLocation.UpperArms]: false,
+      [ArmorLocation.Elbows]: false,
+      [ArmorLocation.Forearms]: false,
+      [ArmorLocation.Hands]: true,
+      [ArmorLocation.ThoraxFront]: false,
+      [ArmorLocation.ThoraxBack]: false,
+      [ArmorLocation.AbdomenFront]: false,
+      [ArmorLocation.AbdomenBack]: false,
+      [ArmorLocation.Hips]: false,
+      [ArmorLocation.Groin]: false,
+      [ArmorLocation.Thighs]: false,
+      [ArmorLocation.Knees]: false,
+      [ArmorLocation.Calves]: false,
+      [ArmorLocation.Feet]: false
+    }, baseWeight: 0.4,
+    basePrice: 8
+  },
+  {
     name: 'cloth leggings',
     type: ArmorType.Cloth,
     coverage: {
@@ -304,6 +329,31 @@ export const ArmorList: Armor[] = [
     basePrice: 264
   },
   {
+    name: 'quild gloves',
+    type: ArmorType.Quilt,
+    coverage: {
+      [ArmorLocation.Skull]: false,
+      [ArmorLocation.Face]: false,
+      [ArmorLocation.Neck]: false,
+      [ArmorLocation.Shoulders]: false,
+      [ArmorLocation.UpperArms]: false,
+      [ArmorLocation.Elbows]: false,
+      [ArmorLocation.Forearms]: false,
+      [ArmorLocation.Hands]: true,
+      [ArmorLocation.ThoraxFront]: false,
+      [ArmorLocation.ThoraxBack]: false,
+      [ArmorLocation.AbdomenFront]: false,
+      [ArmorLocation.AbdomenBack]: false,
+      [ArmorLocation.Hips]: false,
+      [ArmorLocation.Groin]: false,
+      [ArmorLocation.Thighs]: false,
+      [ArmorLocation.Knees]: false,
+      [ArmorLocation.Calves]: false,
+      [ArmorLocation.Feet]: false
+    }, baseWeight: 1.2,
+    basePrice: 16
+  },
+  {
     name: 'quilt leggings',
     type: ArmorType.Quilt,
     coverage: {
@@ -354,7 +404,7 @@ export const ArmorList: Armor[] = [
     basePrice: 176
   },
   {
-    name: 'leather calftboots',
+    name: 'leather calfboots',
     type: ArmorType.Leather,
     coverage: {
       [ArmorLocation.Skull]: false,
@@ -427,6 +477,31 @@ export const ArmorList: Armor[] = [
       [ArmorLocation.Feet]: false
     }, baseWeight: 1.6,
     basePrice: 32
+  },
+  {
+    name: 'leather gorget',
+    type: ArmorType.Leather,
+    coverage: {
+      [ArmorLocation.Skull]: false,
+      [ArmorLocation.Face]: false,
+      [ArmorLocation.Neck]: true,
+      [ArmorLocation.Shoulders]: false,
+      [ArmorLocation.UpperArms]: false,
+      [ArmorLocation.Elbows]: false,
+      [ArmorLocation.Forearms]: false,
+      [ArmorLocation.Hands]: false,
+      [ArmorLocation.ThoraxFront]: false,
+      [ArmorLocation.ThoraxBack]: false,
+      [ArmorLocation.AbdomenFront]: false,
+      [ArmorLocation.AbdomenBack]: false,
+      [ArmorLocation.Hips]: false,
+      [ArmorLocation.Groin]: false,
+      [ArmorLocation.Thighs]: false,
+      [ArmorLocation.Knees]: false,
+      [ArmorLocation.Calves]: false,
+      [ArmorLocation.Feet]: false
+    }, baseWeight: 0.8,
+    basePrice: 16
   },
   {
     name: 'leather gauntlets',
