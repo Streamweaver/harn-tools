@@ -1,10 +1,8 @@
-import {TitleCasePipe} from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Component, OnInit} from '@angular/core';
+import * as _ from 'lodash';
+import {ArmorList} from '../shared/armor.data';
 import {ArmorType} from '../shared/armor.enum';
 import {Armor, ArmorPiece} from '../shared/armor.model';
-import {ArmorList} from '../shared/armor.data';
-import {ArmorService} from '../shared/armor.service';
 
 @Component({
   selector: 'app-armor-list',
@@ -16,7 +14,8 @@ export class ArmorListComponent implements OnInit {
   armorWorn: ArmorPiece[];
   armorType = ArmorType;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.armorWorn = [];
@@ -25,13 +24,7 @@ export class ArmorListComponent implements OnInit {
 
   addWornArmor($event: any) {
     const data: Armor = <Armor>$event.dragData;
-    this.armorWorn.push(new ArmorPiece(
-      data.name,
-      data.type,
-      data.baseWeight,
-      data.basePrice,
-      data.coverage
-    ));
+    this.armorWorn.push(new ArmorPiece(data));
   }
 
   removeWornArmor($event: any) {

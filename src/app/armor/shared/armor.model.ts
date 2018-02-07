@@ -1,16 +1,29 @@
 import {ProtectionValue} from './armor.data';
-import {ArmorProtection, ArmorType} from './armor.enum';
-
-export interface CoverageLocation {
-  [location: string]: boolean;
-}
+import {ArmorLocation, ArmorProtection, ArmorType} from './armor.enum';
 
 export interface Armor {
   name: string;
   type: ArmorType;
   baseWeight: number;
   basePrice: number;
-  coverage: CoverageLocation;
+  skull: boolean;
+  face: boolean;
+  neck: boolean;
+  shoulders: boolean;
+  upperArms: boolean;
+  elbows: boolean;
+  forearms: boolean;
+  hands: boolean;
+  thoraxFront: boolean;
+  thoraxBack: boolean;
+  abdomenFront: boolean;
+  abdomenBack: boolean;
+  hips: boolean;
+  groin: boolean;
+  thighs: boolean;
+  knees: boolean;
+  calves: boolean;
+  feet: boolean;
 }
 
 export class ArmorPiece implements Armor {
@@ -18,21 +31,28 @@ export class ArmorPiece implements Armor {
   type: ArmorType;
   baseWeight: number;
   basePrice: number;
-  coverage: CoverageLocation;
+  skull: boolean;
+  face: boolean;
+  neck: boolean;
+  shoulders: boolean;
+  upperArms: boolean;
+  elbows: boolean;
+  forearms: boolean;
+  hands: boolean;
+  thoraxFront: boolean;
+  thoraxBack: boolean;
+  abdomenFront: boolean;
+  abdomenBack: boolean;
+  hips: boolean;
+  groin: boolean;
+  thighs: boolean;
+  knees: boolean;
+  calves: boolean;
+  feet: boolean;
   private _quality: number;
 
-  constructor(
-    name: string,
-    type: ArmorType,
-    baseWeight: number,
-    basePrice: number,
-    coverage: CoverageLocation
-  ) {
-    this.name = name;
-    this.type = type;
-    this.baseWeight = baseWeight;
-    this.basePrice = basePrice;
-    this.coverage = coverage;
+  constructor(init?: Partial<ArmorPiece>) {
+    Object.assign(this, init);
     this.quality = 1;
   }
 

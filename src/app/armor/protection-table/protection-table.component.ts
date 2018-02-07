@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ArmorType, ArmorLocation, ArmorProtection, ArmorLocationLabels, ArmorLabelType } from '../shared/armor.enum';
-import {Armor, ArmorPiece} from '../shared/armor.model';
-import {ProtectionValue} from '../shared/armor.data';
+import { ArmorLocation, ArmorProtection, ArmorLocationLabels } from '../shared/armor.enum';
+import { ArmorPiece} from '../shared/armor.model';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-protection-table',
@@ -19,10 +19,10 @@ export class ProtectionTableComponent implements OnInit {
   ngOnInit() {
   }
 
-  locationProtection(location: ArmorLocation, damageType: ArmorProtection): number {
+  locationProtection(location: string, damageType: ArmorProtection): number {
     let protection = 0;
     for (const item of this.armorWorn) {
-      if (item.coverage[location]) {
+      if (item[location]) {
         protection += item.protection(damageType);
       }
     }
@@ -45,11 +45,12 @@ export class ProtectionTableComponent implements OnInit {
     return price;
   }
 
-  locationList(): ArmorLocation[] {
-    const locations: ArmorLocation[] = [];
-    for (const location in ArmorLocation) {
-      if (Number(location) >= 0) {
-        locations.push(Number(location));
+  locationList(): string[] {
+    const locations: string[] = [];
+    for (let location in ArmorLocation) {
+      if (isNaN(Number(location))) {
+        location = _.lowerFirst(location);
+        locations.push(location);
       }
     }
     return locations;

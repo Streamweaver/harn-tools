@@ -55,24 +55,24 @@ export enum ArmorLocation {
  * @type {string}
  */
 export const ArmorLocationLabels = {
-  [ArmorLocation.Skull]: 'skull',
-  [ArmorLocation.Face]: 'face',
-  [ArmorLocation.Neck]: 'neck',
-  [ArmorLocation.Shoulders]: 'shoulders',
-  [ArmorLocation.UpperArms]: 'upper arms',
-  [ArmorLocation.Elbows]: 'elbows',
-  [ArmorLocation.Forearms]: 'forearms',
-  [ArmorLocation.Hands]: 'hands',
-  [ArmorLocation.ThoraxFront]: 'thorax (front)',
-  [ArmorLocation.ThoraxBack]: 'thorax (back)',
-  [ArmorLocation.AbdomenFront]: 'abdomen (front)',
-  [ArmorLocation.AbdomenBack]: 'abdomen (back)',
-  [ArmorLocation.Hips]: 'hips',
-  [ArmorLocation.Groin]: 'groin',
-  [ArmorLocation.Thighs]: 'thighs',
-  [ArmorLocation.Knees]: 'knees',
-  [ArmorLocation.Calves]: 'calves',
-  [ArmorLocation.Feet]: 'feet'
+  skull: 'skull',
+  face: 'face',
+  neck: 'neck',
+  shoulders: 'shoulders',
+  upperArms: 'upper arms',
+  elbows: 'elbows',
+  forearms: 'forearms',
+  hands: 'hands',
+  thoraxFront: 'thorax (front)',
+  thoraxBack: 'thorax (back)',
+  abdomenFront: 'abdomen (front)',
+  abdomenBack: 'abdomen (back)',
+  hips: 'hips',
+  groin: 'groin',
+  thighs: 'thighs',
+  knees: 'knees',
+  calves: 'calves',
+  feet: 'feet'
 };
 
 export enum ArmorProtection {
