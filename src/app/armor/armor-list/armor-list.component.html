@@ -21,8 +21,7 @@
         </div>
         <div class="card-body">
 
-          <div *ngFor="let item of armorList; let i = index" class="list-group-item row" dnd-draggable
-               [dragEnabled]="true" [dragData]="item" [dropZones]="['body']">
+          <div *ngFor="let item of armorList" class="list-group-item row" draggable [dragData]="item">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{item.name | titlecase}}</h5>
               <small>{{item.basePrice}}d/{{item.baseWeight}}lb</small>
@@ -36,10 +35,9 @@
     <div class="col-md-4">
       <div class="card border border-dark fixed">
         <div class="card-header bg-dark"><h5 class="card-title text-light">Armor Worn</h5></div>
-        <div class="card-body" dnd-droppable (onDropSuccess)="addWornArmor($event)" [dropZones]="['body']">
+        <div class="card-body" droppable (onDrop)="onItemDrop($event)">
           <div *ngIf="armorWorn < 1">Drag and Drop armor here</div>
-          <div *ngFor="let item of armorWorn" dnd-draggable [dragEnabled]="true"
-               [dragData]="item" [dropZones]="['trash']">
+          <div *ngFor="let item of armorWorn">
             <div class="list-group-item">
               <div class="d-flex">
                 <h5 class="mr-auto p-1">{{item.name | titlecase}}</h5>
@@ -53,11 +51,11 @@
             </div>
           </div>
         </div>
-        <div class="card-footer pb-3 pt-3" dnd-droppable (onDropSuccess)="removeWornArmor($event)"
-             [dropZones]="['trash']">
+        <div class="card-footer pb-3 pt-3">
           <i class="fas fa-trash"></i> Drop here to remove
         </div>
       </div>
+      {{ armorWorn | json}}
     </div>
 
     <div class="col-md-4">

@@ -22,8 +22,11 @@ export class ArmorListComponent implements OnInit {
     this.filterArmor();
   }
 
-  addWornArmor($event: any) {
-    const data: Armor = <Armor>$event.dragData;
+  onItemDrop(e: any) {
+    this.addWornArmor(e.dragData);
+  }
+
+  addWornArmor(data: Armor) {
     this.armorWorn.push(new ArmorPiece(data));
   }
 
@@ -51,4 +54,5 @@ export class ArmorListComponent implements OnInit {
     }
     return props.join('-');
   }
+
 }
