@@ -9,20 +9,16 @@
         <div class="card-header text-center pb-1 pt-1">
           <div class="btn-group btn-group-sm" role="group" aria-label="First group">
             <button type="button" class="btn btn-secondary" (click)="filterArmor()">All</button>
-            <button type="button" class="btn btn-secondary" (click)="filterArmor(armorType.Cloth)">Cloth</button>
-            <button type="button" class="btn btn-secondary" (click)="filterArmor(armorType.Quilt)">Quilt</button>
-            <button type="button" class="btn btn-secondary" (click)="filterArmor(armorType.Leather)">Leather</button>
-            <button type="button" class="btn btn-secondary" (click)="filterArmor(armorType.Kurbul)">Kurbul</button>
-            <button type="button" class="btn btn-secondary" (click)="filterArmor(armorType.Ring)">Ring</button>
-            <button type="button" class="btn btn-secondary" (click)="filterArmor(armorType.Mail)">Mail</button>
-            <button type="button" class="btn btn-secondary" (click)="filterArmor(armorType.Scale)">Scale</button>
-            <button type="button" class="btn btn-secondary" (click)="filterArmor(armorType.Plate)">Plate</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              *ngFor="let armortType of armorTypes"
+              (click)="filterArmor(armortType)">{{armortType | titlecase}}</button>
           </div>
         </div>
         <div class="card-body">
 
-          <div *ngFor="let item of armorList; let i = index" class="list-group-item row" dnd-draggable
-               [dragEnabled]="true" [dragData]="item" [dropZones]="['body']">
+          <div *ngFor="let item of armorDisplayList" class="list-group-item row" draggable [dragScope]="'rack'" [dragData]="item">
             <div class="d-flex w-100 justify-content-between">
               <h5 class="mb-1">{{item.name | titlecase}}</h5>
               <small>{{item.basePrice}}d/{{item.baseWeight}}lb</small>
@@ -36,10 +32,11 @@
     <div class="col-md-4">
       <div class="card border border-dark fixed">
         <div class="card-header bg-dark"><h5 class="card-title text-light">Armor Worn</h5></div>
-        <div class="card-body" dnd-droppable (onDropSuccess)="addWornArmor($event)" [dropZones]="['body']">
-          <div *ngIf="armorWorn < 1">Drag and Drop armor here</div>
-          <div *ngFor="let item of armorWorn" dnd-draggable [dragEnabled]="true"
-               [dragData]="item" [dropZones]="['trash']">
+        <div class="card-body" droppable [dropScope]="'rack'" (onDrop)="onItemDrop($event)">
+          <div *ngIf="armorWorn < 1" class="text-center">
+            <h4><i class="fas fa-caret-square-down"></i> Drag and Drop armor here</h4>
+          </div>
+          <div *ngFor="let item of armorWorn" draggable [dragScope]="'trash'" [dragData]="item">
             <div class="list-group-item">
               <div class="d-flex">
                 <h5 class="mr-auto p-1">{{item.name | titlecase}}</h5>
@@ -53,9 +50,8 @@
             </div>
           </div>
         </div>
-        <div class="card-footer pb-3 pt-3" dnd-droppable (onDropSuccess)="removeWornArmor($event)"
-             [dropZones]="['trash']">
-          <i class="fas fa-trash"></i> Drop here to remove
+        <div class="card-footer pb-3 pt-3" droppable [dropScope]="'trash'" (onDrop)="onTrashDrop($event)">
+          <h5 [hidden]="armorWorn < 1"><i class="fas fa-trash"></i> Drop here to remove</h5>
         </div>
       </div>
     </div>

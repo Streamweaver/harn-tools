@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ArmorType, ArmorLocation, ArmorProtection, ArmorLocationLabels, ArmorLabelType } from '../shared/armor.enum';
-import {Armor, ArmorPiece} from '../shared/armor.model';
-import {ProtectionValue} from '../shared/armor.data';
+import { DamageTypes } from '../shared/armor.data';
+import { ArmorLocationLabels } from '../shared/armor.data';
+import { ArmorPiece} from '../shared/armor.model';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-protection-table',
@@ -10,19 +11,21 @@ import {ProtectionValue} from '../shared/armor.data';
 })
 export class ProtectionTableComponent implements OnInit {
   @Input('armorWorn') armorWorn: ArmorPiece[];
-  protection = ArmorProtection;
-  location = ArmorLocation;
+  damageTypes: string[];
+  locationList: string[];
   locationLabels = ArmorLocationLabels;
 
   constructor() { }
 
   ngOnInit() {
+    this.parseLocationList();
+    this.damageTypes = DamageTypes;
   }
 
-  locationProtection(location: ArmorLocation, damageType: ArmorProtection): number {
+  locationProtection(location: string, damageType: string): number {
     let protection = 0;
     for (const item of this.armorWorn) {
-      if (item.coverage[location]) {
+      if (item[location]) {
         protection += item.protection(damageType);
       }
     }
@@ -45,23 +48,14 @@ export class ProtectionTableComponent implements OnInit {
     return price;
   }
 
-  locationList(): ArmorLocation[] {
-    const locations: ArmorLocation[] = [];
-    for (const location in ArmorLocation) {
-      if (Number(location) >= 0) {
-        locations.push(Number(location));
+  private parseLocationList() {
+    const locations: string[] = [];
+    for (let location in ArmorLocationLabels) {
+      if (location) {
+        location = _.lowerFirst(location);
+        locations.push(location);
       }
     }
-    return locations;
-  }
-
-  protectionList(): ArmorProtection[] {
-    const protectionTypes: ArmorProtection[] = [];
-    for (const protectionType in ArmorProtection) {
-      if (Number(protectionType) >= 0) {
-        protectionTypes.push(Number(protectionType));
-      }
-    }
-    return protectionTypes;
+    this.locationList = locations;
   }
 }

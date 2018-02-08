@@ -6,35 +6,35 @@ def writeJsonData():
 
 def parseArmor():
   armor_list = []
-  with open('ArmorTables.csv', 'r') as csvFile:
+  with open('ArmorData.csv', 'r') as csvFile:
     reader = csv.DictReader(csvFile)
     for row in reader:
-      type = row['Material Description'].split(' ')[0]
-      name = " ".join(row['Material Description'].split(' ')[1:])
+      type = row['name'].split(' ')[0]
+      name = " ".join(row['name'].split(' '))
       armor_list.append(
         {
           'name': name.lower(),
           'type': type.lower(),
-          'skull': True if row['Skull'] else False,
-          'face': True if row['Face'] else False,
-          'neck': True if row['Neck'] else False,
-          'shoulders': True if row['Shoulder'] else False,
-          'upper_arms': True if row['Upper Arms'] else False,
-          'elbows': True if row['Elbows'] else False,
-          'forearms': True if row['Forearms'] else False,
-          'hands': True if row['Hands'] else False,
-          'thorax_front': True if row['Thorac (Front)'] else False,
-          'thorax_back': True if row['Thorax (Back)'] else False,
-          'abdomen_front': True if row['Abdomen (Front)'] else False,
-          'abdomen_back': True if row['Abdomen (Back)'] else False,
-          'hips': True if row['Hips'] else False,
-          'groin': True if row['Groin'] else False,
-          'thighs': True if row['Thighs'] else False,
-          'knees': True if row['Knees'] else False,
-          'calves': True if row['Calves'] else False,
-          'feet': True if row['Feet'] else False,
-          'weight': float(row['Weight']),
-          'price': int(row['Cost'])
+          'skull': True if row['skull'] else False,
+          'face': True if row['face'] else False,
+          'neck': True if row['neck'] else False,
+          'shoulders': True if row['shoulder'] else False,
+          'upperArms': True if row['upper arms'] else False,
+          'elbows': True if row['elbows'] else False,
+          'forearms': True if row['forearms'] else False,
+          'hands': True if row['hands'] else False,
+          'thoraxFront': True if row['thorax front'] else False,
+          'thoraxBack': True if row['thorax back'] else False,
+          'abdomenFront': True if row['abdomen front'] else False,
+          'abdomenBack': True if row['abdomen back'] else False,
+          'hips': True if row['hips'] else False,
+          'groin': True if row['groin'] else False,
+          'thighs': True if row['thighs'] else False,
+          'knees': True if row['knees'] else False,
+          'calves': True if row['calves'] else False,
+          'feet': True if row['feet'] else False,
+          'baseWeight': float(row['weight']),
+          'basePrice': int(row['cost'])
         }
       )
   return armor_list

@@ -1,9 +1,7 @@
-import {TitleCasePipe} from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {ArmorType} from '../shared/armor.enum';
+import {Component, OnInit} from '@angular/core';
+import * as _ from 'lodash';
+import {ArmorTypes} from '../shared/armor.data';
 import {Armor, ArmorPiece} from '../shared/armor.model';
-import {ArmorList} from '../shared/armor.data';
 import {ArmorService} from '../shared/armor.service';
 
 @Component({
@@ -12,41 +10,102 @@ import {ArmorService} from '../shared/armor.service';
   styleUrls: ['./armor-list.component.scss']
 })
 export class ArmorListComponent implements OnInit {
+  armorDisplayList: Armor[];
   armorList: Armor[];
   armorWorn: ArmorPiece[];
-  armorType = ArmorType;
+  armorLoaded: boolean;
+  armorTypes: string[];
 
-  constructor() { }
+  constructor(private armorService: ArmorService) {
+  }
 
   ngOnInit() {
+    this.armorTypes = ArmorTypes;
+    this.armorLoaded = false;
+    this.armorService.loadArmor().subscribe(
+      armorList => this.armorList = armorList,
+      err => console.log(err),
+      () => {
+        this.armorList = this.sortArmorList(this.armorList);
+        this.filterArmor();
+        this.armorLoaded = true;
+      }
+    );
     this.armorWorn = [];
-    this.filterArmor();
   }
 
-  addWornArmor($event: any) {
-    const data: Armor = <Armor>$event.dragData;
-    this.armorWorn.push(new ArmorPiece(
-      data.name,
-      data.type,
-      data.baseWeight,
-      data.basePrice,
-      data.coverage
-    ));
+  onItemDrop(e: any) {
+    const data = e.dragData as Armor;
+    if (data) {
+      this.addWornArmor(e.dragData);
+    }
   }
 
-  removeWornArmor($event: any) {
-    const idx = this.armorWorn.indexOf($event.dragData);
+  onTrashDrop(e: any) {
+    if (e.dragData instanceof ArmorPiece) {
+      this.removeWornArmor(e.dragData);
+    }
+  }
+
+  addWornArmor(data: Armor) {
+    this.armorWorn.push(new ArmorPiece(data));
+  }
+
+  removeWornArmor(data: ArmorPiece) {
+    const idx = this.armorWorn.indexOf(data);
     if (idx > -1) {
       this.armorWorn.splice(idx, 1);
     }
   }
 
-  filterArmor(armorType: ArmorType = null) {
+  filterArmor(armorType: string = null) {
     if (armorType === null) {
-      this.armorList = ArmorList;
+      this.armorDisplayList = this.armorList;
     } else {
-      this.armorList = ArmorList.filter(armor => armor.type === armorType);
+      this.armorDisplayList = this.armorList.filter(armor => armor.type === armorType);
     }
+  }
+
+  sortArmorList(armorList: Armor[]): Armor[] {
+    return _.orderBy(armorList,
+      [
+        'type',
+        'skull',
+        'face',
+        'neck',
+        'shoulders',
+        'thoraxFront',
+        'thoraxBack',
+        'abdomenFront',
+        'abdomenBack',
+        'hips',
+        'upperArms',
+        'elbows',
+        'hands',
+        'groin',
+        'thighs',
+        'knees',
+        'feet'
+      ],
+      [
+        'asc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+        'desc',
+      ]);
   }
 
   armorCoverageDescription(armor: Armor): string {
@@ -58,4 +117,5 @@ export class ArmorListComponent implements OnInit {
     }
     return props.join('-');
   }
+
 }
