@@ -11,7 +11,7 @@ export class PriceService {
 
   getPrices(): Observable<PriceListing[]> {
     if (!this.priceList) {
-      this.priceList = this.http.get<PriceListing[]>('assets/data/price.data.json');
+      this.priceList = this.http.get<PriceListing[]>('assets/data/combinedprices.data.json');
     }
     return this.priceList;
   }

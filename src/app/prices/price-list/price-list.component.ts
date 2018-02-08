@@ -15,7 +15,6 @@ export class PriceListComponent implements OnInit {
   priceList: PriceListing[];
   filteredPrices: PriceListing[];
   displayList: boolean;
-  categories: string[];
   vendors: string[];
   subcategories: { [key: string]: string[] };
   searchField: FormControl;
@@ -23,8 +22,6 @@ export class PriceListComponent implements OnInit {
   // filter-able properties
   name: string;
   vendor: string;
-  category: string;
-  subcategory: string;
 
   filters = {};
 
@@ -42,10 +39,7 @@ export class PriceListComponent implements OnInit {
       .subscribe(term => {
         this.filterIncludes('name', term);
       });
-    this.categories = [];
     this.vendors = [];
-    this.subcategories = {};
-    this.category = null;
     this.priceService.getPrices().subscribe(
       prices => this.priceList = prices,
       (err) => console.log('Error Loading Price List: ' + err),
@@ -65,7 +59,6 @@ export class PriceListComponent implements OnInit {
   // https://angularfirebase.com/lessons/multi-property-data-filtering-with-firebase-and-angular-4/
   /// filter property by equality to rule
   filterExact(property: string, rule: any) {
-    console.log(property, rule);
     if (!rule) {
       this.removeFilter(property);
     } else {
@@ -104,60 +97,39 @@ export class PriceListComponent implements OnInit {
   }
 
   onCategorySelect(property: string, rule: string) {
-    if (rule === this.category) {
+    if (rule === this.vendor) {
       return;
     }
     if (!rule) {
-      this.removeFilter('subcategory');
-      this.subcategory = null;
+      this.removeFilter('vendor');
       this.removeFilter(property);
-      this.category = null;
     } else {
-      this.category = rule;
       this.filterExact(property, rule);
-      this.removeFilter('subcategory');
-      this.subcategory = null;
       this.applyFilters();
     }
   }
 
-  localPrice(price: number): string {
-    const priceLabel: string[] = [];
+  localPrices(price: number): { coin: string, amount: number}[] {
+    const priceLabel: { coin: string, amount: number}[] = [];
     if (price / 240 > 1) {
-      priceLabel.push(Math.floor(price / 240) + 'L');
+      priceLabel.push({coin: 'L', amount: Math.floor(price / 240)});
       price = price % 240;
     }
     if (price >= 1) {
-      priceLabel.push(Math.floor(price) + 'd');
+      priceLabel.push({coin: 'd', amount: Math.floor(price)});
       price = price % 1;
     }
     if (price > 0) {
-      priceLabel.push (price * 4 + 'f');
+      priceLabel.push({coin: 'f', amount: price * 4});
     }
-    return priceLabel.join(', ');
+    return priceLabel;
   }
 
   private parseSelectOptions() {
     for (const item of this.priceList) {
-      if (this.categories.indexOf(item.category) < 0) {
-        this.categories.push(item.category);
-      }
       if (this.vendors.indexOf(item.vendor) < 0) {
         this.vendors.push(item.vendor);
       }
-      if (!(item.category in this.subcategories)) {
-        this.subcategories[item.category] = [];
-      }
-      if (this.subcategories[item.category].indexOf(item.subcategory) < 0) {
-        this.subcategories[item.category].push(item.subcategory);
-      }
-    }
-    // for (const subcat in this.subcategories) {
-    //   if (subcat) {
-    //     this.subcategories[subcat] = this.subcategories[subcat].sort();
-    //   }
-    // }
-    this.categories = this.categories.sort();
     this.vendors = this.vendors.sort();
   }
-}
+}}

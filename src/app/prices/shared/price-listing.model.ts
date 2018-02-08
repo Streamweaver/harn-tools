@@ -1,9 +1,7 @@
 export interface PriceListing {
-  category: string;
-  subcategory: string;
   name: string;
+  weight: number;
   price: number;
   vendor: string;
-  source: string;
-  comments: string;
+  notes: string;
 }
