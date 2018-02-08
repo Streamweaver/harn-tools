@@ -1,0 +1,5321 @@
+[
+  {
+    "category": "armor",
+    "subcategory": "kurbul",
+    "name": "ailettes",
+    "price": 20.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "4%  Sh"
+  },
+  {
+    "category": "armor",
+    "subcategory": "kurbul",
+    "name": "backplate",
+    "price": 60.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "12% Bk"
+  },
+  {
+    "category": "armor",
+    "subcategory": "kurbul",
+    "name": "breastplate",
+    "price": 60.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "12% Ch"
+  },
+  {
+    "category": "armor",
+    "subcategory": "kurbul",
+    "name": "coudes",
+    "price": 10.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "2%  El"
+  },
+  {
+    "category": "armor",
+    "subcategory": "kurbul",
+    "name": "greaves",
+    "price": 50.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "10% Ca"
+  },
+  {
+    "category": "armor",
+    "subcategory": "kurbul",
+    "name": "halfhelm",
+    "price": 20.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "4%  Sk"
+  },
+  {
+    "category": "armor",
+    "subcategory": "kurbul",
+    "name": "kneecops",
+    "price": 15.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "3%  Kn"
+  },
+  {
+    "category": "armor",
+    "subcategory": "kurbul",
+    "name": "rerebraces",
+    "price": 30.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "6%  Ua"
+  },
+  {
+    "category": "armor",
+    "subcategory": "kurbul",
+    "name": "vambraces",
+    "price": 25.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "5%  Fo"
+  },
+  {
+    "category": "armor",
+    "subcategory": "mail",
+    "name": "byrnie",
+    "price": 660.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "44% Ua Sh Tx Ab Hp Gr"
+  },
+  {
+    "category": "armor",
+    "subcategory": "mail",
+    "name": "cowl",
+    "price": 120.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "8%  Sk Nk"
+  },
+  {
+    "category": "armor",
+    "subcategory": "mail",
+    "name": "hauberk",
+    "price": 975.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "65% tunic + Fo El Th"
+  },
+  {
+    "category": "armor",
+    "subcategory": "mail",
+    "name": "leggings",
+    "price": 660.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "44% Hp Gr Th Kn Ca Ft"
+  },
+  {
+    "category": "armor",
+    "subcategory": "mail",
+    "name": "mittens",
+    "price": 60.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "4%  Ha"
+  },
+  {
+    "category": "armor",
+    "subcategory": "plate",
+    "name": "3/4-helm",
+    "price": 175.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "7%  Sk Fa"
+  },
+  {
+    "category": "armor",
+    "subcategory": "plate",
+    "name": "ailettes",
+    "price": 100.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "4%  Sh"
+  },
+  {
+    "category": "armor",
+    "subcategory": "plate",
+    "name": "backplate",
+    "price": 300.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "12% Bk"
+  },
+  {
+    "category": "armor",
+    "subcategory": "plate",
+    "name": "breastplate",
+    "price": 300.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "12% Ch"
+  },
+  {
+    "category": "armor",
+    "subcategory": "plate",
+    "name": "coudes",
+    "price": 50.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "2%  El"
+  },
+  {
+    "category": "armor",
+    "subcategory": "plate",
+    "name": "great-helm",
+    "price": 275.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "11% Sk Fa Nk"
+  },
+  {
+    "category": "armor",
+    "subcategory": "plate",
+    "name": "greaves",
+    "price": 250.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "10% Ca"
+  },
+  {
+    "category": "armor",
+    "subcategory": "plate",
+    "name": "halfhelm",
+    "price": 100.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "4%  Sk"
+  },
+  {
+    "category": "armor",
+    "subcategory": "plate",
+    "name": "kneecops",
+    "price": 75.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "3%  Kn"
+  },
+  {
+    "category": "armor",
+    "subcategory": "plate",
+    "name": "rerebraces",
+    "price": 150.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "6%  Ua"
+  },
+  {
+    "category": "armor",
+    "subcategory": "plate",
+    "name": "vambraces",
+    "price": 125.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "5%  Fo"
+  },
+  {
+    "category": "armor",
+    "subcategory": "quilted",
+    "name": "cap",
+    "price": 16.0,
+    "vendor": "clothier",
+    "source": "Com4",
+    "comments": "4%  Sk"
+  },
+  {
+    "category": "armor",
+    "subcategory": "quilted",
+    "name": "cowl",
+    "price": 32.0,
+    "vendor": "clothier",
+    "source": "Com4",
+    "comments": "8%  Sk Nk"
+  },
+  {
+    "category": "armor",
+    "subcategory": "quilted",
+    "name": "gambeson",
+    "price": 260.0,
+    "vendor": "clothier",
+    "source": "Com4",
+    "comments": "65% tunic + Fo El Th"
+  },
+  {
+    "category": "armor",
+    "subcategory": "quilted",
+    "name": "leggings",
+    "price": 184.0,
+    "vendor": "clothier",
+    "source": "Com4",
+    "comments": "46% Hp Gr Th Kn Ca Ft"
+  },
+  {
+    "category": "armor",
+    "subcategory": "quilted",
+    "name": "tunic",
+    "price": 176.0,
+    "vendor": "clothier",
+    "source": "Com4",
+    "comments": "44% Ua Sh Tx Ab Hp Gr"
+  },
+  {
+    "category": "armor",
+    "subcategory": "ring",
+    "name": "byrnie",
+    "price": 308.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "44% Ua Sh Tx Ab Hp Gr"
+  },
+  {
+    "category": "armor",
+    "subcategory": "ring",
+    "name": "gauntlets",
+    "price": 28.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "4%  Ha"
+  },
+  {
+    "category": "armor",
+    "subcategory": "ring",
+    "name": "halfhelm",
+    "price": 28.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "4%  Sk"
+  },
+  {
+    "category": "armor",
+    "subcategory": "ring",
+    "name": "hauberk",
+    "price": 455.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "65% tunic + Fo El Th"
+  },
+  {
+    "category": "armor",
+    "subcategory": "ring",
+    "name": "leggings",
+    "price": 308.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "44% Hp Gr Th Kn Ca Ft"
+  },
+  {
+    "category": "armor",
+    "subcategory": "ring",
+    "name": "vest",
+    "price": 196.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "28% Sh Tx Ab"
+  },
+  {
+    "category": "armor",
+    "subcategory": "scale",
+    "name": "byrnie",
+    "price": 440.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "44% Ua Sh Tx Ab Hp Gr"
+  },
+  {
+    "category": "armor",
+    "subcategory": "scale",
+    "name": "hauberk",
+    "price": 650.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "65% tunic + Fo El Th"
+  },
+  {
+    "category": "armor",
+    "subcategory": "scale",
+    "name": "vest",
+    "price": 280.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "28% Sh Tx Ab"
+  },
+  {
+    "category": "armor",
+    "subcategory": "shield",
+    "name": "boss-gore",
+    "price": 12.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": ""
+  },
+  {
+    "category": "armor",
+    "subcategory": "shield",
+    "name": "shield, buckler",
+    "price": 24.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": ""
+  },
+  {
+    "category": "armor",
+    "subcategory": "shield",
+    "name": "shield, kite",
+    "price": 72.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "chivalric"
+  },
+  {
+    "category": "armor",
+    "subcategory": "shield",
+    "name": "shield, knight",
+    "price": 60.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": "chivalric"
+  },
+  {
+    "category": "armor",
+    "subcategory": "shield",
+    "name": "shield, round",
+    "price": 42.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": ""
+  },
+  {
+    "category": "armor",
+    "subcategory": "shield",
+    "name": "shield, tower",
+    "price": 96.0,
+    "vendor": "weaponcrafter",
+    "source": "Com4",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "accessories",
+    "name": "belt, leather",
+    "price": 10.0,
+    "vendor": "hideworker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "accessories",
+    "name": "boots, calf, leather",
+    "price": 64.0,
+    "vendor": "hideworker",
+    "source": "Com4",
+    "comments": "16% Ca Ft"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "accessories",
+    "name": "boots, knee, leather",
+    "price": 76.0,
+    "vendor": "hideworker",
+    "source": "Com4",
+    "comments": "19% Kn Ca Ft"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "accessories",
+    "name": "purse, buckram",
+    "price": 9.0,
+    "vendor": "clothier",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "accessories",
+    "name": "purse, silk",
+    "price": 60.0,
+    "vendor": "clothier",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "accessories",
+    "name": "quiver",
+    "price": 8.0,
+    "vendor": "hideworker",
+    "source": "Pri4",
+    "comments": "holds 24 arrows"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "accessories",
+    "name": "sandals, leather",
+    "price": 8.0,
+    "vendor": "hideworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "accessories",
+    "name": "scabbard, leather",
+    "price": 48.0,
+    "vendor": "hideworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "accessories",
+    "name": "shoes, leather",
+    "price": 24.0,
+    "vendor": "hideworker",
+    "source": "Com4",
+    "comments": "6%  Ft"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, beaver",
+    "price": 30.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, calf",
+    "price": 16.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, deer",
+    "price": 6.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, ermine, sable",
+    "price": 30.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, exotic",
+    "price": 120.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, goat",
+    "price": 4.0,
+    "vendor": "hideworker",
+    "source": "IvPr",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, horse",
+    "price": 10.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, lambskin",
+    "price": 3.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, otter, weasel",
+    "price": 24.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, ox",
+    "price": 12.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, pig",
+    "price": 5.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, rabbit",
+    "price": 1.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, reindeer",
+    "price": 16.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, seal",
+    "price": 24.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "hides",
+    "name": "hide, sheep",
+    "price": 4.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "linen",
+    "name": "cloak, linen",
+    "price": 67.0,
+    "vendor": "clothier",
+    "source": "@1",
+    "comments": "67% surcoat + Kn Ca"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "linen",
+    "name": "gloves, linen",
+    "price": 4.0,
+    "vendor": "clothier",
+    "source": "@1",
+    "comments": "4%  Ha"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "linen",
+    "name": "hat, linen",
+    "price": 4.0,
+    "vendor": "clothier",
+    "source": "@1",
+    "comments": "4%  Sk"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "linen",
+    "name": "hood, linen",
+    "price": 8.0,
+    "vendor": "clothier",
+    "source": "@1",
+    "comments": "8%  Sk Nk"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "linen",
+    "name": "leggings, linen",
+    "price": 44.0,
+    "vendor": "clothier",
+    "source": "@1",
+    "comments": "44% Hp Gr Th Kn Ca Ft"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "linen",
+    "name": "robe, linen",
+    "price": 78.0,
+    "vendor": "clothier",
+    "source": "@1",
+    "comments": "78% cloak + El Fo Ua"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "linen",
+    "name": "surcoat, linen",
+    "price": 52.0,
+    "vendor": "clothier",
+    "source": "@1",
+    "comments": "52% Sh Tx Ab Hp Gr Th"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "linen",
+    "name": "tunic, linen",
+    "price": 44.0,
+    "vendor": "clothier",
+    "source": "@1",
+    "comments": "44% Ua Sh Tx Ab Hp Gr"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "linen",
+    "name": "vest, linen",
+    "price": 28.0,
+    "vendor": "clothier",
+    "source": "@1",
+    "comments": "28% Sh Tx Ab"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "beaver/sy",
+    "price": 18.0,
+    "vendor": "hideworker",
+    "source": "@2",
+    "comments": "18f/% cover"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "buckram/sy",
+    "price": 10.0,
+    "vendor": "clothier",
+    "source": "Pri2",
+    "comments": "10f/% cover"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "canvas/sy",
+    "price": 3.0,
+    "vendor": "shipwright",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "carpet, wool/sy",
+    "price": 40.0,
+    "vendor": "clothier",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "ermine/sy",
+    "price": 40.0,
+    "vendor": "clothier",
+    "source": "@2",
+    "comments": "10d/% cover"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "lace/yard",
+    "price": 50.0,
+    "vendor": "clothier",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "leather/sy",
+    "price": 16.0,
+    "vendor": "hideworker",
+    "source": "@1",
+    "comments": "4d/% cover"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "linen, emelrene/sy",
+    "price": 28.0,
+    "vendor": "clothier",
+    "source": "Pri3",
+    "comments": "7d/% cover"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "linen/sy",
+    "price": 4.0,
+    "vendor": "clothier",
+    "source": "Pri3",
+    "comments": "1d/% cover"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "russet/sy",
+    "price": 12.0,
+    "vendor": "clothier",
+    "source": "Pri4",
+    "comments": "3d/% cover"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "sealskin/sy",
+    "price": 20.0,
+    "vendor": "hideworker",
+    "source": "@2",
+    "comments": "5d/% cover"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "serge/sy",
+    "price": 6.0,
+    "vendor": "clothier",
+    "source": "Pri4",
+    "comments": "6f/% cover"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "silk/sy",
+    "price": 72.0,
+    "vendor": "clothier",
+    "source": "Pri4",
+    "comments": "18d/% cover"
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "wool/lb",
+    "price": 4.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "clothing",
+    "subcategory": "material",
+    "name": "worsted/sy",
+    "price": 24.0,
+    "vendor": "clothier",
+    "source": "Pri4",
+    "comments": "6d/% cover"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "alanal/dose",
+    "price": 6.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "hallucinogen"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "arva/dose",
+    "price": 120.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "strength potion"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "berilik/dose",
+    "price": 30.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "disinfect/anesthetic"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "doshenkana/dose",
+    "price": 15.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "poison"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "elprequir/dose",
+    "price": 12.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "aphrodisiac"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "fanosel/dose",
+    "price": 30.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "narcotic"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "fletharane/dose",
+    "price": 20.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "hallucinogen"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "gaethipa/dose",
+    "price": 60.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "poison"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "habsulara/dose",
+    "price": 6.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "brain stimulant"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "herb, common/oz",
+    "price": 6.0,
+    "vendor": "apothecary",
+    "source": "Hrb1",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "herb, rare/oz",
+    "price": 60.0,
+    "vendor": "apothecary",
+    "source": "Hrb1",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "herb, uncommon/oz",
+    "price": 12.0,
+    "vendor": "apothecary",
+    "source": "Hrb1",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "herb, very-common/oz",
+    "price": 3.0,
+    "vendor": "apothecary",
+    "source": "Hrb1",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "herb, very-rare/oz",
+    "price": 120.0,
+    "vendor": "apothecary",
+    "source": "Hrb1",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "hreyochor/dose",
+    "price": 30.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "fertility drug"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "joldraiven/dose",
+    "price": 150.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "equine stimulant"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "kargele/dose",
+    "price": 150.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "healing"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "lavaryctia/dose",
+    "price": 30.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "soporific"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "leortevald/dose",
+    "price": 8.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "poison"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "metysso/dose",
+    "price": 40.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "invisible ink"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "olrui/dose",
+    "price": 26.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "stimulant"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "opiates/oz",
+    "price": 100.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": "narcotic"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "perigwar/dose",
+    "price": 30.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "aphrodisiac"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "quessel/dose",
+    "price": 30.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "antibiotic"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "rasakile/dose",
+    "price": 6.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "contraceptive"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "stiltrassa/dose",
+    "price": 60.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "emetic/diarrhetic"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "tasparth/dose",
+    "price": 3.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "ordeal drug"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "teranya/dose",
+    "price": 30.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "eye cure"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "tirageyth/dose",
+    "price": 15.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "narcotic"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "wylorafina/dose",
+    "price": 30.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "stimulant/poison"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "drugs",
+    "name": "yulpris/dose",
+    "price": 600.0,
+    "vendor": "apothecary",
+    "source": "Pri3",
+    "comments": "universal antidote"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "dyes",
+    "name": "dragon's-blood/oz",
+    "price": 170.0,
+    "vendor": "clothier",
+    "source": "Pri3",
+    "comments": "red dye"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "dyes",
+    "name": "indigo/oz",
+    "price": 40.0,
+    "vendor": "clothier",
+    "source": "Pri3",
+    "comments": "blue dye"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "dyes",
+    "name": "saffron/oz",
+    "price": 160.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": "yellow dye and spice"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "dyes",
+    "name": "tazach-purple/oz",
+    "price": 200.0,
+    "vendor": "clothier",
+    "source": "Pri3",
+    "comments": "purple dye"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "flavorings",
+    "name": "alum/oz",
+    "price": 16.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "flavorings",
+    "name": "cinnamon/oz",
+    "price": 40.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "flavorings",
+    "name": "ginger/oz",
+    "price": 30.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "flavorings",
+    "name": "ginseng/oz",
+    "price": 170.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "flavorings",
+    "name": "lashu-powder/oz",
+    "price": 180.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": "common rhubarb"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "flavorings",
+    "name": "nutmeg/oz",
+    "price": 50.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "flavorings",
+    "name": "pepper/oz",
+    "price": 36.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "flavorings",
+    "name": "salt/lb",
+    "price": 0.25,
+    "vendor": "salter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "flavorings",
+    "name": "sugar/lb",
+    "price": 60.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "flavorings",
+    "name": "tea/oz",
+    "price": 35.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "hardstone",
+    "name": "amber, fine/oz",
+    "price": 16.0,
+    "vendor": "miner",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "hardstone",
+    "name": "horn, narwhal/lb",
+    "price": 60.0,
+    "vendor": "whaler",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "hardstone",
+    "name": "ivory/lb",
+    "price": 75.0,
+    "vendor": "whaler",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "hardstone",
+    "name": "jade/lb",
+    "price": 2000.0,
+    "vendor": "miner",
+    "source": "@5",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "hardstone",
+    "name": "stone, fine/8cf",
+    "price": 1.0,
+    "vendor": "mason",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "hardstone",
+    "name": "stone, limestone/8cf",
+    "price": 3.0,
+    "vendor": "mason",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "hardstone",
+    "name": "stone/8cf",
+    "price": 0.5,
+    "vendor": "mason",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "hardstone",
+    "name": "whalebone/lb",
+    "price": 6.0,
+    "vendor": "whaler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "metals",
+    "name": "brass/lb",
+    "price": 3.0,
+    "vendor": "metalcrafter",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "metals",
+    "name": "bronze/lb",
+    "price": 4.0,
+    "vendor": "metalcrafter",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "metals",
+    "name": "copper/lb",
+    "price": 2.0,
+    "vendor": "miner",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "metals",
+    "name": "gold/lb",
+    "price": 6400.0,
+    "vendor": "miner",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "metals",
+    "name": "iron, pig/20lb",
+    "price": 1.0,
+    "vendor": "miner",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "metals",
+    "name": "lead/lb",
+    "price": 0.25,
+    "vendor": "miner",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "metals",
+    "name": "mythral/lb",
+    "price": 40000.0,
+    "vendor": "miner",
+    "source": "@5",
+    "comments": "platinum"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "metals",
+    "name": "pewter/lb",
+    "price": 3.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "metals",
+    "name": "silver/lb",
+    "price": 320.0,
+    "vendor": "miner",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "metals",
+    "name": "steel/lb",
+    "price": 1.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "metals",
+    "name": "tin/lb",
+    "price": 2.0,
+    "vendor": "miner",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "oils",
+    "name": "grease/lb",
+    "price": 2.0,
+    "vendor": "chandler",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "oils",
+    "name": "lard/lb",
+    "price": 1.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "oils",
+    "name": "oil, cinnamon/oz",
+    "price": 60.0,
+    "vendor": "perfumer",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "oils",
+    "name": "oil, cooking/gal",
+    "price": 3.0,
+    "vendor": "chandler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "oils",
+    "name": "oil, myrtle/oz",
+    "price": 25.0,
+    "vendor": "perfumer",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "oils",
+    "name": "oil, rose/oz",
+    "price": 20.0,
+    "vendor": "perfumer",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "oils",
+    "name": "oil, whale/gal",
+    "price": 12.0,
+    "vendor": "whaler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "perfumes",
+    "name": "ambergris/oz",
+    "price": 180.0,
+    "vendor": "perfumer",
+    "source": "Pri2",
+    "comments": "fixative"
+  },
+  {
+    "category": "commodities",
+    "subcategory": "perfumes",
+    "name": "bdellium/oz",
+    "price": 40.0,
+    "vendor": "perfumer",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "perfumes",
+    "name": "camphor/oz",
+    "price": 50.0,
+    "vendor": "perfumer",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "perfumes",
+    "name": "frankincense/oz",
+    "price": 70.0,
+    "vendor": "perfumer",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "perfumes",
+    "name": "incense/lb",
+    "price": 12.0,
+    "vendor": "perfumer",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "perfumes",
+    "name": "myrrh/oz",
+    "price": 150.0,
+    "vendor": "perfumer",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "perfumes",
+    "name": "nard/oz",
+    "price": 100.0,
+    "vendor": "perfumer",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "perfumes",
+    "name": "perfumes/oz",
+    "price": 6.0,
+    "vendor": "perfumer",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "wood",
+    "name": "wood, ash/10cf",
+    "price": 12.0,
+    "vendor": "timberwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "wood",
+    "name": "wood, birch/10cf",
+    "price": 4.0,
+    "vendor": "timberwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "wood",
+    "name": "wood, cedar/10cf",
+    "price": 8.0,
+    "vendor": "timberwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "wood",
+    "name": "wood, elm/10cf",
+    "price": 10.0,
+    "vendor": "timberwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "wood",
+    "name": "wood, fir/10cf",
+    "price": 12.0,
+    "vendor": "timberwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "wood",
+    "name": "wood, larch/10cf",
+    "price": 6.0,
+    "vendor": "timberwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "wood",
+    "name": "wood, maple/10cf",
+    "price": 14.0,
+    "vendor": "timberwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "wood",
+    "name": "wood, oak/10cf",
+    "price": 18.0,
+    "vendor": "timberwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "wood",
+    "name": "wood, pine/10cf",
+    "price": 8.0,
+    "vendor": "timberwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "commodities",
+    "subcategory": "wood",
+    "name": "wood, spruce/10cf",
+    "price": 6.0,
+    "vendor": "timberwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "barley/bushel",
+    "price": 5.0,
+    "vendor": "farm/market",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "bread, barley/loaf",
+    "price": 0.25,
+    "vendor": "miller",
+    "source": "IvPr",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "bread, rye/loaf",
+    "price": 0.25,
+    "vendor": "miller",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "bread, wheat/loaf",
+    "price": 0.5,
+    "vendor": "miller",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "buns/dozen",
+    "price": 0.5,
+    "vendor": "miller",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "flour, barley/lb",
+    "price": 0.25,
+    "vendor": "miller",
+    "source": "IvPr",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "flour, rye/lb",
+    "price": 0.25,
+    "vendor": "miller",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "flour, wheat/lb",
+    "price": 0.5,
+    "vendor": "miller",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "hay/bushel",
+    "price": 6.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "oatcakes/dozen",
+    "price": 0.25,
+    "vendor": "miller",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "oatmeal/lb",
+    "price": 0.25,
+    "vendor": "miller",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "oats/bushel",
+    "price": 4.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "pie, fruit",
+    "price": 0.75,
+    "vendor": "miller",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "pie, meat",
+    "price": 1.0,
+    "vendor": "miller",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "rye/bushel",
+    "price": 6.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "scones/dozen",
+    "price": 0.5,
+    "vendor": "miller",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "bakery",
+    "name": "wheat/bushel",
+    "price": 8.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "dairy",
+    "name": "butter/lb",
+    "price": 0.5,
+    "vendor": "farm/market",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "dairy",
+    "name": "cheese/lb",
+    "price": 1.0,
+    "vendor": "farm/market",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "dairy",
+    "name": "cream/gal",
+    "price": 6.0,
+    "vendor": "farm/market",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "dairy",
+    "name": "curds/lb",
+    "price": 0.5,
+    "vendor": "farm/market",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "dairy",
+    "name": "eggs/dozen",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "dairy",
+    "name": "milk, cow/gal",
+    "price": 3.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "dairy",
+    "name": "milk, goat/gal",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "dairy",
+    "name": "milk, sheep/gal",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "ale/hogshead",
+    "price": 72.0,
+    "vendor": "innkeeper",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "ale/pint",
+    "price": 0.25,
+    "vendor": "innkeeper",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "beer/hogshead",
+    "price": 75.0,
+    "vendor": "innkeeper",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "beer/pint",
+    "price": 0.25,
+    "vendor": "innkeeper",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "brandy/cup",
+    "price": 4.0,
+    "vendor": "innkeeper",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "brandy/hogshead",
+    "price": 1800.0,
+    "vendor": "innkeeper",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "cider/hogshead",
+    "price": 80.0,
+    "vendor": "innkeeper",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "cider/pint",
+    "price": 0.25,
+    "vendor": "innkeeper",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "mead/hogshead",
+    "price": 140.0,
+    "vendor": "innkeeper",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "mead/pint",
+    "price": 0.5,
+    "vendor": "innkeeper",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "wine/cup",
+    "price": 0.75,
+    "vendor": "innkeeper",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "drink",
+    "name": "wine/hogshead",
+    "price": 400.0,
+    "vendor": "innkeeper",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meals",
+    "name": "meal, cheap",
+    "price": 0.25,
+    "vendor": "innkeeper",
+    "source": "Inn1",
+    "comments": "bread and cheese"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meals",
+    "name": "meal, cold",
+    "price": 0.75,
+    "vendor": "innkeeper",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meals",
+    "name": "meal, deluxe",
+    "price": 3.0,
+    "vendor": "innkeeper",
+    "source": "Inn1",
+    "comments": "with fresh meat"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meals",
+    "name": "meal, hot",
+    "price": 1.0,
+    "vendor": "innkeeper",
+    "source": "Pri4",
+    "comments": "stew and warm bread"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "bacon/lb",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "beef/lb",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "chicken/lb",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "duck/lb",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "goat/lb",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "goose/lb",
+    "price": 3.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "ham/lb",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "horsemeat/lb",
+    "price": 1.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "lamb/lb",
+    "price": 3.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "mutton/lb",
+    "price": 1.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "pheasant/lb",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "pidgeon/lb",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "@4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "pork/lb",
+    "price": 2.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "rabbit/lb",
+    "price": 1.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "swan/lb",
+    "price": 3.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "veal/lb",
+    "price": 3.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "meat",
+    "name": "venison/lb",
+    "price": 3.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "dessert, bannocks",
+    "price": 0.75,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "bannocks & honey"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "dessert, cheese-pie",
+    "price": 12.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "elderflower cheesepie"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "dessert, custard",
+    "price": 1.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "plum duff & custard"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "dessert, dumpling",
+    "price": 0.25,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "fresh dumpling"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "dessert, pears",
+    "price": 6.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "pears & honey wine"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "dessert, pie",
+    "price": 4.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "gooseberry pie"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "dessert, pudding",
+    "price": 2.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "rose petal pudding"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "dessert, tart",
+    "price": 0.5,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "apple tart"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "hotpot, chicken",
+    "price": 4.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "chicken & pidgeon pie"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "hotpot, eels",
+    "price": 3.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "baked eels & lampreys"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "hotpot, kidney",
+    "price": 2.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "kidney & dumplings"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "hotpot, liver",
+    "price": 1.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "liver & giblet stew"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "hotpot, monkfish",
+    "price": 6.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "monkfish & dates"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "meat & sauce, capon",
+    "price": 4.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "capon & black sauce"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "meat & sauce, duck",
+    "price": 9.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "duck & chawdron sauce"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "meat & sauce, goose",
+    "price": 18.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "goose & fruit sauce"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "meat & sauce, oxtongue",
+    "price": 6.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "oxtongue & herb sauce"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "meat & sauce, pork",
+    "price": 5.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "pork & apple sauce"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "meat & sauce, salmon",
+    "price": 12.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "salmon, mustard cream"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "meat & sauce, swan",
+    "price": 24.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "black swan in brandy"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "soup, beef",
+    "price": 1.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "beef & carrot broth"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "soup, cabbage",
+    "price": 0.25,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "cabbage soup"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "soup, chicken",
+    "price": 0.75,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "chicken & turnip broth"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "soup, mutton",
+    "price": 0.5,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "mutton & barley broth"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "soup, oyster",
+    "price": 2.0,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "mussel & oyster soup"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "menu",
+    "name": "soup, pea",
+    "price": 0.25,
+    "vendor": "innkeeper",
+    "source": "Inn2",
+    "comments": "pea & bean soup"
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "apples/lb",
+    "price": 0.25,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "beans/lb",
+    "price": 0.25,
+    "vendor": "farm/market",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "berries/lb",
+    "price": 0.75,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "cabbage/lb",
+    "price": 0.5,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "cherries/lb",
+    "price": 0.5,
+    "vendor": "farm/market",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "honey/gal",
+    "price": 12.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "lentils/lb",
+    "price": 0.5,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "olives/lb",
+    "price": 8.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "pears/lb",
+    "price": 0.5,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "peas/lb",
+    "price": 0.25,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "plums/lb",
+    "price": 0.75,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "produce",
+    "name": "vetches/lb",
+    "price": 4.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "cod/lb",
+    "price": 1.0,
+    "vendor": "fisherman",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "crab/lb",
+    "price": 1.0,
+    "vendor": "fisherman",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "eels/lb",
+    "price": 0.75,
+    "vendor": "fisherman",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "fish, dried/lb",
+    "price": 2.0,
+    "vendor": "fisherman",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "fish, salted/lb",
+    "price": 2.0,
+    "vendor": "salter",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "fish, smoked/lb",
+    "price": 2.0,
+    "vendor": "fisherman",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "herring/lb",
+    "price": 0.5,
+    "vendor": "fisherman",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "mackerel/lb",
+    "price": 0.25,
+    "vendor": "fisherman",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "oyster/lb",
+    "price": 0.5,
+    "vendor": "fisherman",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "pike/lb",
+    "price": 1.0,
+    "vendor": "fisherman",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "salmon/lb",
+    "price": 2.0,
+    "vendor": "fisherman",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "seaweed, dolce/lb",
+    "price": 6.0,
+    "vendor": "fisherman",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "food and drink",
+    "subcategory": "seafood",
+    "name": "trout/lb",
+    "price": 1.0,
+    "vendor": "fisherman",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "bath",
+    "name": "broom",
+    "price": 1.0,
+    "vendor": "thatcher",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "bath",
+    "name": "brush, hair",
+    "price": 3.0,
+    "vendor": "chandler",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "bath",
+    "name": "comb",
+    "price": 2.0,
+    "vendor": "chandler",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "bath",
+    "name": "razor",
+    "price": 6.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "bath",
+    "name": "soap/oz",
+    "price": 1.0,
+    "vendor": "perfumer",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "bath",
+    "name": "sponges/each",
+    "price": 45.0,
+    "vendor": "apothecary",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "containers",
+    "name": "bag, canvas",
+    "price": 4.0,
+    "vendor": "tentmaker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "containers",
+    "name": "barrel, hogshead",
+    "price": 15.0,
+    "vendor": "woodworker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "containers",
+    "name": "basket",
+    "price": 2.0,
+    "vendor": "thatcher",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "containers",
+    "name": "bottle, glass",
+    "price": 6.0,
+    "vendor": "glassworker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "containers",
+    "name": "bucket",
+    "price": 4.0,
+    "vendor": "woodworker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "containers",
+    "name": "lockbox",
+    "price": 12.0,
+    "vendor": "locksmith",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "containers",
+    "name": "sack, buckram",
+    "price": 1.0,
+    "vendor": "tentmaker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "containers",
+    "name": "sack, linen",
+    "price": 0.5,
+    "vendor": "tentmaker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "containers",
+    "name": "urn, 5gal",
+    "price": 12.0,
+    "vendor": "potter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "containers",
+    "name": "vase",
+    "price": 4.0,
+    "vendor": "potter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "containers",
+    "name": "wineskin, gallon",
+    "price": 10.0,
+    "vendor": "hideworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "furnishings",
+    "name": "bed",
+    "price": 50.0,
+    "vendor": "woodworker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "furnishings",
+    "name": "blanket",
+    "price": 10.0,
+    "vendor": "clothier",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "furnishings",
+    "name": "cabinet",
+    "price": 144.0,
+    "vendor": "woodworker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "furnishings",
+    "name": "chair",
+    "price": 12.0,
+    "vendor": "woodworker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "furnishings",
+    "name": "table",
+    "price": 36.0,
+    "vendor": "woodworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "furnishings",
+    "name": "trunk",
+    "price": 12.0,
+    "vendor": "woodworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "kitchen",
+    "name": "bowl",
+    "price": 2.0,
+    "vendor": "potter",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "kitchen",
+    "name": "cauldron, iron",
+    "price": 10.0,
+    "vendor": "metalcrafter",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "kitchen",
+    "name": "cup",
+    "price": 1.0,
+    "vendor": "potter",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "kitchen",
+    "name": "flagon",
+    "price": 4.0,
+    "vendor": "potter",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "kitchen",
+    "name": "goblet, pewter",
+    "price": 3.0,
+    "vendor": "metalcrafter",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "kitchen",
+    "name": "pan, copper",
+    "price": 12.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "kitchen",
+    "name": "plate, pewter",
+    "price": 5.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "kitchen",
+    "name": "plate, tin",
+    "price": 2.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "kitchen",
+    "name": "tankard, pewter",
+    "price": 4.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "light & heat",
+    "name": "candles, beeswax/lb",
+    "price": 24.0,
+    "vendor": "chandler",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "light & heat",
+    "name": "candles, tallow/lb",
+    "price": 3.0,
+    "vendor": "chandler",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "light & heat",
+    "name": "charcoal/bushel",
+    "price": 2.0,
+    "vendor": "charcoaler",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "light & heat",
+    "name": "coal/bushel",
+    "price": 6.0,
+    "vendor": "charcoaler",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "light & heat",
+    "name": "firewood/cwt",
+    "price": 2.0,
+    "vendor": "charcoaler",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "light & heat",
+    "name": "lantern",
+    "price": 12.0,
+    "vendor": "chandler",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "light & heat",
+    "name": "oil, lamp/gal",
+    "price": 12.0,
+    "vendor": "chandler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "light & heat",
+    "name": "tinderbox",
+    "price": 6.0,
+    "vendor": "chandler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "light & heat",
+    "name": "wax, candle/lb",
+    "price": 1.0,
+    "vendor": "chandler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "miscellaneous",
+    "name": "awnings",
+    "price": 18.0,
+    "vendor": "tentmaker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "miscellaneous",
+    "name": "bells, small",
+    "price": 1.0,
+    "vendor": "metalcrafter",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "miscellaneous",
+    "name": "bells, temple",
+    "price": 200.0,
+    "vendor": "metalcrafter",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "miscellaneous",
+    "name": "glass, pottery",
+    "price": 12.0,
+    "vendor": "glassworker",
+    "source": "Pri3",
+    "comments": "dishes, bottles, etc."
+  },
+  {
+    "category": "housewares",
+    "subcategory": "miscellaneous",
+    "name": "glass, stained/sf",
+    "price": 12.0,
+    "vendor": "glassworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "miscellaneous",
+    "name": "glass, window/sf",
+    "price": 2.0,
+    "vendor": "glassworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "miscellaneous",
+    "name": "pipe, smoking",
+    "price": 2.0,
+    "vendor": "potter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "miscellaneous",
+    "name": "stall, canvas",
+    "price": 24.0,
+    "vendor": "tentmaker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "miscellaneous",
+    "name": "tent, pavilion",
+    "price": 200.0,
+    "vendor": "tentmaker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "miscellaneous",
+    "name": "tent, two-man",
+    "price": 27.0,
+    "vendor": "tentmaker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "housewares",
+    "subcategory": "miscellaneous",
+    "name": "tent/sf",
+    "price": 3.0,
+    "vendor": "tentmaker",
+    "source": "HnDx",
+    "comments": "by floor area"
+  },
+  {
+    "category": "livestock",
+    "subcategory": "food animals",
+    "name": "calf, live",
+    "price": 60.0,
+    "vendor": "farm/market",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "food animals",
+    "name": "capon, live",
+    "price": 4.0,
+    "vendor": "farm/market",
+    "source": "@4",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "food animals",
+    "name": "chicken, live",
+    "price": 6.0,
+    "vendor": "farm/market",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "food animals",
+    "name": "duck, live",
+    "price": 6.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "food animals",
+    "name": "goat, live",
+    "price": 10.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "food animals",
+    "name": "goose, live",
+    "price": 9.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "food animals",
+    "name": "lamb, live",
+    "price": 6.0,
+    "vendor": "farm/market",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "food animals",
+    "name": "pidgeon, live",
+    "price": 0.5,
+    "vendor": "farm/market",
+    "source": "@4",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "food animals",
+    "name": "pig, live",
+    "price": 24.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "food animals",
+    "name": "sheep, live",
+    "price": 12.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "food animals",
+    "name": "swan, live",
+    "price": 12.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "bear, trained",
+    "price": 300.0,
+    "vendor": "trainer",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "dog, hatter",
+    "price": 9.0,
+    "vendor": "breeder",
+    "source": "Dog1",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "dog, hound",
+    "price": 18.0,
+    "vendor": "breeder",
+    "source": "Dog1",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "dog, sheepdog",
+    "price": 18.0,
+    "vendor": "breeder",
+    "source": "Dog1",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "dog, sled",
+    "price": 30.0,
+    "vendor": "breeder",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "dog, trained",
+    "price": 24.0,
+    "vendor": "breeder",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "dog, wolfhound",
+    "price": 12.0,
+    "vendor": "breeder",
+    "source": "Dog1",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "donkey",
+    "price": 120.0,
+    "vendor": "ostler",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "falcon, trained",
+    "price": 100.0,
+    "vendor": "falconer",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "horse, cart",
+    "price": 180.0,
+    "vendor": "ostler",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "horse, plough",
+    "price": 240.0,
+    "vendor": "ostler",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "horse, riding",
+    "price": 360.0,
+    "vendor": "ostler",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "horse, war",
+    "price": 600.0,
+    "vendor": "ostler",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "mule",
+    "price": 180.0,
+    "vendor": "ostler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "ox, cow",
+    "price": 96.0,
+    "vendor": "farm/market",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "slave, gladiator",
+    "price": 480.0,
+    "vendor": "slaver",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "slave, laborer",
+    "price": 240.0,
+    "vendor": "slaver",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "livestock",
+    "subcategory": "work animals",
+    "name": "slave, pleasure",
+    "price": 300.0,
+    "vendor": "slaver",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "rural",
+    "name": "castle, large",
+    "price": 2400000.0,
+    "vendor": "mason",
+    "source": "HnDx",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "rural",
+    "name": "castle, small",
+    "price": 240000.0,
+    "vendor": "mason",
+    "source": "HnDx",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "rural",
+    "name": "keep, large",
+    "price": 480000.0,
+    "vendor": "mason",
+    "source": "HnDx",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "rural",
+    "name": "keep, small",
+    "price": 48000.0,
+    "vendor": "mason",
+    "source": "HnDx",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "rural",
+    "name": "manor-house, stone, large",
+    "price": 14400.0,
+    "vendor": "mason",
+    "source": "HnDx",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "rural",
+    "name": "manor-house, stone, small",
+    "price": 1440.0,
+    "vendor": "mason",
+    "source": "HnDx",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "rural",
+    "name": "mill",
+    "price": 960.0,
+    "vendor": "mason",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "rural",
+    "name": "wall, stone, 5ft/sf(ext)",
+    "price": 12.0,
+    "vendor": "mason",
+    "source": "Pri1",
+    "comments": "5 foot thick"
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "demolition, building/sf",
+    "price": 0.25,
+    "vendor": "mason",
+    "source": "RlE4",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "house & garden",
+    "price": 9600.0,
+    "vendor": "mason",
+    "source": "Pri1",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "house, mid-class, average",
+    "price": 2880.0,
+    "vendor": "mason",
+    "source": "Pri1",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "house, mid-class, poor",
+    "price": 1440.0,
+    "vendor": "mason",
+    "source": "Pri1",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "house, mid-class, wealthy",
+    "price": 4800.0,
+    "vendor": "mason",
+    "source": "Pri1",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "house, slum, hovel",
+    "price": 720.0,
+    "vendor": "mason",
+    "source": "Pri1",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "house, upper-class",
+    "price": 6720.0,
+    "vendor": "mason",
+    "source": "Pri1",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "house, urban, best/sf",
+    "price": 3.5,
+    "vendor": "mason",
+    "source": "RlE4",
+    "comments": "total of all floors"
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "house, urban, good/sf",
+    "price": 2.5,
+    "vendor": "mason",
+    "source": "RlE4",
+    "comments": "total of all floors"
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "house, urban, mid/sf",
+    "price": 1.5,
+    "vendor": "mason",
+    "source": "RlE4",
+    "comments": "total of all floors"
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "house, urban, poor/sf",
+    "price": 0.75,
+    "vendor": "mason",
+    "source": "RlE4",
+    "comments": "total of all floors"
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "house, urban, slum/sf",
+    "price": 0.25,
+    "vendor": "mason",
+    "source": "RlE4",
+    "comments": "total of all floors"
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "land, urban, best/sf",
+    "price": 7.0,
+    "vendor": "landowner",
+    "source": "RlE4",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "land, urban, good/sf",
+    "price": 5.0,
+    "vendor": "landowner",
+    "source": "RlE4",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "land, urban, mid/sf",
+    "price": 3.0,
+    "vendor": "landowner",
+    "source": "RlE4",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "land, urban, poor/sf",
+    "price": 1.5,
+    "vendor": "landowner",
+    "source": "RlE4",
+    "comments": ""
+  },
+  {
+    "category": "property",
+    "subcategory": "urban",
+    "name": "land, urban, slum/sf",
+    "price": 0.75,
+    "vendor": "landowner",
+    "source": "RlE4",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "accommodation",
+    "name": "lodging, dorm, poor/night",
+    "price": 0.5,
+    "vendor": "innkeeper",
+    "source": "Inn3",
+    "comments": "soiled strawbed"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "accommodation",
+    "name": "lodging, dorm/night",
+    "price": 1.0,
+    "vendor": "innkeeper",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "accommodation",
+    "name": "lodging, room/night",
+    "price": 6.0,
+    "vendor": "innkeeper",
+    "source": "Pri2",
+    "comments": "furnished"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "accommodation",
+    "name": "lodging, suite/night",
+    "price": 12.0,
+    "vendor": "innkeeper",
+    "source": "oHnD",
+    "comments": "furnished"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "accommodation",
+    "name": "stabling/day",
+    "price": 1.0,
+    "vendor": "ostler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "accommodation",
+    "name": "stabling+feed/day",
+    "price": 2.0,
+    "vendor": "ostler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "education",
+    "name": "college, heraldic/mo",
+    "price": 72.0,
+    "vendor": "herald",
+    "source": "Her1",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "education",
+    "name": "diploma & ceremony, arcane",
+    "price": 36.0,
+    "vendor": "arcanist",
+    "source": "ArL3",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "education",
+    "name": "education, satia/day",
+    "price": 1.75,
+    "vendor": "arcanist",
+    "source": "ArL3",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "education",
+    "name": "education, shenava/day",
+    "price": 3.5,
+    "vendor": "arcanist",
+    "source": "ArL3",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "education",
+    "name": "education, viran/day",
+    "price": 7.0,
+    "vendor": "arcanist",
+    "source": "ArL3",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "education",
+    "name": "room & board, chantry/mo",
+    "price": 90.0,
+    "vendor": "arcanist",
+    "source": "ArL3",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "education",
+    "name": "test, admission, heraldic",
+    "price": 320.0,
+    "vendor": "herald",
+    "source": "Her1",
+    "comments": "no refund if fail"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "entertainment",
+    "name": "courtesan, great/evening",
+    "price": 1000.0,
+    "vendor": "courtesan",
+    "source": "HnDx",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "entertainment",
+    "name": "courtesan/evening",
+    "price": 12.0,
+    "vendor": "courtesan",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "entertainment",
+    "name": "music/composition",
+    "price": 12.0,
+    "vendor": "harper",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "entertainment",
+    "name": "music/performance",
+    "price": 3.0,
+    "vendor": "harper",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "entertainment",
+    "name": "prostitute/evening",
+    "price": 1.0,
+    "vendor": "prostitute",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "entertainment",
+    "name": "seating, pamesani, good",
+    "price": 12.0,
+    "vendor": "agrikan",
+    "source": "Pam2",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "entertainment",
+    "name": "seating, pamesani, poor",
+    "price": 0.5,
+    "vendor": "agrikan",
+    "source": "Pam2",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "legal",
+    "name": "contract",
+    "price": 12.0,
+    "vendor": "litigant",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "legal",
+    "name": "court-appearance/day",
+    "price": 12.0,
+    "vendor": "litigant",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "legal",
+    "name": "deed",
+    "price": 18.0,
+    "vendor": "litigant",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "legal",
+    "name": "registry, bastard",
+    "price": 120.0,
+    "vendor": "herald",
+    "source": "Her3",
+    "comments": "to bear father's arms"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "legal",
+    "name": "registry, heraldic",
+    "price": 5000.0,
+    "vendor": "herald",
+    "source": "Her3",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "legal",
+    "name": "will",
+    "price": 24.0,
+    "vendor": "litigant",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "medical",
+    "name": "embalming",
+    "price": 200.0,
+    "vendor": "embalmer",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "medical",
+    "name": "first-aid",
+    "price": 3.0,
+    "vendor": "physician",
+    "source": "Phy1",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "medical",
+    "name": "surgery, major",
+    "price": 240.0,
+    "vendor": "physician",
+    "source": "Phy1",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "medical",
+    "name": "veterinarian/day",
+    "price": 6.0,
+    "vendor": "ostler",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "mercantyle",
+    "name": "franchise, inn",
+    "price": 9600.0,
+    "vendor": "innkeeper",
+    "source": "Inn1",
+    "comments": "rarely exchanged"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "mercantyle",
+    "name": "market-fee/stall/day",
+    "price": 1.0,
+    "vendor": "mangai",
+    "source": "Hrn10",
+    "comments": "to sell in market"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "taxes & licenses",
+    "name": "anchorage/day/5ft",
+    "price": 1.0,
+    "vendor": "town",
+    "source": "Hrn15",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "taxes & licenses",
+    "name": "license, mill/yr",
+    "price": 240.0,
+    "vendor": "landlord",
+    "source": "Hrn7",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "taxes & licenses",
+    "name": "pilotage",
+    "price": 32.0,
+    "vendor": "town",
+    "source": "Hrn15",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "taxes & licenses",
+    "name": "registry, ship/ft/yr",
+    "price": 50.0,
+    "vendor": "town",
+    "source": "@3",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "taxes & licenses",
+    "name": "toll/camel, ox",
+    "price": 0.5,
+    "vendor": "landlord",
+    "source": "Cam10",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "taxes & licenses",
+    "name": "toll/cart",
+    "price": 0.25,
+    "vendor": "landlord",
+    "source": "Cam10",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "taxes & licenses",
+    "name": "toll/horse",
+    "price": 1.0,
+    "vendor": "landlord",
+    "source": "Cam10",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "taxes & licenses",
+    "name": "toll/person, afoot",
+    "price": 0.25,
+    "vendor": "landlord",
+    "source": "Cam10",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "taxes & licenses",
+    "name": "toll/sheep, goat",
+    "price": 0.25,
+    "vendor": "landlord",
+    "source": "Cam10",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "taxes & licenses",
+    "name": "toll/wagon",
+    "price": 1.0,
+    "vendor": "landlord",
+    "source": "Cam10",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "taxes & licenses",
+    "name": "wharfage/day/ft",
+    "price": 1.0,
+    "vendor": "town",
+    "source": "Hrn15",
+    "comments": "not registered"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "berth, cabin, ship/hl",
+    "price": 1.0,
+    "vendor": "shipowner",
+    "source": "MTr5",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "berth, steerage, ship/hl",
+    "price": 0.25,
+    "vendor": "shipowner",
+    "source": "MTr5",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "caravan-fee/afoot/5hl",
+    "price": 2.0,
+    "vendor": "mercantyler",
+    "source": "Cam10",
+    "comments": "to join caravan"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "caravan-fee/cart/5hl",
+    "price": 6.0,
+    "vendor": "mercantyler",
+    "source": "Cam10",
+    "comments": "to join caravan"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "caravan-fee/horse/5hl",
+    "price": 4.0,
+    "vendor": "mercantyler",
+    "source": "Cam10",
+    "comments": "to join caravan"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "caravan-fee/wagon/5hl",
+    "price": 12.0,
+    "vendor": "mercantyler",
+    "source": "Cam10",
+    "comments": "to join caravan"
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "charter, ship/tun/day",
+    "price": 12.0,
+    "vendor": "shipowner",
+    "source": "MTr5",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "food, cabin, ship/day",
+    "price": 2.0,
+    "vendor": "shipowner",
+    "source": "MTr5",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "food, steerage, ship/day",
+    "price": 1.0,
+    "vendor": "shipowner",
+    "source": "MTr5",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "freight, land/5hl/ton",
+    "price": 20.0,
+    "vendor": "mercantyler",
+    "source": "Cam10",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "freight, water/5hl/ton",
+    "price": 4.0,
+    "vendor": "mercantyler",
+    "source": "Cam10",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "grooming, horse/day",
+    "price": 4.0,
+    "vendor": "ostler",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "loading, longshore/tun",
+    "price": 1.0,
+    "vendor": "longshoreman",
+    "source": "@3",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "porter/day",
+    "price": 1.0,
+    "vendor": "porter",
+    "source": "Cam8",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "shoeing, horse/each",
+    "price": 2.0,
+    "vendor": "ostler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "services & fees",
+    "subcategory": "transport",
+    "name": "tack-repair/day",
+    "price": 0.5,
+    "vendor": "ostler",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "farm tools",
+    "name": "axe, wood",
+    "price": 12.0,
+    "vendor": "metalcrafter",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "farm tools",
+    "name": "hoe",
+    "price": 3.0,
+    "vendor": "metalcrafter",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "farm tools",
+    "name": "iron, branding",
+    "price": 18.0,
+    "vendor": "metalcrafter",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "farm tools",
+    "name": "pick",
+    "price": 8.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "farm tools",
+    "name": "pitchfork",
+    "price": 6.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "farm tools",
+    "name": "plough",
+    "price": 48.0,
+    "vendor": "woodworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "farm tools",
+    "name": "ploughshare",
+    "price": 8.0,
+    "vendor": "metalcrafter",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "farm tools",
+    "name": "scythe",
+    "price": 24.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "farm tools",
+    "name": "spade",
+    "price": 8.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "farm tools",
+    "name": "wheelbarrow",
+    "price": 10.0,
+    "vendor": "woodworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "fishing tools",
+    "name": "harpoon",
+    "price": 40.0,
+    "vendor": "metalcrafter",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "fishing tools",
+    "name": "net/fathom",
+    "price": 60.0,
+    "vendor": "shipwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "fishing tools",
+    "name": "rope/ft",
+    "price": 1.0,
+    "vendor": "shipwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "fishing tools",
+    "name": "tar/gal",
+    "price": 9.0,
+    "vendor": "chandler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "general tools",
+    "name": "chain/ft",
+    "price": 1.0,
+    "vendor": "metalcrafter",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "general tools",
+    "name": "chisel",
+    "price": 6.0,
+    "vendor": "metalcrafter",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "general tools",
+    "name": "crowbar",
+    "price": 9.0,
+    "vendor": "metalcrafter",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "general tools",
+    "name": "hammer",
+    "price": 6.0,
+    "vendor": "metalcrafter",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "general tools",
+    "name": "ladder, 8ft",
+    "price": 6.0,
+    "vendor": "woodworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "general tools",
+    "name": "nails/lb",
+    "price": 2.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "general tools",
+    "name": "paint/gal",
+    "price": 20.0,
+    "vendor": "chandler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "general tools",
+    "name": "wedge",
+    "price": 1.0,
+    "vendor": "metalcrafter",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "lexigraphy",
+    "name": "ink, black/quart",
+    "price": 3.0,
+    "vendor": "lexigrapher",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "lexigraphy",
+    "name": "ink, blue/quart",
+    "price": 4.0,
+    "vendor": "lexigrapher",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "lexigraphy",
+    "name": "ink, brown/quart",
+    "price": 5.0,
+    "vendor": "lexigrapher",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "lexigraphy",
+    "name": "ink, green/quart",
+    "price": 4.0,
+    "vendor": "lexigrapher",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "lexigraphy",
+    "name": "ink, red/quart",
+    "price": 6.0,
+    "vendor": "lexigrapher",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "lexigraphy",
+    "name": "map",
+    "price": 12.0,
+    "vendor": "lexigrapher",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "lexigraphy",
+    "name": "parchment/sf",
+    "price": 2.0,
+    "vendor": "lexigrapher",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "lexigraphy",
+    "name": "quill",
+    "price": 1.0,
+    "vendor": "lexigrapher",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "lexigraphy",
+    "name": "seal, signature",
+    "price": 36.0,
+    "vendor": "lexigrapher",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "lexigraphy",
+    "name": "vellum/sf",
+    "price": 2.0,
+    "vendor": "lexigrapher",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "misc. tools",
+    "name": "coffin",
+    "price": 9.0,
+    "vendor": "woodworker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "misc. tools",
+    "name": "fetters",
+    "price": 6.0,
+    "vendor": "metalcrafter",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "misc. tools",
+    "name": "grapple",
+    "price": 10.0,
+    "vendor": "metalcrafter",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "misc. tools",
+    "name": "grindstone",
+    "price": 12.0,
+    "vendor": "mason",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "misc. tools",
+    "name": "keys",
+    "price": 2.0,
+    "vendor": "locksmith",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "misc. tools",
+    "name": "lock",
+    "price": 4.0,
+    "vendor": "locksmith",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "misc. tools",
+    "name": "millstone",
+    "price": 250.0,
+    "vendor": "mason",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "misc. tools",
+    "name": "scale, balance",
+    "price": 72.0,
+    "vendor": "jeweller",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "music",
+    "name": "drum",
+    "price": 36.0,
+    "vendor": "harper",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "music",
+    "name": "flute",
+    "price": 18.0,
+    "vendor": "harper",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "music",
+    "name": "harp",
+    "price": 300.0,
+    "vendor": "harper",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "music",
+    "name": "horn, hunting",
+    "price": 20.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "music",
+    "name": "horn, musical",
+    "price": 72.0,
+    "vendor": "harper",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "music",
+    "name": "lute",
+    "price": 200.0,
+    "vendor": "harper",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "music",
+    "name": "lyre",
+    "price": 120.0,
+    "vendor": "harper",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "tools",
+    "subcategory": "music",
+    "name": "pipes",
+    "price": 60.0,
+    "vendor": "harper",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "miscellaneous",
+    "name": "palanquin",
+    "price": 100.0,
+    "vendor": "woodworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "miscellaneous",
+    "name": "skis, wood/pair",
+    "price": 42.0,
+    "vendor": "woodworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "miscellaneous",
+    "name": "sled",
+    "price": 80.0,
+    "vendor": "woodworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "miscellaneous",
+    "name": "snowshoes/pair",
+    "price": 36.0,
+    "vendor": "woodworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "anchor/tun",
+    "price": 1.0,
+    "vendor": "shipwright",
+    "source": "Shp10",
+    "comments": "per tun of ship"
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "astrolabe",
+    "price": 300.0,
+    "vendor": "pilot",
+    "source": "PGls",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "compass",
+    "price": 1000.0,
+    "vendor": "pilot",
+    "source": "PGls",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "cross-staff",
+    "price": 200.0,
+    "vendor": "pilot",
+    "source": "PGls",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "cross-staff, fancy",
+    "price": 1500.0,
+    "vendor": "pilot",
+    "source": "PGls",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "mast/ft",
+    "price": 6.0,
+    "vendor": "shipwright",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "oar",
+    "price": 5.0,
+    "vendor": "shipwright",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "quadrant",
+    "price": 75.0,
+    "vendor": "pilot",
+    "source": "PGls",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "ship, dak (cog)/ft2",
+    "price": 7.0,
+    "vendor": "shipwright",
+    "source": "Shp8",
+    "comments": "48 to 84 ft"
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "ship, dragon (longship)/ft2",
+    "price": 6.0,
+    "vendor": "shipwright",
+    "source": "Shp8",
+    "comments": "60 to 120 ft"
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "ship, karune (carrack)/ft2",
+    "price": 8.0,
+    "vendor": "shipwright",
+    "source": "Shp8",
+    "comments": "60 to 96 ft"
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "ship, laru (galea)/ft2",
+    "price": 5.0,
+    "vendor": "shipwright",
+    "source": "Shp8",
+    "comments": "60 to 150 ft"
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "ship, laru-mar (dromon)/ft2",
+    "price": 6.0,
+    "vendor": "shipwright",
+    "source": "Shp8",
+    "comments": "60 to 150 ft"
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "ship, nivik (knarr)/ft2",
+    "price": 5.0,
+    "vendor": "shipwright",
+    "source": "Shp8",
+    "comments": "24 to 60 ft"
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "ship, pinda (pinnace)/ft2",
+    "price": 3.0,
+    "vendor": "shipwright",
+    "source": "Shp8",
+    "comments": "12 to 21 ft"
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "ship, raem (caravel)/ft2",
+    "price": 5.0,
+    "vendor": "shipwright",
+    "source": "Shp8",
+    "comments": "48 to 84 ft"
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "ship, talbar (river or canal boat)/ft2",
+    "price": 4.0,
+    "vendor": "shipwright",
+    "source": "Shp8",
+    "comments": "24 to 42 ft"
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "ship, venar (knarr)/ft2",
+    "price": 4.0,
+    "vendor": "shipwright",
+    "source": "Shp8",
+    "comments": "24 to 60 ft"
+  },
+  {
+    "category": "transport",
+    "subcategory": "ship",
+    "name": "spares, ship, general",
+    "price": 100.0,
+    "vendor": "shipwright",
+    "source": "Crw8",
+    "comments": "for general repairs"
+  },
+  {
+    "category": "transport",
+    "subcategory": "tack",
+    "name": "blanket, horse",
+    "price": 12.0,
+    "vendor": "ostler",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "tack",
+    "name": "bridle",
+    "price": 12.0,
+    "vendor": "ostler",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "tack",
+    "name": "collar, horse",
+    "price": 18.0,
+    "vendor": "ostler",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "tack",
+    "name": "comb, horse",
+    "price": 3.0,
+    "vendor": "ostler",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "tack",
+    "name": "harness, horse",
+    "price": 18.0,
+    "vendor": "ostler",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "tack",
+    "name": "harness, ox",
+    "price": 18.0,
+    "vendor": "hideworker",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "tack",
+    "name": "horseshoe/each",
+    "price": 1.0,
+    "vendor": "metalcrafter",
+    "source": "Pri3",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "tack",
+    "name": "saddle, riding",
+    "price": 80.0,
+    "vendor": "ostler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "tack",
+    "name": "saddle, war",
+    "price": 240.0,
+    "vendor": "ostler",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "tack",
+    "name": "spurs",
+    "price": 18.0,
+    "vendor": "metalcrafter",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "wagon",
+    "name": "axle",
+    "price": 6.0,
+    "vendor": "metalcrafter",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "wagon",
+    "name": "cart, 2-wheel",
+    "price": 80.0,
+    "vendor": "woodworker",
+    "source": "Pri2",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "wagon",
+    "name": "wagon, 4-wheel",
+    "price": 220.0,
+    "vendor": "woodworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "wagon",
+    "name": "wheel",
+    "price": 18.0,
+    "vendor": "woodworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "wagon",
+    "name": "wheel, ironbound",
+    "price": 30.0,
+    "vendor": "woodworker",
+    "source": "Pri4",
+    "comments": ""
+  },
+  {
+    "category": "transport",
+    "subcategory": "wagon",
+    "name": "yoke, ox",
+    "price": 3.0,
+    "vendor": "woodworker",
+    "source": "oHnD",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "axe",
+    "name": "battleaxe",
+    "price": 100.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": "chivalric"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "axe",
+    "name": "handaxe",
+    "price": 72.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "axe",
+    "name": "hatchet",
+    "price": 12.0,
+    "vendor": "metalcrafter",
+    "source": "Com3",
+    "comments": "tool"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "axe",
+    "name": "shorkana",
+    "price": 48.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": "throwing axe"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "axe",
+    "name": "warhammer",
+    "price": 90.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": "chivalric"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "blowgun",
+    "name": "blowgun",
+    "price": 12.0,
+    "vendor": "woodworker",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "bow",
+    "name": "arrows/dozen",
+    "price": 15.0,
+    "vendor": "fletcher",
+    "source": "HnPr",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "bow",
+    "name": "hartbow",
+    "price": 96.0,
+    "vendor": "sindarin",
+    "source": "Com3",
+    "comments": "elven composite bow"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "bow",
+    "name": "longbow",
+    "price": 36.0,
+    "vendor": "fletcher",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "bow",
+    "name": "shortbow",
+    "price": 24.0,
+    "vendor": "fletcher",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "club",
+    "name": "club",
+    "price": 12.0,
+    "vendor": "woodworker",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "club",
+    "name": "mace",
+    "price": 84.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": "chivalric"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "club",
+    "name": "maul",
+    "price": 24.0,
+    "vendor": "woodworker",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "club",
+    "name": "morningstar",
+    "price": 48.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "crossbow",
+    "name": "crossbow",
+    "price": 60.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "dagger",
+    "name": "dagger",
+    "price": 24.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "dagger",
+    "name": "keltan",
+    "price": 36.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "dagger",
+    "name": "knife",
+    "price": 6.0,
+    "vendor": "metalcrafter",
+    "source": "Com3",
+    "comments": "tool"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "dagger",
+    "name": "taburi",
+    "price": 20.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "flail",
+    "name": "ball & chain",
+    "price": 60.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": "chivalric"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "flail",
+    "name": "flail, grain",
+    "price": 12.0,
+    "vendor": "woodworker",
+    "source": "Com3",
+    "comments": "tool"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "flail",
+    "name": "nachakas",
+    "price": 12.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "flail",
+    "name": "warflail",
+    "price": 60.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "hand weapon",
+    "name": "fighting-claw",
+    "price": 12.0,
+    "vendor": "weaponcrafter",
+    "source": "oCm11",
+    "comments": "claw attached to hand"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "net",
+    "name": "net, weighted",
+    "price": 48.0,
+    "vendor": "hideworker",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "polearm",
+    "name": "falcastra",
+    "price": 42.0,
+    "vendor": "metalcrafter",
+    "source": "Com3",
+    "comments": "tool"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "polearm",
+    "name": "glaive",
+    "price": 84.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "polearm",
+    "name": "pike",
+    "price": 96.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "polearm",
+    "name": "poleaxe",
+    "price": 96.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": "chivalric"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "polearm",
+    "name": "sickle",
+    "price": 10.0,
+    "vendor": "metalcrafter",
+    "source": "Com3",
+    "comments": "tool"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "sling",
+    "name": "sling",
+    "price": 6.0,
+    "vendor": "hideworker",
+    "source": "Com3",
+    "comments": "tool"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "sling",
+    "name": "staffsling",
+    "price": 12.0,
+    "vendor": "woodworker",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "spear",
+    "name": "javelin",
+    "price": 48.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "spear",
+    "name": "lance",
+    "price": 120.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": "chivalric"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "spear",
+    "name": "spear",
+    "price": 60.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "spear",
+    "name": "staff",
+    "price": 36.0,
+    "vendor": "woodworker",
+    "source": "Com3",
+    "comments": "tool"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "spear",
+    "name": "trident",
+    "price": 72.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "sword",
+    "name": "bastard-sword",
+    "price": 180.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": "chivalric"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "sword",
+    "name": "battlesword",
+    "price": 230.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": "chivalric"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "sword",
+    "name": "broadsword",
+    "price": 150.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": "chivalric"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "sword",
+    "name": "estoc",
+    "price": 150.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": "chivalric"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "sword",
+    "name": "falchion",
+    "price": 120.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "sword",
+    "name": "longknife",
+    "price": 96.0,
+    "vendor": "sindarin",
+    "source": "Com3",
+    "comments": "elven rapier"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "sword",
+    "name": "mang",
+    "price": 110.0,
+    "vendor": "gargun",
+    "source": "Com3",
+    "comments": "gargun scimitar"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "sword",
+    "name": "mankar",
+    "price": 84.0,
+    "vendor": "gargun",
+    "source": "Com3",
+    "comments": "gargun heavy axe"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "sword",
+    "name": "shortsword",
+    "price": 90.0,
+    "vendor": "weaponcrafter",
+    "source": "Com3",
+    "comments": ""
+  },
+  {
+    "category": "weapons",
+    "subcategory": "whip",
+    "name": "isagra",
+    "price": 20.0,
+    "vendor": "hideworker",
+    "source": "Com3",
+    "comments": "spiked whip"
+  },
+  {
+    "category": "weapons",
+    "subcategory": "whip",
+    "name": "whip",
+    "price": 12.0,
+    "vendor": "hideworker",
+    "source": "Com3",
+    "comments": ""
+  }
+]
