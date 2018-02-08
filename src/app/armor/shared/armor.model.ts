@@ -1,9 +1,8 @@
 import {ProtectionValue} from './armor.data';
-import {ArmorLocation, ArmorProtection, ArmorType} from './armor.enum';
 
 export interface Armor {
   name: string;
-  type: ArmorType;
+  type: string;
   baseWeight: number;
   basePrice: number;
   skull: boolean;
@@ -28,7 +27,7 @@ export interface Armor {
 
 export class ArmorPiece implements Armor {
   name: string;
-  type: ArmorType;
+  type: string;
   baseWeight: number;
   basePrice: number;
   skull: boolean;
@@ -87,11 +86,12 @@ export class ArmorPiece implements Armor {
   }
 
   private maxQuality(): number {
+
     return Math.max(
-      ProtectionValue[this.type][ArmorProtection.Blunt],
-      ProtectionValue[this.type][ArmorProtection.Edge],
-      ProtectionValue[this.type][ArmorProtection.Pierce],
-      ProtectionValue[this.type][ArmorProtection.Fire]
+      ProtectionValue[this.type]['blunt'],
+      ProtectionValue[this.type]['edge'],
+      ProtectionValue[this.type]['point'],
+      ProtectionValue[this.type]['fire']
     );
   }
 
@@ -109,7 +109,7 @@ export class ArmorPiece implements Armor {
     return parseFloat(price.toFixed(1));
   }
 
-  protection(aspect: ArmorProtection): number {
+  protection(aspect: string): number {
     const base = ProtectionValue[this.type][aspect];
     const mod = this.qualityMod();
     const adjusted = mod + base < 0 ? 0 : mod + base;

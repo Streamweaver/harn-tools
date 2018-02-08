@@ -10,11 +10,11 @@
   </tr>
   </thead>
   <tbody>
-    <ng-container *ngFor="let location of locationList()">
+    <ng-container *ngFor="let location of locationList">
       <tr>
         <td class="font-weight-bold">{{locationLabels[location] | titlecase}}</td>
-        <ng-container *ngFor="let protectionType of protectionList()">
-          <td class="text-center">{{locationProtection(location, protectionType)}}</td>
+        <ng-container *ngFor="let damageType of damageTypes">
+          <td class="text-center">{{locationProtection(location, damageType)}}</td>
         </ng-container>
       </tr>
     </ng-container>

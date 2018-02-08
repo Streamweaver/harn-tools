@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ArmorLocation, ArmorProtection, ArmorLocationLabels } from '../shared/armor.enum';
+import { DamageTypes } from '../shared/armor.data';
+import { ArmorLocationLabels } from '../shared/armor.data';
 import { ArmorPiece} from '../shared/armor.model';
 import * as _ from 'lodash';
 
@@ -10,16 +11,18 @@ import * as _ from 'lodash';
 })
 export class ProtectionTableComponent implements OnInit {
   @Input('armorWorn') armorWorn: ArmorPiece[];
-  protection = ArmorProtection;
-  location = ArmorLocation;
+  damageTypes: string[];
+  locationList: string[];
   locationLabels = ArmorLocationLabels;
 
   constructor() { }
 
   ngOnInit() {
+    this.parseLocationList();
+    this.damageTypes = DamageTypes;
   }
 
-  locationProtection(location: string, damageType: ArmorProtection): number {
+  locationProtection(location: string, damageType: string): number {
     let protection = 0;
     for (const item of this.armorWorn) {
       if (item[location]) {
@@ -45,24 +48,14 @@ export class ProtectionTableComponent implements OnInit {
     return price;
   }
 
-  locationList(): string[] {
+  private parseLocationList() {
     const locations: string[] = [];
-    for (let location in ArmorLocation) {
-      if (isNaN(Number(location))) {
+    for (let location in ArmorLocationLabels) {
+      if (location) {
         location = _.lowerFirst(location);
         locations.push(location);
       }
     }
-    return locations;
-  }
-
-  protectionList(): ArmorProtection[] {
-    const protectionTypes: ArmorProtection[] = [];
-    for (const protectionType in ArmorProtection) {
-      if (Number(protectionType) >= 0) {
-        protectionTypes.push(Number(protectionType));
-      }
-    }
-    return protectionTypes;
+    this.locationList = locations;
   }
 }

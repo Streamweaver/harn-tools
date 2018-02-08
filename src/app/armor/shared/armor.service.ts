@@ -7,10 +7,12 @@ import { HttpClient } from '@angular/common/http';
 export class ArmorService {
   private armorList: Observable<Armor[]>;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   loadArmor(): Observable<Armor[]> {
-    this.armorList = this.http.get<Armor[]>('assets/data/armor.data.json');
+    if (!this.armorList) {
+      this.armorList = this.http.get<Armor[]>('assets/data/armor.data.json');
+    }
     return this.armorList;
   }
 }
