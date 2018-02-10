@@ -767,7 +767,7 @@ var CoreModule = (function () {
 /***/ "../../../../../src/app/core/loading-spinner/loading-spinner.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "{{msg}}\n<div class=\"spinner\"></div>\n"
+module.exports = "{{msg}}\n<div class=\"spinner\">\n  <div class=\"bounce1\"></div>\n  <div class=\"bounce2\"></div>\n  <div class=\"bounce3\"></div>\n</div>\n"
 
 /***/ }),
 
@@ -779,7 +779,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".spinner {\n  width: 40px;\n  height: 40px;\n  margin: 100px auto;\n  background-color: #333;\n  border-radius: 100%;\n  -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;\n  animation: sk-scaleout 1.0s infinite ease-in-out; }\n\n@-webkit-keyframes sk-scaleout {\n  0% {\n    -webkit-transform: scale(0); }\n  100% {\n    -webkit-transform: scale(1);\n    opacity: 0; } }\n\n@keyframes sk-scaleout {\n  0% {\n    -webkit-transform: scale(0);\n    transform: scale(0); }\n  100% {\n    -webkit-transform: scale(1);\n    transform: scale(1);\n    opacity: 0; } }\n", ""]);
+exports.push([module.i, ".spinner {\n  width: 70px;\n  text-align: center; }\n\n.spinner > div {\n  width: 18px;\n  height: 18px;\n  background-color: #333;\n  border-radius: 100%;\n  display: inline-block;\n  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;\n  animation: sk-bouncedelay 1.4s infinite ease-in-out both; }\n\n.spinner .bounce1 {\n  -webkit-animation-delay: -0.32s;\n  animation-delay: -0.32s; }\n\n.spinner .bounce2 {\n  -webkit-animation-delay: -0.16s;\n  animation-delay: -0.16s; }\n\n@-webkit-keyframes sk-bouncedelay {\n  0%, 80%, 100% {\n    -webkit-transform: scale(0); }\n  40% {\n    -webkit-transform: scale(1); } }\n\n@keyframes sk-bouncedelay {\n  0%, 80%, 100% {\n    -webkit-transform: scale(0);\n    transform: scale(0); }\n  40% {\n    -webkit-transform: scale(1);\n    transform: scale(1); } }\n", ""]);
 
 // exports
 
@@ -4771,7 +4771,7 @@ var NamesService = (function () {
 /***/ "../../../../../src/app/prices/price-list/price-list.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid page\">\n  <h2>Harnic Price List</h2>\n  <p>By Dakin Burdick (2015) based on Steve McDonald's work, v. 2.0 Feb 1997 </p>\n  <p>Prices are general base prices and may vary in location based on supply and demand.</p>\n  <app-loading-spinner *ngIf=\"!displayList\" [msg]=\"'Loading Prices ...'\"></app-loading-spinner>\n  <div class=\"form-inline\" *ngIf=\"displayList\">\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\" for=\"itemSearchInput\">Search: </label>\n      <input type=\"text\" class=\"form-control mb-2 mr-sm-2\" id=\"itemSearchInput\" [formControl]=\"searchField\" placeholder=\"Type an item name or category ...\">\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\">Vendor: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\" id=\"vendorSelect\" (change)=\"filterExact('vendor', $event.target.value)\">\n        <option value=\"\">Any</option>\n        <option *ngFor=\"let vendor of vendors\" value=\"{{vendor}}\">{{vendor | titlecase}}</option>\n      </select>\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\">Category: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\" id=\"categorySelect\"\n              (change)=\"onCategorySelect('category', $event.target.value)\">\n        <option value=\"\" [selected]=\"category === null\">All</option>\n        <option *ngFor=\"let selectCategory of categories\" value=\"{{selectCategory}}\"\n                [selected]=\"selectCategory === category\">{{selectCategory |\n          titlecase}}</option>\n      </select>\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\" *ngIf=\"category\">\n      <label class=\"my-1 mr-2\">Sub-Category: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\"\n              id=\"subcategorySelect\" (change)=\"filterExact('subcategory', $event.target.value)\">\n        <option [value]=\"\">All</option>\n        <option *ngFor=\"let subcategory of subcategories[category]\" value=\"{{subcategory}}\">{{subcategory | titlecase}}</option>\n      </select>\n    </div>\n  </div>\n\n  <table class=\"table table-bordered table-striped\" *ngIf=\"displayList\">\n    <thead class=\"table-dark\">\n    <tr>\n      <td>Item</td>\n      <td>Price(d)</td>\n      <td>Common Price</td>\n      <td>Vendor</td>\n      <td>Catagory</td>\n      <td>Subcatagory</td>\n      <td>Source</td>\n      <td>Comment</td>\n    </tr>\n    </thead>\n    <tbody>\n    <ng-container *ngFor=\"let salesItem of filteredPrices\">\n      <tr>\n        <td>{{salesItem.name | titlecase}}</td>\n        <td>{{salesItem.price}}</td>\n        <td>{{localPrice(salesItem.price)}}</td>\n        <td>{{salesItem.vendor | titlecase}}</td>\n        <td>{{salesItem.category | titlecase}}</td>\n        <td>{{salesItem.subcategory | titlecase}}</td>\n        <td>{{salesItem.source}}</td>\n        <td>{{salesItem.comments}}</td>\n      </tr>\n    </ng-container>\n    </tbody>\n  </table>\n</div>\n"
+module.exports = "<div class=\"container-fluid page\">\n  <h2>Harnic Price List</h2>\n  <div>A growing list of {{priceList.length}} items sold across Harn.  Invididual prices may vary based on supply and demand, or the fiat of local monpolies. Some modifications by me but data largely derived from several community efforts aggregated and modified further in <a href=\"https://www.lythia.com/game_aides/comprehensive-pricelist/\" target=\"_blank\">Leitchy's Comprehensive Price list</a> on <a href=\"https://www.lythia.com\" target=\"_blank\">Lythia.com</a></div>\n  <app-loading-spinner *ngIf=\"!pricesReady\" [msg]=\"'Loading Prices ...'\"></app-loading-spinner>\n  <div class=\"form-inline\" *ngIf=\"pricesReady\">\n\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\" for=\"itemSearchInput\">Search: </label>\n      <input type=\"text\" class=\"form-control mb-2 mr-sm-2\" id=\"itemSearchInput\" [formControl]=\"searchField\" placeholder=\"Type an item name or category ...\">\n    </div>\n    <div class=\"input-group mb-2 mr-sm-2\">\n      <label class=\"my-1 mr-2\">Vendor: </label>\n      <select class=\"custom-select\" class=\"condensed list-group-item\" id=\"vendorSelect\" (change)=\"onVendorSelect($event.target.value)\">\n        <option value=\"\">Any</option>\n        <option *ngFor=\"let vendor of vendors\" value=\"{{vendor}}\">{{vendor | titlecase}}</option>\n      </select>\n    </div>\n  </div>\n\n  <div class=\"title-box bg-dark text-white px-3 py-2 mx-1 font-weight-bold d-flex w-100 justify-content-between row\">\n    <h4 class=\"pb-0 mb-0 col-8\">Price List ({{filteredPrices.length}})</h4>\n    <div class=\"align-self-end d-flex col-4 m-0 p-0 justify-content-end btn-lg\" *ngIf=\"currentMaxPages() > 1\">\n      <div><a (click)=\"onPageBackClick()\" class=\"px-2\"><i class=\"far fa-caret-square-left large\"></i></a></div>\n      <div>Page {{currentPage}} of {{currentMaxPages()}}</div>\n      <div><a (click)=\"onPageForwardClick()\" class=\"px-2 btn-lg\"><i class=\"far fa-caret-square-right\"></i></a></div>\n    </div>\n  </div>\n\n  <div *ngIf=\"pricesReady\" class=\"list-group px-3\">\n    <div class=\"list-group-item list-group-item-action flex-column\" *ngFor=\"let item of pageList()\">\n      <div class=\"d-flex w-100 justify-content-between row\">\n        <div class=\"align-items-start col-11\">\n          <h5>{{item.name | titlecase}}</h5>\n          <div><strong>{{item.vendor | titlecase}}</strong><span *ngIf=\"item.notes\">, {{item.notes}}</span></div>\n        </div>\n        <div class=\"align-items-end col-1 p-0 m-0\">\n          <div><span *ngIf=\"item.price\">{{item.price}} <small>d</small></span></div>\n          <div class=\"text-muted\"><span *ngIf=\"item.weight\">{{item.weight}} <small>lbs</small></span></div>\n        </div>\n      </div>\n    </div>\n    <div class=\"list-group-item list-group-item-action flex-column\" *ngIf=\"filteredPrices.length < 1\">\n      <div class=\"d-flex w-100 justify-content-between text-center\">\n        <div *ngIf=\"isFilterEmpty; then searchprompt else noresults\"></div>\n      </div>\n    </div>\n  </div>\n\n\n</div>\n\n<ng-template #searchprompt><h5>Enter a search term or select a vendor to display prices</h5></ng-template>\n<ng-template #noresults><h5>No items found.</h5></ng-template>\n"
 
 /***/ }),
 
@@ -4823,126 +4823,122 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PriceListComponent = (function () {
     function PriceListComponent(priceService) {
         this.priceService = priceService;
-        this.filters = {};
     }
     PriceListComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.displayList = false;
+        this.clearFilters();
+        this.vendors = [];
+        this.pricesReady = false;
         this.searchField = new __WEBPACK_IMPORTED_MODULE_1__angular_forms__["b" /* FormControl */]();
+        this.filteredPrices = [];
+        this.currentVendor = '';
+        this.currentSearchTerm = '';
+        this.currentPage = 1;
+        this.itemsPerPage = 20;
         this.searchField.valueChanges
             .debounceTime(400)
             .distinctUntilChanged()
             .subscribe(function (term) {
-            _this.filterIncludes('name', term);
+            _this.onSearchPrices(term);
         });
-        this.categories = [];
-        this.vendors = [];
-        this.subcategories = {};
-        this.category = null;
-        this.priceService.getPrices().subscribe(function (prices) { return _this.priceList = prices; }, function (err) { return console.log('Error Loading Price List: ' + err); }, function () {
-            _this.parseSelectOptions();
+        this.priceService.priceList.subscribe(function (priceList) { return _this.priceList = priceList; }, function (err) { return console.log(err); }, function () {
+            _this.sortPrices();
+            _this.parseVendors();
             _this.applyFilters();
-            _this.displayList = true;
+            _this.pricesReady = true;
         });
+        this.parseVendors();
     };
+    PriceListComponent.prototype.localPrices = function (price) {
+        var priceLabel = [];
+        if (price / 240 > 1) {
+            priceLabel.push({ coin: 'L', amount: Math.floor(price / 240) });
+            price = price % 240;
+        }
+        if (price >= 1) {
+            priceLabel.push({ coin: 'd', amount: Math.floor(price) });
+            price = price % 1;
+        }
+        if (price > 0) {
+            priceLabel.push({ coin: 'f', amount: price * 4 });
+        }
+        return priceLabel;
+    };
+    // Paging
+    PriceListComponent.prototype.pageList = function () {
+        var indexStart = this.currentPage - 1;
+        return this.filteredPrices.slice(indexStart * this.itemsPerPage, (indexStart + 1) * this.itemsPerPage);
+    };
+    PriceListComponent.prototype.onPageForwardClick = function () {
+        this.currentPage = __WEBPACK_IMPORTED_MODULE_2_lodash__["clamp"](this.currentPage + 1, 1, this.currentMaxPages());
+    };
+    PriceListComponent.prototype.onPageBackClick = function () {
+        this.currentPage = __WEBPACK_IMPORTED_MODULE_2_lodash__["clamp"](this.currentPage - 1, 1, this.currentMaxPages());
+    };
+    PriceListComponent.prototype.currentMaxPages = function () {
+        return Math.ceil(this.filteredPrices.length / this.itemsPerPage);
+    };
+    // Searching and Sorting
+    PriceListComponent.prototype.onSearchPrices = function (term) {
+        this.currentSearchTerm = term;
+        this.filterIncludes('name', term);
+    };
+    PriceListComponent.prototype.onVendorSelect = function (rule) {
+        this.currentVendor = rule;
+        this.filterExact('vendor', rule);
+    };
+    PriceListComponent.prototype.sortPrices = function () {
+        this.priceList = __WEBPACK_IMPORTED_MODULE_2_lodash__["sortBy"](this.priceList, ['vendor', 'name']);
+    };
+    PriceListComponent.prototype.parseVendors = function () {
+        for (var _i = 0, _a = this.priceList; _i < _a.length; _i++) {
+            var item = _a[_i];
+            if (this.vendors.indexOf(item.vendor) < 0) {
+                this.vendors.push(item.vendor);
+            }
+            this.vendors = this.vendors.sort();
+        }
+    };
+    // Filtering prices
     PriceListComponent.prototype.applyFilters = function () {
-        this.filteredPrices = __WEBPACK_IMPORTED_MODULE_2_lodash__["filter"](this.priceList, __WEBPACK_IMPORTED_MODULE_2_lodash__["conforms"](this.filters));
-    };
-    // Much of this pulled from the very find AngularFirebase tutorial at
-    // https://angularfirebase.com/lessons/multi-property-data-filtering-with-firebase-and-angular-4/
-    /// filter property by equality to rule
-    PriceListComponent.prototype.filterExact = function (property, rule) {
-        console.log(property, rule);
-        if (!rule) {
-            this.removeFilter(property);
+        this.currentPage = 1;
+        if (this.isFilterEmpty()) {
+            this.filteredPrices = this.priceList;
         }
         else {
-            this.filters[property] = function (val) { return val === rule; };
+            this.filteredPrices = __WEBPACK_IMPORTED_MODULE_2_lodash__["filter"](this.priceList, __WEBPACK_IMPORTED_MODULE_2_lodash__["conforms"](this.filters));
+        }
+    };
+    PriceListComponent.prototype.filterExact = function (property, rule) {
+        if (this.filters[property] !== rule) {
+            if (!rule) {
+                this.removeFilter(property);
+            }
+            else {
+                this.filters[property] = function (val) { return val === rule; };
+            }
             this.applyFilters();
         }
     };
     PriceListComponent.prototype.filterIncludes = function (property, rule) {
-        this.removeFilter(property);
-        this.filters[property] = function (val) { return val.includes(rule.toLowerCase()); };
-        this.applyFilters();
-    };
-    /// filter  numbers greater than rule
-    PriceListComponent.prototype.filterLessThan = function (property, rule) {
-        this.filters[property] = function (val) { return val < rule; };
-        this.applyFilters();
-    };
-    /// filter properties that resolve to true
-    PriceListComponent.prototype.filterBoolean = function (property, rule) {
-        if (!rule) {
-            this.removeFilter(property);
-        }
-        else {
-            this.filters[property] = function (val) { return val; };
+        if (this.filters[property] !== rule) {
+            if (!rule) {
+                this.removeFilter(property);
+            }
+            else {
+                this.filters[property] = function (val) { return val.includes(rule.toLowerCase()); };
+            }
             this.applyFilters();
         }
     };
-    /// removes filter
     PriceListComponent.prototype.removeFilter = function (property) {
         delete this.filters[property];
-        this[property] = null;
-        this.applyFilters();
     };
-    PriceListComponent.prototype.onCategorySelect = function (property, rule) {
-        if (rule === this.category) {
-            return;
-        }
-        if (!rule) {
-            this.removeFilter('subcategory');
-            this.subcategory = null;
-            this.removeFilter(property);
-            this.category = null;
-        }
-        else {
-            this.category = rule;
-            this.filterExact(property, rule);
-            this.removeFilter('subcategory');
-            this.subcategory = null;
-            this.applyFilters();
-        }
+    PriceListComponent.prototype.clearFilters = function () {
+        this.filters = {};
     };
-    PriceListComponent.prototype.localPrice = function (price) {
-        var priceLabel = [];
-        if (price / 240 > 1) {
-            priceLabel.push(Math.floor(price / 240) + 'L');
-            price = price % 240;
-        }
-        if (price >= 1) {
-            priceLabel.push(Math.floor(price) + 'd');
-            price = price % 1;
-        }
-        if (price > 0) {
-            priceLabel.push(price * 4 + 'f');
-        }
-        return priceLabel.join(', ');
-    };
-    PriceListComponent.prototype.parseSelectOptions = function () {
-        for (var _i = 0, _a = this.priceList; _i < _a.length; _i++) {
-            var item = _a[_i];
-            if (this.categories.indexOf(item.category) < 0) {
-                this.categories.push(item.category);
-            }
-            if (this.vendors.indexOf(item.vendor) < 0) {
-                this.vendors.push(item.vendor);
-            }
-            if (!(item.category in this.subcategories)) {
-                this.subcategories[item.category] = [];
-            }
-            if (this.subcategories[item.category].indexOf(item.subcategory) < 0) {
-                this.subcategories[item.category].push(item.subcategory);
-            }
-        }
-        // for (const subcat in this.subcategories) {
-        //   if (subcat) {
-        //     this.subcategories[subcat] = this.subcategories[subcat].sort();
-        //   }
-        // }
-        this.categories = this.categories.sort();
-        this.vendors = this.vendors.sort();
+    PriceListComponent.prototype.isFilterEmpty = function () {
+        return __WEBPACK_IMPORTED_MODULE_2_lodash__["isEmpty"](this.filters);
     };
     PriceListComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
@@ -5025,12 +5021,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var PriceService = (function () {
     function PriceService(http) {
         this.http = http;
+        this.loadPrices();
     }
-    PriceService.prototype.getPrices = function () {
-        if (!this.priceList) {
-            this.priceList = this.http.get('assets/data/price.data.json');
-        }
-        return this.priceList;
+    PriceService.prototype.loadPrices = function () {
+        this.priceList = this.http.get('assets/data/expandedprice.data.json');
     };
     PriceService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
