@@ -21,6 +21,8 @@ export class PriceListComponent implements OnInit {
   filters: {[key: string]: any};
   currentVendor: string;
   currentSearchTerm: string;
+  currentPage: number;
+  private itemsPerPage: number;
 
   constructor(private priceService: PriceService) {
   }
@@ -31,6 +33,10 @@ export class PriceListComponent implements OnInit {
     this.pricesReady = false;
     this.searchField = new FormControl();
     this.filteredPrices = [];
+    this.currentVendor = '';
+    this.currentSearchTerm = '';
+    this.currentPage = 1;
+    this.itemsPerPage = 20;
     this.searchField.valueChanges
       .debounceTime(400)
       .distinctUntilChanged()
@@ -42,8 +48,10 @@ export class PriceListComponent implements OnInit {
       priceList => this.priceList = priceList,
           err => console.log(err),
           () => {
-            this.pricesReady = true;
+            this.sortPrices();
             this.parseVendors();
+            this.applyFilters();
+            this.pricesReady = true;
           }
     );
     this.parseVendors();
@@ -65,6 +73,27 @@ export class PriceListComponent implements OnInit {
     return priceLabel;
   }
 
+  // Paging
+  pageList(): PriceListing[] {
+    const indexStart = this.currentPage - 1;
+    return this.filteredPrices.slice(
+      indexStart * this.itemsPerPage, (indexStart + 1) * this.itemsPerPage
+    );
+  }
+
+  onPageForwardClick() {
+    this.currentPage = _.clamp(this.currentPage + 1, 1, this.currentMaxPages());
+  }
+
+  onPageBackClick() {
+    this.currentPage = _.clamp(this.currentPage - 1, 1, this.currentMaxPages());
+  }
+
+  currentMaxPages(): number {
+    return Math.ceil(this.filteredPrices.length / this.itemsPerPage);
+  }
+
+  // Searching and Sorting
   onSearchPrices(term: string) {
     this.currentSearchTerm = term;
     this.filterIncludes('name', term);
@@ -73,6 +102,10 @@ export class PriceListComponent implements OnInit {
   onVendorSelect(rule: string) {
     this.currentVendor = rule;
     this.filterExact('vendor', rule);
+  }
+
+  private sortPrices() {
+    this.priceList = _.sortBy(this.priceList, ['vendor', 'name']);
   }
 
   private parseVendors() {
@@ -86,8 +119,9 @@ export class PriceListComponent implements OnInit {
 
   // Filtering prices
   private applyFilters() {
+    this.currentPage = 1;
     if (this.isFilterEmpty()) {
-      this.filteredPrices = [];
+      this.filteredPrices = this.priceList;
     } else {
       this.filteredPrices = _.filter(this.priceList, _.conforms(this.filters));
     }

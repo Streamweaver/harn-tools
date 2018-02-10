@@ -14,6 +14,6 @@ export class PriceService {
   }
 
   loadPrices() {
-    this.priceList = this.http.get<PriceListing[]>('assets/data/price.data.json');
+    this.priceList = this.http.get<PriceListing[]>('assets/data/expandedprice.data.json');
   }
 }

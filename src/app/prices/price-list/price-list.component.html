@@ -1,9 +1,9 @@
 <div class="container-fluid page">
-  <h2>Harnic Price List {{pricesReady}}</h2>
-  <p>By Dakin Burdick (2015) based on Steve McDonald's work, v. 2.0 Feb 1997 </p>
-  <p>Prices are general base prices and may vary in location based on supply and demand.</p>
+  <h2>Harnic Price List</h2>
+  <div>A growing list of {{priceList.length}} items sold across Harn.  Invididual prices may vary based on supply and demand, or the fiat of local monpolies. Some modifications by me but data largely derived from several community efforts aggregated and modified further in <a href="https://www.lythia.com/game_aides/comprehensive-pricelist/" target="_blank">Leitchy's Comprehensive Price list</a> on <a href="https://www.lythia.com" target="_blank">Lythia.com</a></div>
   <app-loading-spinner *ngIf="!pricesReady" [msg]="'Loading Prices ...'"></app-loading-spinner>
   <div class="form-inline" *ngIf="pricesReady">
+
     <div class="input-group mb-2 mr-sm-2">
       <label class="my-1 mr-2" for="itemSearchInput">Search: </label>
       <input type="text" class="form-control mb-2 mr-sm-2" id="itemSearchInput" [formControl]="searchField" placeholder="Type an item name or category ...">
@@ -17,33 +17,37 @@
     </div>
   </div>
 
-  <table class="table table-bordered table-striped" *ngIf="pricesReady">
-    <thead class="table-dark">
-    <tr>
-      <td>Item<span *ngIf="filteredPrices.length > 1">s</span> ({{filteredPrices.length}})</td>
-      <td>Price(d)</td>
-      <td>Common Price</td>
-      <td>Weight (lbs)</td>
-      <td>Vendor</td>
-      <td>Notes</td>
-    </tr>
-    </thead>
-    <tbody>
-    <ng-container *ngFor="let salesItem of filteredPrices">
-      <tr>
-        <td>{{salesItem.name | titlecase}}</td>
-        <td>{{salesItem.price}} <small *ngIf="salesItem.price">d</small></td>
-        <td>
-          <ng-container *ngFor="let item of localPrices(salesItem.price)">
-            {{item.amount}} <small>{{item.coin}}</small>,
-          </ng-container>
-        </td>
-        <td>{{salesItem.weight}} <small *ngIf="salesItem.weight">lbs</small></td>
-        <td>{{salesItem.vendor | titlecase}}</td>
-        <td>{{salesItem.notes}}</td>
-      </tr>
-    </ng-container>
-    </tbody>
-  </table>
-  <div *ngIf="filteredPrices.length < 1 && currentVendor">Enter a search term or select a vendor.</div>
+  <div class="title-box bg-dark text-white px-3 py-2 mx-1 font-weight-bold d-flex w-100 justify-content-between row">
+    <h4 class="pb-0 mb-0 col-8">Price List ({{filteredPrices.length}})</h4>
+    <div class="align-self-end d-flex col-4 m-0 p-0 justify-content-end btn-lg" *ngIf="currentMaxPages() > 1">
+      <div><a (click)="onPageBackClick()" class="px-2"><i class="far fa-caret-square-left large"></i></a></div>
+      <div>Page {{currentPage}} of {{currentMaxPages()}}</div>
+      <div><a (click)="onPageForwardClick()" class="px-2 btn-lg"><i class="far fa-caret-square-right"></i></a></div>
+    </div>
+  </div>
+
+  <div *ngIf="pricesReady" class="list-group px-3">
+    <div class="list-group-item list-group-item-action flex-column" *ngFor="let item of pageList()">
+      <div class="d-flex w-100 justify-content-between row">
+        <div class="align-items-start col-11">
+          <h5>{{item.name | titlecase}}</h5>
+          <div><strong>{{item.vendor | titlecase}}</strong><span *ngIf="item.notes">, {{item.notes}}</span></div>
+        </div>
+        <div class="align-items-end col-1 p-0 m-0">
+          <div><span *ngIf="item.price">{{item.price}} <small>d</small></span></div>
+          <div class="text-muted"><span *ngIf="item.weight">{{item.weight}} <small>lbs</small></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="list-group-item list-group-item-action flex-column" *ngIf="filteredPrices.length < 1">
+      <div class="d-flex w-100 justify-content-between text-center">
+        <div *ngIf="isFilterEmpty; then searchprompt else noresults"></div>
+      </div>
+    </div>
+  </div>
+
+
 </div>
+
+<ng-template #searchprompt><h5>Enter a search term or select a vendor to display prices</h5></ng-template>
+<ng-template #noresults><h5>No items found.</h5></ng-template>
