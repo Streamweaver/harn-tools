@@ -5,7 +5,7 @@ import csv, json
 def writeprices():
     priceList = parsePrices('PriceList2.csv')
     # headers = ['name', 'weight', 'price', 'vendor']
-    with open('combinedprices.data.json', 'w', encoding='utf-8') as jsonFile:
+    with open('expandedprice.data.json', 'w', encoding='utf-8') as jsonFile:
         json.dump(priceList, jsonFile)
 
 def parsePrice(price):
@@ -22,18 +22,30 @@ def parsePrice(price):
   if str(price).endswith('L'):
     price = price[:-1]
     price = float(price) * 240.0
-  return float(price)
+  try:
+    return float(price)
+  except ValueError:
+    return 0
+
+
+def parseWeight(weight):
+  try:
+    weight = float(weight)
+    return weight
+  except ValueError:
+    return 0
 
 def parsePrices(filename):
   prices = []
   with open(filename, encoding='utf-8') as priceFile:
       nameReader = csv.DictReader(priceFile)
-      for row in nameReader:
+      for idx, row in enumerate(nameReader):
         priceRow ={}
         try:
           if row['Name']:
+            priceRow['id'] = idx + 1
             priceRow['name'] = row['Name'].strip().lower()
-            priceRow['weight'] = row['Weight'].strip().lower()
+            priceRow['weight'] = parseWeight(row['Weight'].strip().lower())
             priceRow['price'] = parsePrice(row['Cost'])
             priceRow['vendor'] = row['Vendor'].strip().lower()
             priceRow['notes'] = row['Notes'].strip()

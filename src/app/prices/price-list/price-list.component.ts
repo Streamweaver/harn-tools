@@ -14,150 +14,150 @@ import 'rxjs/add/operator/distinctUntilChanged';
 export class PriceListComponent implements OnInit {
   priceList: PriceListing[];
   filteredPrices: PriceListing[];
-  displayList: boolean;
-  categories: string[];
+  pricesReady: boolean;
   vendors: string[];
-  subcategories: { [key: string]: string[] };
   searchField: FormControl;
 
-  // filter-able properties
-  name: string;
-  vendor: string;
-  category: string;
-  subcategory: string;
+  filters: {[key: string]: any};
+  currentVendor: string;
+  currentSearchTerm: string;
+  currentPage: number;
+  private itemsPerPage: number;
 
-  filters = {};
-
-  constructor(
-    private priceService: PriceService
-  ) {
+  constructor(private priceService: PriceService) {
   }
 
   ngOnInit() {
-    this.displayList = false;
+    this.clearFilters();
+    this.vendors = [];
+    this.pricesReady = false;
     this.searchField = new FormControl();
+    this.filteredPrices = [];
+    this.currentVendor = '';
+    this.currentSearchTerm = '';
+    this.currentPage = 1;
+    this.itemsPerPage = 20;
     this.searchField.valueChanges
       .debounceTime(400)
       .distinctUntilChanged()
       .subscribe(term => {
-        this.filterIncludes('name', term);
+        this.onSearchPrices(term);
       });
-    this.categories = [];
-    this.vendors = [];
-    this.subcategories = {};
-    this.category = null;
-    this.priceService.getPrices().subscribe(
-      prices => this.priceList = prices,
-      (err) => console.log('Error Loading Price List: ' + err),
-      () => {
-        this.parseSelectOptions();
-        this.applyFilters();
-        this.displayList = true;
-      }
+
+    this.priceService.priceList.subscribe(
+      priceList => this.priceList = priceList,
+          err => console.log(err),
+          () => {
+            this.sortPrices();
+            this.parseVendors();
+            this.applyFilters();
+            this.pricesReady = true;
+          }
     );
+    this.parseVendors();
   }
 
-  private applyFilters() {
-    this.filteredPrices = _.filter(this.priceList, _.conforms(this.filters));
-  }
-
-  // Much of this pulled from the very find AngularFirebase tutorial at
-  // https://angularfirebase.com/lessons/multi-property-data-filtering-with-firebase-and-angular-4/
-  /// filter property by equality to rule
-  filterExact(property: string, rule: any) {
-    console.log(property, rule);
-    if (!rule) {
-      this.removeFilter(property);
-    } else {
-      this.filters[property] = val => val === rule;
-      this.applyFilters();
-    }
-  }
-
-  filterIncludes(property: string, rule: string) {
-    this.removeFilter(property);
-    this.filters[property] = val => val.includes(rule.toLowerCase());
-    this.applyFilters();
-  }
-
-  /// filter  numbers greater than rule
-  filterLessThan(property: string, rule: number) {
-    this.filters[property] = val => val < rule;
-    this.applyFilters();
-  }
-
-  /// filter properties that resolve to true
-  filterBoolean(property: string, rule: boolean) {
-    if (!rule) {
-      this.removeFilter(property);
-    } else {
-      this.filters[property] = val => val;
-      this.applyFilters();
-    }
-  }
-
-  /// removes filter
-  removeFilter(property: string) {
-    delete this.filters[property];
-    this[property] = null;
-    this.applyFilters();
-  }
-
-  onCategorySelect(property: string, rule: string) {
-    if (rule === this.category) {
-      return;
-    }
-    if (!rule) {
-      this.removeFilter('subcategory');
-      this.subcategory = null;
-      this.removeFilter(property);
-      this.category = null;
-    } else {
-      this.category = rule;
-      this.filterExact(property, rule);
-      this.removeFilter('subcategory');
-      this.subcategory = null;
-      this.applyFilters();
-    }
-  }
-
-  localPrice(price: number): string {
-    const priceLabel: string[] = [];
+  localPrices(price: number): {coin: string, amount: number}[] {
+    const priceLabel: { coin: string, amount: number}[] = [];
     if (price / 240 > 1) {
-      priceLabel.push(Math.floor(price / 240) + 'L');
+      priceLabel.push({coin: 'L', amount: Math.floor(price / 240)});
       price = price % 240;
     }
     if (price >= 1) {
-      priceLabel.push(Math.floor(price) + 'd');
+      priceLabel.push({coin: 'd', amount: Math.floor(price)});
       price = price % 1;
     }
     if (price > 0) {
-      priceLabel.push (price * 4 + 'f');
+      priceLabel.push({coin: 'f', amount: price * 4});
     }
-    return priceLabel.join(', ');
+    return priceLabel;
   }
 
-  private parseSelectOptions() {
+  // Paging
+  pageList(): PriceListing[] {
+    const indexStart = this.currentPage - 1;
+    return this.filteredPrices.slice(
+      indexStart * this.itemsPerPage, (indexStart + 1) * this.itemsPerPage
+    );
+  }
+
+  onPageForwardClick() {
+    this.currentPage = _.clamp(this.currentPage + 1, 1, this.currentMaxPages());
+  }
+
+  onPageBackClick() {
+    this.currentPage = _.clamp(this.currentPage - 1, 1, this.currentMaxPages());
+  }
+
+  currentMaxPages(): number {
+    return Math.ceil(this.filteredPrices.length / this.itemsPerPage);
+  }
+
+  // Searching and Sorting
+  onSearchPrices(term: string) {
+    this.currentSearchTerm = term;
+    this.filterIncludes('name', term);
+  }
+
+  onVendorSelect(rule: string) {
+    this.currentVendor = rule;
+    this.filterExact('vendor', rule);
+  }
+
+  private sortPrices() {
+    this.priceList = _.sortBy(this.priceList, ['vendor', 'name']);
+  }
+
+  private parseVendors() {
     for (const item of this.priceList) {
-      if (this.categories.indexOf(item.category) < 0) {
-        this.categories.push(item.category);
-      }
       if (this.vendors.indexOf(item.vendor) < 0) {
         this.vendors.push(item.vendor);
       }
-      if (!(item.category in this.subcategories)) {
-        this.subcategories[item.category] = [];
-      }
-      if (this.subcategories[item.category].indexOf(item.subcategory) < 0) {
-        this.subcategories[item.category].push(item.subcategory);
+      this.vendors = this.vendors.sort();
+    }
+  }
+
+  // Filtering prices
+  private applyFilters() {
+    this.currentPage = 1;
+    if (this.isFilterEmpty()) {
+      this.filteredPrices = this.priceList;
+    } else {
+      this.filteredPrices = _.filter(this.priceList, _.conforms(this.filters));
+    }
+    }
+
+  private filterExact(property: string, rule: string) {
+      if (this.filters[property] !== rule) {
+        if (!rule) {
+          this.removeFilter(property);
+        } else {
+          this.filters[property] = val => val === rule;
+        }
+        this.applyFilters();
       }
     }
-    // for (const subcat in this.subcategories) {
-    //   if (subcat) {
-    //     this.subcategories[subcat] = this.subcategories[subcat].sort();
-    //   }
-    // }
-    this.categories = this.categories.sort();
-    this.vendors = this.vendors.sort();
-  }
+
+    filterIncludes(property: string, rule: string) {
+      if (this.filters[property] !== rule) {
+        if (!rule) {
+          this.removeFilter(property);
+        } else {
+          this.filters[property] = val => val.includes(rule.toLowerCase());
+        }
+        this.applyFilters();
+      }
+    }
+
+    removeFilter(property: string) {
+      delete this.filters[property];
+    }
+
+    clearFilters() {
+      this.filters = {};
+    }
+
+    isFilterEmpty() {
+    return _.isEmpty(this.filters);
+    }
 }
