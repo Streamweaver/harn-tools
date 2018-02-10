@@ -1,9 +1,9 @@
 <div class="container-fluid page">
-  <h2>Harnic Price List</h2>
+  <h2>Harnic Price List {{pricesReady}}</h2>
   <p>By Dakin Burdick (2015) based on Steve McDonald's work, v. 2.0 Feb 1997 </p>
   <p>Prices are general base prices and may vary in location based on supply and demand.</p>
-  <app-loading-spinner *ngIf="!displayList" [msg]="'Loading Prices ...'"></app-loading-spinner>
-  <div class="form-inline" *ngIf="displayList">
+  <app-loading-spinner *ngIf="!pricesReady" [msg]="'Loading Prices ...'"></app-loading-spinner>
+  <div class="form-inline" *ngIf="pricesReady">
     <div class="input-group mb-2 mr-sm-2">
       <label class="my-1 mr-2" for="itemSearchInput">Search: </label>
       <input type="text" class="form-control mb-2 mr-sm-2" id="itemSearchInput" [formControl]="searchField" placeholder="Type an item name or category ...">
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <table class="table table-bordered table-striped" *ngIf="displayList">
+  <table class="table table-bordered table-striped" *ngIf="pricesReady">
     <thead class="table-dark">
     <tr>
       <td>Item</td>
@@ -29,7 +29,7 @@
     </tr>
     </thead>
     <tbody>
-    <ng-container *ngFor="let salesItem of filteredPrices">
+    <ng-container *ngFor="let salesItem of filteredPrices$ | async">
       <tr>
         <td>{{salesItem.name | titlecase}}</td>
         <td>{{salesItem.price}} <small *ngIf="salesItem.price">d</small></td>

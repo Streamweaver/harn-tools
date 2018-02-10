@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import * as _ from 'lodash';
+import {Observable} from 'rxjs/Observable';
 import {PriceListing} from '../shared/price-listing.model';
 import {PriceService} from '../shared/price.service';
 import 'rxjs/add/operator/debounceTime';
@@ -14,9 +15,8 @@ import 'rxjs/add/operator/distinctUntilChanged';
 export class PriceListComponent implements OnInit {
   priceList: PriceListing[];
   filteredPrices: PriceListing[];
-  displayList: boolean;
+  pricesReady: boolean;
   vendors: string[];
-  subcategories: { [key: string]: string[] };
   searchField: FormControl;
 
   // filter-able properties
@@ -31,82 +31,20 @@ export class PriceListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.displayList = false;
+    this.vendors = [];
+    this.pricesReady = true;
     this.searchField = new FormControl();
     this.searchField.valueChanges
       .debounceTime(400)
       .distinctUntilChanged()
       .subscribe(term => {
-        this.filterIncludes('name', term);
+        this.onSearchPrices(term);
       });
-    this.vendors = [];
-    this.priceService.getPrices().subscribe(
-      prices => this.priceList = prices,
-      (err) => console.log('Error Loading Price List: ' + err),
-      () => {
-        this.parseSelectOptions();
-        this.applyFilters();
-        this.displayList = true;
-      }
+    this.priceService.getPriceList().subscribe(
+      priceList => this.filteredPrices = priceList,
+      err => console.log(err),
+      () => this.pricesReady = true
     );
-  }
-
-  private applyFilters() {
-    this.filteredPrices = _.filter(this.priceList, _.conforms(this.filters));
-  }
-
-  // Much of this pulled from the very find AngularFirebase tutorial at
-  // https://angularfirebase.com/lessons/multi-property-data-filtering-with-firebase-and-angular-4/
-  /// filter property by equality to rule
-  filterExact(property: string, rule: any) {
-    if (!rule) {
-      this.removeFilter(property);
-    } else {
-      this.filters[property] = val => val === rule;
-      this.applyFilters();
-    }
-  }
-
-  filterIncludes(property: string, rule: string) {
-    this.removeFilter(property);
-    this.filters[property] = val => val.includes(rule.toLowerCase());
-    this.applyFilters();
-  }
-
-  /// filter  numbers greater than rule
-  filterLessThan(property: string, rule: number) {
-    this.filters[property] = val => val < rule;
-    this.applyFilters();
-  }
-
-  /// filter properties that resolve to true
-  filterBoolean(property: string, rule: boolean) {
-    if (!rule) {
-      this.removeFilter(property);
-    } else {
-      this.filters[property] = val => val;
-      this.applyFilters();
-    }
-  }
-
-  /// removes filter
-  removeFilter(property: string) {
-    delete this.filters[property];
-    this[property] = null;
-    this.applyFilters();
-  }
-
-  onCategorySelect(property: string, rule: string) {
-    if (rule === this.vendor) {
-      return;
-    }
-    if (!rule) {
-      this.removeFilter('vendor');
-      this.removeFilter(property);
-    } else {
-      this.filterExact(property, rule);
-      this.applyFilters();
-    }
   }
 
   localPrices(price: number): { coin: string, amount: number}[] {
@@ -125,7 +63,16 @@ export class PriceListComponent implements OnInit {
     return priceLabel;
   }
 
-  private parseSelectOptions() {
+  onSearchPrices(term: string) {
+    this.priceService.filterIncludes('name', term);
+  }
+
+  onVendorSelect(rule: string) {
+    this.priceService.filterExact('vendor', rule);
+  }
+
+  private parseVendorList() {
+    this.vendors = [];
     for (const item of this.priceList) {
       if (this.vendors.indexOf(item.vendor) < 0) {
         this.vendors.push(item.vendor);
