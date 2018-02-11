@@ -1,10 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import * as _ from 'lodash';
-import {PriceListing} from '../shared/price-listing.model';
-import {PriceService} from '../shared/price.service';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
+import {CartItem, PriceListing} from '../shared/price-listing.model';
+import {PriceService} from '../shared/price.service';
 
 @Component({
   selector: 'app-price-list',
@@ -14,11 +14,12 @@ import 'rxjs/add/operator/distinctUntilChanged';
 export class PriceListComponent implements OnInit {
   priceList: PriceListing[];
   filteredPrices: PriceListing[];
+  cartList: CartItem[];
   pricesReady: boolean;
   vendors: string[];
   searchField: FormControl;
 
-  filters: {[key: string]: any};
+  filters: { [key: string]: any };
   currentVendor: string;
   currentSearchTerm: string;
   currentPage: number;
@@ -33,6 +34,7 @@ export class PriceListComponent implements OnInit {
     this.pricesReady = false;
     this.searchField = new FormControl();
     this.filteredPrices = [];
+    this.cartList = [];
     this.currentVendor = '';
     this.currentSearchTerm = '';
     this.currentPage = 1;
@@ -46,19 +48,19 @@ export class PriceListComponent implements OnInit {
 
     this.priceService.priceList.subscribe(
       priceList => this.priceList = priceList,
-          err => console.log(err),
-          () => {
-            this.sortPrices();
-            this.parseVendors();
-            this.applyFilters();
-            this.pricesReady = true;
-          }
+      err => console.log(err),
+      () => {
+        this.sortPrices();
+        this.parseVendors();
+        this.applyFilters();
+        this.pricesReady = true;
+      }
     );
     this.parseVendors();
   }
 
-  localPrices(price: number): {coin: string, amount: number}[] {
-    const priceLabel: { coin: string, amount: number}[] = [];
+  localPrices(price: number): { coin: string, amount: number }[] {
+    const priceLabel: { coin: string, amount: number }[] = [];
     if (price / 240 > 1) {
       priceLabel.push({coin: 'L', amount: Math.floor(price / 240)});
       price = price % 240;
@@ -125,39 +127,87 @@ export class PriceListComponent implements OnInit {
     } else {
       this.filteredPrices = _.filter(this.priceList, _.conforms(this.filters));
     }
-    }
+  }
 
   private filterExact(property: string, rule: string) {
-      if (this.filters[property] !== rule) {
-        if (!rule) {
-          this.removeFilter(property);
-        } else {
-          this.filters[property] = val => val === rule;
-        }
-        this.applyFilters();
+    if (this.filters[property] !== rule) {
+      if (!rule) {
+        this.removeFilter(property);
+      } else {
+        this.filters[property] = val => val === rule;
       }
+      this.applyFilters();
     }
+  }
 
-    filterIncludes(property: string, rule: string) {
-      if (this.filters[property] !== rule) {
-        if (!rule) {
-          this.removeFilter(property);
-        } else {
-          this.filters[property] = val => val.includes(rule.toLowerCase());
-        }
-        this.applyFilters();
+  filterIncludes(property: string, rule: string) {
+    if (this.filters[property] !== rule) {
+      if (!rule) {
+        this.removeFilter(property);
+      } else {
+        this.filters[property] = val => val.includes(rule.toLowerCase());
       }
+      this.applyFilters();
     }
+  }
 
-    removeFilter(property: string) {
-      delete this.filters[property];
-    }
+  removeFilter(property: string) {
+    delete this.filters[property];
+  }
 
-    clearFilters() {
-      this.filters = {};
-    }
+  clearFilters() {
+    this.filters = {};
+  }
 
-    isFilterEmpty() {
+  isFilterEmpty() {
     return _.isEmpty(this.filters);
+  }
+
+  // Drag and Drop
+  onItemDrop(e: any) {
+    const data = e.dragData as number;
+    if (data) {
+      this.purchaseItem(data);
     }
+  }
+
+  onTrashDrop(e: any) {
+    const data = e.dragData as number;
+    if (data) {
+      this.deleteItem(data);
+    }
+  }
+
+  private purchaseItem(itemId: number) {
+    let item: CartItem = _.find(this.cartList, {id: itemId});
+    if (item) {
+      item.addOne();
+    } else {
+      item = _.find(this.priceList, {id: itemId});
+      this.cartList.push(new CartItem(item));
+    }
+  }
+
+  private deleteItem(itemId: number) {
+    const idx = this.cartList.indexOf(_.find(this.cartList, {id: itemId}));
+    if (idx > -1) {
+      this.cartList.splice(idx, 1);
+    }
+  }
+
+  totalWeight(): number {
+    let weight = 0;
+    for (const item of this.cartList) {
+      weight += item.totalWeight();
+    }
+    return weight;
+  }
+
+  totalPrice(): number {
+    let price = 0;
+    for (const item of this.cartList) {
+      price += item.totalPrice();
+    }
+    return price;
+  }
 }

@@ -2,8 +2,8 @@
   <h2>Harnic Price List</h2>
   <div>A growing list of {{priceList.length}} items sold across Harn.  Invididual prices may vary based on supply and demand, or the fiat of local monpolies. Some modifications by me but data largely derived from several community efforts aggregated and modified further in <a href="https://www.lythia.com/game_aides/comprehensive-pricelist/" target="_blank">Leitchy's Comprehensive Price list</a> on <a href="https://www.lythia.com" target="_blank">Lythia.com</a></div>
   <app-loading-spinner *ngIf="!pricesReady" [msg]="'Loading Prices ...'"></app-loading-spinner>
-  <div class="form-inline" *ngIf="pricesReady">
 
+  <div class="form-inline" *ngIf="pricesReady">
     <div class="input-group mb-2 mr-sm-2">
       <label class="my-1 mr-2" for="itemSearchInput">Search: </label>
       <input type="text" class="form-control mb-2 mr-sm-2" id="itemSearchInput" [formControl]="searchField" placeholder="Type an item name or category ...">
@@ -17,34 +17,86 @@
     </div>
   </div>
 
-  <div class="title-box bg-dark text-white px-3 py-2 mx-1 font-weight-bold d-flex w-100 justify-content-between row">
-    <h4 class="pb-0 mb-0 col-8">Price List ({{filteredPrices.length}})</h4>
-    <div class="align-self-end d-flex col-4 m-0 p-0 justify-content-end btn-lg" *ngIf="currentMaxPages() > 1">
-      <div><a (click)="onPageBackClick()" class="px-2"><i class="far fa-caret-square-left large"></i></a></div>
-      <div>Page {{currentPage}} of {{currentMaxPages()}}</div>
-      <div><a (click)="onPageForwardClick()" class="px-2 btn-lg"><i class="far fa-caret-square-right"></i></a></div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header title-box bg-dark text-light px-3 py-3 mx-1 d-flex w-100 justify-content-between row">
+          <h4 class="pb-0 mb-0 col-8">Price List ({{filteredPrices.length}})</h4>
+          <div class="align-self-end d-flex col-4 m-0 p-0 justify-content-end btn-lg" *ngIf="currentMaxPages() > 1">
+            <div><a (click)="onPageBackClick()" class="px-2"><i class="far fa-caret-square-left large"></i></a></div>
+            <div>Page {{currentPage}} of {{currentMaxPages()}}</div>
+            <div><a (click)="onPageForwardClick()" class="px-2 btn-lg"><i class="far fa-caret-square-right"></i></a></div>
+          </div>
+        </div>
+        <div class="card-body pt-1">
+          <div class="list-group-item list-group-item-action flex-column p-0 py-1" *ngFor="let item of pageList()">
+            <div class="d-flex w-100 justify-content-between row m-0"  draggable [dragScope]="'cart'" [dragData]="item.id">
+              <div class="align-items-start col-10">
+                <h5>{{item.name | titlecase}}</h5>
+                <div><strong>{{item.vendor | titlecase}}</strong><span *ngIf="item.notes">, {{item.notes}}</span></div>
+              </div>
+              <div class="align-items-end col-2 p-0 m-0">
+                <div><span *ngIf="item.price">{{item.price}} <small>d</small></span></div>
+                <div class="text-muted"><span *ngIf="item.weight">{{item.weight}} <small>lbs</small></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="list-group-item list-group-item-action flex-column" *ngIf="filteredPrices.length < 1">
+            <div class="d-flex w-100 justify-content-between text-center">
+              <div *ngIf="isFilterEmpty; then searchprompt else noresults"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col">
+      <div class="card fixed">
+        <div class="card-header title-box bg-dark text-light py-3">
+          <h4 class="m-0 p-0">Purchases</h4>
+        </div>
+        <div class="card-body pt-1" droppable [dropScope]="'cart'" (onDrop)="onItemDrop($event)">
+
+          <div *ngIf="cartList < 1" class="text-center">
+            <h4><i class="fas fa-caret-square-down"></i> Drag and Drop armor here</h4>
+          </div>
+
+          <div class="list-group-item list-group-item-action flex-column p-0 py-1" *ngFor="let cartItem of cartList">
+            <div class="d-flex w-100 justify-content-between row m-0" draggable [dragScope]="'trash'" [dragData]="cartItem.id">
+              <div class="align-items-start col-10">
+                <h5>{{cartItem.name | titlecase}}</h5>
+                <div>
+                  <strong>{{cartItem.totalPrice()}}<small>d</small></strong>;
+                  <strong>{{cartItem.totalWeight()}} <small>lbs</small></strong>
+                </div>
+              </div>
+              <div class="align-items-end col-2 p-0 m-0">
+                <div class="p-1 text-center">#:
+                  <a (click)="cartItem.removeOne()"><i class="far fa-minus-square"></i></a>
+                  {{cartItem.quantity}}
+                  <a (click)="cartItem.addOne()"><i class="far fa-plus-square"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex w-100 justify-content-between row m-0 pt-2">
+            <div><strong>Weight: {{totalWeight()}} <small>lbs</small></strong></div>
+            <div><strong>Price: {{totalPrice()}} <small>d</small></strong></div>
+          </div>
+        </div>
+
+        <div class="card-footer pb-3 pt-3" droppable [dropScope]="'trash'" (onDrop)="onTrashDrop($event)">
+          <h5 [hidden]="cartList < 1"><i class="fas fa-trash"></i> Drop here to remove</h5>
+
+        </div>
+      </div>
     </div>
   </div>
 
-  <div *ngIf="pricesReady" class="list-group px-3">
-    <div class="list-group-item list-group-item-action flex-column" *ngFor="let item of pageList()">
-      <div class="d-flex w-100 justify-content-between row">
-        <div class="align-items-start col-11">
-          <h5>{{item.name | titlecase}}</h5>
-          <div><strong>{{item.vendor | titlecase}}</strong><span *ngIf="item.notes">, {{item.notes}}</span></div>
-        </div>
-        <div class="align-items-end col-1 p-0 m-0">
-          <div><span *ngIf="item.price">{{item.price}} <small>d</small></span></div>
-          <div class="text-muted"><span *ngIf="item.weight">{{item.weight}} <small>lbs</small></span></div>
-        </div>
-      </div>
-    </div>
-    <div class="list-group-item list-group-item-action flex-column" *ngIf="filteredPrices.length < 1">
-      <div class="d-flex w-100 justify-content-between text-center">
-        <div *ngIf="isFilterEmpty; then searchprompt else noresults"></div>
-      </div>
-    </div>
-  </div>
+
 
 
 </div>
