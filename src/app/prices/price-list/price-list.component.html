@@ -6,7 +6,7 @@
   <div class="form-inline" *ngIf="pricesReady">
     <div class="input-group mb-2 mr-sm-2">
       <label class="my-1 mr-2" for="itemSearchInput">Search: </label>
-      <input type="text" class="form-control mb-2 mr-sm-2" id="itemSearchInput" [formControl]="searchField" placeholder="Type an item name or category ...">
+      <input type="text" class="form-control mb-2 mr-sm-2" id="itemSearchInput" [formControl]="searchField" placeholder="Type item name ...">
     </div>
     <div class="input-group mb-2 mr-sm-2">
       <label class="my-1 mr-2">Vendor: </label>
@@ -18,7 +18,7 @@
   </div>
 
   <div class="row">
-    <div class="col">
+    <div class="col-md">
       <div class="card">
         <div class="card-header title-box bg-dark text-light px-3 py-3 mx-1 d-flex w-100 justify-content-between row">
           <h4 class="pb-0 mb-0 col-8">Price List ({{filteredPrices.length}})</h4>
@@ -52,7 +52,7 @@
     </div>
 
 
-    <div class="col">
+    <div class="col-md">
       <div class="card fixed">
         <div class="card-header title-box bg-dark text-light py-3">
           <h4 class="m-0 p-0">Purchases</h4>
@@ -65,30 +65,30 @@
 
           <div class="list-group-item list-group-item-action flex-column p-0 py-1" *ngFor="let cartItem of cartList">
             <div class="d-flex w-100 justify-content-between row m-0" draggable [dragScope]="'trash'" [dragData]="cartItem.id">
-              <div class="align-items-start col-10">
+              <div class="align-items-start col-9">
                 <h5>{{cartItem.name | titlecase}}</h5>
                 <div>
                   <strong>{{cartItem.totalPrice()}}<small>d</small></strong>;
                   <strong>{{cartItem.totalWeight()}} <small>lbs</small></strong>
                 </div>
               </div>
-              <div class="align-items-end col-2 p-0 m-0">
-                <div class="p-1 text-center">#:
+              <div class="align-items-end col-3 p-0 m-0">
+                <h5 class="p-1 text-center">Qty:
                   <a (click)="cartItem.removeOne()"><i class="far fa-minus-square"></i></a>
                   {{cartItem.quantity}}
                   <a (click)="cartItem.addOne()"><i class="far fa-plus-square"></i></a>
-                </div>
+                </h5>
               </div>
             </div>
           </div>
 
           <div class="d-flex w-100 justify-content-between row m-0 pt-2">
-            <div><strong>Weight: {{totalWeight()}} <small>lbs</small></strong></div>
-            <div><strong>Price: {{totalPrice()}} <small>d</small></strong></div>
+            <div><h5>Weight: {{totalWeight()}} <small>lbs</small></h5></div>
+            <div><h5>Price: {{totalPrice()}} <small>d</small></h5></div>
           </div>
         </div>
 
-        <div class="card-footer pb-3 pt-3" droppable [dropScope]="'trash'" (onDrop)="onTrashDrop($event)">
+        <div class="card-footer pb-3 pt-4" droppable [dropScope]="'trash'" (onDrop)="onTrashDrop($event)">
           <h5 [hidden]="cartList < 1"><i class="fas fa-trash"></i> Drop here to remove</h5>
 
         </div>
