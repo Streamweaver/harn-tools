@@ -6,6 +6,9 @@ Builds of this app can be seen at https://streamweaver.github.io/harn-tools/
 
 ## Acknowlegements
 
+Price Data derived from community efforts and compiled lists from:
+* Lythia.com Comprehensive Pricelist https://www.lythia.com/game_aides/comprehensive-pricelist/
+
 Name data derived from the following sources:
 * English Surnames in Northumberland https://www.s-gabriel.org/names/juetta/parish/surnames.html 
 * Medieval English, Welsh & Saxon Names http://www.infernaldreams.com/names/Europe/
