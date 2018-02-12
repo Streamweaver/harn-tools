@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import * as _ from 'lodash';
-import {ArmorTypes} from '../shared/armor.data';
+import {ArmorLocationCodes, ArmorTypes} from '../shared/armor.data';
 import {Armor, ArmorPiece} from '../shared/armor.model';
 import {ArmorService} from '../shared/armor.service';
 
@@ -108,14 +108,14 @@ export class ArmorListComponent implements OnInit {
       ]);
   }
 
-  armorCoverageDescription(armor: Armor): string {
+  armorCoverageList(armor: Armor): string {
     const props: string[] = [];
     for (const prop in armor) {
-      if (typeof armor[prop] === 'boolean' && armor[prop]) {
-        props.push(prop);
+      if (ArmorLocationCodes[prop] && armor[prop]) {
+        props.push(ArmorLocationCodes[prop]);
       }
     }
-    return props.join('-');
+    return props.join(', ');
   }
 
 }

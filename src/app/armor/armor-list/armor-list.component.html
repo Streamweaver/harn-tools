@@ -13,15 +13,22 @@
               type="button"
               class="btn btn-secondary"
               *ngFor="let armortType of armorTypes"
-              (click)="filterArmor(armortType)">{{armortType | titlecase}}</button>
+              (click)="filterArmor(armortType)">{{armortType | titlecase}}
+            </button>
           </div>
         </div>
         <div class="card-body">
 
-          <div *ngFor="let item of armorDisplayList" class="list-group-item row" draggable [dragScope]="'rack'" [dragData]="item">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">{{item.name | titlecase}}</h5>
-              <small>{{item.basePrice}}d/{{item.baseWeight}}lb</small>
+          <div *ngFor="let item of armorDisplayList" class="list-group-item row" draggable [dragScope]="'rack'"
+               [dragData]="item">
+            <div class="d-flex p-0 m-0">
+              <div class="w-100 justify-content-between">
+                <h5 class="mb-1">{{item.name | titlecase}}</h5>
+                <small>{{item.basePrice}}d/{{item.baseWeight}}lb</small>
+              </div>
+              <div class="w-100 p-0 m-0">
+                <small>{{armorCoverageList(item) | titlecase}}</small>
+              </div>
             </div>
           </div>
 
@@ -38,15 +45,16 @@
           </div>
           <div *ngFor="let item of armorWorn" draggable [dragScope]="'trash'" [dragData]="item">
             <div class="list-group-item">
-              <div class="d-flex">
-                <h5 class="mr-auto p-1">{{item.name | titlecase}}</h5>
-                <div class="p-1 pr-2">{{item.price()}}d/{{item.baseWeight}}lb</div>
-                <div class="p-1 text-center">Qlty:
-                  <a (click)="item.decreaseQuality()"><i class="far fa-minus-square"></i></a>
-                  {{item.quality}}
-                  <a (click)="item.increaseQuality()"><i class="far fa-plus-square"></i></a>
-                </div>
+              <div class="d-flex justify-content-between">
+                  <h5 class="p-0">{{item.name | titlecase}}</h5>
+                  <div class="p-1 pr-2">{{item.price()}}d/{{item.baseWeight}}lb</div>
+                  <div class="p-1 text-center">Qlty:
+                    <a (click)="item.decreaseQuality()"><i class="far fa-minus-square"></i></a>
+                    {{item.quality}}
+                    <a (click)="item.increaseQuality()"><i class="far fa-plus-square"></i></a>
+                  </div>
               </div>
+              <small>{{armorCoverageList(item) | titlecase}}</small>
             </div>
           </div>
         </div>

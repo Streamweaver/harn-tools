@@ -88,3 +88,24 @@ export const ArmorLocationLabels = {
   feet: 'feet'
 };
 
+export const ArmorLocationCodes = {
+  skull: 'sk',
+  face: 'fc',
+  neck: 'nk',
+  shoulders: 'sh',
+  upperArms: 'ua',
+  elbows: 'el',
+  forearms: 'fo',
+  hands: 'ha',
+  thoraxFront: 'tx-f',
+  thoraxBack: 'tx-b',
+  abdomenFront: 'ab-f',
+  abdomenBack: 'ab-b',
+  hips: 'hp',
+  groin: 'gr',
+  thighs: 'th',
+  knees: 'kn',
+  calves: 'ca',
+  feet: 'ft'
+};
+
